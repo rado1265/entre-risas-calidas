@@ -153,10 +153,10 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'marfil', name: 'Marfil Natural', hex: '#FAF0E6', priceExtra: 0, image: 'assets/vela/vela 100ml soja.jpg' },
-      { id: 'terracota', name: 'Terracota Cálido', hex: '#C86D51', priceExtra: 310, image: 'assets/vela/margarita.png' },
-      { id: 'lavanda', name: 'Lavanda Pastel', hex: '#C8B6E2', priceExtra: 310, image: 'assets/vela/luna.png' },
-      { id: 'rosa', name: 'Rosa Palo', hex: '#E8C5C8', priceExtra: 310, image: 'assets/vela/rosa.png' },
-      { id: 'verde', name: 'Verde Menta', hex: '#A3D9C9', priceExtra: 310, image: 'assets/vela/nube.png' }
+      { id: 'terracota', name: 'Terracota Cálido', hex: '#C86D51', priceExtra: 310, image: 'assets/vela/margarita.PNG' },
+      { id: 'lavanda', name: 'Lavanda Pastel', hex: '#C8B6E2', priceExtra: 310, image: 'assets/vela/luna.PNG' },
+      { id: 'rosa', name: 'Rosa Palo', hex: '#E8C5C8', priceExtra: 310, image: 'assets/vela/rosa.PNG' },
+      { id: 'verde', name: 'Verde Menta', hex: '#A3D9C9', priceExtra: 310, image: 'assets/vela/nube.PNG' }
     ],
     aromas: [
       { id: 'vainilla', name: 'Vainilla & Coco' },
@@ -181,8 +181,8 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'transparente', name: 'Gel Transparente', hex: '#E0F7FA', priceExtra: 0, image: 'assets/vela/vela 100ml gel.jpg' },
-      { id: 'rosa-cristal', name: 'Rosa Cristal', hex: '#F8BBD0', priceExtra: 400, image: 'assets/vela/corazon textura.png' },
-      { id: 'azul-marino', name: 'Azul Marino', hex: '#B3E5FC', priceExtra: 400, image: 'assets/vela/cilindro ovalado v1.png' }
+      { id: 'rosa-cristal', name: 'Rosa Cristal', hex: '#F8BBD0', priceExtra: 400, image: 'assets/vela/corazon textura.PNG' },
+      { id: 'azul-marino', name: 'Azul Marino', hex: '#B3E5FC', priceExtra: 400, image: 'assets/vela/cilindro ovalado v1.PNG' }
     ],
     aromas: [
       { id: 'vainilla', name: 'Vainilla & Coco' },
@@ -199,16 +199,16 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura floral en cera de alta pureza',
     description: 'Escultura delicada de margarita en cera de alta pureza. Ideal para centros de mesa o recuerdos.',
-    image: 'assets/vela/margarita.png',
+    image: 'assets/vela/margarita.PNG',
     isCandle: true,
     sizes: [
-      { id: 'chico', name: 'Chica (5,5 cm)', price: 2490, image: 'assets/vela/margarita.png' },
-      { id: 'grande', name: 'Grande (8,5 cm)', price: 3490, image: 'assets/vela/margarita 2.png' }
+      { id: 'chico', name: 'Chica (5,5 cm)', price: 2490, image: 'assets/vela/margarita.PNG' },
+      { id: 'grande', name: 'Grande (8,5 cm)', price: 3490, image: 'assets/vela/margarita 2.PNG' }
     ],
     colors: [
-      { id: 'blanco', name: 'Blanco Natural', hex: '#FFFFFF', priceExtra: 0, image: 'assets/vela/margarita.png' },
-      { id: 'rosa', name: 'Rosa Palo', hex: '#E8C5C8', priceExtra: 300, image: 'assets/vela/margarita 2.png' },
-      { id: 'terracota', name: 'Terracota', hex: '#C86D51', priceExtra: 300, image: 'assets/vela/corazon textura.png' }
+      { id: 'blanco', name: 'Blanco Natural', hex: '#FFFFFF', priceExtra: 0, image: 'assets/vela/margarita.PNG' },
+      { id: 'rosa', name: 'Rosa Palo', hex: '#E8C5C8', priceExtra: 300, image: 'assets/vela/margarita 2.PNG' },
+      { id: 'terracota', name: 'Terracota', hex: '#C86D51', priceExtra: 300, image: 'assets/vela/corazon textura.PNG' }
     ],
     aromas: [
       { id: 'vainilla', name: 'Vainilla & Coco' },
@@ -224,10 +224,10 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura de Luna en cera artesanal',
     description: 'Escultura mística de Luna en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
-    image: 'assets/vela/moldes/luna.png',
+    image: 'assets/vela/moldes/luna.PNG',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '5,5 cm', price: 300, image: 'assets/vela/moldes/luna.png' }
+      { id: 'estandar', name: '5,5 cm', price: 300, image: 'assets/vela/moldes/luna.PNG' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
@@ -256,10 +256,10 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura esculpida de Rosa',
     description: 'Detallada escultura en cera de alta densidad con forma de rosa florecida.',
-    image: 'assets/vela/moldes/rosa.png',
+    image: 'assets/vela/moldes/rosa.PNG',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '5 cm ancho x 3 cm alto', price: 350, image: 'assets/vela/moldes/rosa.png' }
+      { id: 'estandar', name: '5 cm ancho x 3 cm alto', price: 350, image: 'assets/vela/moldes/rosa.PNG' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
@@ -288,12 +288,12 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura esponjosa de nube',
     description: 'Forma suave y moderna de nube decorativa en cera de soja.',
-    image: 'assets/vela/moldes/nube.png',
+    image: 'assets/vela/moldes/nube.PNG',
     isCandle: true,
     sizes: [
-      { id: 'pequeño', name: '4,5 cm ancho x 2 cm alto', price: 200, image: 'assets/vela/moldes/nube.png' },
-      { id: 'mediano', name: '6,5 cm ancho x 2,5 cm alto', price: 400, image: 'assets/vela/moldes/nube.png' },
-      { id: 'grande', name: '8 cm ancho x 3,5 cm alto', price: 600, image: 'assets/vela/moldes/nube.png' }
+      { id: 'pequeño', name: '4,5 cm ancho x 2 cm alto', price: 200, image: 'assets/vela/moldes/nube.PNG' },
+      { id: 'mediano', name: '6,5 cm ancho x 2,5 cm alto', price: 400, image: 'assets/vela/moldes/nube.PNG' },
+      { id: 'grande', name: '8 cm ancho x 3,5 cm alto', price: 600, image: 'assets/vela/moldes/nube.PNG' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
@@ -322,10 +322,10 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura de corazón con relieve',
     description: 'Escultura romántica de corazón con micro-textura en cera de soja pura.',
-    image: 'assets/vela/moldes/corazon textura.png',
+    image: 'assets/vela/moldes/corazon textura.PNG',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '6 cm ancho x 1,5 cm alto', price: 890, image: 'assets/vela/moldes/corazon textura.png' }
+      { id: 'estandar', name: '6 cm ancho x 1,5 cm alto', price: 890, image: 'assets/vela/moldes/corazon textura.PNG' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
@@ -354,10 +354,10 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 10 cm alto aprox.',
     description: 'Vela escultural cilíndrica de líneas arquitectónicas.',
-    image: 'assets/vela/moldes/cilindro ovalado v1.png',
+    image: 'assets/vela/moldes/cilindro ovalado v1.PNG',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '10 cm alto', price: 1400, image: 'assets/vela/moldes/cilindro ovalado v1.png' }
+      { id: 'estandar', name: '10 cm alto', price: 1400, image: 'assets/vela/moldes/cilindro ovalado v1.PNG' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
@@ -612,7 +612,7 @@ const PRODUCTS_DATA = [
     isCustomPhoto: true,
     /* sizes: [
       { id: '10cm', name: 'Placa 10 cm', priceExtra: 0, image: 'assets/litofania/litografia base.jpg' },
-      { id: '15cm', name: 'Placa 15 cm', priceExtra: 2000, image: 'assets/litofania/litografia cuadro.png' },
+      { id: '15cm', name: 'Placa 15 cm', priceExtra: 2000, image: 'assets/litofania/litografia cuadro.PNG' },
       { id: '20cm', name: 'Placa 20 cm', priceExtra: 4000, image: 'assets/litofania/litografia base.jpg' }
     ], */
     variants: [
@@ -628,16 +628,16 @@ const PRODUCTS_DATA = [
     categoryName: 'Litofanías & Personalizados',
     dimensions: 'Cubo con 4 fotografías personalizadas',
     description: 'Lámpara de noche en forma de cubo con 4 fotografías familiares personalizables retroiluminadas.',
-    image: 'assets/litofania/litografia cuadro.png',
+    image: 'assets/litofania/litografia cuadro.PNG',
     isCustomPhoto: true,
     /* sizes: [
-      { id: 'estandar', name: 'Fotos 7,5 × 10 cm', priceExtra: 0, image: 'assets/litofania/litografia cuadro.png' },
+      { id: 'estandar', name: 'Fotos 7,5 × 10 cm', priceExtra: 0, image: 'assets/litofania/litografia cuadro.PNG' },
       { id: 'grande', name: 'Fotos 10 × 12 cm', priceExtra: 5000, image: 'assets/litofania/litografia base.jpg' }
     ], */
     variants: [
-      { id: 'marco-4fotos', name: 'Marco Cubo + 4 Fotos 3D', price: 19990, image: 'assets/litofania/litografia cuadro.png' },
-      { id: 'solo-marco', name: 'Solo Marco Cubo', price: 8990, image: 'assets/litofania/litografia cuadro.png' },
-      { id: 'solo-imagen-repuesto', name: 'Solo 1 Foto de Repuesto', price: 4490, image: 'assets/litofania/litografia cuadro.png' }
+      { id: 'marco-4fotos', name: 'Marco Cubo + 4 Fotos 3D', price: 19990, image: 'assets/litofania/litografia cuadro.PNG' },
+      { id: 'solo-marco', name: 'Solo Marco Cubo', price: 8990, image: 'assets/litofania/litografia cuadro.PNG' },
+      { id: 'solo-imagen-repuesto', name: 'Solo 1 Foto de Repuesto', price: 4490, image: 'assets/litofania/litografia cuadro.PNG' }
     ]
   }
 ];
