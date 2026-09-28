@@ -7,7 +7,7 @@ const PRODUCTS_DATA = [
     name: 'Bandeja Redonda',
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
-    dimensions: 'Ø1 cm alto',
+    dimensions: '1 cm alto',
     description: 'Bandeja decorativa minimalista y versátil, ideal para posar velas, joyas, llaves o elementos de perfumería.',
     image: 'assets/decoracion/redondo/ovalado mediano blanco.png',
     material: [
@@ -105,14 +105,14 @@ const PRODUCTS_DATA = [
     name: 'Caja Redonda con Tapa',
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
-    dimensions: 'Ø5,5 cm × 3,5 cm',
+    dimensions: '5,5 cm × 3,5 cm',
     description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
     image: 'assets/decoracion/redondocontapa/redondo tapa blanco.png',
     material: [
       { id: 'Yeso', name: 'Yeso', price: 590, image: 'assets/decoracion/redondocontapa/redondo tapa blanco.png' },
       { id: 'Cemento', name: 'Cemento', price: 1290, image: 'assets/decoracion/redondocontapa/redondo tapa blanco.png' },
     ], sizes: [
-      { id: 'estandar', name: 'Ø5,5 cm × 3,5 cm', price: 0, image: 'assets/decoracion/redondocontapa/redondo tapa blanco.png' }
+      { id: 'estandar', name: '5,5 cm × 3,5 cm', price: 0, image: 'assets/decoracion/redondocontapa/redondo tapa blanco.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/redondocontapa/redondo tapa blanco.png' }
@@ -123,14 +123,14 @@ const PRODUCTS_DATA = [
     name: 'Caja Cuadrada con Tapa',
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
-    dimensions: 'Ø6 cm × 4, cm',
+    dimensions: '6 cm × 4, cm',
     description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
     image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png',
     material: [
       { id: 'Yeso', name: 'Yeso', price: 790, image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png' },
       { id: 'Cemento', name: 'Cemento', price: 1890, image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png' },
     ], sizes: [
-      { id: 'estandar', name: 'Ø6 cm × 4, cm', price: 0, image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png' }
+      { id: 'estandar', name: '6 cm × 4, cm', price: 0, image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png' }
@@ -606,7 +606,7 @@ const PRODUCTS_DATA = [
     name: 'Litofanía Individual Personalizada',
     category: 'litofanias',
     categoryName: 'Litofanías & Personalizados',
-    dimensions: 'Placa de foto 3D retroiluminada',
+    dimensions: 'Placa de foto 3D retroiluminada 10 cm de ancho',
     description: 'Fotografía en relieve 3D que cobra vida al encender su luz LED. Un recuerdo mágico y emocionante.',
     image: 'assets/litofania/litografia base.jpg',
     isCustomPhoto: true,
@@ -617,8 +617,8 @@ const PRODUCTS_DATA = [
     ], */
     variants: [
       { id: 'base-imagen', name: 'Base LED + Placa Imagen', price: 6990, image: 'assets/litofania/litografia base.jpg' },
-      { id: 'solo-imagen', name: 'Solo Placa Imagen 3D', price: 4990, image: 'assets/litofania/litografia base.jpg' },
-      { id: 'solo-base', name: 'Solo Base LED Madera', price: 2490, image: 'assets/litofania/litografia base.jpg' }
+      { id: 'solo-imagen', name: 'Solo Placa Imagen 3D - 10 cm aprox', price: 4990, image: 'assets/litofania/litografia base.jpg' },
+      { id: 'solo-base', name: 'Solo Base LED Madera - 10 cm aprox', price: 2490, image: 'assets/litofania/litografia base.jpg' }
     ]
   },
   {
@@ -636,8 +636,8 @@ const PRODUCTS_DATA = [
     ], */
     variants: [
       { id: 'marco-4fotos', name: 'Marco Cubo + 4 Fotos 3D', price: 19990, image: 'assets/litofania/litografia cuadro.PNG' },
-      { id: 'solo-marco', name: 'Solo Marco Cubo', price: 8990, image: 'assets/litofania/litografia cuadro.PNG' },
-      { id: 'solo-imagen-repuesto', name: 'Solo 1 Foto de Repuesto', price: 4490, image: 'assets/litofania/litografia cuadro.PNG' }
+      { id: 'solo-marco', name: 'Solo Marco Cubo - 12 x 11 cm aprox', price: 8990, image: 'assets/litofania/litografia cuadro.PNG' },
+      { id: 'solo-imagen-repuesto', name: 'Solo 1 Foto - 7,5 × 10 cm aprox', price: 4490, image: 'assets/litofania/litografia cuadro.PNG' }
     ]
   }
 ];
