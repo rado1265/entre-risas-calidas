@@ -17,7 +17,10 @@ const PRODUCTS_DATA = [
     colors: [
       { id: 'yeso', name: 'Yeso Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/bandeja redonda.png' },
       { id: 'cemento', name: 'Cemento Pulido', hex: '#9E9E9E', priceExtra: 2500, image: 'assets/decoracion/Ovalado 17,8 × 9,4 cm 2.png' },
-      { id: 'terracota', name: 'Terracota', hex: '#C86D51', priceExtra: 500, image: 'assets/decoracion/gato portavelas.png' }
+      { id: 'terracota', name: 'Terracota', hex: '#C86D51', priceExtra: 500, image: 'assets/decoracion/gato portavelas.png' },
+      { id: 'lavanda', name: 'Lavanda Pastel', hex: '#C8B6E2', priceExtra: 500, image: 'assets/decoracion/Hoja 21,2 × 12,2 cm.png' },
+      { id: 'rosa', name: 'Rosa Palo', hex: '#E8C5C8', priceExtra: 500, image: 'assets/decoracion/Cerrado Ovalado 6,1cm 2.png' },
+      { id: 'menta', name: 'Verde Menta', hex: '#A3D9C9', priceExtra: 500, image: 'assets/decoracion/hornillo aromatico 2.png' }
     ]
   },
   {
@@ -379,7 +382,12 @@ const PRODUCTS_DATA = [
 let currentCategoryFilter = 'todos';
 let searchQuery = '';
 let selectedOptionsMap = {}; // { productId: { sizeId, colorId, aromaId, variantId } }
+let expandedColorsMap = {}; // { productId: boolean }
 let cart = []; // Array of cart items
+
+// PAGINATION STATE
+let currentPage = 1;
+const ITEMS_PER_PAGE = 12;
 
 // DOM Ready initialization
 document.addEventListener('DOMContentLoaded', () => {
@@ -412,6 +420,7 @@ function setupEventListeners() {
       tabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentCategoryFilter = btn.dataset.category;
+      currentPage = 1;
       renderCatalog();
     });
   });
@@ -421,6 +430,7 @@ function setupEventListeners() {
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value.toLowerCase().trim();
+      currentPage = 1;
       renderCatalog();
     });
   }
@@ -548,8 +558,29 @@ function updateProductOption(productId, optionType, optionId) {
   }
 }
 
+function toggleExpandedColors(productId) {
+  expandedColorsMap[productId] = !expandedColorsMap[productId];
+  const product = PRODUCTS_DATA.find(p => p.id === productId);
+  if (!product) return;
+
+  const state = getProductState(product);
+
+  const card = document.querySelector(`[data-product-id="${productId}"]`);
+  if (card) {
+    const optionsEl = card.querySelector('.product-card-options');
+    if (optionsEl) optionsEl.innerHTML = buildProductOptionsHTML(product, state, false);
+  }
+
+  const modalContainer = document.querySelector(`[data-modal-product-id="${productId}"]`);
+  if (modalContainer) {
+    const modalOptions = document.getElementById('modal-product-options');
+    if (modalOptions) modalOptions.innerHTML = buildProductOptionsHTML(product, state, true);
+  }
+}
+
 function renderCatalog() {
   const container = document.getElementById('products-grid');
+  const paginationContainer = document.getElementById('pagination-container');
   if (!container) return;
 
   const filtered = PRODUCTS_DATA.filter(product => {
@@ -561,7 +592,13 @@ function renderCatalog() {
     return matchesCategory && matchesSearch;
   });
 
-  if (filtered.length === 0) {
+  const totalProducts = filtered.length;
+  const totalPages = Math.ceil(totalProducts / ITEMS_PER_PAGE) || 1;
+
+  if (currentPage > totalPages) currentPage = totalPages;
+  if (currentPage < 1) currentPage = 1;
+
+  if (totalProducts === 0) {
     container.innerHTML = `
       <div class="col-span-full text-center py-16 px-4 bg-white/60 rounded-3xl border border-dashed border-[#C86D51]/30">
         <div class="w-16 h-16 mx-auto mb-4 text-[#C86D51] opacity-70">
@@ -572,15 +609,101 @@ function renderCatalog() {
         <button onclick="resetFilters()" class="mt-6 px-5 py-2.5 bg-[#C86D51] text-white text-sm font-medium rounded-full hover:bg-[#b35b40] transition-colors shadow-sm">Ver todo el catálogo</button>
       </div>
     `;
+    if (paginationContainer) paginationContainer.innerHTML = '';
     return;
   }
 
-  container.innerHTML = filtered.map(product => buildProductCardHTML(product)).join('');
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, totalProducts);
+  const pageProducts = filtered.slice(startIndex, endIndex);
+
+  container.innerHTML = pageProducts.map(product => buildProductCardHTML(product)).join('');
+
+  renderPaginationControls(totalProducts, totalPages, startIndex, endIndex);
+}
+
+function renderPaginationControls(totalProducts, totalPages, startIndex, endIndex) {
+  const container = document.getElementById('pagination-container');
+  if (!container) return;
+
+  if (totalPages <= 1) {
+    container.innerHTML = `
+      <div class="text-xs text-[#8B5A2B] font-medium">
+        Mostrando <strong>${totalProducts}</strong> de <strong>${totalProducts}</strong> productos
+      </div>
+      <div></div>
+    `;
+    return;
+  }
+
+  let pageButtonsHTML = '';
+  for (let i = 1; i <= totalPages; i++) {
+    const isActive = i === currentPage;
+    pageButtonsHTML += `
+      <button 
+        type="button"
+        onclick="goToPage(${i})"
+        class="w-9 h-9 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+          isActive 
+            ? 'bg-[#C86D51] text-white shadow-md font-bold scale-105' 
+            : 'bg-white text-[#3A2E2B] border border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
+        }"
+      >
+        ${i}
+      </button>
+    `;
+  }
+
+  container.innerHTML = `
+    <div class="text-xs text-[#8B5A2B] font-medium">
+      Mostrando <strong>${startIndex + 1} - ${endIndex}</strong> de <strong>${totalProducts}</strong> productos
+    </div>
+
+    <div class="flex items-center gap-1.5">
+      <button 
+        type="button"
+        onclick="goToPage(${currentPage - 1})"
+        ${currentPage === 1 ? 'disabled' : ''}
+        class="px-3.5 py-2 rounded-xl text-xs font-semibold border transition-all ${
+          currentPage === 1 
+            ? 'opacity-40 bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed' 
+            : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9] cursor-pointer'
+        }"
+      >
+        ← Anterior
+      </button>
+
+      ${pageButtonsHTML}
+
+      <button 
+        type="button"
+        onclick="goToPage(${currentPage + 1})"
+        ${currentPage === totalPages ? 'disabled' : ''}
+        class="px-3.5 py-2 rounded-xl text-xs font-semibold border transition-all ${
+          currentPage === totalPages 
+            ? 'opacity-40 bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed' 
+            : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9] cursor-pointer'
+        }"
+      >
+        Siguiente →
+      </button>
+    </div>
+  `;
+}
+
+function goToPage(page) {
+  currentPage = page;
+  renderCatalog();
+  const catalogSection = document.getElementById('catalogo');
+  if (catalogSection) {
+    catalogSection.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 
 function resetFilters() {
   currentCategoryFilter = 'todos';
   searchQuery = '';
+  currentPage = 1;
   const searchInput = document.getElementById('search-input');
   if (searchInput) searchInput.value = '';
   document.querySelectorAll('.tab-pill').forEach(b => {
@@ -619,33 +742,62 @@ function buildProductOptionsHTML(product, state, isModal = false) {
         </div>
       ` : ''}
 
-      <!-- 2. COLOR / TONO Swatches (Option Buttons - MercadoLibre Style) -->
-      ${product.colors ? `
-        <div>
-          <div class="flex justify-between items-center mb-1.5">
-            <span class="text-[11px] font-bold text-[#8B5A2B] uppercase tracking-wider">Color / Tono:</span>
-            <span class="text-[11px] font-semibold text-[#C86D51]">${state.selectedColor ? state.selectedColor.name : ''}</span>
-          </div>
-          <div class="flex flex-wrap gap-1.5">
-            ${product.colors.map(c => {
-              const isSelected = state.selectedColor && state.selectedColor.id === c.id;
-              return `
+      <!-- 2. COLOR / TONO Swatches (Option Buttons - MercadoLibre Style + Toggle) -->
+      ${product.colors ? (() => {
+        const MAX_VISIBLE = 3;
+        const isExpanded = !!expandedColorsMap[product.id];
+        const totalColors = product.colors.length;
+        const hasMore = totalColors > MAX_VISIBLE;
+
+        let visibleColors = product.colors;
+        if (hasMore && !isExpanded) {
+          visibleColors = product.colors.slice(0, MAX_VISIBLE);
+          // Always ensure current selected color is visible even if collapsed
+          if (state.selectedColor && !visibleColors.some(c => c.id === state.selectedColor.id)) {
+            visibleColors = [...visibleColors.slice(0, MAX_VISIBLE - 1), state.selectedColor];
+          }
+        }
+
+        const hiddenCount = totalColors - visibleColors.length;
+
+        return `
+          <div>
+            <div class="flex justify-between items-center mb-1.5">
+              <span class="text-[11px] font-bold text-[#8B5A2B] uppercase tracking-wider">Color / Tono:</span>
+              <span class="text-[11px] font-semibold text-[#C86D51]">${state.selectedColor ? state.selectedColor.name : ''}</span>
+            </div>
+            <div class="flex flex-wrap gap-1.5 items-center">
+              ${visibleColors.map(c => {
+                const isSelected = state.selectedColor && state.selectedColor.id === c.id;
+                return `
+                  <button 
+                    type="button"
+                    onclick="updateProductOption('${product.id}', 'colorId', '${c.id}')"
+                    class="option-btn px-2.5 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1.5 cursor-pointer ${
+                      isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
+                    }"
+                    title="${c.name}"
+                  >
+                    <span class="w-3.5 h-3.5 rounded-full border border-black/20 shadow-inner flex-shrink-0" style="background-color: ${c.hex}"></span>
+                    <span>${c.name}</span>
+                  </button>
+                `;
+              }).join('')}
+
+              ${hasMore ? `
                 <button 
                   type="button"
-                  onclick="updateProductOption('${product.id}', 'colorId', '${c.id}')"
-                  class="option-btn px-2.5 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1.5 cursor-pointer ${
-                    isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
-                  }"
-                  title="${c.name}"
+                  onclick="toggleExpandedColors('${product.id}')"
+                  class="option-btn px-2.5 py-1.5 rounded-xl text-xs font-bold border border-[#C86D51]/40 bg-[#FFF5F0] text-[#C86D51] hover:bg-[#C86D51] hover:text-white transition-all cursor-pointer flex items-center gap-1 shadow-sm"
+                  title="${isExpanded ? 'Ver menos colores' : 'Ver todos los colores'}"
                 >
-                  <span class="w-3.5 h-3.5 rounded-full border border-black/20 shadow-inner flex-shrink-0" style="background-color: ${c.hex}"></span>
-                  <span>${c.name}</span>
+                  <span>${isExpanded ? '− Menos' : `+${hiddenCount}`}</span>
                 </button>
-              `;
-            }).join('')}
+              ` : ''}
+            </div>
           </div>
-        </div>
-      ` : ''}
+        `;
+      })() : ''}
 
       <!-- 3. FRAGANCIA / AROMA (Option Buttons - MercadoLibre Style) -->
       ${product.aromas ? `
