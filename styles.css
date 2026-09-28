@@ -139,3 +139,31 @@ body {
 .lithophane-glow {
   box-shadow: 0 0 40px 15px rgba(255, 215, 130, 0.45);
 }
+
+/* Mercado Libre Style Swatches & Option Buttons */
+.option-btn {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.option-btn:hover {
+  transform: translateY(-1px);
+}
+
+.option-btn:active {
+  transform: translateY(0);
+}
+
+.option-btn.selected {
+  background-color: #FFF5F0;
+  color: #C86D51;
+  border-color: #C86D51;
+  border-width: 2px;
+  box-shadow: 0 2px 8px rgba(200, 109, 81, 0.18);
+  font-weight: 700;
+}
+
+.product-card-img {
+  transition: opacity 0.2s ease-in-out, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
