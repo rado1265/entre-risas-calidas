@@ -148,7 +148,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Litofanías & Personalizados',
     dimensions: '10 cm · Placa de foto 3D',
     description: 'Fotografía en relieve 3D que cobra vida al encender su luz LED. Un recuerdo mágico y emocionante.',
-    image: 'assets/litofania/litografia + base.jpg',
+    image: 'assets/litofania/litografia base.jpg',
     isCustomPhoto: true,
     defaultVariant: 'base-imagen',
     variants: [
@@ -164,7 +164,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Litofanías & Personalizados',
     dimensions: 'Medida fotos: 7,5 × 10 cm (4 caras)',
     description: 'Lámpara de noche en forma de cubo con 4 fotografías familiares personalizables retroiluminadas.',
-    image: 'assets/litofania/litografia + cuadro.PNG',
+    image: 'assets/litofania/litografia cuadro.PNG',
     isCustomPhoto: true,
     defaultVariant: 'marco-4fotos',
     variants: [
