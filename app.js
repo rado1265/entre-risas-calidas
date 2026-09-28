@@ -357,7 +357,7 @@ const PRODUCTS_DATA = [
     image: 'assets/vela/moldes/cilindro ovalado v1.PNG',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '10 cm alto', price: 1400, image: 'assets/vela/moldes/cilindro ovalado v1.PNG' }
+      { id: 'estandar', name: '10 cm alto', price: 1600, image: 'assets/vela/moldes/cilindro ovalado v1.PNG' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
@@ -388,7 +388,7 @@ const PRODUCTS_DATA = [
     image: 'assets/vela/moldes/corazon love.png',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '6 cm alto', price: 1100, image: 'assets/vela/moldes/corazon love.png' }
+      { id: 'estandar', name: '6 cm alto', price: 1400, image: 'assets/vela/moldes/corazon love.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
