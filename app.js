@@ -9,7 +9,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: 'Ø18 cm · alto 2 cm',
     description: 'Bandeja decorativa minimalista y versátil, ideal para posar velas, joyas, llaves o elementos de perfumería.',
-    image: 'assets/bandeja_redonda_1790601849955.jpg',
+    image: 'assets/decoracion/bandeja redonda.png',
     defaultVariant: 'yeso',
     variants: [
       { id: 'yeso', name: 'Yeso Artesanal', price: 990, label: 'Yeso: $990' },
@@ -23,7 +23,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: '12,2 cm largo × 6,5 cm alto aprox.',
     description: 'Ternura y funcionalidad en una sola pieza. Sculpted candle holder perfecto para dar calidez a tu mesa o velador.',
-    image: 'assets/gatito_portavelas_1790601887020.jpg',
+    image: 'assets/decoracion/gato portavelas.png',
     defaultVariant: 'yeso',
     variants: [
       { id: 'yeso', name: 'Yeso Artesanal', price: 1490, label: 'Yeso: $1.490' },
@@ -37,7 +37,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: '21,2 × 12,2 cm',
     description: 'Diseño botánico inspirado en la naturaleza. Textura sutil y delicada para centro de mesa o decoración.',
-    image: 'assets/bandeja_hoja_1790601990344.jpg',
+    image: 'assets/decoracion/Hoja 21,2 × 12,2 cm.png',
     defaultVariant: 'yeso',
     variants: [
       { id: 'yeso', name: 'Yeso Artesanal', price: 1690, label: 'Yeso: $1.690' },
@@ -51,7 +51,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: 'Ø8 cm × 7,5 cm',
     description: 'Diseñado especialmente para wax melts, aceites esenciales o aromaterapia. Incluye cavidad para tea-light.',
-    image: 'assets/hornillo_aromatico_1790602067254.jpg',
+    image: 'assets/decoracion/hornillo aromatico 2.png',
     defaultVariant: 'yeso',
     variants: [
       { id: 'yeso', name: 'Yeso Artesanal', price: 2490, label: 'Yeso: $2.490' },
@@ -65,7 +65,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: '18 × 9 × 2 cm',
     description: 'Estética limpia y estilizada. Ideal para organizar frascos de perfume, accesorios o velas cilíndricas.',
-    image: 'assets/bandeja_ovalada_1790602424224.jpg',
+    image: 'assets/decoracion/Ovalado 17,8 × 9,4 cm 2.png',
     defaultVariant: 'yeso',
     variants: [
       { id: 'yeso', name: 'Yeso Artesanal', price: 1990, label: 'Yeso: $1.990' },
@@ -79,7 +79,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: 'Ø7 cm × 4,5 cm',
     description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
-    image: 'assets/caja_redonda_1790602484507.jpg',
+    image: 'assets/decoracion/Cerrado Ovalado 6,1cm 2.png',
     defaultVariant: 'yeso',
     variants: [
       { id: 'yeso', name: 'Yeso Artesanal', price: 590, label: 'Yeso: $590' },
@@ -95,7 +95,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: '100 ml · Formato Individual',
     description: 'Vela de cera de soja 100% vegetal en frasco de vidrio reutilizable con tapa de corcho natural y lazo de yute.',
-    image: 'assets/vela_frasco_1790602150793.jpg',
+    image: 'assets/vela/vela 100ml soja.jpg',
     isCandle: true,
     defaultVariant: 'normal',
     variants: [
@@ -112,7 +112,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: '200 ml · Formato Mediano',
     description: 'Formato más grande diseñado para perfumar e iluminar espacios amplios. Mayor duración de quemado limpio.',
-    image: 'assets/vela_frasco_1790602150793.jpg',
+    image: 'assets/vela/vela 200ml soja.jpg',
     isCandle: true,
     defaultVariant: 'normal',
     variants: [
@@ -129,7 +129,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 10 cm alto aprox.',
     description: 'Escultura delicada de ángel en cera de alta pureza. Ideal para recuerditos de bautizo, primera comunión o altar.',
-    image: 'assets/vela_angelito_1790602328742.jpg',
+    image: 'assets/vela/angel parafina.png',
     isCandle: true,
     defaultVariant: 'normal',
     variants: [
@@ -148,7 +148,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Litofanías & Personalizados',
     dimensions: '10 cm · Placa de foto 3D',
     description: 'Fotografía en relieve 3D que cobra vida al encender su luz LED. Un recuerdo mágico y emocionante.',
-    image: 'assets/litofania_individual_1790602540226.jpg',
+    image: 'assets/litografia/litografia + base.jpg',
     isCustomPhoto: true,
     defaultVariant: 'base-imagen',
     variants: [
@@ -164,7 +164,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Litofanías & Personalizados',
     dimensions: 'Medida fotos: 7,5 × 10 cm (4 caras)',
     description: 'Lámpara de noche en forma de cubo con 4 fotografías familiares personalizables retroiluminadas.',
-    image: 'assets/litofania_marco_cubo_1790602248267.jpg',
+    image: 'assets/litografia/litografia + cuadro.png',
     isCustomPhoto: true,
     defaultVariant: 'marco-4fotos',
     variants: [
