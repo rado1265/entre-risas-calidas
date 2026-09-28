@@ -450,7 +450,7 @@ const PRODUCTS_DATA = [
     image: 'assets/vela/moldes/Osito.png',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '4,5 cm alto', price: 600, image: 'assets/vela/moldes/Osito.png' }
+      { id: 'estandar', name: '4,5 cm alto', price: 600, image: 'assets/vela/moldes/osito.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
@@ -481,7 +481,7 @@ const PRODUCTS_DATA = [
     image: 'assets/vela/moldes/Virgen blanca v1.png',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '6 cm alto', price: 1200, image: 'assets/vela/moldes/Virgen blanca v1.png' }
+      { id: 'estandar', name: '6 cm alto', price: 1200, image: 'assets/vela/moldes/virgen blanca v1.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
