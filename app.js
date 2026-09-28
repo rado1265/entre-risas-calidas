@@ -90,7 +90,7 @@ const PRODUCTS_DATA = [
   // CATEGORIA 2: Velas Artesanales
   {
     id: 'vela-frasco-100ml',
-    name: 'Vela en Frasco 100 ml',
+    name: 'Vela Soja en Frasco 100 ml',
     category: 'velas',
     categoryName: 'Velas Artesanales',
     dimensions: '100 ml · Formato Individual',
@@ -107,7 +107,7 @@ const PRODUCTS_DATA = [
   },
   {
     id: 'vela-frasco-200ml',
-    name: 'Vela en Frasco 200 ml',
+    name: 'Vela Soja en Frasco 200 ml',
     category: 'velas',
     categoryName: 'Velas Artesanales',
     dimensions: '200 ml · Formato Mediano',
@@ -121,7 +121,126 @@ const PRODUCTS_DATA = [
       { id: 'color', name: 'Con Color Pastel', price: 5990, label: 'Con color: $5.990' },
       { id: 'aroma-color', name: 'Con Aroma + Color', price: 7490, label: 'Aroma + Color: $7.490' }
     ]
+  },{
+    id: 'vela-frasco-100ml',
+    name: 'Vela Gel en Frasco 100 ml',
+    category: 'velas',
+    categoryName: 'Velas Artesanales',
+    dimensions: '100 ml · Formato Individual',
+    description: 'Vela de cera de gel 100% vegetal en frasco de vidrio reutilizable con tapa de corcho natural y lazo de yute.',
+    image: 'assets/vela/vela 100ml gel.jpg',
+    isCandle: true,
+    defaultVariant: 'normal',
+    variants: [
+      { id: 'normal', name: 'Vela Normal (Sin aroma/color)', price: 3490, label: 'Normal: $3.490' },
+      { id: 'aroma', name: 'Con Aroma Especial', price: 4590, label: 'Con aroma: $4.590' },
+      { id: 'color', name: 'Con Color Pastel', price: 3800, label: 'Con color: $3.800' },
+      { id: 'aroma-color', name: 'Con Aroma + Color', price: 5490, label: 'Aroma + Color: $5.490' }
+    ]
   },
+  {
+    id: 'Margarita-Vela-Soja',
+    name: 'Margarita Vela Soja',
+    category: 'velas',
+    categoryName: 'Velas Artesanales',
+    dimensions: 'Figura 5,5 cm alto aprox.',
+    description: 'Escultura delicada de margarita en cera de alta pureza. Ideal para regalos.',
+    image: 'assets/vela/margarita.png',
+    isCandle: true,
+    defaultVariant: 'normal',
+    variants: [
+      { id: 'normal', name: 'Vela Normal', price: 2490, label: 'Normal: $2.490' },
+      { id: 'aroma', name: 'Con Aroma', price: 2990, label: 'Con aroma: $2.990' },
+      { id: 'color', name: 'Con Color', price: 2790, label: 'Con color: $2.790' },
+      { id: 'aroma-color', name: 'Con Aroma + Color', price: 3400, label: 'Aroma + Color: $3.400' }
+    ]
+  },
+  {
+    id: 'luna-Vela-Soja',
+    name: 'Luna Vela Soja',
+    category: 'velas',
+    categoryName: 'Velas Artesanales',
+    dimensions: 'Figura 5 cm alto aprox.',
+    description: 'Escultura delicada de Luna en cera de alta pureza.',
+    image: 'assets/vela/luna.png',
+    isCandle: true,
+    defaultVariant: 'normal',
+    variants: [
+      { id: 'normal', name: 'Vela Normal', price: 2490, label: 'Normal: $2.490' },
+      { id: 'aroma', name: 'Con Aroma', price: 2990, label: 'Con aroma: $2.990' },
+      { id: 'color', name: 'Con Color', price: 2790, label: 'Con color: $2.790' },
+      { id: 'aroma-color', name: 'Con Aroma + Color', price: 3400, label: 'Aroma + Color: $3.400' }
+    ]
+  },
+  {
+    id: 'rosa-Vela-Soja',
+    name: 'Rosa Vela Soja',
+    category: 'velas',
+    categoryName: 'Velas Artesanales',
+    dimensions: 'Figura 5 cm alto aprox.',
+    description: 'Escultura delicada de rosa en cera de alta pureza.',
+    image: 'assets/vela/rosa.png',
+    isCandle: true,
+    defaultVariant: 'normal',
+    variants: [
+      { id: 'normal', name: 'Vela Normal', price: 2490, label: 'Normal: $2.490' },
+      { id: 'aroma', name: 'Con Aroma', price: 2990, label: 'Con aroma: $2.990' },
+      { id: 'color', name: 'Con Color', price: 2790, label: 'Con color: $2.790' },
+      { id: 'aroma-color', name: 'Con Aroma + Color', price: 3400, label: 'Aroma + Color: $3.400' }
+    ]
+  },
+  {
+    id: 'nube-Vela-Soja',
+    name: 'Nube Vela Soja',
+    category: 'velas',
+    categoryName: 'Velas Artesanales',
+    dimensions: 'Figura 5 cm alto aprox.',
+    description: 'Escultura delicada de nube en cera de alta pureza.',
+    image: 'assets/vela/nube.png',
+    isCandle: true,
+    defaultVariant: 'normal',
+    variants: [
+      { id: 'normal', name: 'Vela Normal', price: 2490, label: 'Normal: $2.490' },
+      { id: 'aroma', name: 'Con Aroma', price: 2990, label: 'Con aroma: $2.990' },
+      { id: 'color', name: 'Con Color', price: 2790, label: 'Con color: $2.790' },
+      { id: 'aroma-color', name: 'Con Aroma + Color', price: 3400, label: 'Aroma + Color: $3.400' }
+    ]
+  },
+  {
+    id: 'corazon-textura-Vela-Soja',
+    name: 'Corazon Textura Vela Soja',
+    category: 'velas',
+    categoryName: 'Velas Artesanales',
+    dimensions: 'Figura 5 cm alto aprox.',
+    description: 'Escultura delicada de una corazon con textura en cera de alta pureza.',
+    image: 'assets/vela/corazon textura.png',
+    isCandle: true,
+    defaultVariant: 'normal',
+    variants: [
+      { id: 'normal', name: 'Vela Normal', price: 2490, label: 'Normal: $2.490' },
+      { id: 'aroma', name: 'Con Aroma', price: 2990, label: 'Con aroma: $2.990' },
+      { id: 'color', name: 'Con Color', price: 2790, label: 'Con color: $2.790' },
+      { id: 'aroma-color', name: 'Con Aroma + Color', price: 3400, label: 'Aroma + Color: $3.400' }
+    ]
+  },
+  {
+    id: 'cilindro-v1-Vela-Soja',
+    name: 'Cilindro Ovalado Vela Soja',
+    category: 'velas',
+    categoryName: 'Velas Artesanales',
+    dimensions: 'Figura 10 cm alto aprox.',
+    description: 'Escultura delicada de cilindro en cera de alta pureza.',
+    image: 'assets/vela/cilindro ovalado v1.PNG',
+    isCandle: true,
+    defaultVariant: 'normal',
+    variants: [
+      { id: 'normal', name: 'Vela Normal', price: 2490, label: 'Normal: $2.490' },
+      { id: 'aroma', name: 'Con Aroma', price: 2990, label: 'Con aroma: $2.990' },
+      { id: 'color', name: 'Con Color', price: 2790, label: 'Con color: $2.790' },
+      { id: 'aroma-color', name: 'Con Aroma + Color', price: 3400, label: 'Aroma + Color: $3.400' }
+    ]
+  },
+  
   {
     id: 'angelitos-parafina',
     name: 'Angelitos en Cera de Parafina',
