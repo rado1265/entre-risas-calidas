@@ -7,20 +7,20 @@ const PRODUCTS_DATA = [
     name: 'Bandeja Redonda',
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
-    dimensions: 'Ø18 cm · alto 2 cm',
+    dimensions: 'Ø1 cm alto',
     description: 'Bandeja decorativa minimalista y versátil, ideal para posar velas, joyas, llaves o elementos de perfumería.',
-    image: 'assets/decoracion/bandeja redonda.png',
+    image: 'assets/decoracion/redondo/ovalado mediano blanco.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 490, image: 'assets/decoracion/redondo/ovalado mediano blanco.png' },
+      { id: 'Cemento', name: 'Cemento', price: 1190, image: 'assets/decoracion/redondo/ovalado mediano blanco.png' },
+    ],
     sizes: [
-      { id: '18cm', name: 'Ø18 cm (Individual)', price: 990, image: 'assets/decoracion/bandeja redonda.png' },
-      { id: '25cm', name: 'Ø25 cm (Grande)', price: 1690, image: 'assets/decoracion/Hoja 21,2 × 12,2 cm.png' }
+      { id: '18cm', name: 'Ø8 cm (Individual)', priceExtra: 0, image: 'assets/decoracion/redondo/ovalado mediano blanco.png' },
+      { id: '25cm', name: 'Ø11 cm (Grande)', priceExtra: 800, image: 'assets/decoracion/redondo/ovalado mediano blanco.png' }
     ],
     colors: [
-      { id: 'yeso', name: 'Yeso Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/bandeja redonda.png' },
-      { id: 'cemento', name: 'Cemento Pulido', hex: '#9E9E9E', priceExtra: 2500, image: 'assets/decoracion/Ovalado 17,8 × 9,4 cm 2.png' },
-      { id: 'terracota', name: 'Terracota', hex: '#C86D51', priceExtra: 500, image: 'assets/decoracion/gato portavelas.png' },
-      { id: 'lavanda', name: 'Lavanda Pastel', hex: '#C8B6E2', priceExtra: 500, image: 'assets/decoracion/Hoja 21,2 × 12,2 cm.png' },
-      { id: 'rosa', name: 'Rosa Palo', hex: '#E8C5C8', priceExtra: 500, image: 'assets/decoracion/Cerrado Ovalado 6,1cm 2.png' },
-      { id: 'menta', name: 'Verde Menta', hex: '#A3D9C9', priceExtra: 500, image: 'assets/decoracion/hornillo aromatico 2.png' }
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/redondo/ovalado mediano blanco.png' },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, image: 'assets/decoracion/redondo/ovalado mediano verde.png' }
     ]
   },
   {
@@ -28,17 +28,19 @@ const PRODUCTS_DATA = [
     name: 'Gatito Portavelas',
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
-    dimensions: '12,2 cm largo × 6,5 cm alto aprox.',
+    dimensions: '10 cm largo × 6 cm alto aprox.',
     description: 'Ternura y funcionalidad en una sola pieza. Sculpted candle holder perfecto para dar calidez a tu mesa o velador.',
-    image: 'assets/decoracion/gato portavelas.png',
-    sizes: [
-      { id: 'estandar', name: 'Chico (12 cm)', price: 1490, image: 'assets/decoracion/gato portavelas.png' },
-      { id: 'grande', name: 'Mediano (16 cm)', price: 2490, image: 'assets/decoracion/hornillo aromatico 2.png' }
+    image: 'assets/decoracion/gato/gato blanco.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 1490, image: 'assets/decoracion/gato/gato blanco.png' },
+      { id: 'Cemento', name: 'Cemento', price: 3490, image: 'assets/decoracion/gato/gato blanco.png' },
+    ], sizes: [
+      { id: 'estandar', name: '10 cm × 6 cm', price: 0, image: 'assets/decoracion/gato/gato blanco.png' }
     ],
     colors: [
-      { id: 'yeso', name: 'Yeso Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/gato portavelas.png' },
-      { id: 'cemento', name: 'Cemento Pulido', hex: '#9E9E9E', priceExtra: 2000, image: 'assets/decoracion/Ovalado 17,8 × 9,4 cm 2.png' },
-      { id: 'caramelo', name: 'Caramelo', hex: '#8B5A2B', priceExtra: 500, image: 'assets/decoracion/Cerrado Ovalado 6,1cm 2.png' }
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/gato/gato blanco.png' },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/gato/gato gris.png' },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, image: 'assets/decoracion/gato/gato amarillo.png' }
     ]
   },
   {
@@ -48,17 +50,18 @@ const PRODUCTS_DATA = [
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: '21,2 × 12,2 cm',
     description: 'Diseño botánico inspirado en la naturaleza. Textura sutil y delicada para centro de mesa o decoración.',
-    image: 'assets/decoracion/Hoja 21,2 × 12,2 cm.png',
-    sizes: [
-      { id: 'mediana', name: '21 × 12 cm', price: 1690, image: 'assets/decoracion/Hoja 21,2 × 12,2 cm.png' },
-      { id: 'grande', name: '28 × 16 cm', price: 2990, image: 'assets/decoracion/bandeja redonda.png' }
+    image: 'assets/decoracion/hoja/hoja blanca.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 1690, image: 'assets/decoracion/hoja/hoja blanca.png' },
+      { id: 'Cemento', name: 'Cemento', price: 3990, image: 'assets/decoracion/hoja/hoja blanca.png' },
+    ], sizes: [
+      { id: 'estandar', name: '21,2 × 12,2 cm', price: 0, image: 'assets/decoracion/hoja/hoja blanca.png' }
     ],
     colors: [
-      { id: 'yeso', name: 'Yeso Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/Hoja 21,2 × 12,2 cm.png' },
-      { id: 'cemento', name: 'Cemento Pulido', hex: '#9E9E9E', priceExtra: 2800, image: 'assets/decoracion/Ovalado 17,8 × 9,4 cm 2.png' },
-      { id: 'menta', name: 'Verde Menta', hex: '#A3D9C9', priceExtra: 600, image: 'assets/decoracion/hornillo aromatico 2.png' }
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/hoja/hoja blanca.png' },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, image: 'assets/decoracion/hoja/hoja amarilla.png' }
     ]
-  },
+  }/* ,
   {
     id: 'hornillo-aromatico',
     name: 'Hornillo Aromático',
@@ -76,23 +79,25 @@ const PRODUCTS_DATA = [
       { id: 'cemento', name: 'Cemento Pulido', hex: '#9E9E9E', priceExtra: 7500, image: 'assets/decoracion/Ovalado 17,8 × 9,4 cm 2.png' },
       { id: 'terracota', name: 'Terracota', hex: '#C86D51', priceExtra: 800, image: 'assets/decoracion/bandeja redonda.png' }
     ]
-  },
+  } */,
   {
     id: 'bandeja-ovalada',
     name: 'Bandeja Ovalada',
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
-    dimensions: '18 × 9 × 2 cm',
+    dimensions: '17,5 × 9 × 1,5 cm',
     description: 'Estética limpia y estilizada. Ideal para organizar frascos de perfume, accesorios o velas cilíndricas.',
-    image: 'assets/decoracion/Ovalado 17,8 × 9,4 cm 2.png',
-    sizes: [
-      { id: 'mediana', name: '18 × 9 cm', price: 1990, image: 'assets/decoracion/Ovalado 17,8 × 9,4 cm 2.png' },
-      { id: 'grande', name: '24 × 12 cm', price: 3200, image: 'assets/decoracion/bandeja redonda.png' }
+    image: 'assets/decoracion/ovalado/ovalado blanco.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 1690, image: 'assets/decoracion/ovalado/ovalado blanco.png' },
+      { id: 'Cemento', name: 'Cemento', price: 3990, image: 'assets/decoracion/ovalado/ovalado blanco.png' },
+    ], sizes: [
+      { id: 'estandar', name: '17,5 × 9 × 1,5 cm', price: 0, image: 'assets/decoracion/ovalado/ovalado blanco.png' }
     ],
     colors: [
-      { id: 'yeso', name: 'Yeso Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/Ovalado 17,8 × 9,4 cm 2.png' },
-      { id: 'cemento', name: 'Cemento Pulido', hex: '#9E9E9E', priceExtra: 3000, image: 'assets/decoracion/Cerrado Ovalado 6,1cm 2.png' },
-      { id: 'lavanda', name: 'Lavanda Pastel', hex: '#C8B6E2', priceExtra: 500, image: 'assets/decoracion/Hoja 21,2 × 12,2 cm.png' }
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalado blanco.png' },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalado amarillo.png' },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalado verde.png' }
     ]
   },
   {
@@ -100,22 +105,40 @@ const PRODUCTS_DATA = [
     name: 'Caja Redonda con Tapa',
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
-    dimensions: 'Ø7 cm × 4,5 cm',
+    dimensions: 'Ø5,5 cm × 3,5 cm',
     description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
-    image: 'assets/decoracion/Cerrado Ovalado 6,1cm 2.png',
-    sizes: [
-      { id: 'chica', name: 'Ø7 cm (Chica)', price: 590, image: 'assets/decoracion/Cerrado Ovalado 6,1cm 2.png' },
-      { id: 'mediana', name: 'Ø10 cm (Mediana)', price: 1290, image: 'assets/decoracion/bandeja redonda.png' }
+    image: 'assets/decoracion/redondocontapa/redondo tapa blanco.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 590, image: 'assets/decoracion/redondocontapa/redondo tapa blanco.png' },
+      { id: 'Cemento', name: 'Cemento', price: 1290, image: 'assets/decoracion/redondocontapa/redondo tapa blanco.png' },
+    ], sizes: [
+      { id: 'estandar', name: 'Ø5,5 cm × 3,5 cm', price: 0, image: 'assets/decoracion/redondocontapa/redondo tapa blanco.png' }
     ],
     colors: [
-      { id: 'yeso', name: 'Yeso Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/Cerrado Ovalado 6,1cm 2.png' },
-      { id: 'cemento', name: 'Cemento Pulido', hex: '#9E9E9E', priceExtra: 1400, image: 'assets/decoracion/Ovalado 17,8 × 9,4 cm 2.png' },
-      { id: 'rosa', name: 'Rosa Palo', hex: '#E8C5C8', priceExtra: 300, image: 'assets/decoracion/gato portavelas.png' }
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/redondocontapa/redondo tapa blanco.png' }
+    ]
+  },
+  {
+    id: 'caja-cuadrada-tapa',
+    name: 'Caja Cuadrada con Tapa',
+    category: 'yeso-cemento',
+    categoryName: 'Decoración Yeso y Cemento',
+    dimensions: 'Ø6 cm × 4, cm',
+    description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
+    image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 790, image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png' },
+      { id: 'Cemento', name: 'Cemento', price: 1890, image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png' },
+    ], sizes: [
+      { id: 'estandar', name: 'Ø6 cm × 4, cm', price: 0, image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png' }
+    ],
+    colors: [
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png' }
     ]
   },
 
   // CATEGORIA 2: Velas Artesanales
-  {
+  /* {
     id: 'vela-frasco-soja',
     name: 'Vela Soja en Frasco',
     category: 'velas',
@@ -193,7 +216,7 @@ const PRODUCTS_DATA = [
       { id: 'jazmin', name: 'Jazmín & Ámbar' },
       { id: 'sin-aroma', name: 'Sin aroma' }
     ]
-  },
+  }, */
   {
     id: 'luna-Vela-Soja',
     name: 'Luna Vela Soja',
@@ -201,21 +224,29 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura de Luna en cera artesanal',
     description: 'Escultura mística de Luna en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
-    image: 'assets/vela/luna.PNG',
+    image: 'assets/vela/moldes/luna.PNG',
     isCandle: true,
     sizes: [
-      { id: 'chico', name: 'Chica (5 cm)', price: 2490, image: 'assets/vela/luna.PNG' },
-      { id: 'mediano', name: 'Mediana (8 cm)', price: 3490, image: 'assets/vela/nube.PNG' }
+      { id: 'estandar', name: '5,5 cm', price: 300, image: 'assets/vela/moldes/luna.PNG' }
     ],
     colors: [
-      { id: 'blanco', name: 'Blanco Místico', hex: '#F9F9FB', priceExtra: 0, image: 'assets/vela/luna.PNG' },
-      { id: 'lavanda', name: 'Lavanda Pastel', hex: '#C8B6E2', priceExtra: 300, image: 'assets/vela/rosa.PNG' },
-      { id: 'celeste', name: 'Celeste Suave', hex: '#B3E5FC', priceExtra: 300, image: 'assets/vela/cilindro ovalado v1.PNG' }
+      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
     ],
     aromas: [
-      { id: 'lavanda', name: 'Lavanda Silvestre' },
-      { id: 'vainilla', name: 'Vainilla & Coco' },
-      { id: 'sin-aroma', name: 'Sin aroma' }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 500 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 500 },
+      { id: 'limon', name: 'Limón', priceExtra: 500 },
+      { id: 'menta', name: 'Menta', priceExtra: 500 }
     ]
   },
   {
@@ -225,21 +256,29 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura esculpida de Rosa',
     description: 'Detallada escultura en cera de alta densidad con forma de rosa florecida.',
-    image: 'assets/vela/rosa.PNG',
+    image: 'assets/vela/moldes/rosa.PNG',
     isCandle: true,
     sizes: [
-      { id: 'chico', name: 'Chica (5 cm)', price: 2490, image: 'assets/vela/rosa.PNG' },
-      { id: 'grande', name: 'Grande (8 cm)', price: 3490, image: 'assets/vela/corazon textura.PNG' }
+      { id: 'estandar', name: '5 cm ancho x 3 cm alto', price: 350, image: 'assets/vela/moldes/rosa.PNG' }
     ],
     colors: [
-      { id: 'rosa', name: 'Rosa Palo', hex: '#E8C5C8', priceExtra: 0, image: 'assets/vela/rosa.PNG' },
-      { id: 'blanco', name: 'Blanco Marfil', hex: '#FAF0E6', priceExtra: 0, image: 'assets/vela/margarita.PNG' },
-      { id: 'terracota', name: 'Terracota', hex: '#C86D51', priceExtra: 300, image: 'assets/vela/luna.PNG' }
+      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
     ],
     aromas: [
-      { id: 'jazmin', name: 'Jazmín & Ámbar' },
-      { id: 'vainilla', name: 'Vainilla & Coco' },
-      { id: 'sin-aroma', name: 'Sin aroma' }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 500 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 500 },
+      { id: 'limon', name: 'Limón', priceExtra: 500 },
+      { id: 'menta', name: 'Menta', priceExtra: 500 }
     ]
   },
   {
@@ -249,21 +288,31 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura esponjosa de nube',
     description: 'Forma suave y moderna de nube decorativa en cera de soja.',
-    image: 'assets/vela/nube.PNG',
+    image: 'assets/vela/moldes/nube.PNG',
     isCandle: true,
     sizes: [
-      { id: 'chico', name: 'Chica (5 cm)', price: 2490, image: 'assets/vela/nube.PNG' },
-      { id: 'grande', name: 'Grande (9 cm)', price: 3490, image: 'assets/vela/cilindro ovalado v1.PNG' }
+      { id: 'pequeño', name: '4,5 cm ancho x 2 cm alto', price: 200, image: 'assets/vela/moldes/nube.PNG' },
+      { id: 'mediano', name: '6,5 cm ancho x 2,5 cm alto', price: 400, image: 'assets/vela/moldes/nube.PNG' },
+      { id: 'grande', name: '8 cm ancho x 3,5 cm alto', price: 600, image: 'assets/vela/moldes/nube.PNG' }
     ],
     colors: [
-      { id: 'blanco', name: 'Blanco Nube', hex: '#FFFFFF', priceExtra: 0, image: 'assets/vela/nube.PNG' },
-      { id: 'menta', name: 'Verde Menta', hex: '#A3D9C9', priceExtra: 300, image: 'assets/vela/luna.PNG' },
-      { id: 'lavanda', name: 'Lavanda', hex: '#C8B6E2', priceExtra: 300, image: 'assets/vela/margarita 2.PNG' }
+      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
     ],
     aromas: [
-      { id: 'vainilla', name: 'Vainilla & Coco' },
-      { id: 'lavanda', name: 'Lavanda Silvestre' },
-      { id: 'sin-aroma', name: 'Sin aroma' }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 500 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 500 },
+      { id: 'limon', name: 'Limón', priceExtra: 500 },
+      { id: 'menta', name: 'Menta', priceExtra: 500 }
     ]
   },
   {
@@ -273,21 +322,29 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura de corazón con relieve',
     description: 'Escultura romántica de corazón con micro-textura en cera de soja pura.',
-    image: 'assets/vela/corazon textura.PNG',
+    image: 'assets/vela/moldes/corazon textura.PNG',
     isCandle: true,
     sizes: [
-      { id: 'chico', name: 'Chico (5 cm)', price: 2490, image: 'assets/vela/corazon textura.PNG' },
-      { id: 'mediano', name: 'Mediano (8 cm)', price: 3490, image: 'assets/vela/rosa.PNG' }
+      { id: 'estandar', name: '6 cm ancho x 1,5 cm alto', price: 890, image: 'assets/vela/moldes/corazon textura.PNG' }
     ],
     colors: [
-      { id: 'terracota', name: 'Terracota', hex: '#C86D51', priceExtra: 0, image: 'assets/vela/corazon textura.PNG' },
-      { id: 'rosa', name: 'Rosa Suave', hex: '#E8C5C8', priceExtra: 0, image: 'assets/vela/rosa.PNG' },
-      { id: 'blanco', name: 'Blanco Puro', hex: '#FFFFFF', priceExtra: 0, image: 'assets/vela/margarita.PNG' }
+      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
     ],
     aromas: [
-      { id: 'vainilla', name: 'Vainilla & Coco' },
-      { id: 'jazmin', name: 'Jazmín & Ámbar' },
-      { id: 'sin-aroma', name: 'Sin aroma' }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 500 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 500 },
+      { id: 'limon', name: 'Limón', priceExtra: 500 },
+      { id: 'menta', name: 'Menta', priceExtra: 500 }
     ]
   },
   {
@@ -297,22 +354,188 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 10 cm alto aprox.',
     description: 'Vela escultural cilíndrica de líneas arquitectónicas.',
-    image: 'assets/vela/cilindro ovalado v1.PNG',
+    image: 'assets/vela/moldes/cilindro ovalado v1.PNG',
     isCandle: true,
     sizes: [
-      { id: '10cm', name: '10 cm alto', price: 2490, image: 'assets/vela/cilindro ovalado v1.PNG' },
-      { id: '15cm', name: '15 cm alto', price: 3990, image: 'assets/vela/corazon textura.PNG' }
+      { id: 'estandar', name: '10 cm alto', price: 1400, image: 'assets/vela/moldes/cilindro ovalado v1.PNG' }
     ],
     colors: [
-      { id: 'blanco', name: 'Marfil Natural', hex: '#FAF0E6', priceExtra: 0, image: 'assets/vela/cilindro ovalado v1.PNG' },
-      { id: 'caramelo', name: 'Caramelo', hex: '#8B5A2B', priceExtra: 300, image: 'assets/vela/nube.PNG' }
+      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
     ],
     aromas: [
-      { id: 'cafe', name: 'Café & Caramelo' },
-      { id: 'vainilla', name: 'Vainilla & Coco' },
-      { id: 'sin-aroma', name: 'Sin aroma' }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 600 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 600 },
+      { id: 'limon', name: 'Limón', priceExtra: 600 },
+      { id: 'menta', name: 'Menta', priceExtra: 600 }
+    ]
+  },{
+    id: 'Corazon-love-Vela-Soja',
+    name: 'Corazon "Love" Vela Soja',
+    category: 'velas',
+    categoryName: 'Velas Artesanales',
+    dimensions: 'Figura 6 cm alto aprox.',
+    description: 'Vela escultural cilíndrica de líneas arquitectónicas.',
+    image: 'assets/vela/moldes/corazon love.PNG',
+    isCandle: true,
+    sizes: [
+      { id: 'estandar', name: '6 cm alto', price: 1100, image: 'assets/vela/moldes/corazon love.PNG' }
+    ],
+    colors: [
+      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
+    ],
+    aromas: [
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 600 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 600 },
+      { id: 'limon', name: 'Limón', priceExtra: 600 },
+      { id: 'menta', name: 'Menta', priceExtra: 600 }
+    ]
+  },{
+    id: 'margarita-Vela-Soja',
+    name: 'Margarita Vela Soja',
+    category: 'velas',
+    categoryName: 'Velas Artesanales',
+    dimensions: 'Figura 6 cm aprox.',
+    description: 'Vela escultural cilíndrica de líneas arquitectónicas.',
+    image: 'assets/vela/moldes/margarita.PNG',
+    isCandle: true,
+    sizes: [
+      { id: 'estandar', name: '6 cm', price: 1200, image: 'assets/vela/moldes/margarita.PNG' }
+    ],
+    colors: [
+      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
+    ],
+    aromas: [
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 500 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 500 },
+      { id: 'limon', name: 'Limón', priceExtra: 500 },
+      { id: 'menta', name: 'Menta', priceExtra: 500 }
+    ]
+  },{
+    id: 'osito-Vela-Soja',
+    name: 'Osito Vela Soja',
+    category: 'velas',
+    categoryName: 'Velas Artesanales',
+    dimensions: 'Figura 4,5 cm alto aprox.',
+    description: 'Vela escultural cilíndrica de líneas arquitectónicas.',
+    image: 'assets/vela/moldes/Osito.PNG',
+    isCandle: true,
+    sizes: [
+      { id: 'estandar', name: '4,5 cm alto', price: 600, image: 'assets/vela/moldes/Osito.PNG' }
+    ],
+    colors: [
+      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
+    ],
+    aromas: [
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 300 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 300 },
+      { id: 'limon', name: 'Limón', priceExtra: 300 },
+      { id: 'menta', name: 'Menta', priceExtra: 300 }
+    ]
+  },{
+    id: 'virgen-blanca-v1-Vela-Soja',
+    name: 'Virgen v1 Vela Soja',
+    category: 'velas',
+    categoryName: 'Velas Artesanales',
+    dimensions: 'Figura 6,5 cm alto aprox.',
+    description: 'Vela escultural cilíndrica de líneas arquitectónicas.',
+    image: 'assets/vela/moldes/Virgen blanca v1.PNG',
+    isCandle: true,
+    sizes: [
+      { id: 'estandar', name: '6 cm alto', price: 1200, image: 'assets/vela/moldes/Virgen blanca v1.PNG' }
+    ],
+    colors: [
+      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
+    ],
+    aromas: [
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 600 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 600 },
+      { id: 'limon', name: 'Limón', priceExtra: 600 },
+      { id: 'menta', name: 'Menta', priceExtra: 600 }
+    ]
+  },{
+    id: 'virgen blanca v2-Vela-Soja',
+    name: 'Virgen v2 Vela Soja',
+    category: 'velas',
+    categoryName: 'Velas Artesanales',
+    dimensions: 'Figura 6,5 cm alto aprox.',
+    description: 'Vela escultural cilíndrica de líneas arquitectónicas.',
+    image: 'assets/vela/moldes/corazon love.PNG',
+    isCandle: true,
+    sizes: [
+      { id: 'estandar', name: '6,5 cm alto', price: 1200, image: 'assets/vela/moldes/virgen blanca v2.PNG' }
+    ],
+    colors: [
+      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
+    ],
+    aromas: [
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 600 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 600 },
+      { id: 'limon', name: 'Limón', priceExtra: 600 },
+      { id: 'menta', name: 'Menta', priceExtra: 600 }
     ]
   },
+
+
   {
     id: 'angelitos-parafina',
     name: 'Angelitos en Cera',
@@ -320,19 +543,30 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 10 cm alto aprox.',
     description: 'Escultura delicada de ángel en cera. Ideal para recuerditos de bautizo o primera comunión.',
-    image: 'assets/vela/angel parafina.png',
+    image: 'assets/vela/moldes/angel parafina.png',
     isCandle: true,
     sizes: [
-      { id: '10cm', name: '10 cm alto', price: 2490, image: 'assets/vela/angel parafina.png' },
-      { id: '14cm', name: '14 cm alto', price: 3490, image: 'assets/vela/margarita.PNG' }
+      { id: 'mujer', name: 'Niña 10 cm alto', price: 1500, image: 'assets/vela/moldes/angel parafina.png' },
+      { id: 'hombre', name: 'Niño 10 cm alto', price: 1500, image: 'assets/vela/moldes/angel parafina.png' }
     ],
     colors: [
-      { id: 'blanco', name: 'Blanco Puro', hex: '#FFFFFF', priceExtra: 0, image: 'assets/vela/angel parafina.png' },
-      { id: 'dorado-suave', name: 'Marfil Cálido', hex: '#FFFDD0', priceExtra: 300, image: 'assets/vela/luna.PNG' }
+      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
     ],
     aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma (Recomendado)' },
-      { id: 'vainilla', name: 'Vainilla Suave' }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 600 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 600 },
+      { id: 'limon', name: 'Limón', priceExtra: 600 },
+      { id: 'menta', name: 'Menta', priceExtra: 600 }
     ]
   },
 
@@ -346,14 +580,14 @@ const PRODUCTS_DATA = [
     description: 'Fotografía en relieve 3D que cobra vida al encender su luz LED. Un recuerdo mágico y emocionante.',
     image: 'assets/litofania/litografia base.jpg',
     isCustomPhoto: true,
-    sizes: [
+    /* sizes: [
       { id: '10cm', name: 'Placa 10 cm', priceExtra: 0, image: 'assets/litofania/litografia base.jpg' },
       { id: '15cm', name: 'Placa 15 cm', priceExtra: 2000, image: 'assets/litofania/litografia cuadro.PNG' },
       { id: '20cm', name: 'Placa 20 cm', priceExtra: 4000, image: 'assets/litofania/litografia base.jpg' }
-    ],
+    ], */
     variants: [
       { id: 'base-imagen', name: 'Base LED + Placa Imagen', price: 6990, image: 'assets/litofania/litografia base.jpg' },
-      { id: 'solo-imagen', name: 'Solo Placa Imagen 3D', price: 4990, image: 'assets/litofania/litografia cuadro.PNG' },
+      { id: 'solo-imagen', name: 'Solo Placa Imagen 3D', price: 4990, image: 'assets/litofania/litografia base.jpg' },
       { id: 'solo-base', name: 'Solo Base LED Madera', price: 2490, image: 'assets/litofania/litografia base.jpg' }
     ]
   },
@@ -366,13 +600,13 @@ const PRODUCTS_DATA = [
     description: 'Lámpara de noche en forma de cubo con 4 fotografías familiares personalizables retroiluminadas.',
     image: 'assets/litofania/litografia cuadro.PNG',
     isCustomPhoto: true,
-    sizes: [
+    /* sizes: [
       { id: 'estandar', name: 'Fotos 7,5 × 10 cm', priceExtra: 0, image: 'assets/litofania/litografia cuadro.PNG' },
       { id: 'grande', name: 'Fotos 10 × 12 cm', priceExtra: 5000, image: 'assets/litofania/litografia base.jpg' }
-    ],
+    ], */
     variants: [
       { id: 'marco-4fotos', name: 'Marco Cubo + 4 Fotos 3D', price: 19990, image: 'assets/litofania/litografia cuadro.PNG' },
-      { id: 'solo-marco', name: 'Solo Marco Cubo', price: 8990, image: 'assets/litofania/litografia base.jpg' },
+      { id: 'solo-marco', name: 'Solo Marco Cubo', price: 8990, image: 'assets/litofania/litografia cuadro.PNG' },
       { id: 'solo-imagen-repuesto', name: 'Solo 1 Foto de Repuesto', price: 4490, image: 'assets/litofania/litografia cuadro.PNG' }
     ]
   }
@@ -400,6 +634,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initDefaultState() {
   PRODUCTS_DATA.forEach(p => {
     selectedOptionsMap[p.id] = {
+      materialId: p.material ? p.material[0].id : null,
       sizeId: p.sizes ? p.sizes[0].id : null,
       colorId: p.colors ? p.colors[0].id : null,
       aromaId: p.aromas ? p.aromas[0].id : null,
@@ -448,7 +683,7 @@ function setupEventListeners() {
 
 function getProductState(product) {
   const options = selectedOptionsMap[product.id] || {};
-  
+  const selectedMaterial = product.material?.find(s => s.id === options.materialId) || product.material?.[0] || null;
   const selectedSize = product.sizes?.find(s => s.id === options.sizeId) || product.sizes?.[0] || null;
   const selectedColor = product.colors?.find(c => c.id === options.colorId) || product.colors?.[0] || null;
   const selectedAroma = product.aromas?.find(a => a.id === options.aromaId) || product.aromas?.[0] || null;
@@ -458,6 +693,8 @@ function getProductState(product) {
   let price = 0;
   if (selectedVariant) {
     price = selectedVariant.price;
+  } else if (selectedMaterial) {
+    price = selectedMaterial.price || 0;
   } else if (selectedSize) {
     price = selectedSize.price || 0;
   } else {
@@ -470,11 +707,16 @@ function getProductState(product) {
   if (selectedColor && selectedColor.priceExtra) {
     price += selectedColor.priceExtra;
   }
+  if (selectedAroma && selectedAroma.priceExtra) {
+    price += selectedAroma.priceExtra;
+  }
 
   // Calculate dynamic image
   let image = product.image;
   if (selectedColor && selectedColor.image) {
     image = selectedColor.image;
+  } else if (selectedMaterial && selectedMaterial.image) {
+    image = selectedMaterial.image;
   } else if (selectedSize && selectedSize.image) {
     image = selectedSize.image;
   } else if (selectedVariant && selectedVariant.image) {
@@ -482,6 +724,7 @@ function getProductState(product) {
   }
 
   return {
+    selectedMaterial,
     selectedSize,
     selectedColor,
     selectedAroma,
@@ -585,7 +828,7 @@ function renderCatalog() {
 
   const filtered = PRODUCTS_DATA.filter(product => {
     const matchesCategory = currentCategoryFilter === 'todos' || product.category === currentCategoryFilter;
-    const matchesSearch = !searchQuery || 
+    const matchesSearch = !searchQuery ||
       product.name.toLowerCase().includes(searchQuery) ||
       product.description.toLowerCase().includes(searchQuery) ||
       product.categoryName.toLowerCase().includes(searchQuery);
@@ -643,11 +886,10 @@ function renderPaginationControls(totalProducts, totalPages, startIndex, endInde
       <button 
         type="button"
         onclick="goToPage(${i})"
-        class="w-9 h-9 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
-          isActive 
-            ? 'bg-[#C86D51] text-white shadow-md font-bold scale-105' 
-            : 'bg-white text-[#3A2E2B] border border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
-        }"
+        class="w-9 h-9 rounded-xl text-xs font-semibold transition-all cursor-pointer ${isActive
+        ? 'bg-[#C86D51] text-white shadow-md font-bold scale-105'
+        : 'bg-white text-[#3A2E2B] border border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
+      }"
       >
         ${i}
       </button>
@@ -664,11 +906,10 @@ function renderPaginationControls(totalProducts, totalPages, startIndex, endInde
         type="button"
         onclick="goToPage(${currentPage - 1})"
         ${currentPage === 1 ? 'disabled' : ''}
-        class="px-3.5 py-2 rounded-xl text-xs font-semibold border transition-all ${
-          currentPage === 1 
-            ? 'opacity-40 bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed' 
-            : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9] cursor-pointer'
-        }"
+        class="px-3.5 py-2 rounded-xl text-xs font-semibold border transition-all ${currentPage === 1
+      ? 'opacity-40 bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed'
+      : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9] cursor-pointer'
+    }"
       >
         ← Anterior
       </button>
@@ -679,11 +920,10 @@ function renderPaginationControls(totalProducts, totalPages, startIndex, endInde
         type="button"
         onclick="goToPage(${currentPage + 1})"
         ${currentPage === totalPages ? 'disabled' : ''}
-        class="px-3.5 py-2 rounded-xl text-xs font-semibold border transition-all ${
-          currentPage === totalPages 
-            ? 'opacity-40 bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed' 
-            : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9] cursor-pointer'
-        }"
+        class="px-3.5 py-2 rounded-xl text-xs font-semibold border transition-all ${currentPage === totalPages
+      ? 'opacity-40 bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed'
+      : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9] cursor-pointer'
+    }"
       >
         Siguiente →
       </button>
@@ -715,7 +955,31 @@ function resetFilters() {
 function buildProductOptionsHTML(product, state, isModal = false) {
   return `
     <div class="space-y-3 my-3 bg-[#F7EFE5]/50 p-3 rounded-2xl border border-[#8B5A2B]/10">
-      
+       <!-- 1. MAterial (Option Buttons - MercadoLibre Style) -->
+      ${product.material ? `
+        <div>
+          <div class="flex justify-between items-center mb-1.5">
+            <span class="text-[11px] font-bold text-[#8B5A2B] uppercase tracking-wider">Tamaño:</span>
+            <span class="text-[11px] font-semibold text-[#C86D51]">${state.selectedMaterial ? state.selectedMaterial.name : ''}</span>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            ${product.material.map(s => {
+    const isSelected = state.selectedMaterial && state.selectedMaterial.id === s.id;
+    return `
+                <button 
+                  type="button"
+                  onclick="updateProductOption('${product.id}', 'materialId', '${s.id}')"
+                  class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1 cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
+      }"
+                >
+                  <span>${s.name}</span>
+                </button>
+              `;
+  }).join('')}
+          </div>
+        </div>
+      ` : ''}
+
       <!-- 1. TAMAÑO (Option Buttons - MercadoLibre Style) -->
       ${product.sizes ? `
         <div>
@@ -725,42 +989,41 @@ function buildProductOptionsHTML(product, state, isModal = false) {
           </div>
           <div class="flex flex-wrap gap-1.5">
             ${product.sizes.map(s => {
-              const isSelected = state.selectedSize && state.selectedSize.id === s.id;
-              return `
+    const isSelected = state.selectedSize && state.selectedSize.id === s.id;
+    return `
                 <button 
                   type="button"
                   onclick="updateProductOption('${product.id}', 'sizeId', '${s.id}')"
-                  class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1 cursor-pointer ${
-                    isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
-                  }"
+                  class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1 cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
+      }"
                 >
                   <span>${s.name}</span>
                 </button>
               `;
-            }).join('')}
+  }).join('')}
           </div>
         </div>
       ` : ''}
 
       <!-- 2. COLOR / TONO Swatches (Option Buttons - MercadoLibre Style + Toggle) -->
       ${product.colors ? (() => {
-        const MAX_VISIBLE = 3;
-        const isExpanded = !!expandedColorsMap[product.id];
-        const totalColors = product.colors.length;
-        const hasMore = totalColors > MAX_VISIBLE;
+      const MAX_VISIBLE = 3;
+      const isExpanded = !!expandedColorsMap[product.id];
+      const totalColors = product.colors.length;
+      const hasMore = totalColors > MAX_VISIBLE;
 
-        let visibleColors = product.colors;
-        if (hasMore && !isExpanded) {
-          visibleColors = product.colors.slice(0, MAX_VISIBLE);
-          // Always ensure current selected color is visible even if collapsed
-          if (state.selectedColor && !visibleColors.some(c => c.id === state.selectedColor.id)) {
-            visibleColors = [...visibleColors.slice(0, MAX_VISIBLE - 1), state.selectedColor];
-          }
+      let visibleColors = product.colors;
+      if (hasMore && !isExpanded) {
+        visibleColors = product.colors.slice(0, MAX_VISIBLE);
+        // Always ensure current selected color is visible even if collapsed
+        if (state.selectedColor && !visibleColors.some(c => c.id === state.selectedColor.id)) {
+          visibleColors = [...visibleColors.slice(0, MAX_VISIBLE - 1), state.selectedColor];
         }
+      }
 
-        const hiddenCount = totalColors - visibleColors.length;
+      const hiddenCount = totalColors - visibleColors.length;
 
-        return `
+      return `
           <div>
             <div class="flex justify-between items-center mb-1.5">
               <span class="text-[11px] font-bold text-[#8B5A2B] uppercase tracking-wider">Color / Tono:</span>
@@ -768,21 +1031,20 @@ function buildProductOptionsHTML(product, state, isModal = false) {
             </div>
             <div class="flex flex-wrap gap-1.5 items-center">
               ${visibleColors.map(c => {
-                const isSelected = state.selectedColor && state.selectedColor.id === c.id;
-                return `
+        const isSelected = state.selectedColor && state.selectedColor.id === c.id;
+        return `
                   <button 
                     type="button"
                     onclick="updateProductOption('${product.id}', 'colorId', '${c.id}')"
-                    class="option-btn px-2.5 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1.5 cursor-pointer ${
-                      isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
-                    }"
+                    class="option-btn px-2.5 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1.5 cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
+          }"
                     title="${c.name}"
                   >
                     <span class="w-3.5 h-3.5 rounded-full border border-black/20 shadow-inner flex-shrink-0" style="background-color: ${c.hex}"></span>
                     <span>${c.name}</span>
                   </button>
                 `;
-              }).join('')}
+      }).join('')}
 
               ${hasMore ? `
                 <button 
@@ -797,7 +1059,7 @@ function buildProductOptionsHTML(product, state, isModal = false) {
             </div>
           </div>
         `;
-      })() : ''}
+    })() : ''}
 
       <!-- 3. FRAGANCIA / AROMA (Option Buttons - MercadoLibre Style) -->
       ${product.aromas ? `
@@ -808,19 +1070,18 @@ function buildProductOptionsHTML(product, state, isModal = false) {
           </div>
           <div class="flex flex-wrap gap-1">
             ${product.aromas.map(a => {
-              const isSelected = state.selectedAroma && state.selectedAroma.id === a.id;
-              return `
+      const isSelected = state.selectedAroma && state.selectedAroma.id === a.id;
+      return `
                 <button 
                   type="button"
                   onclick="updateProductOption('${product.id}', 'aromaId', '${a.id}')"
-                  class="option-btn px-2.5 py-1 rounded-lg text-[11px] font-medium border transition-all cursor-pointer ${
-                    isSelected ? 'selected' : 'bg-white text-[#6C5C57] border-gray-200 hover:border-gray-400'
-                  }"
+                  class="option-btn px-2.5 py-1 rounded-lg text-[11px] font-medium border transition-all cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#6C5C57] border-gray-200 hover:border-gray-400'
+        }"
                 >
                   🌸 ${a.name}
                 </button>
               `;
-            }).join('')}
+    }).join('')}
           </div>
         </div>
       ` : ''}
@@ -834,14 +1095,13 @@ function buildProductOptionsHTML(product, state, isModal = false) {
           </div>
           <div class="grid grid-cols-1 gap-1.5">
             ${product.variants.map(v => {
-              const isSelected = state.selectedVariant && state.selectedVariant.id === v.id;
-              return `
+      const isSelected = state.selectedVariant && state.selectedVariant.id === v.id;
+      return `
                 <button 
                   type="button"
                   onclick="updateProductOption('${product.id}', 'variantId', '${v.id}')"
-                  class="option-btn px-3 py-2 rounded-xl text-xs font-semibold border transition-all flex items-center justify-between gap-2 text-left cursor-pointer ${
-                    isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
-                  }"
+                  class="option-btn px-3 py-2 rounded-xl text-xs font-semibold border transition-all flex items-center justify-between gap-2 text-left cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
+        }"
                 >
                   <div class="flex items-center gap-1.5">
                     <span class="text-[#C86D51]">${isSelected ? '●' : '○'}</span>
@@ -850,7 +1110,7 @@ function buildProductOptionsHTML(product, state, isModal = false) {
                   <span class="font-bold text-[#C86D51]">${formatCLP(v.price)}</span>
                 </button>
               `;
-            }).join('')}
+    }).join('')}
           </div>
         </div>
       ` : ''}
@@ -1143,7 +1403,7 @@ function previewLithophanePhoto(event) {
   const file = event.target.files[0];
   if (file) {
     const reader = new FileReader();
-    reader.onload = function(e) {
+    reader.onload = function (e) {
       const img = document.getElementById('modal-product-img');
       if (img) {
         img.src = e.target.result;
