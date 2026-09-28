@@ -22,7 +22,12 @@ const PRODUCTS_DATA = [
       { id: 'estandar', name: '4 cm × 5 cm', price: 0/* , image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png' */ }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0/* , image: 'assets/decoracion/contraluz/contraluz estrella.png' */ }
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0/* , image: 'assets/decoracion/contraluz/contraluz estrella.png' */ },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
   }, {
     id: 'joyero-corazon',
@@ -40,7 +45,12 @@ const PRODUCTS_DATA = [
       { id: 'estandar', name: '11 cm × 9,5 cm', price: 0, image: 'assets/decoracion/joyeros/corazon.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/corazon.png' }
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/corazon.png' },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
   }, {
     id: 'joyero-flor',
@@ -58,10 +68,15 @@ const PRODUCTS_DATA = [
       { id: 'estandar', name: '10 cm × 10 cm', price: 0, image: 'assets/decoracion/joyeros/flor.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/flor.png' }
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/flor.png' },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
   },
-   {
+  {
     id: 'joyero-taichi',
     name: 'Portavela tipo Tai chi',
     category: 'yeso-cemento',
@@ -77,9 +92,14 @@ const PRODUCTS_DATA = [
       { id: 'estandar', name: 'Ø9 cm', price: 0, image: 'assets/decoracion/joyeros/taichi.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/taichi.png' }
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/taichi.png' },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
-  },{
+  }, {
     id: 'joyero-cuerda',
     name: 'Portavela tipo Cuerda Cañamo ',
     category: 'yeso-cemento',
@@ -95,9 +115,14 @@ const PRODUCTS_DATA = [
       { id: 'estandar', name: 'Ø6 cm', price: 0, image: 'assets/decoracion/joyeros/frasco.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/frasco.png' }
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/frasco.png' },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
-  },{
+  }, {
     id: 'joyero-infinito',
     name: 'Portavela tipo Infinito "Tú & Yo"',
     category: 'yeso-cemento',
@@ -113,9 +138,14 @@ const PRODUCTS_DATA = [
       { id: 'estandar', name: '16,5 cm x 6 cm', price: 0, image: 'assets/decoracion/joyeros/love infinito.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/love infinito.png' }
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/love infinito.png' },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
-  },{
+  }, {
     id: 'joyero-loto',
     name: 'Portavela tipo Loto',
     category: 'yeso-cemento',
@@ -131,7 +161,12 @@ const PRODUCTS_DATA = [
       { id: 'estandar', name: 'Ø8 cm', price: 0, image: 'assets/decoracion/joyeros/loto.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/loto.png' }
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/loto.png' },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
   },
   // CATEGORIA 1: Decoración en Yeso y Cemento
@@ -153,7 +188,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/redondo/ovalado mediano blanco.png' },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, image: 'assets/decoracion/redondo/ovalado mediano verde.png' }
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, image: 'assets/decoracion/redondo/ovalado mediano verde.png' },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
   },
   {
@@ -173,7 +212,10 @@ const PRODUCTS_DATA = [
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/gato/gato blanco.png' },
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/gato/gato gris.png' },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, image: 'assets/decoracion/gato/gato amarillo.png' }
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, image: 'assets/decoracion/gato/gato amarillo.png' },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
   },
   {
@@ -192,7 +234,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/hoja/hoja blanca.png' },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, image: 'assets/decoracion/hoja/hoja amarilla.png' }
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, image: 'assets/decoracion/hoja/hoja amarilla.png' },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, available: false },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
   }/* ,
   {
@@ -230,7 +276,10 @@ const PRODUCTS_DATA = [
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalado blanco.png' },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalado amarillo.png' },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalado verde.png' }
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalado verde.png' },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
   },
   {
@@ -248,7 +297,12 @@ const PRODUCTS_DATA = [
       { id: 'estandar', name: '5,5 cm × 3,5 cm', price: 0, image: 'assets/decoracion/redondocontapa/redondo tapa blanco.png' }
     ],
     colors: [
-      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/redondocontapa/redondo tapa blanco.png' }
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/redondocontapa/redondo tapa blanco.png' },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, available: false },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
   },
   {
@@ -266,7 +320,12 @@ const PRODUCTS_DATA = [
       { id: 'estandar', name: '6 cm × 4, cm', price: 0, image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png' }
     ],
     colors: [
-      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png' }
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png' },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, available: false },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
   },
 
@@ -1226,19 +1285,63 @@ function buildProductOptionsHTML(product, state, isModal = false) {
             </div>
             <div class="flex flex-wrap gap-1.5 items-center">
               ${visibleColors.map(c => {
-        const isSelected = state.selectedColor && state.selectedColor.id === c.id;
+        const isSelected =
+          c.available !== false &&
+          state.selectedColor &&
+          state.selectedColor.id === c.id;
+        const isAvailable = c.available !== false;
+
         return `
-                  <button 
-                    type="button"
-                    onclick="updateProductOption('${product.id}', 'colorId', '${c.id}')"
-                    class="option-btn px-2.5 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1.5 cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
-          }"
-                    title="${c.name}"
-                  >
-                    <span class="w-3.5 h-3.5 rounded-full border border-black/20 shadow-inner flex-shrink-0" style="background-color: ${c.hex}"></span>
-                    <span>${c.name}</span>
-                  </button>
-                `;
+    <button 
+      type="button"
+      ${isAvailable
+            ? `onclick="updateProductOption('${product.id}', 'colorId', '${c.id}')"`
+            : ''
+          }
+      class="
+        option-btn 
+        px-2.5 py-1.5 
+        rounded-xl 
+        text-xs 
+        font-semibold 
+        border 
+        transition-all 
+        flex 
+        items-center 
+        gap-1.5
+        relative
+        overflow-hidden
+        ${!isAvailable
+            ? 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed opacity-70'
+            : isSelected
+              ? 'selected cursor-pointer'
+              : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9] cursor-pointer'
+          }
+      "
+      title="${isAvailable ? c.name : `${c.name} - No disponible`}"
+      ${!isAvailable ? 'disabled' : ''}
+    >
+      <span 
+        class="
+          w-3.5 h-3.5 
+          rounded-full 
+          border border-black/20 
+          shadow-inner 
+          flex-shrink-0
+          ${!isAvailable ? 'grayscale opacity-50' : ''}
+        "
+        style="background-color: ${c.hex}"
+      ></span>
+
+      <span>${c.name}</span>
+
+      ${!isAvailable ? `
+        <span class="absolute inset-0 pointer-events-none">
+          <span class="absolute w-[140%] h-[1px] bg-gray-400/70 rotate-[-20deg] top-1/2 left-[-20%]"></span>
+        </span>
+      ` : ''}
+    </button>
+  `;
       }).join('')}
 
               ${hasMore ? `
