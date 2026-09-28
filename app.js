@@ -164,7 +164,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Litofanías & Personalizados',
     dimensions: 'Medida fotos: 7,5 × 10 cm (4 caras)',
     description: 'Lámpara de noche en forma de cubo con 4 fotografías familiares personalizables retroiluminadas.',
-    image: 'assets/litografia/litografia + cuadro.png',
+    image: 'assets/litografia/litografia + cuadro.PNG',
     isCustomPhoto: true,
     defaultVariant: 'marco-4fotos',
     variants: [
