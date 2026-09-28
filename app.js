@@ -353,7 +353,7 @@ const PRODUCTS_DATA = [
     category: 'velas',
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 10 cm alto aprox.',
-    description: 'Vela escultural cilíndrica de líneas arquitectónicas.',
+    description: 'Escultura mística de cilindro en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
     image: 'assets/vela/moldes/cilindro ovalado v1.PNG',
     isCandle: true,
     sizes: [
@@ -384,7 +384,7 @@ const PRODUCTS_DATA = [
     category: 'velas',
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 6 cm alto aprox.',
-    description: 'Vela escultural cilíndrica de líneas arquitectónicas.',
+    description: 'Escultura romántica de corazón con micro-textura en cera de soja pura.',
     image: 'assets/vela/moldes/corazon love.png',
     isCandle: true,
     sizes: [
@@ -415,7 +415,7 @@ const PRODUCTS_DATA = [
     category: 'velas',
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 6 cm aprox.',
-    description: 'Vela escultural cilíndrica de líneas arquitectónicas.',
+    description: 'Escultura mística de margarita en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
     image: 'assets/vela/moldes/margarita.png',
     isCandle: true,
     sizes: [
@@ -446,7 +446,7 @@ const PRODUCTS_DATA = [
     category: 'velas',
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 4,5 cm alto aprox.',
-    description: 'Vela escultural cilíndrica de líneas arquitectónicas.',
+    description: 'Escultura mística de osito en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
     image: 'assets/vela/moldes/Osito.png',
     isCandle: true,
     sizes: [
@@ -477,7 +477,7 @@ const PRODUCTS_DATA = [
     category: 'velas',
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 6,5 cm alto aprox.',
-    description: 'Vela escultural cilíndrica de líneas arquitectónicas.',
+    description: 'Escultura mística de Virgen en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
     image: 'assets/vela/moldes/Virgen blanca v1.png',
     isCandle: true,
     sizes: [
@@ -508,7 +508,7 @@ const PRODUCTS_DATA = [
     category: 'velas',
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 6,5 cm alto aprox.',
-    description: 'Vela escultural cilíndrica de líneas arquitectónicas.',
+    description: 'Escultura mística de Virgen en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
     image: 'assets/vela/moldes/corazon love.png',
     isCandle: true,
     sizes: [
@@ -572,7 +572,7 @@ const PRODUCTS_DATA = [
     category: 'velas',
     categoryName: 'Velas Artesanales',
     dimensions: '1,5 cm c/u',
-    description: 'Escultura delicada de ángel en cera. Ideal para recuerditos de bautizo o primera comunión.',
+    description: 'Conjunto de corazones para quemar en tu hornillo y dar un detalle cálido y sereno para dar fragancia a tu hogar.',
     image: 'assets/vela/wax metls/wax metls corazon.png',
     isCandle: true,
     sizes: [
