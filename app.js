@@ -989,7 +989,7 @@ function buildProductOptionsHTML(product, state, isModal = false) {
       ${product.material ? `
         <div>
           <div class="flex justify-between items-center mb-1.5">
-            <span class="text-[11px] font-bold text-[#8B5A2B] uppercase tracking-wider">Tamaño:</span>
+            <span class="text-[11px] font-bold text-[#8B5A2B] uppercase tracking-wider">Material:</span>
             <span class="text-[11px] font-semibold text-[#C86D51]">${state.selectedMaterial ? state.selectedMaterial.name : ''}</span>
           </div>
           <div class="flex flex-wrap gap-1.5">
