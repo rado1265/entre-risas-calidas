@@ -1,6 +1,139 @@
 // app.js - Entre Risas Cálidas - Interactive Catalog & Order Engine
 
 const PRODUCTS_DATA = [
+  {
+    id: 'Porta-contraluz',
+    name: 'Porta Vela contraluz',
+    category: 'yeso-cemento',
+    categoryName: 'Decoración Yeso y Cemento',
+    dimensions: '4 cm × 5, cm',
+    description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
+    image: 'assets/decoracion/contraluz/contraluz angel.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 490/* , image: 'assets/decoracion/contraluz/contraluz angel.png' */ },
+      { id: 'Cemento', name: 'Cemento', price: 1190/* , image: 'assets/decoracion/contraluz/contraluz angel.png'  */ },
+    ],
+    diseño: [
+      { id: 'Angel', name: 'Angel', price: 0, image: 'assets/decoracion/contraluz/contraluz angel.png' },
+      { id: 'Estrella', name: 'Estrella', price: 0, image: 'assets/decoracion/contraluz/contraluz estrella.png' },
+      { id: 'Corazon', name: 'Corazón', price: 0, image: 'assets/decoracion/contraluz/contraluz corazon.png' },
+      { id: 'arbol navidad', name: 'Arbol Navidad', price: 0, image: 'assets/decoracion/contraluz/contraluz arbol navidad.png' },
+    ], sizes: [
+      { id: 'estandar', name: '4 cm × 5 cm', price: 0/* , image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png' */ }
+    ],
+    colors: [
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0/* , image: 'assets/decoracion/contraluz/contraluz estrella.png' */ }
+    ]
+  }, {
+    id: 'joyero-corazon',
+    name: 'Corazón joyero + portavela',
+    category: 'yeso-cemento',
+    categoryName: 'Decoración Yeso y Cemento',
+    dimensions: '11 cm × 9,5 cm',
+    description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
+    image: 'assets/decoracion/joyeros/corazon.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 1490, image: 'assets/decoracion/joyeros/corazon.png' },
+      { id: 'Cemento', name: 'Cemento', price: 3490, image: 'assets/decoracion/joyeros/corazon.png' },
+    ],
+    sizes: [
+      { id: 'estandar', name: '11 cm × 9,5 cm', price: 0, image: 'assets/decoracion/joyeros/corazon.png' }
+    ],
+    colors: [
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/corazon.png' }
+    ]
+  }, {
+    id: 'joyero-flor',
+    name: 'Flor joyero + portavela',
+    category: 'yeso-cemento',
+    categoryName: 'Decoración Yeso y Cemento',
+    dimensions: '10 cm × 10 cm',
+    description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
+    image: 'assets/decoracion/joyeros/flor.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 1490, image: 'assets/decoracion/joyeros/flor.png' },
+      { id: 'Cemento', name: 'Cemento', price: 3490, image: 'assets/decoracion/joyeros/flor.png' },
+    ],
+    sizes: [
+      { id: 'estandar', name: '10 cm × 10 cm', price: 0, image: 'assets/decoracion/joyeros/flor.png' }
+    ],
+    colors: [
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/flor.png' }
+    ]
+  },
+   {
+    id: 'joyero-taichi',
+    name: 'Portavela tipo Tai chi',
+    category: 'yeso-cemento',
+    categoryName: 'Decoración Yeso y Cemento',
+    dimensions: 'Ø9 cm',
+    description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
+    image: 'assets/decoracion/joyeros/taichi.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 1590, image: 'assets/decoracion/joyeros/taichi.png' },
+      { id: 'Cemento', name: 'Cemento', price: 3790, image: 'assets/decoracion/joyeros/taichi.png' },
+    ],
+    sizes: [
+      { id: 'estandar', name: 'Ø9 cm', price: 0, image: 'assets/decoracion/joyeros/taichi.png' }
+    ],
+    colors: [
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/taichi.png' }
+    ]
+  },{
+    id: 'joyero-cuerda',
+    name: 'Portavela tipo Cuerda Cañamo ',
+    category: 'yeso-cemento',
+    categoryName: 'Decoración Yeso y Cemento',
+    dimensions: 'Ø6 cm',
+    description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
+    image: 'assets/decoracion/joyeros/frasco.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 590, image: 'assets/decoracion/joyeros/frasco.png' },
+      { id: 'Cemento', name: 'Cemento', price: 1290, image: 'assets/decoracion/joyeros/frasco.png' },
+    ],
+    sizes: [
+      { id: 'estandar', name: 'Ø6 cm', price: 0, image: 'assets/decoracion/joyeros/frasco.png' }
+    ],
+    colors: [
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/frasco.png' }
+    ]
+  },{
+    id: 'joyero-infinito',
+    name: 'Portavela tipo Infinito "Tú & Yo"',
+    category: 'yeso-cemento',
+    categoryName: 'Decoración Yeso y Cemento',
+    dimensions: '16,5 cm x 6 cm',
+    description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
+    image: 'assets/decoracion/joyeros/love infinito.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 1790, image: 'assets/decoracion/joyeros/love infinito.png' },
+      { id: 'Cemento', name: 'Cemento', price: 4290, image: 'assets/decoracion/joyeros/love infinito.png' },
+    ],
+    sizes: [
+      { id: 'estandar', name: '16,5 cm x 6 cm', price: 0, image: 'assets/decoracion/joyeros/love infinito.png' }
+    ],
+    colors: [
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/love infinito.png' }
+    ]
+  },{
+    id: 'joyero-loto',
+    name: 'Portavela tipo Loto',
+    category: 'yeso-cemento',
+    categoryName: 'Decoración Yeso y Cemento',
+    dimensions: 'Ø8 cm',
+    description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
+    image: 'assets/decoracion/joyeros/loto.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 990, image: 'assets/decoracion/joyeros/loto.png' },
+      { id: 'Cemento', name: 'Cemento', price: 2390, image: 'assets/decoracion/joyeros/loto.png' },
+    ],
+    sizes: [
+      { id: 'estandar', name: 'Ø8 cm', price: 0, image: 'assets/decoracion/joyeros/loto.png' }
+    ],
+    colors: [
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/loto.png' }
+    ]
+  },
   // CATEGORIA 1: Decoración en Yeso y Cemento
   {
     id: 'bandeja-redonda',
@@ -378,7 +511,7 @@ const PRODUCTS_DATA = [
       { id: 'limon', name: 'Limón', priceExtra: 600 },
       { id: 'menta', name: 'Menta', priceExtra: 600 }
     ]
-  },{
+  }, {
     id: 'Corazon-love-Vela-Soja',
     name: 'Corazon "Love" Vela Soja',
     category: 'velas',
@@ -409,7 +542,7 @@ const PRODUCTS_DATA = [
       { id: 'limon', name: 'Limón', priceExtra: 600 },
       { id: 'menta', name: 'Menta', priceExtra: 600 }
     ]
-  },{
+  }, {
     id: 'margarita-Vela-Soja',
     name: 'Margarita Vela Soja',
     category: 'velas',
@@ -440,7 +573,7 @@ const PRODUCTS_DATA = [
       { id: 'limon', name: 'Limón', priceExtra: 500 },
       { id: 'menta', name: 'Menta', priceExtra: 500 }
     ]
-  },{
+  }, {
     id: 'osito-Vela-Soja',
     name: 'Osito Vela Soja',
     category: 'velas',
@@ -471,7 +604,7 @@ const PRODUCTS_DATA = [
       { id: 'limon', name: 'Limón', priceExtra: 300 },
       { id: 'menta', name: 'Menta', priceExtra: 300 }
     ]
-  },{
+  }, {
     id: 'virgen-blanca-v1-Vela-Soja',
     name: 'Virgen v1 Vela Soja',
     category: 'velas',
@@ -502,7 +635,7 @@ const PRODUCTS_DATA = [
       { id: 'limon', name: 'Limón', priceExtra: 600 },
       { id: 'menta', name: 'Menta', priceExtra: 600 }
     ]
-  },{
+  }, {
     id: 'virgen blanca v2-Vela-Soja',
     name: 'Virgen v2 Vela Soja',
     category: 'velas',
@@ -566,7 +699,7 @@ const PRODUCTS_DATA = [
       { id: 'limon', name: 'Limón', priceExtra: 600 },
       { id: 'menta', name: 'Menta', priceExtra: 600 }
     ]
-  },{
+  }, {
     id: 'wax-metls-corazon',
     name: 'Wax Melts Corazon',
     category: 'velas',
@@ -665,6 +798,7 @@ function initDefaultState() {
   PRODUCTS_DATA.forEach(p => {
     selectedOptionsMap[p.id] = {
       materialId: p.material ? p.material[0].id : null,
+      diseñoId: p.diseño ? p.diseño[0].id : null,
       sizeId: p.sizes ? p.sizes[0].id : null,
       colorId: p.colors ? p.colors[0].id : null,
       aromaId: p.aromas ? p.aromas[0].id : null,
@@ -714,6 +848,7 @@ function setupEventListeners() {
 function getProductState(product) {
   const options = selectedOptionsMap[product.id] || {};
   const selectedMaterial = product.material?.find(s => s.id === options.materialId) || product.material?.[0] || null;
+  const selectedDiseño = product.diseño?.find(s => s.id === options.diseñoId) || product.diseño?.[0] || null;
   const selectedSize = product.sizes?.find(s => s.id === options.sizeId) || product.sizes?.[0] || null;
   const selectedColor = product.colors?.find(c => c.id === options.colorId) || product.colors?.[0] || null;
   const selectedAroma = product.aromas?.find(a => a.id === options.aromaId) || product.aromas?.[0] || null;
@@ -734,6 +869,9 @@ function getProductState(product) {
   if (selectedSize && selectedSize.priceExtra && !selectedVariant) {
     price += selectedSize.priceExtra;
   }
+  if (selectedDiseño && selectedDiseño.priceExtra) {
+    price += selectedDiseño.priceExtra;
+  }
   if (selectedColor && selectedColor.priceExtra) {
     price += selectedColor.priceExtra;
   }
@@ -747,6 +885,8 @@ function getProductState(product) {
     image = selectedColor.image;
   } else if (selectedMaterial && selectedMaterial.image) {
     image = selectedMaterial.image;
+  } else if (selectedDiseño && selectedDiseño.image) {
+    image = selectedDiseño.image;
   } else if (selectedSize && selectedSize.image) {
     image = selectedSize.image;
   } else if (selectedVariant && selectedVariant.image) {
@@ -754,6 +894,7 @@ function getProductState(product) {
   }
 
   return {
+    selectedDiseño,
     selectedMaterial,
     selectedSize,
     selectedColor,
@@ -999,6 +1140,30 @@ function buildProductOptionsHTML(product, state, isModal = false) {
                 <button 
                   type="button"
                   onclick="updateProductOption('${product.id}', 'materialId', '${s.id}')"
+                  class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1 cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
+      }"
+                >
+                  <span>${s.name}</span>
+                </button>
+              `;
+  }).join('')}
+          </div>
+        </div>
+      ` : ''}
+       <!-- 1. Diseño (Option Buttons - MercadoLibre Style) -->
+      ${product.diseño ? `
+        <div>
+          <div class="flex justify-between items-center mb-1.5">
+            <span class="text-[11px] font-bold text-[#8B5A2B] uppercase tracking-wider">Diseño:</span>
+            <span class="text-[11px] font-semibold text-[#C86D51]">${state.selectedDiseño ? state.selectedDiseño.name : ''}</span>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            ${product.diseño.map(s => {
+    const isSelected = state.selectedDiseño && state.selectedDiseño.id === s.id;
+    return `
+                <button 
+                  type="button"
+                  onclick="updateProductOption('${product.id}', 'diseñoId', '${s.id}')"
                   class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1 cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
       }"
                 >
