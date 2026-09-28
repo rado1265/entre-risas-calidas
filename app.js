@@ -179,7 +179,6 @@ const AROMAS_OPTIONS = [
   'Vainilla Francesa & Coco',
   'Lavanda Silvestre & Relajación',
   'Café Tostado & Caramelo',
-  'Canela & Dulce Manzana',
   'Jazmín Blanco & Ámbar',
   'Sin aroma (Neutro)'
 ];
