@@ -23,11 +23,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0/* , image: 'assets/decoracion/contraluz/contraluz estrella.png' */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 150, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 150, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 150, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 150, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 150, available: false }
     ]
   }, {
     id: 'joyero-corazon',
@@ -46,11 +46,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/corazon.png' },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200, available: false }
     ]
   }, {
     id: 'joyero-flor',
@@ -69,11 +69,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/flor.png' },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200, available: false }
     ]
   }, {
     id: 'joyero-mariposa',
@@ -92,11 +92,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/mariposa gris.png' },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200, available: false }
     ]
   },
   {
@@ -116,11 +116,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/tortuga/tortuga.png' },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 400, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 400, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 400, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 400, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 400, available: false }
     ]
   },
   {
@@ -140,11 +140,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/taichi.png' },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200, available: false }
     ]
   }, {
     id: 'joyero-cuerda',
@@ -163,11 +163,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/frasco.png' },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 150, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 150, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 150, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 150, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 150, available: false }
     ]
   }, {
     id: 'joyero-infinito',
@@ -186,11 +186,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/love infinito.png' },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+     { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 300, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 300, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 300, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 300, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 300, available: false }
     ]
   }, {
     id: 'buda',
@@ -209,11 +209,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/buda/buda.png' },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200, available: false }
     ]
   }, {
     id: 'joyero-loto',
@@ -232,11 +232,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/loto.png' },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 150, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 150, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 150, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 150, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 150, available: false }
     ]
   }, {
     id: 'bandeja-corazon',
@@ -255,11 +255,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, imagen: 'assets/decoracion/corazon/bandeja corazon gris.png' },
-      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200, available: false }
     ]
   },
   // CATEGORIA 1: Decoración en Yeso y Cemento
@@ -281,11 +281,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/redondo/ovalado mediano blanco.png' },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, image: 'assets/decoracion/redondo/ovalado mediano verde.png' },
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, image: 'assets/decoracion/redondo/ovalado mediano verde.png' },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E',  priceExtra: 200, available: false  },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200, available: false }
     ]
   },
   {
@@ -304,11 +304,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/gato/gato blanco.png' },
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/gato/gato gris.png' },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, image: 'assets/decoracion/gato/gato amarillo.png' },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 300, image: 'assets/decoracion/gato/gato gris.png' },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 300, image: 'assets/decoracion/gato/gato amarillo.png' },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 300, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 300, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 300, available: false }
     ]
   },
   {
@@ -327,11 +327,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/hoja/hoja blanca.png' },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, image: 'assets/decoracion/hoja/hoja amarilla.png' },
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, available: false },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 300, image: 'assets/decoracion/hoja/hoja amarilla.png' },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 300, available: false  },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 300, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 300, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 300, available: false }
     ]
   },
   {
@@ -351,11 +351,11 @@ const PRODUCTS_DATA = [
     colors: [
 
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/hornillo/hornillo gris.png', },
-      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 300, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 300, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 300, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 300, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 300, available: false }
     ]
   },
   {
@@ -374,11 +374,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalado blanco.png' },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalado amarillo.png' },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalado verde.png' },
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, image: 'assets/decoracion/ovalado/ovalado amarillo.png' },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, image: 'assets/decoracion/ovalado/ovalado verde.png' },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 200, available: false  },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200, available: false }
     ]
   }, {
     id: 'bandeja-ovalada-doble',
@@ -396,11 +396,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalada doble gris.png' },
-      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200, available: false }
     ]
   }, {
     id: 'bandeja-nube',
@@ -418,11 +418,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/bandejanube/bandeja nube.png' },
-      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 300, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 300, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 300, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 300, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 300, available: false }
     ]
   },
   {
@@ -441,11 +441,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/redondocontapa/redondo tapa blanco.png' },
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, available: false },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 150, available: false  },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 150, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 150, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 150, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 150, available: false }
     ]
   },
   {
@@ -464,11 +464,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png' },
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, available: false },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 150, available: false  },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 150, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 150, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 150, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 150, available: false }
     ]
   },
 
@@ -1429,7 +1429,7 @@ function buildProductOptionsHTML(product, state, isModal = false) {
             <div class="flex flex-wrap gap-1.5 items-center">
               ${visibleColors.map(c => {
         const isSelected =
-          c.available !== false &&
+          /* c.available !== false && */
           state.selectedColor &&
           state.selectedColor.id === c.id;
         const isAvailable = c.available !== false;
@@ -1437,9 +1437,10 @@ function buildProductOptionsHTML(product, state, isModal = false) {
         return `
     <button 
       type="button"
+      onclick="updateProductOption('${product.id}', 'colorId', '${c.id}')"
       ${isAvailable
             ? `onclick="updateProductOption('${product.id}', 'colorId', '${c.id}')"`
-            : ''
+            : `onclick="updateProductOption('${product.id}', 'colorId', '${c.id}')"`
           }
       class="
         option-btn 
@@ -1454,15 +1455,15 @@ function buildProductOptionsHTML(product, state, isModal = false) {
         gap-1.5
         relative
         overflow-hidden
-        ${!isAvailable
+        ${/* !isAvailable
             ? 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed opacity-70'
-            : isSelected
+            :  */isSelected
               ? 'selected cursor-pointer'
               : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9] cursor-pointer'
           }
       "
-      title="${isAvailable ? c.name : `${c.name} - No disponible`}"
-      ${!isAvailable ? 'disabled' : ''}
+      title="${isAvailable ? c.name : `${c.name} - Solo disponible para cotizar`}"
+      /* {!isAvailable ? 'disabled' : ''} */
     >
       <span 
         class="
@@ -1471,7 +1472,7 @@ function buildProductOptionsHTML(product, state, isModal = false) {
           border border-black/20 
           shadow-inner 
           flex-shrink-0
-          ${!isAvailable ? 'grayscale opacity-50' : ''}
+          /* {!isAvailable ? 'grayscale opacity-50' : ''} */
         "
         style="background-color: ${c.hex}"
       ></span>
