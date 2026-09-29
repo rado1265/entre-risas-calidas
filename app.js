@@ -193,6 +193,29 @@ const PRODUCTS_DATA = [
       { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
   }, {
+    id: 'buda',
+    name: 'Buda',
+    category: 'yeso-cemento',
+    categoryName: 'Decoración Yeso y Cemento',
+    dimensions: '9,5 cm x 6 cm',
+    description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería.',
+    image: 'assets/decoracion/buda/buda.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 1290, image: 'assets/decoracion/buda/buda.png' },
+      { id: 'Cemento', name: 'Cemento', price: 2990, image: 'assets/decoracion/buda/buda.png' },
+    ],
+    sizes: [
+      { id: 'estandar', name: '9,5 cm x 6 cm', price: 0, image: 'assets/decoracion/buda/buda.png' }
+    ],
+    colors: [
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/buda/buda.png' },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+    ]
+  }, {
     id: 'joyero-loto',
     name: 'Portavela tipo Loto',
     category: 'yeso-cemento',
