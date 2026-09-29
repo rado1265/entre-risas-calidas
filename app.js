@@ -31,7 +31,7 @@ const PRODUCTS_DATA = [
     ]
   }, {
     id: 'joyero-corazon',
-    name: 'Corazón joyero + portavela',
+    name: 'Corazón portavela',
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: '11 cm × 9,5 cm',
@@ -54,7 +54,7 @@ const PRODUCTS_DATA = [
     ]
   }, {
     id: 'joyero-flor',
-    name: 'Flor joyero + portavela',
+    name: 'Flor portavela',
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: '10 cm × 10 cm',
@@ -69,6 +69,53 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/flor.png' },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+    ]
+  }, {
+    id: 'joyero-mariposa',
+    name: 'Mariposa portavela',
+    category: 'yeso-cemento',
+    categoryName: 'Decoración Yeso y Cemento',
+    dimensions: '10 cm × 10 cm',
+    description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería',
+    image: 'assets/decoracion/joyeros/mariposa.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 1490, image: 'assets/decoracion/joyeros/mariposa.png' },
+      { id: 'Cemento', name: 'Cemento', price: 3490, image: 'assets/decoracion/joyeros/mariposa.png' },
+    ],
+    sizes: [
+      { id: 'estandar', name: '10 cm × 10 cm', price: 0, image: 'assets/decoracion/joyeros/mariposa.png' }
+    ],
+    colors: [
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/mariposa.png' },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+    ]
+  },
+  {
+    id: 'joyero-tortuga',
+    name: 'Tortuga con Tapa',
+    category: 'yeso-cemento',
+    categoryName: 'Decoración Yeso y Cemento',
+    dimensions: '14 cm × 10 cm',
+    description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas o llaves.',
+    image: 'assets/decoracion/tortuga/tortuga.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 2100, image: 'assets/decoracion/tortuga/tortuga.png' },
+      { id: 'Cemento', name: 'Cemento', price: 4990, image: 'assets/decoracion/tortuga/tortuga.png' },
+    ],
+    sizes: [
+      { id: 'estandar', name: '14 cm × 10 cm', price: 0, image: 'assets/decoracion/tortuga/tortuga.png' }
+    ],
+    colors: [
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/tortuga/tortuga.png' },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
@@ -168,6 +215,29 @@ const PRODUCTS_DATA = [
       { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
       { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
+  }, {
+    id: 'bandeja-corazon',
+    name: 'Bandeja Corazón',
+    category: 'yeso-cemento',
+    categoryName: 'Decoración Yeso y Cemento',
+    dimensions: '12 cm x 11,5 cm',
+    description: 'Bandeja decorativa minimalista y versátil, ideal para posar velas, joyas, llaves o elementos de perfumería.',
+    image: 'assets/decoracion/corazon/bandeja corazon gris.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 1290, image: 'assets/decoracion/corazon/bandeja corazon gris.png' },
+      { id: 'Cemento', name: 'Cemento', price: 2990, image: 'assets/decoracion/corazon/bandeja corazon gris.png' },
+    ],
+    sizes: [
+      { id: '18cm', name: '12 cm x 11,5 cm', priceExtra: 0, image: 'assets/decoracion/corazon/bandeja corazon gris.png' }
+    ],
+    colors: [
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, imagen: 'assets/decoracion/corazon/bandeja corazon gris.png' },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+    ]
   },
   // CATEGORIA 1: Decoración en Yeso y Cemento
   {
@@ -180,11 +250,11 @@ const PRODUCTS_DATA = [
     image: 'assets/decoracion/redondo/ovalado mediano blanco.png',
     material: [
       { id: 'Yeso', name: 'Yeso', price: 490, image: 'assets/decoracion/redondo/ovalado mediano blanco.png' },
-      { id: 'Cemento', name: 'Cemento', price: 1190, image: 'assets/decoracion/redondo/ovalado mediano blanco.png' },
+      { id: 'Cemento', name: 'Cemento', price: 990, image: 'assets/decoracion/redondo/ovalado mediano blanco.png' },
     ],
     sizes: [
       { id: '18cm', name: 'Ø8 cm (Individual)', priceExtra: 0, image: 'assets/decoracion/redondo/ovalado mediano blanco.png' },
-      { id: '25cm', name: 'Ø11 cm (Grande)', priceExtra: 800, image: 'assets/decoracion/redondo/ovalado mediano blanco.png' }
+      { id: '25cm', name: 'Ø11 cm (Grande)', priceExtra: 900, image: 'assets/decoracion/redondo/ovalado mediano blanco.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/redondo/ovalado mediano blanco.png' },
@@ -204,8 +274,8 @@ const PRODUCTS_DATA = [
     description: 'Ternura y funcionalidad en una sola pieza. Sculpted candle holder perfecto para dar calidez a tu mesa o velador.',
     image: 'assets/decoracion/gato/gato blanco.png',
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 1490, image: 'assets/decoracion/gato/gato blanco.png' },
-      { id: 'Cemento', name: 'Cemento', price: 3490, image: 'assets/decoracion/gato/gato blanco.png' },
+      { id: 'Yeso', name: 'Yeso', price: 1590, image: 'assets/decoracion/gato/gato blanco.png' },
+      { id: 'Cemento', name: 'Cemento', price: 3890, image: 'assets/decoracion/gato/gato blanco.png' },
     ], sizes: [
       { id: 'estandar', name: '10 cm × 6 cm', price: 0, image: 'assets/decoracion/gato/gato blanco.png' }
     ],
@@ -240,25 +310,31 @@ const PRODUCTS_DATA = [
       { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
       { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
-  }/* ,
+  },
   {
     id: 'hornillo-aromatico',
-    name: 'Hornillo Aromático',
+    name: 'Hornillo Aromático con ',
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: 'Ø8 cm × 7,5 cm',
     description: 'Diseñado especialmente para wax melts, aceites esenciales o aromaterapia. Incluye cavidad para tea-light.',
-    image: 'assets/decoracion/hornillo aromatico 2.png',
-    sizes: [
-      { id: 'estandar', name: 'Ø8 cm (Estándar)', price: 2490, image: 'assets/decoracion/hornillo aromatico 2.png' },
-      { id: 'maxi', name: 'Ø10 cm (Maxi)', price: 3990, image: 'assets/decoracion/Cerrado Ovalado 6,1cm 2.png' }
+    image: 'assets/decoracion/hornillo/hornillo gris.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 2990, image: 'assets/decoracion/hornillo/hornillo gris.png' },
+      { id: 'Cemento', name: 'Cemento', price: 6990, image: 'assets/decoracion/hornillo/hornillo gris.png' },
+    ], sizes: [
+      { id: 'estandar', name: 'Ø9 cm', price: 0, image: 'assets/decoracion/hornillo/hornillo gris.png' }
     ],
     colors: [
-      { id: 'yeso', name: 'Yeso Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/hornillo aromatico 2.png' },
-      { id: 'cemento', name: 'Cemento Pulido', hex: '#9E9E9E', priceExtra: 7500, image: 'assets/decoracion/Ovalado 17,8 × 9,4 cm 2.png' },
-      { id: 'terracota', name: 'Terracota', hex: '#C86D51', priceExtra: 800, image: 'assets/decoracion/bandeja redonda.png' }
+
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/hornillo/hornillo gris.png', },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
-  } */,
+  },
   {
     id: 'bandeja-ovalada',
     name: 'Bandeja Ovalada',
@@ -278,6 +354,50 @@ const PRODUCTS_DATA = [
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalado amarillo.png' },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalado verde.png' },
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+    ]
+  }, {
+    id: 'bandeja-ovalada-doble',
+    name: 'Bandeja Ovalada doble',
+    category: 'yeso-cemento',
+    categoryName: 'Decoración Yeso y Cemento',
+    dimensions: '17,5 × 9 × 1,5 cm',
+    description: 'Estética limpia y estilizada. Ideal para organizar frascos de perfume, accesorios o velas cilíndricas.',
+    image: 'assets/decoracion/ovalado/ovalada doble gris.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 1790, image: 'assets/decoracion/ovalado/ovalada doble gris.png' },
+      { id: 'Cemento', name: 'Cemento', price: 4190, image: 'assets/decoracion/ovalado/ovalada doble gris.png' },
+    ], sizes: [
+      { id: 'estandar', name: '17,5 × 9 × 1,5 cm', price: 0, image: 'assets/decoracion/ovalado/ovalada doble gris.png' }
+    ],
+    colors: [
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalada doble gris.png' },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
+    ]
+  }, {
+    id: 'bandeja-nube',
+    name: 'Bandeja Nube',
+    category: 'yeso-cemento',
+    categoryName: 'Decoración Yeso y Cemento',
+    dimensions: '19 × 13,5 × 1,5 cm',
+    description: 'Estética limpia y estilizada. Ideal para organizar frascos de perfume, accesorios o velas cilíndricas.',
+    image: 'assets/decoracion/bandejanube/bandeja nube.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 1990, image: 'assets/decoracion/bandejanube/bandeja nube.png' },
+      { id: 'Cemento', name: 'Cemento', price: 4690, image: 'assets/decoracion/bandejanube/bandeja nube.png' },
+    ], sizes: [
+      { id: 'estandar', name: '19 × 13,5 × 1,5 cm', price: 0, image: 'assets/decoracion/bandejanube/bandeja nube.png' }
+    ],
+    colors: [
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/bandejanube/bandeja nube.png' },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
       { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 0, available: false },
       { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 0, available: false }
     ]
