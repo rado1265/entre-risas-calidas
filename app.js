@@ -7,7 +7,7 @@ const PRODUCTS_DATA = [
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: '4 cm × 5, cm',
-    description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
+    description: 'Porta Vela contraluz para vela pequeña.',
     image: 'assets/decoracion/contraluz/contraluz angel.png',
     material: [
       { id: 'Yeso', name: 'Yeso', price: 490/* , image: 'assets/decoracion/contraluz/contraluz angel.png' */ },
@@ -35,7 +35,7 @@ const PRODUCTS_DATA = [
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: '11 cm × 9,5 cm',
-    description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
+    description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería.',
     image: 'assets/decoracion/joyeros/corazon.png',
     material: [
       { id: 'Yeso', name: 'Yeso', price: 1490, image: 'assets/decoracion/joyeros/corazon.png' },
@@ -58,7 +58,7 @@ const PRODUCTS_DATA = [
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: '10 cm × 10 cm',
-    description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
+    description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería',
     image: 'assets/decoracion/joyeros/flor.png',
     material: [
       { id: 'Yeso', name: 'Yeso', price: 1490, image: 'assets/decoracion/joyeros/flor.png' },
@@ -82,7 +82,7 @@ const PRODUCTS_DATA = [
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: 'Ø9 cm',
-    description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
+    description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería.',
     image: 'assets/decoracion/joyeros/taichi.png',
     material: [
       { id: 'Yeso', name: 'Yeso', price: 1590, image: 'assets/decoracion/joyeros/taichi.png' },
@@ -105,7 +105,7 @@ const PRODUCTS_DATA = [
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: 'Ø6 cm',
-    description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
+    description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería.',
     image: 'assets/decoracion/joyeros/frasco.png',
     material: [
       { id: 'Yeso', name: 'Yeso', price: 590, image: 'assets/decoracion/joyeros/frasco.png' },
@@ -128,7 +128,7 @@ const PRODUCTS_DATA = [
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: '16,5 cm x 6 cm',
-    description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
+    description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería.',
     image: 'assets/decoracion/joyeros/love infinito.png',
     material: [
       { id: 'Yeso', name: 'Yeso', price: 1790, image: 'assets/decoracion/joyeros/love infinito.png' },
@@ -151,7 +151,7 @@ const PRODUCTS_DATA = [
     category: 'yeso-cemento',
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: 'Ø8 cm',
-    description: 'Alhajero minimalista y multipropósito con tapa encajable para resguardar pequeños tesoros.',
+    description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería.',
     image: 'assets/decoracion/joyeros/loto.png',
     material: [
       { id: 'Yeso', name: 'Yeso', price: 990, image: 'assets/decoracion/joyeros/loto.png' },
