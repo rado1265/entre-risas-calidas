@@ -611,7 +611,7 @@ const PRODUCTS_DATA = [
     image: 'assets/vela/moldes/margarita.png',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '6 cm', price: 1200, image: 'assets/vela/moldes/margarita.png' }
+      { id: 'estandar', name: '6 cm', price: 700, image: 'assets/vela/moldes/margarita.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
@@ -627,10 +627,10 @@ const PRODUCTS_DATA = [
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 500 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 500 },
-      { id: 'limon', name: 'Limón', priceExtra: 500 },
-      { id: 'menta', name: 'Menta', priceExtra: 500 }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 400 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 400 },
+      { id: 'limon', name: 'Limón', priceExtra: 400 },
+      { id: 'menta', name: 'Menta', priceExtra: 400 }
     ]
   }, {
     id: 'osito-Vela-Soja',
