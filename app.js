@@ -82,16 +82,16 @@ const PRODUCTS_DATA = [
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: '10 cm × 10 cm',
     description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería',
-    image: 'assets/decoracion/joyeros/mariposa.png',
+    image: 'assets/decoracion/joyeros/mariposa gris.png',
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 1490, image: 'assets/decoracion/joyeros/mariposa.png' },
-      { id: 'Cemento', name: 'Cemento', price: 3490, image: 'assets/decoracion/joyeros/mariposa.png' },
+      { id: 'Yeso', name: 'Yeso', price: 1490, image: 'assets/decoracion/joyeros/mariposa gris.png' },
+      { id: 'Cemento', name: 'Cemento', price: 3490, image: 'assets/decoracion/joyeros/mariposa gris.png' },
     ],
     sizes: [
-      { id: 'estandar', name: '10 cm × 10 cm', price: 0, image: 'assets/decoracion/joyeros/mariposa.png' }
+      { id: 'estandar', name: '10 cm × 10 cm', price: 0, image: 'assets/decoracion/joyeros/mariposa gris.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/mariposa.png' },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/mariposa gris.png' },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 0, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 0, available: false },
