@@ -1020,6 +1020,14 @@ let cart = []; // Array of cart items
 const QUOTE_CONFIG = {
   entregas: [
     {
+      id: 'sinEmpaque',
+      name: 'Sin empaque',
+      badge: '(Sin empaque)',
+      desc: 'Sin empaque.',
+      priceExtra: 0,
+      icon: '👤'
+    },
+    {
       id: 'enCaja',
       name: 'En Caja',
       badge: '(Ideal para regalo simple)',
@@ -1037,10 +1045,10 @@ const QUOTE_CONFIG = {
     },
     {
       id: 'eventos',
-      name: 'Pack Eventos',
+      name: 'Momentos especiales',/* 'Pack Eventos', */
       badge: '(Listo para regalar)',
-      desc: 'Incluye caja personalizada + cinta + montaje.',
-      priceExtra: 0,
+      desc: 'Envíanos tu idea y lo cotizamos según tus necesidades.',/* 'Incluye caja personalizada + cinta + montaje.', */
+      priceExtra: -1,
       icon: '🎁'
     }
   ],
@@ -2047,6 +2055,20 @@ function renderCartDrawer() {
     if (totalElem) {
       totalElem.textContent = '$0';
     }
+    const subtitleElem = document.getElementById('cart-total-subtitle');
+    if (subtitleElem) {
+      subtitleElem.textContent = 'Incluye descuentos y presentación seleccionada';
+      subtitleElem.className = 'block text-[11px] text-[#8B5A2B]';
+    }
+    const priceNoticeElem = document.getElementById('cart-total-price-notice');
+    if (priceNoticeElem) {
+      priceNoticeElem.classList.add('hidden');
+      priceNoticeElem.textContent = '';
+    }
+    const alertElem = document.getElementById('cart-presentation-alert');
+    if (alertElem) {
+      alertElem.classList.add('hidden');
+    }
     return;
   }
 
@@ -2203,7 +2225,15 @@ function renderCartDrawer() {
             <span>Presentación (${totals.delivery.name}):</span>
             <span class="font-semibold text-[#8B5A2B]">+${formatCLP(totals.deliveryAmount)}</span>
           </div>
-        ` : ''}
+        ` : (totals.delivery.priceExtra === -1 ? `
+          <div class="flex justify-between items-center text-[#6C5C57] pt-1">
+            <span>Presentación (${totals.delivery.name}):</span>
+            <span class="font-semibold text-amber-800 bg-amber-100/90 border border-amber-300/60 px-2 py-0.5 rounded-md text-[11px] flex items-center gap-1">
+              <span>⚠️</span>
+              <span>+ Por confirmar</span>
+            </span>
+          </div>
+        ` : '')}
       </div>
 
       <!-- PERSONALIZACIÓN DE LA PRESENTACIÓN -->
@@ -2219,16 +2249,19 @@ function renderCartDrawer() {
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
           ${QUOTE_CONFIG.entregas.map(entrega => {
     const isSelected = quoteOptions.deliveryId === entrega.id;
+    const isPending = entrega.priceExtra === -1;
     return `
               <div 
                 onclick="updateQuoteDelivery('${entrega.id}')"
                 class="relative cursor-pointer p-3 rounded-2xl border transition-all flex flex-col justify-between ${isSelected
-        ? 'bg-[#FFFDF9] border-[#C86D51] ring-2 ring-[#C86D51]/20 shadow-md'
+        ? (isPending
+          ? 'bg-amber-50/50 border-amber-500 ring-2 ring-amber-500/25 shadow-md'
+          : 'bg-[#FFFDF9] border-[#C86D51] ring-2 ring-[#C86D51]/20 shadow-md')
         : 'bg-white/80 border-[#8B5A2B]/20 hover:border-[#C86D51]/40 hover:bg-white'
       }"
               >
                 ${isSelected ? `
-                  <span class="absolute -top-2.5 right-2 bg-[#C86D51] text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow-sm flex items-center gap-1">
+                  <span class="absolute -top-2.5 right-2 ${isPending ? 'bg-amber-600' : 'bg-[#C86D51]'} text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow-sm flex items-center gap-1">
                     Seleccionado 🎖️
                   </span>
                 ` : ''}
@@ -2242,21 +2275,64 @@ function renderCartDrawer() {
                   <p class="text-[10px] text-[#6C5C57] leading-tight">${entrega.desc}</p>
                 </div>
 
-                <div class="mt-2.5 pt-2 border-t border-[#8B5A2B]/10 flex items-center justify-between text-[11px] font-bold text-[#C86D51]">
-                  <span>+${entrega.priceExtra == 0 ? ' Por confirmar' : (formatCLP(entrega.priceExtra) + ' c/u.')}</span>
+                <div class="mt-2.5 pt-2 border-t border-[#8B5A2B]/10 flex items-center justify-between text-[11px] font-bold ${isPending ? 'text-amber-700' : 'text-[#C86D51]'}">
+                  <span>${isPending ? 'Empaque sujeto a confirmación' : '+' + (formatCLP(entrega.priceExtra) + ' c/u.')}</span>
                 </div>
               </div>
             `;
   }).join('')}
         </div>
+
+        <!--${totals.delivery.priceExtra === -1 ? `
+          <div class="mt-3 bg-amber-50/90 border border-amber-200/90 rounded-xl p-2.5 text-[11px] text-amber-900 flex items-start gap-2 shadow-xs">
+            <span class="text-sm">⚠️</span>
+            <div>
+              <strong class="font-semibold text-amber-950">El total final puede variar:</strong> Al seleccionar <em>"${totals.delivery.name}" (+ Por confirmar)</em>, el valor final del empaque no está incluido en el cálculo actual y se definirá según los detalles de tu evento.
+            </div>
+          </div>
+        ` : ''}
+        -->
       </div>
     </div>
   `;
 
   container.innerHTML = bannerHTML + itemsHTML + summaryHTML;
 
+  const isPendingDelivery = totals.delivery?.priceExtra === -1;
+
   if (totalElem) {
-    totalElem.textContent = formatCLP(totals.total);
+    totalElem.textContent = isPendingDelivery ? `${formatCLP(totals.total)}*` : formatCLP(totals.total);
+  }
+
+  const subtitleElem = document.getElementById('cart-total-subtitle');
+  if (subtitleElem) {
+    if (isPendingDelivery) {
+      subtitleElem.textContent = '⚠️ Precio base estimado (empaque sujeto a confirmación)';
+      subtitleElem.className = 'block text-[11px] text-amber-700 font-semibold';
+    } else {
+      subtitleElem.textContent = 'Incluye descuentos y presentación seleccionada';
+      subtitleElem.className = 'block text-[11px] text-[#8B5A2B]';
+    }
+  }
+
+  const priceNoticeElem = document.getElementById('cart-total-price-notice');
+  if (priceNoticeElem) {
+    if (isPendingDelivery) {
+      priceNoticeElem.textContent = '*+ empaque por confirmar';
+      priceNoticeElem.classList.remove('hidden');
+    } else {
+      priceNoticeElem.textContent = '';
+      priceNoticeElem.classList.add('hidden');
+    }
+  }
+
+  const alertElem = document.getElementById('cart-presentation-alert');
+  if (alertElem) {
+    if (isPendingDelivery) {
+      alertElem.classList.remove('hidden');
+    } else {
+      alertElem.classList.add('hidden');
+    }
   }
 }
 
@@ -2295,12 +2371,18 @@ function sendConsolidatedWhatsAppOrder() {
     msg += `💲 *Subtotal c/descuento:* ${formatCLP(totals.subtotal - totals.discountAmount)}\n`;
   }
 
-  msg += `🎁 *Presentación:* ${totals.delivery.name} (+${formatCLP(totals.delivery.priceExtra)} c/u)\n`;
-  if (totals.deliveryAmount > 0) {
-    msg += `🚚 *Costo presentación:* +${formatCLP(totals.deliveryAmount)}\n`;
+  if (totals.delivery.priceExtra === -1) {
+    msg += `🎁 *Presentación:* ${totals.delivery.name} _(*Por confirmar / a cotizar*)_\n`;
+    msg += `\n💵 *TOTAL ESTIMADO BASE: ${formatCLP(totals.total)}* _(+ empaque por confirmar)_\n`;
+    msg += `⚠️ *Nota:* El valor final podría variar ya que la presentación seleccionada fue "${totals.delivery.name} (+ Por Confirmar)".\n\n`;
+  } else {
+    msg += `🎁 *Presentación:* ${totals.delivery.name} (+${formatCLP(totals.delivery.priceExtra)} c/u)\n`;
+    if (totals.deliveryAmount > 0) {
+      msg += `🚚 *Costo presentación:* +${formatCLP(totals.deliveryAmount)}\n`;
+    }
+    msg += `\n💵 *TOTAL ESTIMADO: ${formatCLP(totals.total)}*\n\n`;
   }
 
-  msg += `\n💵 *TOTAL ESTIMADO: ${formatCLP(totals.total)}*\n\n`;
   msg += `Quedo atento a la disponibilidad y tiempos de entrega en El Monte / envíos. ¡Muchas gracias!`;
 
   const waUrl = `https://wa.me/56948738454?text=${encodeURIComponent(msg)}`;

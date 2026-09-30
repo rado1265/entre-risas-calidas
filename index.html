@@ -572,9 +572,20 @@
       <div class="flex items-center justify-between">
         <div>
           <span class="block text-base font-bold text-[#3A2E2B]">Total Estimado:</span>
-          <span class="block text-[11px] text-[#8B5A2B]">Incluye descuentos y presentación seleccionada</span>
+          <span id="cart-total-subtitle" class="block text-[11px] text-[#8B5A2B]">Incluye descuentos y presentación seleccionada</span>
         </div>
-        <span id="cart-total-price" class="text-2xl font-extrabold text-[#3A2E2B]">$0</span>
+        <div class="text-right">
+          <span id="cart-total-price" class="text-2xl font-extrabold text-[#3A2E2B]">$0</span>
+          <span id="cart-total-price-notice" class="block text-[10px] text-amber-700 font-bold hidden"></span>
+        </div>
+      </div>
+
+      <!-- Alerta cuando la presentación es 'Por confirmar' -->
+      <div id="cart-presentation-alert" class="hidden bg-amber-50 border border-amber-200/90 rounded-xl p-2.5 text-xs text-amber-900 flex items-start gap-2 shadow-xs">
+        <span class="text-base leading-none">⚠️</span>
+        <div class="text-[11px] leading-tight">
+          <strong class="font-bold text-amber-950">El precio final puede variar:</strong> Al elegir <em>Pack Eventos (+ Por confirmar)</em>, el valor del empaque se definirá directamente por WhatsApp según tus requerimientos.
+        </div>
       </div>
 
       <button id="send-whatsapp-order"
