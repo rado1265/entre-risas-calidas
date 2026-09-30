@@ -1022,24 +1022,33 @@ const QUOTE_CONFIG = {
     {
       id: 'enCaja',
       name: 'En Caja',
-      priceExtra: 200
+      badge: '(Ideal para regalo simple)',
+      desc: 'Incluye caja de cartón kraft.',
+      priceExtra: 200,
+      icon: '📦'
     },
     {
       id: 'personalizado',
-      name: 'En Caja y Etiqueta personalizada',
-      priceExtra: 400
+      name: 'En Caja con Etiqueta Personalizada',
+      badge: '(Regalo único)',
+      desc: 'Incluye caja kraft + etiqueta con tu diseño.',
+      priceExtra: 400,
+      icon: '🏷️'
     },
     {
       id: 'eventos',
-      name: 'Eventos',
-      priceExtra: 600
+      name: 'Pack Eventos',
+      badge: '(Listo para regalar)',
+      desc: 'Incluye caja personalizada + cinta + montaje.',
+      priceExtra: 600,
+      icon: '🎁'
     }
   ],
 
   descuentosCantidad: [
     { min: 51, discount: 15 },
     { min: 21, discount: 12 },
-    { min: 11, discount: 10 }
+    { min: 10, discount: 10 }
   ]
 };
 
@@ -1348,43 +1357,53 @@ function updateQuoteDelivery(deliveryId) {
 }
 
 function getQuoteTotals() {
+  const totalQuantity = cart.reduce((sum, item) => sum + (Number(item.quantity) || 0), 0);
+
+  // Group quantities by product type (productId), regardless of color, size, or variant
+  const productQuantitiesMap = {};
+  cart.forEach(item => {
+    const pid = item.productId || item.cartItemId.split('-')[0];
+    productQuantitiesMap[pid] = (productQuantitiesMap[pid] || 0) + (Number(item.quantity) || 0);
+  });
 
   let subtotal = 0;
   let discountAmount = 0;
+  const discountedProductsMap = {};
 
   const items = cart.map(item => {
+    const quantity = Number(item.quantity) || 1;
+    const unitPrice = Number(item.price) || 0;
+    const pid = item.productId || item.cartItemId.split('-')[0];
+    const totalProductQuantity = productQuantitiesMap[pid] || quantity;
 
-    const quantity =
-      Number(item.quantity) || 1;
-
-    const unitPrice =
-      Number(item.price) || 0;
-
-    const discountPercent =
-      getDiscountByQuantity(quantity);
-
-    const unitDiscount =
-      unitPrice * (discountPercent / 100);
-
-    const discountedUnitPrice =
-      unitPrice - unitDiscount;
-
-    const itemSubtotal =
-      unitPrice * quantity;
-
-    const itemDiscount =
-      unitDiscount * quantity;
-
-    const itemTotal =
-      discountedUnitPrice * quantity;
+    // Discount depends strictly on total quantity of THIS product type
+    const discountPercent = getDiscountByQuantity(totalProductQuantity);
+    const unitDiscount = unitPrice * (discountPercent / 100);
+    const discountedUnitPrice = unitPrice - unitDiscount;
+    const itemSubtotal = unitPrice * quantity;
+    const itemDiscount = unitDiscount * quantity;
+    const itemTotal = discountedUnitPrice * quantity;
 
     subtotal += itemSubtotal;
     discountAmount += itemDiscount;
+
+    if (discountPercent > 0 && itemDiscount > 0) {
+      if (!discountedProductsMap[pid]) {
+        discountedProductsMap[pid] = {
+          name: item.name,
+          discountPercent,
+          discountAmount: 0,
+          totalUnits: totalProductQuantity
+        };
+      }
+      discountedProductsMap[pid].discountAmount += itemDiscount;
+    }
 
     return {
       ...item,
       quantity,
       unitPrice,
+      productTypeQuantity: totalProductQuantity,
       discountPercent,
       unitDiscount,
       discountedUnitPrice,
@@ -1392,34 +1411,22 @@ function getQuoteTotals() {
       itemDiscount,
       itemTotal
     };
-
   });
 
-  const delivery =
-    QUOTE_CONFIG.entregas.find(
-      e => e.id === quoteOptions.deliveryId
-    ) || QUOTE_CONFIG.entregas[0];
+  const delivery = QUOTE_CONFIG.entregas.find(e => e.id === quoteOptions.deliveryId) || QUOTE_CONFIG.entregas[0];
+  const deliveryPerUnit = delivery?.priceExtra || 0;
+  const deliveryAmount = deliveryPerUnit * totalQuantity;
 
-  const deliveryAmount =
-    delivery?.priceExtra || 0;
-
-  const totalQuantity =
-    items.reduce(
-      (sum, item) => sum + item.quantity,
-      0
-    );
-
-  const total =
-    subtotal -
-    discountAmount +
-    deliveryAmount;
+  const total = subtotal - discountAmount + deliveryAmount;
 
   return {
     items,
     subtotal,
     totalQuantity,
     discountAmount,
+    discountedProductsMap,
     delivery,
+    deliveryPerUnit,
     deliveryAmount,
     total
   };
@@ -1747,63 +1754,33 @@ function buildProductOptionsHTML(product, state, isModal = false) {
             <div class="flex flex-wrap gap-1.5 items-center">
               ${visibleColors.map(c => {
         const isSelected =
-          /* c.available !== false && */
           state.selectedColor &&
           state.selectedColor.id === c.id;
+
         const isAvailable = c.available !== false;
 
         return `
-    <button 
-      type="button"
-      onclick="updateProductOption('${product.id}', 'colorId', '${c.id}')"
-      ${isAvailable
-            ? `onclick="updateProductOption('${product.id}', 'colorId', '${c.id}')"`
-            : `onclick="updateProductOption('${product.id}', 'colorId', '${c.id}')"`
-          }
-      class="
-        option-btn 
-        px-2.5 py-1.5 
-        rounded-xl 
-        text-xs 
-        font-semibold 
-        border 
-        transition-all 
-        flex 
-        items-center 
-        gap-1.5
-        relative
-        overflow-hidden
-        ${/* !isAvailable
-            ? 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed opacity-70'
-            :  */isSelected
-            ? 'selected cursor-pointer'
-            : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9] cursor-pointer'
-          }
-      "
-      title="${isAvailable ? c.name : `${c.name} - Solo disponible para cotizar`}"
-      /* {!isAvailable ? 'disabled' : ''} */
-    >
-      <span 
-        class="
-          w-3.5 h-3.5 
-          rounded-full 
-          border border-black/20 
-          shadow-inner 
-          flex-shrink-0
-          /* {!isAvailable ? 'grayscale opacity-50' : ''} */
-        "
-        style="background-color: ${c.hex}"
-      ></span>
+                  <button 
+                    type="button"
+                    onclick="updateProductOption('${product.id}', 'colorId', '${c.id}')"
+                    class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1.5 cursor-pointer relative ${isSelected
+            ? 'selected'
+            : isAvailable
+              ? 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
+              : 'bg-gray-50 text-gray-400 border-gray-200 opacity-60'
+          }"
+                  >
+                    <span class="w-3.5 h-3.5 rounded-full border border-black/10 inline-block flex-shrink-0" style="background-color: ${c.hex}"></span>
+                    <span>${c.name}</span>
+                    ${c.priceExtra > 0 ? `<span class="text-[10px] opacity-75">(+${formatCLP(c.priceExtra)})</span>` : ''}
 
-      <span>${c.name}</span>
-
-      ${!isAvailable ? `
-        <span class="absolute inset-0 pointer-events-none">
-          <span class="absolute w-[140%] h-[1px] bg-gray-400/70 rotate-[-20deg] top-1/2 left-[-20%]"></span>
-        </span>
-      ` : ''}
-    </button>
-  `;
+                    ${!isAvailable ? `
+                      <span class="absolute inset-0 pointer-events-none">
+                        <span class="absolute w-[140%] h-[1px] bg-gray-400/70 rotate-[-20deg] top-1/2 left-[-20%]"></span>
+                      </span>
+                    ` : ''}
+                  </button>
+                `;
       }).join('')}
 
               ${hasMore ? `
@@ -1876,223 +1853,24 @@ function buildProductOptionsHTML(product, state, isModal = false) {
       ` : ''}
 
     </div>
-
-    <!-- ENTREGA -->
-${product.entrega ? `
-  <div>
-    <div class="flex justify-between items-center mb-1.5">
-      <span class="text-[11px] font-bold text-[#8B5A2B] uppercase tracking-wider">
-        Entrega:
-      </span>
-
-      <span class="text-[11px] font-semibold text-[#C86D51]">
-        ${state.selectedEntrega ? state.selectedEntrega.name : ''}
-      </span>
-    </div>
-
-    <div class="grid grid-cols-1 gap-1.5">
-      ${product.entrega.map(e => {
-      const isSelected =
-        state.selectedEntrega &&
-        state.selectedEntrega.id === e.id;
-
-      return `
-          <button
-            type="button"
-            onclick="updateProductOption('${product.id}', 'deliveryId', '${e.id}')"
-            class="
-              option-btn
-              px-3 py-2
-              rounded-xl
-              text-xs
-              font-semibold
-              border
-              transition-all
-              flex
-              items-center
-              justify-between
-              gap-2
-              text-left
-              cursor-pointer
-              ${isSelected
-          ? 'selected'
-          : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
-        }
-            "
-          >
-            <div class="flex items-center gap-1.5">
-              <span class="text-[#C86D51]">
-                ${isSelected ? '●' : '○'}
-              </span>
-
-              <span>${e.name}</span>
-            </div>
-
-            <span class="font-bold text-[#C86D51] whitespace-nowrap">
-              ${e.priceExtra > 0
-          ? `+ ${formatCLP(e.priceExtra)}`
-          : 'Gratis'
-        }
-            </span>
-          </button>
-        `;
-    }).join('')}
-    </div>
-  </div>
-` : ''}
-<!-- CANTIDAD -->
-<!--<div class="mt-4">
-  <label class="block text-sm font-semibold text-gray-700 mb-2">
-    Cantidad
-  </label>
-
-  <div class="flex items-center gap-2">
-    <button
-      type="button"
-      onclick="changeProductQuantity('${product.id}', -1)"
-      class="w-10 h-10 rounded-lg border border-gray-300 bg-white hover:bg-gray-100 flex items-center justify-center font-bold text-lg"
-    >
-      −
-    </button>
-
-    <input
-      id="quantity-${product.id}"
-      type="number"
-      min="1"
-      value="${state.quantity || 1}"
-      onchange="updateProductQuantity('${product.id}', this.value)"
-      class="w-20 h-10 text-center border border-gray-300 rounded-lg font-semibold focus:outline-none focus:ring-2 focus:ring-orange-400"
-    />
-
-    <button
-      type="button"
-      onclick="changeProductQuantity('${product.id}', 1)"
-      class="w-10 h-10 rounded-lg border border-gray-300 bg-white hover:bg-gray-100 flex items-center justify-center font-bold text-lg"
-    >
-      +
-    </button>
-  </div>
-</div>-->
-
-<!-- DESCUENTOS POR CANTIDAD  -->
-${product.descuentosCantidad?.length
-      ? `
-      <!-- <div class="mt-3 p-3 rounded-lg bg-orange-50 border border-orange-200">
-
-        <div class="flex items-center gap-2 mb-2">
-          <span class="text-orange-600 font-semibold text-sm">
-            Descuentos por cantidad
-          </span>
-        </div>
-
-        <div class="space-y-1 text-sm text-gray-700">
-          <div class="flex justify-between">
-            <span>1 - 9 unidades</span>
-            <span class="font-semibold">Sin descuento</span>
-          </div>
-          <div class="flex justify-between">
-            <span>10 - 19 unidades</span>
-            <span class="font-semibold text-green-600">
-              5% descuento
-            </span>
-          </div>
-
-          <div class="flex justify-between">
-            <span>20 - 49 unidades</span>
-            <span class="font-semibold text-green-600">
-              8% descuento
-            </span>
-          </div>
-
-          <div class="flex justify-between">
-            <span>50+ unidades</span>
-            <span class="font-semibold text-green-600">
-              12% descuento
-            </span>
-          </div>
-
-        </div>
-      </div> -->
-    `
-      : ''
-    }
-   
-
-<!-- RESUMEN DEL PRECIO 
-<div class="mt-4 p-4 rounded-xl bg-gray-50 border border-gray-200">
-
-  ${state.discountPercent > 0
-      ? `
-        <div class="flex justify-between text-sm text-gray-500">
-          <span>Precio unitario</span>
-          <span class="line-through">
-            ${formatCLP(state.price)}
-          </span>
-        </div>
-
-        <div class="flex justify-between text-sm text-green-600 mt-1">
-          <span>
-            Descuento (${state.discountPercent}%)
-          </span>
-          <span>
-            -${formatCLP(state.discountAmount)}
-          </span>
-        </div>
-
-        <div class="flex justify-between font-semibold mt-2">
-          <span>Precio unitario con descuento</span>
-          <span class="text-green-600">
-            ${formatCLP(state.discountedPrice)}
-          </span>
-        </div>
-      `
-      : `
-        <div class="flex justify-between">
-          <span>Precio unitario</span>
-          <span class="font-semibold">
-            ${formatCLP(state.price)}
-          </span>
-        </div>
-      `
-    }
-
-  <div class="border-t border-gray-200 mt-3 pt-3 flex justify-between items-center">
-    <span class="font-bold text-gray-800">
-      Total (${state.quantity || 1} unidades)
-    </span>
-
-    <span class="text-xl font-bold text-orange-600">
-      ${formatCLP(
-      (state.discountedPrice || state.price) * (state.quantity || 1)
-    )}
-    </span>
-  </div>
-
-</div>-->
   `;
 }
 
 function updateProductQuantity(productId, quantity) {
   quantity = parseInt(quantity, 10);
-
   if (isNaN(quantity) || quantity < 1) {
     quantity = 1;
   }
-
   if (!selectedOptionsMap[productId]) {
     selectedOptionsMap[productId] = {};
   }
-
   selectedOptionsMap[productId].quantity = quantity;
-
   renderCatalog();
 }
+
 function changeProductQuantity(productId, amount) {
-  const currentQuantity =
-    selectedOptionsMap[productId]?.quantity || 1;
-
+  const currentQuantity = selectedOptionsMap[productId]?.quantity || 1;
   const newQuantity = Math.max(1, currentQuantity + amount);
-
   updateProductQuantity(productId, newQuantity);
 }
 
@@ -2122,7 +1900,6 @@ function buildProductCardHTML(product) {
         <div>
           <div class="flex items-baseline justify-between mb-1 gap-2">
             <h3 class="text-lg font-serif-title font-bold text-[#3A2E2B] group-hover:text-[#C86D51] transition-colors leading-tight">${product.name}</h3>
-            <!-- <span class="product-card-price text-lg font-extrabold text-[#C86D51] whitespace-nowrap">${formatCLP(state.price)}</span> -->
           </div>
           
           <p class="text-xs text-[#8B5A2B] font-medium mb-2 flex items-center gap-1.5">
@@ -2168,167 +1945,58 @@ function buildProductCardHTML(product) {
 
 // CART MANAGEMENT
 function addToCart(productId) {
-
-  const product =
-    PRODUCTS_DATA.find(
-      p => p.id === productId
-    );
-
+  const product = PRODUCTS_DATA.find(p => p.id === productId);
   if (!product) return;
 
-
-  const state =
-    getProductState(product);
-
-
+  const state = getProductState(product);
   const details = [];
 
+  if (state.selectedVariant) details.push(state.selectedVariant.name);
+  if (state.selectedSize) details.push(`Tamaño: ${state.selectedSize.name}`);
+  if (state.selectedColor) details.push(`Color: ${state.selectedColor.name}`);
+  if (state.selectedAroma) details.push(`Aroma: ${state.selectedAroma.name}`);
 
-  if (state.selectedVariant) {
+  const variantLabel = details.join(' · ') || 'Estándar';
+  const cartItemId = `${productId}-${state.selectedSize?.id || ''}-${state.selectedColor?.id || ''}-${state.selectedAroma?.id || ''}-${state.selectedVariant?.id || ''}`;
 
-    details.push(
-      state.selectedVariant.name
-    );
-
-  }
-
-  if (state.selectedSize) {
-
-    details.push(
-      `Tamaño: ${state.selectedSize.name}`
-    );
-
-  }
-
-  if (state.selectedColor) {
-
-    details.push(
-      `Color: ${state.selectedColor.name}`
-    );
-
-  }
-
-  if (state.selectedAroma) {
-
-    details.push(
-      `Aroma: ${state.selectedAroma.name}`
-    );
-
-  }
-
-
-  const variantLabel =
-    details.join(' · ') ||
-    'Estándar';
-
-
-  const cartItemId =
-    `${productId}-${state.selectedSize?.id || ''}-${state.selectedColor?.id || ''}-${state.selectedAroma?.id || ''}-${state.selectedVariant?.id || ''}`;
-
-
-  const existingIndex =
-    cart.findIndex(
-      item =>
-        item.cartItemId === cartItemId
-    );
-
-
-  // ==========================================
-  // YA EXISTE
-  // ==========================================
+  const existingIndex = cart.findIndex(item => item.cartItemId === cartItemId);
 
   if (existingIndex > -1) {
-
     cart[existingIndex].quantity += 1;
-
-  }
-
-
-  // ==========================================
-  // PRODUCTO NUEVO
-  // ==========================================
-
-  else {
-
+  } else {
     cart.push({
-
       cartItemId,
-
-      productId:
-        product.id,
-
-      name:
-        product.name,
-
-      variantName:
-        variantLabel,
-
-      // Precio SIN descuento
-      price:
-        state.price,
-
-      quantity:
-        1,
-
-      image:
-        state.image
-
+      productId: product.id,
+      name: product.name,
+      variantName: variantLabel,
+      price: state.price,
+      quantity: 1,
+      image: state.image
     });
-
   }
-
 
   updateCartBadge();
-
   renderCartDrawer();
-
-
-  showToastNotification(
-    `¡"${product.name}" (${variantLabel}) agregado a tu cotización!`
-  );
+  showToastNotification(`¡"${product.name}" (${variantLabel}) agregado a tu cotización!`);
 }
 
 function removeFromCart(cartItemId) {
-
-  cart =
-    cart.filter(
-      item =>
-        item.cartItemId !== cartItemId
-    );
-
+  cart = cart.filter(item => item.cartItemId !== cartItemId);
   updateCartBadge();
-
   renderCartDrawer();
 }
 
-function updateCartQuantity(
-  cartItemId,
-  delta
-) {
-
-  const item =
-    cart.find(
-      i =>
-        i.cartItemId === cartItemId
-    );
-
-
+function updateCartQuantity(cartItemId, delta) {
+  const item = cart.find(i => i.cartItemId === cartItemId);
   if (!item) return;
 
-
   item.quantity += delta;
-
-
   if (item.quantity <= 0) {
-
     removeFromCart(cartItemId);
-
     return;
   }
 
-
   updateCartBadge();
-
   renderCartDrawer();
 }
 
@@ -2360,506 +2028,284 @@ function closeCartDrawer() {
   }
 }
 
-/* function renderCartDrawer() {
+function renderCartDrawer() {
   const container = document.getElementById('cart-items-list');
   const totalElem = document.getElementById('cart-total-price');
-  if (!container) return;
- 
-  if (cart.length === 0) {
-    container.innerHTML = `
-      <div class="text-center py-12 text-[#6C5C57]">
-        <svg class="w-12 h-12 mx-auto mb-3 text-[#8B5A2B]/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-        <p class="font-medium text-sm">Tu cotización está vacía</p>
-        <p class="text-xs text-[#8B5A2B]/70 mt-1">Explora nuestro catálogo y agrega las piezas que desees.</p>
-      </div>
-    `;
-    if (totalElem) totalElem.textContent = '$0';
-    return;
-  }
- 
-  let total = 0;
-  container.innerHTML = cart.map(item => {
-    const itemTotal = item.price * item.quantity;
-    total += itemTotal;
- 
-    return `
-      <div class="flex items-center gap-3 p-3 bg-white rounded-2xl border border-[#8B5A2B]/10 shadow-sm">
-        <img src="${item.image}" alt="${item.name}" class="w-14 h-14 rounded-xl object-cover" />
-        <div class="flex-1">
-          <h4 class="font-serif-title font-semibold text-sm text-[#3A2E2B] leading-tight">${item.name}</h4>
-          <p class="text-[11px] text-[#8B5A2B]">${item.variantName}</p>
-          <div class="text-xs font-bold text-[#C86D51] mt-1">${formatCLP(itemTotal)}</div>
-        </div>
-        <div class="flex items-center gap-1.5 bg-[#F7EFE5] rounded-xl px-2 py-1">
-          <button onclick="updateCartQuantity('${item.cartItemId}', -1)" class="w-5 h-5 flex items-center justify-center font-bold text-xs text-[#8B5A2B] hover:text-[#C86D51]">-</button>
-          <span class="text-xs font-semibold text-[#3A2E2B] w-4 text-center">${item.quantity}</span>
-          <button onclick="updateCartQuantity('${item.cartItemId}', 1)" class="w-5 h-5 flex items-center justify-center font-bold text-xs text-[#8B5A2B] hover:text-[#C86D51]">+</button>
-        </div>
-        <button onclick="removeFromCart('${item.cartItemId}')" class="text-gray-400 hover:text-red-500 p-1">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-        </button>
-      </div>
-    `;
-  }).join('');
- 
-  if (totalElem) totalElem.textContent = formatCLP(total);
-} */
-
-function renderCartDrawer() {
-
-  const container =
-    document.getElementById('cart-items-list');
-
-  const totalElem =
-    document.getElementById('cart-total-price');
 
   if (!container) return;
 
-
-  // ============================================
-  // COTIZACIÓN VACÍA
-  // ============================================
-
   if (cart.length === 0) {
-
     container.innerHTML = `
-      <div class="text-center py-12 text-[#6C5C57]">
-
-        <svg
-          class="w-12 h-12 mx-auto mb-3 text-[#8B5A2B]/40"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24">
-
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-        </svg>
-
-        <p class="font-medium text-sm">
-          Tu cotización está vacía
-        </p>
-
-        <p class="text-xs text-[#8B5A2B]/70 mt-1">
-          Explora nuestro catálogo y agrega las piezas que desees.
-        </p>
-
+      <div class="text-center py-16 px-4 text-[#6C5C57]">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#F7EFE5] flex items-center justify-center text-[#8B5A2B]/60 text-2xl shadow-inner">
+          🛒
+        </div>
+        <p class="font-serif-title font-bold text-lg text-[#3A2E2B]">Tu cotización está vacía</p>
+        <p class="text-xs text-[#8B5A2B]/80 mt-1 max-w-xs mx-auto">Explora nuestro catálogo artesanal y agrega las piezas que desees para cotizar.</p>
       </div>
     `;
-
     if (totalElem) {
       totalElem.textContent = '$0';
     }
-
     return;
   }
 
-
-  // ============================================
-  // PRODUCTOS
-  // ============================================
-
-  container.innerHTML = cart.map(item => {
-
-    const quantity = Number(item.quantity) || 1;
-    const discountPercent = getDiscountByQuantity(quantity);
-    const discountedUnitPrice =
-      item.price * (1 - discountPercent / 100);
-
-    const itemTotal =
-      discountedUnitPrice * quantity;
-
-    return `
-      <div
-        class="flex items-center gap-3 p-3 bg-white rounded-2xl border border-[#8B5A2B]/10 shadow-sm">
-
-        <img
-          src="${item.image}"
-          alt="${item.name}"
-          class="w-14 h-14 rounded-xl object-cover"
-        />
-
-        <div class="flex-1">
-
-          <h4
-            class="font-serif-title font-semibold text-sm text-[#3A2E2B] leading-tight">
-            ${item.name}
-          </h4>
-
-          <p class="text-[11px] text-[#8B5A2B]">
-            ${item.variantName}
-          </p>
-
-          <div class="text-xs text-[#6C5C57]">
-            ${formatCLP(item.price)} c/u
-          </div>
-
-          <div class="text-xs font-bold text-[#C86D51] mt-1">
-            ${formatCLP(itemTotal)}
-          </div>
-
-        </div>
-
-        <div
-          class="flex items-center gap-1.5 bg-[#F7EFE5] rounded-xl px-2 py-1">
-
-          <button
-            onclick="updateCartQuantity('${item.cartItemId}', -1)"
-            class="w-5 h-5 flex items-center justify-center font-bold text-xs text-[#8B5A2B]">
-            -
-          </button>
-
-          <span
-            class="text-xs font-semibold text-[#3A2E2B] w-4 text-center">
-            ${item.quantity}
-          </span>
-
-          <button
-            onclick="updateCartQuantity('${item.cartItemId}', 1)"
-            class="w-5 h-5 flex items-center justify-center font-bold text-xs text-[#8B5A2B]">
-            +
-          </button>
-
-        </div>
-
-        <button
-          onclick="removeFromCart('${item.cartItemId}')"
-          class="text-gray-400 hover:text-red-500 p-1">
-
-          🗑️
-
-        </button>
-
-      </div>
-    `;
-
-  }).join('');
-
-
-  // ============================================
-  // RESUMEN DE LA COTIZACIÓN
-  // ============================================
-
   const totals = getQuoteTotals();
 
-
-  container.innerHTML += `
-
-    <div
-      class="mt-4 p-4 rounded-2xl bg-[#F7EFE5] border border-[#8B5A2B]/10">
-
-      <div
-        class="flex justify-between items-center mb-3">
-
-        <span class="text-sm text-[#6C5C57]">
-          Cantidad total
-        </span>
-
-        <strong class="text-[#3A2E2B]">
-          ${totals.totalQuantity} unidades
-        </strong>
-
-      </div>
-
-
-      <!-- DESCUENTO GLOBAL -->
-
-      <div class="mb-4">
-
-        <!--<div class="flex justify-between items-center">
-
-          <span class="text-sm text-[#6C5C57]">
-            Descuento por cantidad
-          </span>
-
-          <span class="font-semibold text-green-600">
-            ${totals.discountPercent}%
-          </span>
-
-        </div>-->
-
-        ${totals.discountAmount > 0
-      ? `
-              <div class="flex justify-between text-sm mt-1">
-
-                <span class="text-green-600">
-                  Descuento aplicado
-                </span>
-
-                <span class="font-semibold text-green-600">
-                  -${formatCLP(totals.discountAmount)}
-                </span>
-
-              </div>
-            `
-      : `
-              <p class="text-xs text-[#8B5A2B]/70 mt-1">
-                <strong>Agrega más unidades para obtener descuento.</strong>
-              </p>
-            `
+  // 1. BANNER DE INCENTIVO DE DESCUENTO POR TIPO DE PRODUCTO
+  let bannerHTML = '';
+  const sortedTiers = [...QUOTE_CONFIG.descuentosCantidad].sort((a, b) => a.min - b.min);
+  const productSummaryList = Object.values(totals.discountedProductsMap || {});
+  
+  const productQuantitiesMap = {};
+  cart.forEach(item => {
+    const pid = item.productId || item.cartItemId.split('-')[0];
+    if (!productQuantitiesMap[pid]) {
+      productQuantitiesMap[pid] = { name: item.name, total: 0 };
     }
+    productQuantitiesMap[pid].total += Number(item.quantity) || 0;
+  });
 
-      </div>
-
-
-      <!-- ENTREGA GLOBAL -->
-
-      <div>
-
-        <p class="text-sm font-semibold text-[#3A2E2B] mb-2">
-          Tipo de presentación
-        </p>
-
-        <div class="space-y-2">
-
-          ${QUOTE_CONFIG.entregas.map(entrega => `
-
-            <label
-              class="flex items-center justify-between p-3 rounded-xl bg-white border border-[#8B5A2B]/10 cursor-pointer">
-
-              <div class="flex items-center gap-2">
-
-                <input
-                  type="radio"
-                  name="quote-delivery"
-                  value="${entrega.id}"
-                  ${quoteOptions.deliveryId === entrega.id ? 'checked' : ''}
-                  onchange="updateQuoteDelivery('${entrega.id}')"
-                />
-
-                <span class="text-sm text-[#3A2E2B]">
-                  ${entrega.name}
-                </span>
-
-              </div>
-
-              <span class="text-xs font-semibold text-[#8B5A2B]">
-                ${entrega.priceExtra > 0
-        ? `+${formatCLP(entrega.priceExtra)}`
-        : 'Incluido'
+  let closeToNextTierMessage = '';
+  for (let pid in productQuantitiesMap) {
+    const prod = productQuantitiesMap[pid];
+    const nextTier = sortedTiers.find(t => t.min > prod.total);
+    if (nextTier) {
+      const needed = nextTier.min - prod.total;
+      if (needed <= 15) {
+        closeToNextTierMessage = `Agrega <strong>${needed} ${needed === 1 ? 'unidad más' : 'unidades más'}</strong> de <strong>"${prod.name}"</strong> para obtener <strong>${nextTier.discount}% OFF</strong> en ese artículo.`;
+        break;
       }
-              </span>
+    }
+  }
 
-            </label>
+  if (productSummaryList.length > 0) {
+    const discountNames = productSummaryList.map(p => `${p.name} (${p.discountPercent}% OFF)`).join(', ');
+    bannerHTML = `
+      <div class="p-3.5 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-200/80 shadow-sm mb-4">
+        <div class="flex items-center gap-2 text-xs font-semibold text-emerald-800 mb-1">
+          <span class="text-base">🏷️</span>
+          <span>¡Descuento por Volumen Aplicado!</span>
+        </div>
+        <p class="text-[11px] text-emerald-700 leading-tight">
+          Descuento activo en: <strong>${discountNames}</strong>.
+        </p>
+        ${closeToNextTierMessage ? `
+          <p class="text-[11px] text-[#6C5C57] mt-1.5 pt-1.5 border-t border-emerald-200/60 flex items-center gap-1">
+            <span>💡</span> <span>${closeToNextTierMessage}</span>
+          </p>
+        ` : ''}
+      </div>
+    `;
+  } else {
+    bannerHTML = `
+      <div class="p-3.5 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl border border-amber-200/80 shadow-sm mb-4">
+        <div class="flex items-center justify-between text-xs font-semibold text-[#8B5A2B] mb-1">
+          <span class="flex items-center gap-1.5">
+            <span class="text-base">💡</span>
+            <span>Descuentos por Cantidad por Artículo</span>
+          </span>
+          <span class="text-[#C86D51] font-bold text-[11px]">10+ un. por modelo</span>
+        </div>
+        <p class="text-[11px] text-[#6C5C57] leading-tight">
+          ${closeToNextTierMessage ? closeToNextTierMessage : 'Obtén <strong>10% OFF</strong> al sumar 10 o más unidades de un mismo artículo (combinando variantes o colores).'}
+        </p>
+      </div>
+    `;
+  }
 
-          `).join('')}
+  // 2. CARDS DE PRODUCTOS
+  const itemsHTML = totals.items.map(item => {
+    return `
+      <div class="p-4 bg-white rounded-2xl border border-[#8B5A2B]/12 shadow-sm hover:shadow-md transition-all flex flex-col gap-3">
+        <div class="flex items-start gap-3">
+          <img src="${item.image}" alt="${item.name}" class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover border border-gray-100 flex-shrink-0" />
+          
+          <div class="flex-1 min-w-0">
+            <h4 class="font-serif-title font-bold text-base text-[#3A2E2B] leading-tight truncate">${item.name}</h4>
+            <p class="text-xs text-[#8B5A2B] font-medium mt-0.5">${item.variantName}</p>
+            
+            <div class="flex items-baseline gap-2 mt-1.5">
+              <span class="text-xs text-[#6C5C57] font-medium">${formatCLP(item.unitPrice)} c/u</span>
+              ${item.discountPercent > 0 ? `
+                <span class="text-[10px] text-gray-400 line-through">${formatCLP(item.unitPrice)}</span>
+              ` : ''}
+            </div>
+          </div>
 
+          <button onclick="removeFromCart('${item.cartItemId}')" title="Eliminar producto" class="text-gray-300 hover:text-red-500 p-1.5 transition-colors rounded-lg hover:bg-red-50">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+          </button>
         </div>
 
+        <!-- Price Breakdown & Quantity Controls -->
+        <div class="flex items-center justify-between pt-2.5 border-t border-gray-100 mt-0.5">
+          <div>
+            <div class="text-[11px] text-gray-400 font-medium">Total Price</div>
+            <div class="text-base font-bold text-[#3A2E2B]">${formatCLP(item.itemTotal)}</div>
+          </div>
+
+          ${item.itemDiscount > 0 ? `
+            <div class="bg-emerald-50 border border-emerald-200 text-emerald-700 text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
+              <span>🏷️</span>
+              <span>Descuento Aplicado (-${formatCLP(item.itemDiscount)})</span>
+            </div>
+          ` : ''}
+
+          <div class="flex items-center gap-2 bg-[#F7EFE5] rounded-xl px-2.5 py-1 border border-[#8B5A2B]/15">
+            <button onclick="updateCartQuantity('${item.cartItemId}', -1)" class="w-6 h-6 flex items-center justify-center font-bold text-sm text-[#8B5A2B] hover:text-[#C86D51] transition-colors">-</button>
+            <span class="text-xs font-bold text-[#3A2E2B] w-5 text-center">${item.quantity}</span>
+            <button onclick="updateCartQuantity('${item.cartItemId}', 1)" class="w-6 h-6 flex items-center justify-center font-bold text-sm text-[#8B5A2B] hover:text-[#C86D51] transition-colors">+</button>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // 3. RESUMEN DEL PEDIDO
+  const discountDetails = productSummaryList.map(p => p.name).join(', ');
+
+  const summaryHTML = `
+    <div class="mt-6 p-4 sm:p-5 rounded-2xl bg-[#F7EFE5]/90 border border-[#8B5A2B]/15 space-y-4 shadow-sm">
+      <h4 class="font-serif-title font-bold text-sm text-[#3A2E2B] uppercase tracking-wider border-b border-[#8B5A2B]/15 pb-2 flex items-center justify-between">
+        <span>RESUMEN DEL PEDIDO</span>
+        <span class="text-xs font-normal lowercase text-[#8B5A2B]">(${totals.totalQuantity} ${totals.totalQuantity === 1 ? 'unidad' : 'unidades'})</span>
+      </h4>
+
+      <div class="space-y-2.5 text-xs">
+        <div class="flex justify-between items-center text-[#6C5C57]">
+          <span>Cantidad total:</span>
+          <span class="font-semibold text-[#3A2E2B]">(${totals.totalQuantity} unidades)</span>
+        </div>
+
+        <div class="flex justify-between items-center text-[#6C5C57]">
+          <span>Subtotal Productos:</span>
+          <span class="font-semibold text-[#3A2E2B]">${formatCLP(totals.subtotal)}</span>
+        </div>
+
+        ${totals.discountAmount > 0 ? `
+          <div class="flex justify-between items-center bg-[#258B47] text-white p-2.5 rounded-xl font-medium shadow-sm">
+            <span class="font-semibold flex items-center gap-1.5 text-xs">
+              <span>🏷️</span>
+              <span>Descuento por Volumen ${discountDetails ? `(${discountDetails})` : ''}:</span>
+            </span>
+            <span class="font-extrabold text-sm">-${formatCLP(totals.discountAmount)}</span>
+          </div>
+
+          <div class="flex justify-between items-center text-[#3A2E2B] font-medium pt-0.5">
+            <span>Subtotal (después de descuento):</span>
+            <span class="font-bold text-sm text-[#3A2E2B]">${formatCLP(totals.subtotal - totals.discountAmount)}</span>
+          </div>
+        ` : ''}
+
+        ${totals.deliveryAmount > 0 ? `
+          <div class="flex justify-between items-center text-[#6C5C57] pt-1">
+            <span>Presentación (${totals.delivery.name}):</span>
+            <span class="font-semibold text-[#8B5A2B]">+${formatCLP(totals.deliveryAmount)}</span>
+          </div>
+        ` : ''}
       </div>
 
-    </div>
+      <!-- PERSONALIZACIÓN DE LA PRESENTACIÓN -->
+      <div class="pt-3 border-t border-[#8B5A2B]/15">
+        <div class="mb-3">
+          <h5 class="text-xs font-bold text-[#3A2E2B] uppercase tracking-wider flex items-center gap-1.5">
+            <span>🎁</span>
+            <span>PERSONALIZACIÓN DE LA PRESENTACIÓN</span>
+          </h5>
+          <p class="text-[11px] text-[#8B5A2B] mt-0.5">Selecciona el tipo de empaque para tus piezas:</p>
+        </div>
 
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+          ${QUOTE_CONFIG.entregas.map(entrega => {
+            const isSelected = quoteOptions.deliveryId === entrega.id;
+            return `
+              <div 
+                onclick="updateQuoteDelivery('${entrega.id}')"
+                class="relative cursor-pointer p-3 rounded-2xl border transition-all flex flex-col justify-between ${
+                  isSelected 
+                    ? 'bg-[#FFFDF9] border-[#C86D51] ring-2 ring-[#C86D51]/20 shadow-md' 
+                    : 'bg-white/80 border-[#8B5A2B]/20 hover:border-[#C86D51]/40 hover:bg-white'
+                }"
+              >
+                ${isSelected ? `
+                  <span class="absolute -top-2.5 right-2 bg-[#C86D51] text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow-sm flex items-center gap-1">
+                    Seleccionado 🎖️
+                  </span>
+                ` : ''}
 
-    <!-- RESUMEN FINAL -->
+                <div>
+                  <div class="flex items-center gap-1.5 mb-1">
+                    <span class="text-xl">${entrega.icon}</span>
+                    <h6 class="font-bold text-xs text-[#3A2E2B] leading-tight">${entrega.name}</h6>
+                  </div>
+                  <p class="text-[10px] text-[#8B5A2B] font-semibold mb-1">${entrega.badge}</p>
+                  <p class="text-[10px] text-[#6C5C57] leading-tight">${entrega.desc}</p>
+                </div>
 
-    <div class="mt-4 px-1 space-y-2">
-
-      <div class="flex justify-between text-sm">
-
-        <span class="text-[#6C5C57]">
-          Subtotal
-        </span>
-
-        <span>
-          ${formatCLP(totals.subtotal)}
-        </span>
-
+                <div class="mt-2.5 pt-2 border-t border-[#8B5A2B]/10 flex items-center justify-between text-[11px] font-bold text-[#C86D51]">
+                  <span>+${formatCLP(entrega.priceExtra)} c/u.</span>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
       </div>
-
-
-     <div class="flex justify-between text-sm text-green-600">
-        <span>
-          Descuento total
-        </span>
-
-        <span>
-          -${formatCLP(totals.discountAmount)}
-        </span>
-      </div>
-
-      <div class="flex justify-between text-sm">
-
-        <span class="text-[#6C5C57]">
-          Entrega
-        </span>
-
-        <span>
-          +${formatCLP(totals.deliveryAmount)}
-        </span>
-
-      </div>
-
     </div>
   `;
 
+  container.innerHTML = bannerHTML + itemsHTML + summaryHTML;
 
   if (totalElem) {
-
-    totalElem.textContent =
-      formatCLP(totals.total);
-
+    totalElem.textContent = formatCLP(totals.total);
   }
 }
 
-/* function sendConsolidatedWhatsAppOrder() {
+function sendConsolidatedWhatsAppOrder() {
   if (cart.length === 0) {
     alert('Tu lista de cotización está vacía.');
     return;
   }
- 
+
+  const totals = getQuoteTotals();
+
   let msg = `✨ *Hola Entre Risas Cálidas!* Quisiera realizar la siguiente cotización / pedido:\n\n`;
-  let total = 0;
- 
-  cart.forEach((item, idx) => {
-    const itemTotal = item.price * item.quantity;
-    total += itemTotal;
+
+  totals.items.forEach((item, idx) => {
     msg += `*${idx + 1}. ${item.name}* (x${item.quantity})\n`;
-    msg += `   • Detalles: ${item.variantName}\n`;
-    msg += `   • Subtotal: ${formatCLP(itemTotal)}\n\n`;
-  });
- 
-  msg += `💰 *TOTAL ESTIMADO: ${formatCLP(total)}*\n\n`;
-  msg += `Quedo atento a la disponibilidad y tiempos de entrega en El Monte / envíos. ¡Muchas gracias!`;
- 
-  const waUrl = `https://wa.me/56948738454?text=${encodeURIComponent(msg)}`;
-  window.open(waUrl, '_blank');
-} */
-
-function sendConsolidatedWhatsAppOrder() {
-
-  if (cart.length === 0) {
-
-    alert(
-      'Tu lista de cotización está vacía.'
-    );
-
-    return;
-  }
-
-
-  const totals =
-    getQuoteTotals();
-
-
-  let msg =
-    `✨ *Hola Entre Risas Cálidas!* ` +
-    `Quisiera realizar la siguiente ` +
-    `cotización / pedido:\n\n`;
-
-
-  // ==========================================
-  // PRODUCTOS
-  // ==========================================
-
-  totals.items.forEach(
-    (item, idx) => {
-
-      msg +=
-        `*${idx + 1}. ${item.name}* ` +
-        `(x${item.quantity})\n`;
-
-
-      if (item.variantName) {
-
-        msg +=
-          `   • Detalles: ` +
-          `${item.variantName}\n`;
-
-      }
-
-
-      msg +=
-        `   • Precio unitario: ` +
-        `${formatCLP(item.unitPrice)}\n`;
-
-
-      // Mostrar descuento SOLO si corresponde
-      if (item.discountPercent > 0) {
-
-        msg +=
-          `   • Descuento: ` +
-          `${item.discountPercent}%\n`;
-
-        msg +=
-          `   • Precio unitario con descuento: ` +
-          `${formatCLP(item.discountedUnitPrice)}\n`;
-
-        msg +=
-          `   • Descuento aplicado: ` +
-          `-${formatCLP(item.itemDiscount)}\n`;
-
-      }
-
-
-      msg +=
-        `   • Subtotal: ` +
-        `${formatCLP(item.itemSubtotal)}\n`;
-
-
-      msg +=
-        `   • Total producto: ` +
-        `${formatCLP(item.itemTotal)}\n\n`;
-
+    if (item.variantName) {
+      msg += `   • Detalles: ${item.variantName}\n`;
     }
-  );
+    msg += `   • Precio unitario: ${formatCLP(item.unitPrice)}\n`;
 
+    if (item.discountPercent > 0) {
+      msg += `   • Descuento por cantidad (${item.discountPercent}%): -${formatCLP(item.itemDiscount)}\n`;
+      msg += `   • Precio unitario c/desc: ${formatCLP(item.discountedUnitPrice)}\n`;
+    }
 
-  // ==========================================
-  // RESUMEN
-  // ==========================================
+    msg += `   • Total producto: ${formatCLP(item.itemTotal)}\n\n`;
+  });
 
-  msg +=
-    `📦 *Cantidad total:* ` +
-    `${totals.totalQuantity} unidades\n`;
-
-
-  msg +=
-    `💰 *Subtotal:* ` +
-    `${formatCLP(totals.subtotal)}\n`;
-
+  msg += `📋 *RESUMEN DEL PEDIDO:*\n`;
+  msg += `📦 *Cantidad total:* ${totals.totalQuantity} unidades\n`;
+  msg += `💰 *Subtotal productos:* ${formatCLP(totals.subtotal)}\n`;
 
   if (totals.discountAmount > 0) {
-
-    msg +=
-      `🏷️ *Descuento total:* ` +
-      `-${formatCLP(totals.discountAmount)}\n`;
-
+    const discountedNames = Object.values(totals.discountedProductsMap || {}).map(p => p.name).join(', ');
+    msg += `🏷️ *Descuento total por volumen ${discountedNames ? `(${discountedNames})` : ''}:* -${formatCLP(totals.discountAmount)}\n`;
+    msg += `💲 *Subtotal c/descuento:* ${formatCLP(totals.subtotal - totals.discountAmount)}\n`;
   }
 
+  msg += `🎁 *Presentación:* ${totals.delivery.name} (+${formatCLP(totals.delivery.priceExtra)} c/u)\n`;
+  if (totals.deliveryAmount > 0) {
+    msg += `🚚 *Costo presentación:* +${formatCLP(totals.deliveryAmount)}\n`;
+  }
 
-  msg +=
-    `📦 *Entrega:* ` +
-    `${totals.delivery.name}\n`;
+  msg += `\n💵 *TOTAL ESTIMADO: ${formatCLP(totals.total)}*\n\n`;
+  msg += `Quedo atento a la disponibilidad y tiempos de entrega en El Monte / envíos. ¡Muchas gracias!`;
 
-
-  msg +=
-    `🚚 *Costo entrega:* ` +
-    `+${formatCLP(totals.deliveryAmount)}\n\n`;
-
-
-  msg +=
-    `💵 *TOTAL ESTIMADO:* ` +
-    `${formatCLP(totals.total)}\n\n`;
-
-
-  msg +=
-    `Quedo atento a la disponibilidad ` +
-    `y tiempos de entrega en El Monte / ` +
-    `envíos. ¡Muchas gracias!`;
-
-
-  const waUrl =
-    `https://wa.me/56948738454?text=` +
-    `${encodeURIComponent(msg)}`;
-
-
-  window.open(
-    waUrl,
-    '_blank'
-  );
+  const waUrl = `https://wa.me/56948738454?text=${encodeURIComponent(msg)}`;
+  window.open(waUrl, '_blank');
 }
 
 // PRODUCT DETAIL & LITHOPHANE PREVIEW MODAL
