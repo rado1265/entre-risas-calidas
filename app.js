@@ -273,12 +273,12 @@ const PRODUCTS_DATA = [
       { id: '18cm', name: '12 cm x 11,5 cm', priceExtra: 0, image: 'assets/decoracion/corazon/bandeja corazon gris.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, imagen: 'assets/decoracion/corazon/bandeja corazon gris.png' },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/corazon/bandeja corazon gris.png' },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, image: 'assets/decoracion/corazon/bandeja corazon rojo.png' },
       { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, available: false },
       { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200, available: false }
     ]
   },
@@ -900,11 +900,11 @@ const PRODUCTS_DATA = [
   },
   {
     id: 'angelitos-parafina',
-    name: 'Angelitos en Cera',
+    name: 'Ángel/Angelita Vela Parafina',
     category: 'velas',
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 10 cm alto aprox.',
-    description: 'Escultura delicada de ángel en cera. Ideal para recuerditos de bautizo o primera comunión.',
+    description: 'Escultura delicada de ángel. Ideal para recuerditos de bautizo o primera comunión.',
     image: 'assets/vela/moldes/angel parafina.png',
     isCandle: true,
     sizes: [
@@ -1024,7 +1024,7 @@ const QUOTE_CONFIG = {
       name: 'En Caja',
       badge: '(Ideal para regalo simple)',
       desc: 'Incluye caja de cartón kraft.',
-      priceExtra: 200,
+      priceExtra: 300,
       icon: '📦'
     },
     {
@@ -1032,7 +1032,7 @@ const QUOTE_CONFIG = {
       name: 'En Caja con Etiqueta Personalizada',
       badge: '(Regalo único)',
       desc: 'Incluye caja kraft + etiqueta con tu diseño.',
-      priceExtra: 400,
+      priceExtra: 500,
       icon: '🏷️'
     },
     {
@@ -1040,7 +1040,7 @@ const QUOTE_CONFIG = {
       name: 'Pack Eventos',
       badge: '(Listo para regalar)',
       desc: 'Incluye caja personalizada + cinta + montaje.',
-      priceExtra: 600,
+      priceExtra: 0,
       icon: '🎁'
     }
   ],
@@ -2056,7 +2056,7 @@ function renderCartDrawer() {
   let bannerHTML = '';
   const sortedTiers = [...QUOTE_CONFIG.descuentosCantidad].sort((a, b) => a.min - b.min);
   const productSummaryList = Object.values(totals.discountedProductsMap || {});
-  
+
   const productQuantitiesMap = {};
   cart.forEach(item => {
     const pid = item.productId || item.cartItemId.split('-')[0];
@@ -2126,7 +2126,7 @@ function renderCartDrawer() {
             <p class="text-xs text-[#8B5A2B] font-medium mt-0.5">${item.variantName}</p>
             
             <div class="flex items-baseline gap-2 mt-1.5">
-              <span class="text-xs text-[#6C5C57] font-medium">${formatCLP(item.unitPrice)} c/u</span>
+              <span class="text-xs text-[#6C5C57] font-medium">${item.discountPercent > 0 ? formatCLP(item.unitPrice * (1 - item.discountPercent / 100)) : formatCLP(item.unitPrice)} c/u</span>
               ${item.discountPercent > 0 ? `
                 <span class="text-[10px] text-gray-400 line-through">${formatCLP(item.unitPrice)}</span>
               ` : ''}
@@ -2218,15 +2218,14 @@ function renderCartDrawer() {
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
           ${QUOTE_CONFIG.entregas.map(entrega => {
-            const isSelected = quoteOptions.deliveryId === entrega.id;
-            return `
+    const isSelected = quoteOptions.deliveryId === entrega.id;
+    return `
               <div 
                 onclick="updateQuoteDelivery('${entrega.id}')"
-                class="relative cursor-pointer p-3 rounded-2xl border transition-all flex flex-col justify-between ${
-                  isSelected 
-                    ? 'bg-[#FFFDF9] border-[#C86D51] ring-2 ring-[#C86D51]/20 shadow-md' 
-                    : 'bg-white/80 border-[#8B5A2B]/20 hover:border-[#C86D51]/40 hover:bg-white'
-                }"
+                class="relative cursor-pointer p-3 rounded-2xl border transition-all flex flex-col justify-between ${isSelected
+        ? 'bg-[#FFFDF9] border-[#C86D51] ring-2 ring-[#C86D51]/20 shadow-md'
+        : 'bg-white/80 border-[#8B5A2B]/20 hover:border-[#C86D51]/40 hover:bg-white'
+      }"
               >
                 ${isSelected ? `
                   <span class="absolute -top-2.5 right-2 bg-[#C86D51] text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow-sm flex items-center gap-1">
@@ -2244,11 +2243,11 @@ function renderCartDrawer() {
                 </div>
 
                 <div class="mt-2.5 pt-2 border-t border-[#8B5A2B]/10 flex items-center justify-between text-[11px] font-bold text-[#C86D51]">
-                  <span>+${formatCLP(entrega.priceExtra)} c/u.</span>
+                  <span>+${entrega.priceExtra == 0 ? ' Por confirmar' : (formatCLP(entrega.priceExtra) + ' c/u.')}</span>
                 </div>
               </div>
             `;
-          }).join('')}
+  }).join('')}
         </div>
       </div>
     </div>
