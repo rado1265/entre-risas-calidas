@@ -1422,7 +1422,7 @@ function getQuoteTotals() {
   });
 
   const delivery = QUOTE_CONFIG.entregas.find(e => e.id === quoteOptions.deliveryId) || QUOTE_CONFIG.entregas[0];
-  const deliveryPerUnit = delivery?.priceExtra || 0;
+  const deliveryPerUnit = (delivery?.priceExtra && delivery.priceExtra > 0) ? delivery.priceExtra : 0;
   const deliveryAmount = deliveryPerUnit * totalQuantity;
 
   const total = subtotal - discountAmount + deliveryAmount;
@@ -2329,6 +2329,12 @@ function renderCartDrawer() {
   const alertElem = document.getElementById('cart-presentation-alert');
   if (alertElem) {
     if (isPendingDelivery) {
+      alertElem.innerHTML = `
+        <span class="text-base leading-none">⚠️</span>
+        <div class="text-[11px] leading-tight">
+          <strong class="font-bold text-amber-950">El precio final puede variar:</strong> Al elegir <em>${totals.delivery.name}</em>, el valor del empaque se definirá directamente por WhatsApp según tus requerimientos.
+        </div>
+      `;
       alertElem.classList.remove('hidden');
     } else {
       alertElem.classList.add('hidden');
@@ -2374,9 +2380,10 @@ function sendConsolidatedWhatsAppOrder() {
   if (totals.delivery.priceExtra === -1) {
     msg += `🎁 *Presentación:* ${totals.delivery.name} _(*Por confirmar / a cotizar*)_\n`;
     msg += `\n💵 *TOTAL ESTIMADO BASE: ${formatCLP(totals.total)}* _(+ empaque por confirmar)_\n`;
-    msg += `⚠️ *Nota:* El valor final podría variar ya que la presentación seleccionada fue "${totals.delivery.name} (+ Por Confirmar)".\n\n`;
+    msg += `⚠️ *Nota:* El valor final podría variar ya que la presentación seleccionada fue "${totals.delivery.name}".\n\n`;
   } else {
-    msg += `🎁 *Presentación:* ${totals.delivery.name} (+${formatCLP(totals.delivery.priceExtra)} c/u)\n`;
+    const extraLabel = totals.delivery.priceExtra > 0 ? ` (+${formatCLP(totals.delivery.priceExtra)} c/u)` : ` (Sin costo adicional)`;
+    msg += `🎁 *Presentación:* ${totals.delivery.name}${extraLabel}\n`;
     if (totals.deliveryAmount > 0) {
       msg += `🚚 *Costo presentación:* +${formatCLP(totals.deliveryAmount)}\n`;
     }
