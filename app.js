@@ -23,12 +23,22 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0/* , image: 'assets/decoracion/contraluz/contraluz estrella.png' */ },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 150, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 150, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 150, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 150, available: false },
       { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 150, available: false },
       { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 150, available: false }
-    ]
+    ]/* ,
+    entrega: [
+      { id: 'enCaja', name: 'En Caja', priceExtra: 200 },
+      { id: 'personalizado', name: 'En Caja y etiqueta personalizada', priceExtra: 400 },
+      { id: 'recibir', name: 'Eventos', priceExtra: 600 }
+    ], descuentosCantidad: [
+      { min: 50, discount: 12 },
+      { min: 20, discount: 8 },
+      { min: 10, discount: 5 }
+    ] */
   }, {
     id: 'joyero-corazon',
     name: 'Corazón portavela',
@@ -36,20 +46,21 @@ const PRODUCTS_DATA = [
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: '11 cm × 9,5 cm',
     description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería.',
-    image: 'assets/decoracion/joyeros/corazon.png',
+    image: 'assets/decoracion/joyeros/corazon gris.png',
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 1490, image: 'assets/decoracion/joyeros/corazon.png' },
-      { id: 'Cemento', name: 'Cemento', price: 3490, image: 'assets/decoracion/joyeros/corazon.png' },
+      { id: 'Yeso', name: 'Yeso', price: 1490, image: 'assets/decoracion/joyeros/corazon gris.png' },
+      { id: 'Cemento', name: 'Cemento', price: 3490, image: 'assets/decoracion/joyeros/corazon gris.png' },
     ],
     sizes: [
-      { id: 'estandar', name: '11 cm × 9,5 cm', price: 0, image: 'assets/decoracion/joyeros/corazon.png' }
+      { id: 'estandar', name: '11 cm × 9,5 cm', price: 0, image: 'assets/decoracion/joyeros/corazon gris.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/corazon.png' },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/corazon gris.png' },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, image: 'assets/decoracion/joyeros/corazon rojo.png' },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, available: false },
       { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200, available: false }
     ]
   }, {
@@ -69,6 +80,7 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/flor.png' },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
@@ -92,6 +104,7 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/mariposa gris.png' },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
@@ -106,20 +119,21 @@ const PRODUCTS_DATA = [
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: '14 cm × 10 cm',
     description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas o llaves.',
-    image: 'assets/decoracion/tortuga/tortuga.png',
+    image: 'assets/decoracion/tortuga/tortuga gris.png',
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 2100, image: 'assets/decoracion/tortuga/tortuga.png' },
-      { id: 'Cemento', name: 'Cemento', price: 4990, image: 'assets/decoracion/tortuga/tortuga.png' },
+      { id: 'Yeso', name: 'Yeso', price: 2100, image: 'assets/decoracion/tortuga/tortuga gris.png' },
+      { id: 'Cemento', name: 'Cemento', price: 4990, image: 'assets/decoracion/tortuga/tortuga gris.png' },
     ],
     sizes: [
-      { id: 'estandar', name: '14 cm × 10 cm', price: 0, image: 'assets/decoracion/tortuga/tortuga.png' }
+      { id: 'estandar', name: '14 cm × 10 cm', price: 0, image: 'assets/decoracion/tortuga/tortuga gris.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/tortuga/tortuga.png' },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/tortuga/tortuga gris.png' },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 400, image: 'assets/decoracion/tortuga/tortuga rojo.png' },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 400, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 400, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 400, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 400, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 400, available: false },
       { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 400, available: false }
     ]
   },
@@ -140,6 +154,7 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/taichi.png' },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
@@ -163,6 +178,7 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/frasco.png' },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 150, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 150, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 150, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 150, available: false },
@@ -186,7 +202,8 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/love infinito.png' },
-     { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 300, available: false },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 300, available: false },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 300, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 300, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 300, available: false },
       { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 300, available: false },
@@ -209,6 +226,7 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/buda/buda.png' },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
@@ -222,16 +240,17 @@ const PRODUCTS_DATA = [
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: 'Ø8 cm',
     description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería.',
-    image: 'assets/decoracion/joyeros/loto.png',
+    image: 'assets/decoracion/joyeros/loto gris.png',
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 990, image: 'assets/decoracion/joyeros/loto.png' },
-      { id: 'Cemento', name: 'Cemento', price: 2390, image: 'assets/decoracion/joyeros/loto.png' },
+      { id: 'Yeso', name: 'Yeso', price: 990, image: 'assets/decoracion/joyeros/loto gris.png' },
+      { id: 'Cemento', name: 'Cemento', price: 2390, image: 'assets/decoracion/joyeros/loto gris.png' },
     ],
     sizes: [
-      { id: 'estandar', name: 'Ø8 cm', price: 0, image: 'assets/decoracion/joyeros/loto.png' }
+      { id: 'estandar', name: 'Ø8 cm', price: 0, image: 'assets/decoracion/joyeros/loto gris.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/loto.png' },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/loto gris.png' },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 150, image: 'assets/decoracion/joyeros/loto cafe.png' },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 150, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 150, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 150, available: false },
@@ -255,6 +274,7 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, imagen: 'assets/decoracion/corazon/bandeja corazon gris.png' },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
@@ -282,7 +302,8 @@ const PRODUCTS_DATA = [
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/redondo/ovalado mediano blanco.png' },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, image: 'assets/decoracion/redondo/ovalado mediano verde.png' },
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E',  priceExtra: 200, available: false  },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200, available: false },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 200, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
       { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, available: false },
       { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200, available: false }
@@ -306,6 +327,7 @@ const PRODUCTS_DATA = [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/gato/gato blanco.png' },
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 300, image: 'assets/decoracion/gato/gato gris.png' },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 300, image: 'assets/decoracion/gato/gato amarillo.png' },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 300, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 300, available: false },
       { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 300, available: false },
       { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 300, available: false }
@@ -328,7 +350,8 @@ const PRODUCTS_DATA = [
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/hoja/hoja blanca.png' },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 300, image: 'assets/decoracion/hoja/hoja amarilla.png' },
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 300, available: false  },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 300, image: 'assets/decoracion/hoja/hoja cafe.png' },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 300, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 300, available: false },
       { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 300, available: false },
       { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 300, available: false }
@@ -351,6 +374,7 @@ const PRODUCTS_DATA = [
     colors: [
 
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/hornillo/hornillo gris.png', },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 300, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 300, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 300, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 300, available: false },
@@ -376,7 +400,8 @@ const PRODUCTS_DATA = [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalado blanco.png' },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, image: 'assets/decoracion/ovalado/ovalado amarillo.png' },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, image: 'assets/decoracion/ovalado/ovalado verde.png' },
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 200, available: false  },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200, available: false },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 200, available: false },
       { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, available: false },
       { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200, available: false }
     ]
@@ -396,10 +421,11 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalada doble gris.png' },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, image: 'assets/decoracion/ovalado/ovalada doble rojo.png' },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, available: false },
       { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200, available: false }
     ]
   }, {
@@ -418,6 +444,7 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/bandejanube/bandeja nube.png' },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 300, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 300, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 300, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 300, available: false },
@@ -441,7 +468,8 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/redondocontapa/redondo tapa blanco.png' },
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 150, available: false  },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 150, available: false },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 150, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 150, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 150, available: false },
       { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 150, available: false },
@@ -464,7 +492,8 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.png' },
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 150, available: false  },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 150, available: false },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 150, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 150, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 150, available: false },
       { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 150, available: false },
@@ -984,6 +1013,42 @@ let selectedOptionsMap = {}; // { productId: { sizeId, colorId, aromaId, variant
 let expandedColorsMap = {}; // { productId: boolean }
 let cart = []; // Array of cart items
 
+// ============================================
+// CONFIGURACIÓN GLOBAL DE LA COTIZACIÓN
+// ============================================
+
+const QUOTE_CONFIG = {
+  entregas: [
+    {
+      id: 'enCaja',
+      name: 'En Caja',
+      priceExtra: 200
+    },
+    {
+      id: 'personalizado',
+      name: 'En Caja y Etiqueta personalizada',
+      priceExtra: 400
+    },
+    {
+      id: 'eventos',
+      name: 'Eventos',
+      priceExtra: 600
+    }
+  ],
+
+  descuentosCantidad: [
+    { min: 51, discount: 15 },
+    { min: 21, discount: 12 },
+    { min: 11, discount: 10 }
+  ]
+};
+
+// Estado de la cotización
+let quoteOptions = {
+  deliveryId: 'enCaja'
+};
+
+
 // PAGINATION STATE
 let currentPage = 1;
 const ITEMS_PER_PAGE = 12;
@@ -1048,62 +1113,315 @@ function setupEventListeners() {
 }
 
 function getProductState(product) {
-  const options = selectedOptionsMap[product.id] || {};
-  const selectedMaterial = product.material?.find(s => s.id === options.materialId) || product.material?.[0] || null;
-  const selectedDiseño = product.diseño?.find(s => s.id === options.diseñoId) || product.diseño?.[0] || null;
-  const selectedSize = product.sizes?.find(s => s.id === options.sizeId) || product.sizes?.[0] || null;
-  const selectedColor = product.colors?.find(c => c.id === options.colorId) || product.colors?.[0] || null;
-  const selectedAroma = product.aromas?.find(a => a.id === options.aromaId) || product.aromas?.[0] || null;
-  const selectedVariant = product.variants?.find(v => v.id === options.variantId) || product.variants?.[0] || null;
 
-  // Calculate total price based on selected size / variant + extras
+  const options = selectedOptionsMap[product.id] || {};
+
+  const selectedMaterial =
+    product.material?.find(
+      s => s.id === options.materialId
+    ) ||
+    product.material?.[0] ||
+    null;
+
+  const selectedDiseño =
+    product.diseño?.find(
+      s => s.id === options.diseñoId
+    ) ||
+    product.diseño?.[0] ||
+    null;
+
+  const selectedSize =
+    product.sizes?.find(
+      s => s.id === options.sizeId
+    ) ||
+    product.sizes?.[0] ||
+    null;
+
+  const selectedColor =
+    product.colors?.find(
+      c => c.id === options.colorId
+    ) ||
+    product.colors?.[0] ||
+    null;
+
+  const selectedAroma =
+    product.aromas?.find(
+      a => a.id === options.aromaId
+    ) ||
+    product.aromas?.[0] ||
+    null;
+
+  const selectedVariant =
+    product.variants?.find(
+      v => v.id === options.variantId
+    ) ||
+    product.variants?.[0] ||
+    null;
+
+
+  // ==========================================
+  // PRECIO BASE
+  // ==========================================
+
   let price = 0;
+
   if (selectedVariant) {
-    price = selectedVariant.price;
+
+    price = selectedVariant.price || 0;
+
   } else if (selectedMaterial) {
+
     price = selectedMaterial.price || 0;
+
   } else if (selectedSize) {
+
     price = selectedSize.price || 0;
+
   } else {
+
     price = product.price || 0;
+
   }
 
-  if (selectedSize && selectedSize.priceExtra && !selectedVariant) {
+
+  // ==========================================
+  // EXTRAS
+  // ==========================================
+
+  if (
+    selectedSize &&
+    selectedSize.priceExtra &&
+    !selectedVariant
+  ) {
     price += selectedSize.priceExtra;
   }
-  if (selectedDiseño && selectedDiseño.priceExtra) {
+
+  if (
+    selectedDiseño &&
+    selectedDiseño.priceExtra
+  ) {
     price += selectedDiseño.priceExtra;
   }
-  if (selectedColor && selectedColor.priceExtra) {
+
+  if (
+    selectedColor &&
+    selectedColor.priceExtra
+  ) {
     price += selectedColor.priceExtra;
   }
-  if (selectedAroma && selectedAroma.priceExtra) {
+
+  if (
+    selectedAroma &&
+    selectedAroma.priceExtra
+  ) {
     price += selectedAroma.priceExtra;
   }
 
-  // Calculate dynamic image
+
+  // ==========================================
+  // CANTIDAD DEL PRODUCTO
+  // ==========================================
+
+  const quantity =
+    Number(options.quantity) || 1;
+
+
+  // ==========================================
+  // DESCUENTO DEL PRODUCTO
+  // ==========================================
+
+  const discountPercent =
+    getDiscountByQuantity(quantity);
+
+  const discountAmount =
+    price * (discountPercent / 100);
+
+  const discountedPrice =
+    price - discountAmount;
+
+  const total =
+    discountedPrice * quantity;
+
+
+  // ==========================================
+  // IMAGEN
+  // ==========================================
+
   let image = product.image;
-  if (selectedColor && selectedColor.image) {
+
+  if (
+    selectedColor &&
+    selectedColor.image
+  ) {
+
     image = selectedColor.image;
-  } else if (selectedMaterial && selectedMaterial.image) {
+
+  } else if (
+    selectedMaterial &&
+    selectedMaterial.image
+  ) {
+
     image = selectedMaterial.image;
-  } else if (selectedDiseño && selectedDiseño.image) {
+
+  } else if (
+    selectedDiseño &&
+    selectedDiseño.image
+  ) {
+
     image = selectedDiseño.image;
-  } else if (selectedSize && selectedSize.image) {
+
+  } else if (
+    selectedSize &&
+    selectedSize.image
+  ) {
+
     image = selectedSize.image;
-  } else if (selectedVariant && selectedVariant.image) {
+
+  } else if (
+    selectedVariant &&
+    selectedVariant.image
+  ) {
+
     image = selectedVariant.image;
+
   }
 
+
   return {
+
     selectedDiseño,
     selectedMaterial,
     selectedSize,
     selectedColor,
     selectedAroma,
     selectedVariant,
+
+    // IMPORTANTE:
+    // Ya NO existe selectedEntrega
+    // porque la entrega es global.
+
     price,
-    image
+
+    image,
+
+    quantity,
+
+    discountPercent,
+
+    discountAmount,
+
+    discountedPrice,
+
+    total
+
+  };
+}
+
+/* function getDiscountByQuantity(product, quantity) {
+  if (!product.descuentosCantidad || quantity <= 0) {
+    return 0;
+  }
+
+  const discount = product.descuentosCantidad
+    .filter(d => quantity >= d.min)
+    .sort((a, b) => b.min - a.min)[0];
+
+  return discount ? discount.discount : 0;
+} */
+function getDiscountByQuantity(quantity) {
+  if (!quantity || quantity <= 0) {
+    return 0;
+  }
+
+  const discount = QUOTE_CONFIG.descuentosCantidad
+    .filter(d => quantity >= d.min)
+    .sort((a, b) => b.min - a.min)[0];
+
+  return discount ? discount.discount : 0;
+}
+
+function updateQuoteDelivery(deliveryId) {
+
+  quoteOptions.deliveryId = deliveryId;
+
+  renderCartDrawer();
+}
+
+function getQuoteTotals() {
+
+  let subtotal = 0;
+  let discountAmount = 0;
+
+  const items = cart.map(item => {
+
+    const quantity =
+      Number(item.quantity) || 1;
+
+    const unitPrice =
+      Number(item.price) || 0;
+
+    const discountPercent =
+      getDiscountByQuantity(quantity);
+
+    const unitDiscount =
+      unitPrice * (discountPercent / 100);
+
+    const discountedUnitPrice =
+      unitPrice - unitDiscount;
+
+    const itemSubtotal =
+      unitPrice * quantity;
+
+    const itemDiscount =
+      unitDiscount * quantity;
+
+    const itemTotal =
+      discountedUnitPrice * quantity;
+
+    subtotal += itemSubtotal;
+    discountAmount += itemDiscount;
+
+    return {
+      ...item,
+      quantity,
+      unitPrice,
+      discountPercent,
+      unitDiscount,
+      discountedUnitPrice,
+      itemSubtotal,
+      itemDiscount,
+      itemTotal
+    };
+
+  });
+
+  const delivery =
+    QUOTE_CONFIG.entregas.find(
+      e => e.id === quoteOptions.deliveryId
+    ) || QUOTE_CONFIG.entregas[0];
+
+  const deliveryAmount =
+    delivery?.priceExtra || 0;
+
+  const totalQuantity =
+    items.reduce(
+      (sum, item) => sum + item.quantity,
+      0
+    );
+
+  const total =
+    subtotal -
+    discountAmount +
+    deliveryAmount;
+
+  return {
+    items,
+    subtotal,
+    totalQuantity,
+    discountAmount,
+    delivery,
+    deliveryAmount,
+    total
   };
 }
 
@@ -1458,8 +1776,8 @@ function buildProductOptionsHTML(product, state, isModal = false) {
         ${/* !isAvailable
             ? 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed opacity-70'
             :  */isSelected
-              ? 'selected cursor-pointer'
-              : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9] cursor-pointer'
+            ? 'selected cursor-pointer'
+            : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9] cursor-pointer'
           }
       "
       title="${isAvailable ? c.name : `${c.name} - Solo disponible para cotizar`}"
@@ -1558,7 +1876,224 @@ function buildProductOptionsHTML(product, state, isModal = false) {
       ` : ''}
 
     </div>
+
+    <!-- ENTREGA -->
+${product.entrega ? `
+  <div>
+    <div class="flex justify-between items-center mb-1.5">
+      <span class="text-[11px] font-bold text-[#8B5A2B] uppercase tracking-wider">
+        Entrega:
+      </span>
+
+      <span class="text-[11px] font-semibold text-[#C86D51]">
+        ${state.selectedEntrega ? state.selectedEntrega.name : ''}
+      </span>
+    </div>
+
+    <div class="grid grid-cols-1 gap-1.5">
+      ${product.entrega.map(e => {
+      const isSelected =
+        state.selectedEntrega &&
+        state.selectedEntrega.id === e.id;
+
+      return `
+          <button
+            type="button"
+            onclick="updateProductOption('${product.id}', 'deliveryId', '${e.id}')"
+            class="
+              option-btn
+              px-3 py-2
+              rounded-xl
+              text-xs
+              font-semibold
+              border
+              transition-all
+              flex
+              items-center
+              justify-between
+              gap-2
+              text-left
+              cursor-pointer
+              ${isSelected
+          ? 'selected'
+          : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
+        }
+            "
+          >
+            <div class="flex items-center gap-1.5">
+              <span class="text-[#C86D51]">
+                ${isSelected ? '●' : '○'}
+              </span>
+
+              <span>${e.name}</span>
+            </div>
+
+            <span class="font-bold text-[#C86D51] whitespace-nowrap">
+              ${e.priceExtra > 0
+          ? `+ ${formatCLP(e.priceExtra)}`
+          : 'Gratis'
+        }
+            </span>
+          </button>
+        `;
+    }).join('')}
+    </div>
+  </div>
+` : ''}
+<!-- CANTIDAD -->
+<!--<div class="mt-4">
+  <label class="block text-sm font-semibold text-gray-700 mb-2">
+    Cantidad
+  </label>
+
+  <div class="flex items-center gap-2">
+    <button
+      type="button"
+      onclick="changeProductQuantity('${product.id}', -1)"
+      class="w-10 h-10 rounded-lg border border-gray-300 bg-white hover:bg-gray-100 flex items-center justify-center font-bold text-lg"
+    >
+      −
+    </button>
+
+    <input
+      id="quantity-${product.id}"
+      type="number"
+      min="1"
+      value="${state.quantity || 1}"
+      onchange="updateProductQuantity('${product.id}', this.value)"
+      class="w-20 h-10 text-center border border-gray-300 rounded-lg font-semibold focus:outline-none focus:ring-2 focus:ring-orange-400"
+    />
+
+    <button
+      type="button"
+      onclick="changeProductQuantity('${product.id}', 1)"
+      class="w-10 h-10 rounded-lg border border-gray-300 bg-white hover:bg-gray-100 flex items-center justify-center font-bold text-lg"
+    >
+      +
+    </button>
+  </div>
+</div>-->
+
+<!-- DESCUENTOS POR CANTIDAD  -->
+${product.descuentosCantidad?.length
+      ? `
+      <!-- <div class="mt-3 p-3 rounded-lg bg-orange-50 border border-orange-200">
+
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-orange-600 font-semibold text-sm">
+            Descuentos por cantidad
+          </span>
+        </div>
+
+        <div class="space-y-1 text-sm text-gray-700">
+          <div class="flex justify-between">
+            <span>1 - 9 unidades</span>
+            <span class="font-semibold">Sin descuento</span>
+          </div>
+          <div class="flex justify-between">
+            <span>10 - 19 unidades</span>
+            <span class="font-semibold text-green-600">
+              5% descuento
+            </span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>20 - 49 unidades</span>
+            <span class="font-semibold text-green-600">
+              8% descuento
+            </span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>50+ unidades</span>
+            <span class="font-semibold text-green-600">
+              12% descuento
+            </span>
+          </div>
+
+        </div>
+      </div> -->
+    `
+      : ''
+    }
+   
+
+<!-- RESUMEN DEL PRECIO 
+<div class="mt-4 p-4 rounded-xl bg-gray-50 border border-gray-200">
+
+  ${state.discountPercent > 0
+      ? `
+        <div class="flex justify-between text-sm text-gray-500">
+          <span>Precio unitario</span>
+          <span class="line-through">
+            ${formatCLP(state.price)}
+          </span>
+        </div>
+
+        <div class="flex justify-between text-sm text-green-600 mt-1">
+          <span>
+            Descuento (${state.discountPercent}%)
+          </span>
+          <span>
+            -${formatCLP(state.discountAmount)}
+          </span>
+        </div>
+
+        <div class="flex justify-between font-semibold mt-2">
+          <span>Precio unitario con descuento</span>
+          <span class="text-green-600">
+            ${formatCLP(state.discountedPrice)}
+          </span>
+        </div>
+      `
+      : `
+        <div class="flex justify-between">
+          <span>Precio unitario</span>
+          <span class="font-semibold">
+            ${formatCLP(state.price)}
+          </span>
+        </div>
+      `
+    }
+
+  <div class="border-t border-gray-200 mt-3 pt-3 flex justify-between items-center">
+    <span class="font-bold text-gray-800">
+      Total (${state.quantity || 1} unidades)
+    </span>
+
+    <span class="text-xl font-bold text-orange-600">
+      ${formatCLP(
+      (state.discountedPrice || state.price) * (state.quantity || 1)
+    )}
+    </span>
+  </div>
+
+</div>-->
   `;
+}
+
+function updateProductQuantity(productId, quantity) {
+  quantity = parseInt(quantity, 10);
+
+  if (isNaN(quantity) || quantity < 1) {
+    quantity = 1;
+  }
+
+  if (!selectedOptionsMap[productId]) {
+    selectedOptionsMap[productId] = {};
+  }
+
+  selectedOptionsMap[productId].quantity = quantity;
+
+  renderCatalog();
+}
+function changeProductQuantity(productId, amount) {
+  const currentQuantity =
+    selectedOptionsMap[productId]?.quantity || 1;
+
+  const newQuantity = Math.max(1, currentQuantity + amount);
+
+  updateProductQuantity(productId, newQuantity);
 }
 
 function buildProductCardHTML(product) {
@@ -1587,7 +2122,7 @@ function buildProductCardHTML(product) {
         <div>
           <div class="flex items-baseline justify-between mb-1 gap-2">
             <h3 class="text-lg font-serif-title font-bold text-[#3A2E2B] group-hover:text-[#C86D51] transition-colors leading-tight">${product.name}</h3>
-            <span class="product-card-price text-lg font-extrabold text-[#C86D51] whitespace-nowrap">${formatCLP(state.price)}</span>
+            <!-- <span class="product-card-price text-lg font-extrabold text-[#C86D51] whitespace-nowrap">${formatCLP(state.price)}</span> -->
           </div>
           
           <p class="text-xs text-[#8B5A2B] font-medium mb-2 flex items-center gap-1.5">
@@ -1633,56 +2168,168 @@ function buildProductCardHTML(product) {
 
 // CART MANAGEMENT
 function addToCart(productId) {
-  const product = PRODUCTS_DATA.find(p => p.id === productId);
+
+  const product =
+    PRODUCTS_DATA.find(
+      p => p.id === productId
+    );
+
   if (!product) return;
 
-  const state = getProductState(product);
+
+  const state =
+    getProductState(product);
+
 
   const details = [];
-  if (state.selectedVariant) details.push(state.selectedVariant.name);
-  if (state.selectedSize) details.push(`Tamaño: ${state.selectedSize.name}`);
-  if (state.selectedColor) details.push(`Color: ${state.selectedColor.name}`);
-  if (state.selectedAroma) details.push(`Aroma: ${state.selectedAroma.name}`);
 
-  const variantLabel = details.join(' · ') || 'Estándar';
-  const cartItemId = `${productId}-${state.selectedSize?.id || ''}-${state.selectedColor?.id || ''}-${state.selectedAroma?.id || ''}-${state.selectedVariant?.id || ''}`;
 
-  const existingIndex = cart.findIndex(item => item.cartItemId === cartItemId);
-  if (existingIndex > -1) {
-    cart[existingIndex].quantity += 1;
-  } else {
-    cart.push({
-      cartItemId,
-      productId: product.id,
-      name: product.name,
-      variantName: variantLabel,
-      price: state.price,
-      quantity: 1,
-      image: state.image
-    });
+  if (state.selectedVariant) {
+
+    details.push(
+      state.selectedVariant.name
+    );
+
   }
 
+  if (state.selectedSize) {
+
+    details.push(
+      `Tamaño: ${state.selectedSize.name}`
+    );
+
+  }
+
+  if (state.selectedColor) {
+
+    details.push(
+      `Color: ${state.selectedColor.name}`
+    );
+
+  }
+
+  if (state.selectedAroma) {
+
+    details.push(
+      `Aroma: ${state.selectedAroma.name}`
+    );
+
+  }
+
+
+  const variantLabel =
+    details.join(' · ') ||
+    'Estándar';
+
+
+  const cartItemId =
+    `${productId}-${state.selectedSize?.id || ''}-${state.selectedColor?.id || ''}-${state.selectedAroma?.id || ''}-${state.selectedVariant?.id || ''}`;
+
+
+  const existingIndex =
+    cart.findIndex(
+      item =>
+        item.cartItemId === cartItemId
+    );
+
+
+  // ==========================================
+  // YA EXISTE
+  // ==========================================
+
+  if (existingIndex > -1) {
+
+    cart[existingIndex].quantity += 1;
+
+  }
+
+
+  // ==========================================
+  // PRODUCTO NUEVO
+  // ==========================================
+
+  else {
+
+    cart.push({
+
+      cartItemId,
+
+      productId:
+        product.id,
+
+      name:
+        product.name,
+
+      variantName:
+        variantLabel,
+
+      // Precio SIN descuento
+      price:
+        state.price,
+
+      quantity:
+        1,
+
+      image:
+        state.image
+
+    });
+
+  }
+
+
   updateCartBadge();
-  showToastNotification(`¡"${product.name}" (${variantLabel}) agregado a tu cotización!`);
+
+  renderCartDrawer();
+
+
+  showToastNotification(
+    `¡"${product.name}" (${variantLabel}) agregado a tu cotización!`
+  );
 }
 
 function removeFromCart(cartItemId) {
-  cart = cart.filter(item => item.cartItemId !== cartItemId);
+
+  cart =
+    cart.filter(
+      item =>
+        item.cartItemId !== cartItemId
+    );
+
   updateCartBadge();
+
   renderCartDrawer();
 }
 
-function updateCartQuantity(cartItemId, delta) {
-  const item = cart.find(i => i.cartItemId === cartItemId);
-  if (item) {
-    item.quantity += delta;
-    if (item.quantity <= 0) {
-      removeFromCart(cartItemId);
-    } else {
-      updateCartBadge();
-      renderCartDrawer();
-    }
+function updateCartQuantity(
+  cartItemId,
+  delta
+) {
+
+  const item =
+    cart.find(
+      i =>
+        i.cartItemId === cartItemId
+    );
+
+
+  if (!item) return;
+
+
+  item.quantity += delta;
+
+
+  if (item.quantity <= 0) {
+
+    removeFromCart(cartItemId);
+
+    return;
   }
+
+
+  updateCartBadge();
+
+  renderCartDrawer();
 }
 
 function updateCartBadge() {
@@ -1713,11 +2360,11 @@ function closeCartDrawer() {
   }
 }
 
-function renderCartDrawer() {
+/* function renderCartDrawer() {
   const container = document.getElementById('cart-items-list');
   const totalElem = document.getElementById('cart-total-price');
   if (!container) return;
-
+ 
   if (cart.length === 0) {
     container.innerHTML = `
       <div class="text-center py-12 text-[#6C5C57]">
@@ -1729,12 +2376,12 @@ function renderCartDrawer() {
     if (totalElem) totalElem.textContent = '$0';
     return;
   }
-
+ 
   let total = 0;
   container.innerHTML = cart.map(item => {
     const itemTotal = item.price * item.quantity;
     total += itemTotal;
-
+ 
     return `
       <div class="flex items-center gap-3 p-3 bg-white rounded-2xl border border-[#8B5A2B]/10 shadow-sm">
         <img src="${item.image}" alt="${item.name}" class="w-14 h-14 rounded-xl object-cover" />
@@ -1754,19 +2401,318 @@ function renderCartDrawer() {
       </div>
     `;
   }).join('');
-
+ 
   if (totalElem) totalElem.textContent = formatCLP(total);
+} */
+
+function renderCartDrawer() {
+
+  const container =
+    document.getElementById('cart-items-list');
+
+  const totalElem =
+    document.getElementById('cart-total-price');
+
+  if (!container) return;
+
+
+  // ============================================
+  // COTIZACIÓN VACÍA
+  // ============================================
+
+  if (cart.length === 0) {
+
+    container.innerHTML = `
+      <div class="text-center py-12 text-[#6C5C57]">
+
+        <svg
+          class="w-12 h-12 mx-auto mb-3 text-[#8B5A2B]/40"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24">
+
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+
+        <p class="font-medium text-sm">
+          Tu cotización está vacía
+        </p>
+
+        <p class="text-xs text-[#8B5A2B]/70 mt-1">
+          Explora nuestro catálogo y agrega las piezas que desees.
+        </p>
+
+      </div>
+    `;
+
+    if (totalElem) {
+      totalElem.textContent = '$0';
+    }
+
+    return;
+  }
+
+
+  // ============================================
+  // PRODUCTOS
+  // ============================================
+
+  container.innerHTML = cart.map(item => {
+
+    const quantity = Number(item.quantity) || 1;
+    const discountPercent = getDiscountByQuantity(quantity);
+    const discountedUnitPrice =
+      item.price * (1 - discountPercent / 100);
+
+    const itemTotal =
+      discountedUnitPrice * quantity;
+
+    return `
+      <div
+        class="flex items-center gap-3 p-3 bg-white rounded-2xl border border-[#8B5A2B]/10 shadow-sm">
+
+        <img
+          src="${item.image}"
+          alt="${item.name}"
+          class="w-14 h-14 rounded-xl object-cover"
+        />
+
+        <div class="flex-1">
+
+          <h4
+            class="font-serif-title font-semibold text-sm text-[#3A2E2B] leading-tight">
+            ${item.name}
+          </h4>
+
+          <p class="text-[11px] text-[#8B5A2B]">
+            ${item.variantName}
+          </p>
+
+          <div class="text-xs text-[#6C5C57]">
+            ${formatCLP(item.price)} c/u
+          </div>
+
+          <div class="text-xs font-bold text-[#C86D51] mt-1">
+            ${formatCLP(itemTotal)}
+          </div>
+
+        </div>
+
+        <div
+          class="flex items-center gap-1.5 bg-[#F7EFE5] rounded-xl px-2 py-1">
+
+          <button
+            onclick="updateCartQuantity('${item.cartItemId}', -1)"
+            class="w-5 h-5 flex items-center justify-center font-bold text-xs text-[#8B5A2B]">
+            -
+          </button>
+
+          <span
+            class="text-xs font-semibold text-[#3A2E2B] w-4 text-center">
+            ${item.quantity}
+          </span>
+
+          <button
+            onclick="updateCartQuantity('${item.cartItemId}', 1)"
+            class="w-5 h-5 flex items-center justify-center font-bold text-xs text-[#8B5A2B]">
+            +
+          </button>
+
+        </div>
+
+        <button
+          onclick="removeFromCart('${item.cartItemId}')"
+          class="text-gray-400 hover:text-red-500 p-1">
+
+          🗑️
+
+        </button>
+
+      </div>
+    `;
+
+  }).join('');
+
+
+  // ============================================
+  // RESUMEN DE LA COTIZACIÓN
+  // ============================================
+
+  const totals = getQuoteTotals();
+
+
+  container.innerHTML += `
+
+    <div
+      class="mt-4 p-4 rounded-2xl bg-[#F7EFE5] border border-[#8B5A2B]/10">
+
+      <div
+        class="flex justify-between items-center mb-3">
+
+        <span class="text-sm text-[#6C5C57]">
+          Cantidad total
+        </span>
+
+        <strong class="text-[#3A2E2B]">
+          ${totals.totalQuantity} unidades
+        </strong>
+
+      </div>
+
+
+      <!-- DESCUENTO GLOBAL -->
+
+      <div class="mb-4">
+
+        <!--<div class="flex justify-between items-center">
+
+          <span class="text-sm text-[#6C5C57]">
+            Descuento por cantidad
+          </span>
+
+          <span class="font-semibold text-green-600">
+            ${totals.discountPercent}%
+          </span>
+
+        </div>-->
+
+        ${totals.discountAmount > 0
+      ? `
+              <div class="flex justify-between text-sm mt-1">
+
+                <span class="text-green-600">
+                  Descuento aplicado
+                </span>
+
+                <span class="font-semibold text-green-600">
+                  -${formatCLP(totals.discountAmount)}
+                </span>
+
+              </div>
+            `
+      : `
+              <p class="text-xs text-[#8B5A2B]/70 mt-1">
+                <strong>Agrega más unidades para obtener descuento.</strong>
+              </p>
+            `
+    }
+
+      </div>
+
+
+      <!-- ENTREGA GLOBAL -->
+
+      <div>
+
+        <p class="text-sm font-semibold text-[#3A2E2B] mb-2">
+          Tipo de presentación
+        </p>
+
+        <div class="space-y-2">
+
+          ${QUOTE_CONFIG.entregas.map(entrega => `
+
+            <label
+              class="flex items-center justify-between p-3 rounded-xl bg-white border border-[#8B5A2B]/10 cursor-pointer">
+
+              <div class="flex items-center gap-2">
+
+                <input
+                  type="radio"
+                  name="quote-delivery"
+                  value="${entrega.id}"
+                  ${quoteOptions.deliveryId === entrega.id ? 'checked' : ''}
+                  onchange="updateQuoteDelivery('${entrega.id}')"
+                />
+
+                <span class="text-sm text-[#3A2E2B]">
+                  ${entrega.name}
+                </span>
+
+              </div>
+
+              <span class="text-xs font-semibold text-[#8B5A2B]">
+                ${entrega.priceExtra > 0
+        ? `+${formatCLP(entrega.priceExtra)}`
+        : 'Incluido'
+      }
+              </span>
+
+            </label>
+
+          `).join('')}
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- RESUMEN FINAL -->
+
+    <div class="mt-4 px-1 space-y-2">
+
+      <div class="flex justify-between text-sm">
+
+        <span class="text-[#6C5C57]">
+          Subtotal
+        </span>
+
+        <span>
+          ${formatCLP(totals.subtotal)}
+        </span>
+
+      </div>
+
+
+     <div class="flex justify-between text-sm text-green-600">
+        <span>
+          Descuento total
+        </span>
+
+        <span>
+          -${formatCLP(totals.discountAmount)}
+        </span>
+      </div>
+
+      <div class="flex justify-between text-sm">
+
+        <span class="text-[#6C5C57]">
+          Entrega
+        </span>
+
+        <span>
+          +${formatCLP(totals.deliveryAmount)}
+        </span>
+
+      </div>
+
+    </div>
+  `;
+
+
+  if (totalElem) {
+
+    totalElem.textContent =
+      formatCLP(totals.total);
+
+  }
 }
 
-function sendConsolidatedWhatsAppOrder() {
+/* function sendConsolidatedWhatsAppOrder() {
   if (cart.length === 0) {
     alert('Tu lista de cotización está vacía.');
     return;
   }
-
+ 
   let msg = `✨ *Hola Entre Risas Cálidas!* Quisiera realizar la siguiente cotización / pedido:\n\n`;
   let total = 0;
-
+ 
   cart.forEach((item, idx) => {
     const itemTotal = item.price * item.quantity;
     total += itemTotal;
@@ -1774,12 +2720,146 @@ function sendConsolidatedWhatsAppOrder() {
     msg += `   • Detalles: ${item.variantName}\n`;
     msg += `   • Subtotal: ${formatCLP(itemTotal)}\n\n`;
   });
-
+ 
   msg += `💰 *TOTAL ESTIMADO: ${formatCLP(total)}*\n\n`;
   msg += `Quedo atento a la disponibilidad y tiempos de entrega en El Monte / envíos. ¡Muchas gracias!`;
-
+ 
   const waUrl = `https://wa.me/56948738454?text=${encodeURIComponent(msg)}`;
   window.open(waUrl, '_blank');
+} */
+
+function sendConsolidatedWhatsAppOrder() {
+
+  if (cart.length === 0) {
+
+    alert(
+      'Tu lista de cotización está vacía.'
+    );
+
+    return;
+  }
+
+
+  const totals =
+    getQuoteTotals();
+
+
+  let msg =
+    `✨ *Hola Entre Risas Cálidas!* ` +
+    `Quisiera realizar la siguiente ` +
+    `cotización / pedido:\n\n`;
+
+
+  // ==========================================
+  // PRODUCTOS
+  // ==========================================
+
+  totals.items.forEach(
+    (item, idx) => {
+
+      msg +=
+        `*${idx + 1}. ${item.name}* ` +
+        `(x${item.quantity})\n`;
+
+
+      if (item.variantName) {
+
+        msg +=
+          `   • Detalles: ` +
+          `${item.variantName}\n`;
+
+      }
+
+
+      msg +=
+        `   • Precio unitario: ` +
+        `${formatCLP(item.unitPrice)}\n`;
+
+
+      // Mostrar descuento SOLO si corresponde
+      if (item.discountPercent > 0) {
+
+        msg +=
+          `   • Descuento: ` +
+          `${item.discountPercent}%\n`;
+
+        msg +=
+          `   • Precio unitario con descuento: ` +
+          `${formatCLP(item.discountedUnitPrice)}\n`;
+
+        msg +=
+          `   • Descuento aplicado: ` +
+          `-${formatCLP(item.itemDiscount)}\n`;
+
+      }
+
+
+      msg +=
+        `   • Subtotal: ` +
+        `${formatCLP(item.itemSubtotal)}\n`;
+
+
+      msg +=
+        `   • Total producto: ` +
+        `${formatCLP(item.itemTotal)}\n\n`;
+
+    }
+  );
+
+
+  // ==========================================
+  // RESUMEN
+  // ==========================================
+
+  msg +=
+    `📦 *Cantidad total:* ` +
+    `${totals.totalQuantity} unidades\n`;
+
+
+  msg +=
+    `💰 *Subtotal:* ` +
+    `${formatCLP(totals.subtotal)}\n`;
+
+
+  if (totals.discountAmount > 0) {
+
+    msg +=
+      `🏷️ *Descuento total:* ` +
+      `-${formatCLP(totals.discountAmount)}\n`;
+
+  }
+
+
+  msg +=
+    `📦 *Entrega:* ` +
+    `${totals.delivery.name}\n`;
+
+
+  msg +=
+    `🚚 *Costo entrega:* ` +
+    `+${formatCLP(totals.deliveryAmount)}\n\n`;
+
+
+  msg +=
+    `💵 *TOTAL ESTIMADO:* ` +
+    `${formatCLP(totals.total)}\n\n`;
+
+
+  msg +=
+    `Quedo atento a la disponibilidad ` +
+    `y tiempos de entrega en El Monte / ` +
+    `envíos. ¡Muchas gracias!`;
+
+
+  const waUrl =
+    `https://wa.me/56948738454?text=` +
+    `${encodeURIComponent(msg)}`;
+
+
+  window.open(
+    waUrl,
+    '_blank'
+  );
 }
 
 // PRODUCT DETAIL & LITHOPHANE PREVIEW MODAL
