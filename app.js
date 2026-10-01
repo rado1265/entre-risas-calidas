@@ -1213,11 +1213,12 @@ function getProductState(product) {
     price += selectedSize.priceExtra;
   }
 
-  if (
-    selectedDiseño &&
-    selectedDiseño.priceExtra
-  ) {
-    price += selectedDiseño.priceExtra;
+  if (selectedDiseño) {
+    if (selectedDiseño.priceExtra) {
+      price += selectedDiseño.priceExtra;
+    } else if (selectedDiseño.price && selectedDiseño.price > 0 && !selectedMaterial && !selectedVariant) {
+      price += selectedDiseño.price;
+    }
   }
 
   if (
@@ -1443,6 +1444,8 @@ function getQuoteTotals() {
 function getWhatsAppLinkForProduct(product, state) {
   let waText = `Hola! Quisiera consultar por el producto: *${product.name}*\n`;
   if (state.selectedVariant) waText += `• Opción: ${state.selectedVariant.name}\n`;
+  if (state.selectedMaterial) waText += `• Material: ${state.selectedMaterial.name}\n`;
+  if (state.selectedDiseño) waText += `• Diseño: ${state.selectedDiseño.name}\n`;
   if (state.selectedSize) waText += `• Tamaño: ${state.selectedSize.name}\n`;
   if (state.selectedColor) waText += `• Color: ${state.selectedColor.name}\n`;
   if (state.selectedAroma) waText += `• Aroma: ${state.selectedAroma.name}\n`;
@@ -1475,7 +1478,11 @@ function updateProductOption(productId, optionType, optionId) {
     }
 
     const priceEl = card.querySelector('.product-card-price');
-    if (priceEl) priceEl.textContent = formatCLP(state.price);
+    if (priceEl) {
+      priceEl.textContent = formatCLP(state.price);
+      priceEl.classList.add('scale-105');
+      setTimeout(() => priceEl.classList.remove('scale-105'), 150);
+    }
 
     const optionsEl = card.querySelector('.product-card-options');
     if (optionsEl) optionsEl.innerHTML = buildProductOptionsHTML(product, state, false);
@@ -1771,11 +1778,11 @@ function buildProductOptionsHTML(product, state, isModal = false) {
                   <button 
                     type="button"
                     onclick="updateProductOption('${product.id}', 'colorId', '${c.id}')"
-                    class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1.5 cursor-pointer relative ${isSelected
+                    class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1.5 relative overflow-hidden ${isSelected
             ? 'selected'
             : isAvailable
-              ? 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
-              : 'bg-gray-50 text-gray-400 border-gray-200 opacity-60'
+              ? 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9] cursor-pointer'
+              : 'bg-gray-50 text-gray-400 border-gray-200 opacity-60 cursor-not-allowed'
           }"
                   >
                     <span class="w-3.5 h-3.5 rounded-full border border-black/10 inline-block flex-shrink-0" style="background-color: ${c.hex}"></span>
@@ -1783,8 +1790,10 @@ function buildProductOptionsHTML(product, state, isModal = false) {
                     ${c.priceExtra > 0 ? `<span class="text-[10px] opacity-75">(+${formatCLP(c.priceExtra)})</span>` : ''}
 
                     ${!isAvailable ? `
-                      <span class="absolute inset-0 pointer-events-none">
-                        <span class="absolute w-[140%] h-[1px] bg-gray-400/70 rotate-[-20deg] top-1/2 left-[-20%]"></span>
+                      <span class="absolute inset-0 pointer-events-none overflow-hidden rounded-xl">
+                        <svg class="w-full h-full stroke-gray-400/80" viewBox="0 0 100 100" preserveAspectRatio="none">
+                          <line x1="0" y1="100" x2="100" y2="0" stroke-width="1.5" vector-effect="non-scaling-stroke" />
+                        </svg>
                       </span>
                     ` : ''}
                   </button>
@@ -1908,6 +1917,7 @@ function buildProductCardHTML(product) {
         <div>
           <div class="flex items-baseline justify-between mb-1 gap-2">
             <h3 class="text-lg font-serif-title font-bold text-[#3A2E2B] group-hover:text-[#C86D51] transition-colors leading-tight">${product.name}</h3>
+            <span class="product-card-price text-lg font-bold text-[#C86D51] whitespace-nowrap transition-transform duration-200 inline-block">${formatCLP(state.price)}</span>
           </div>
           
           <p class="text-xs text-[#8B5A2B] font-medium mb-2 flex items-center gap-1.5">
@@ -1960,12 +1970,14 @@ function addToCart(productId) {
   const details = [];
 
   if (state.selectedVariant) details.push(state.selectedVariant.name);
+  if (state.selectedMaterial) details.push(`Material: ${state.selectedMaterial.name}`);
+  if (state.selectedDiseño) details.push(`Diseño: ${state.selectedDiseño.name}`);
   if (state.selectedSize) details.push(`Tamaño: ${state.selectedSize.name}`);
   if (state.selectedColor) details.push(`Color: ${state.selectedColor.name}`);
   if (state.selectedAroma) details.push(`Aroma: ${state.selectedAroma.name}`);
 
   const variantLabel = details.join(' · ') || 'Estándar';
-  const cartItemId = `${productId}-${state.selectedSize?.id || ''}-${state.selectedColor?.id || ''}-${state.selectedAroma?.id || ''}-${state.selectedVariant?.id || ''}`;
+  const cartItemId = `${productId}-${state.selectedMaterial?.id || ''}-${state.selectedDiseño?.id || ''}-${state.selectedSize?.id || ''}-${state.selectedColor?.id || ''}-${state.selectedAroma?.id || ''}-${state.selectedVariant?.id || ''}`;
 
   const existingIndex = cart.findIndex(item => item.cartItemId === cartItemId);
 
