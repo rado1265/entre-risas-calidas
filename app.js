@@ -591,26 +591,26 @@ const PRODUCTS_DATA = [
     image: 'assets/vela/moldes/luna.PNG',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '5,5 cm', price: 300, image: 'assets/vela/moldes/luna.PNG' }
+      { id: 'estandar', name: '5,5 cm', price: 350, image: 'assets/vela/moldes/luna.PNG' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 500 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 500 },
-      { id: 'limon', name: 'Limón', priceExtra: 500 },
-      { id: 'menta', name: 'Menta', priceExtra: 500 }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 200 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 200 },
+      { id: 'limon', name: 'Limón', priceExtra: 200 },
+      { id: 'menta', name: 'Menta', priceExtra: 200 }
     ]
   },
   {
@@ -623,26 +623,26 @@ const PRODUCTS_DATA = [
     image: 'assets/vela/moldes/rosa.PNG',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '5 cm ancho x 3 cm alto', price: 350, image: 'assets/vela/moldes/rosa.PNG' }
+      { id: 'estandar', name: '5 cm ancho x 3 cm alto', price: 800, image: 'assets/vela/moldes/rosa.PNG' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 500 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 500 },
-      { id: 'limon', name: 'Limón', priceExtra: 500 },
-      { id: 'menta', name: 'Menta', priceExtra: 500 }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 400 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 400 },
+      { id: 'limon', name: 'Limón', priceExtra: 400 },
+      { id: 'menta', name: 'Menta', priceExtra: 400 }
     ]
   },
   {
@@ -655,28 +655,28 @@ const PRODUCTS_DATA = [
     image: 'assets/vela/moldes/nube.PNG',
     isCandle: true,
     sizes: [
-      { id: 'pequeño', name: '4,5 cm ancho x 2 cm alto', price: 200, image: 'assets/vela/moldes/nube.PNG' },
-      { id: 'mediano', name: '6,5 cm ancho x 2,5 cm alto', price: 400, image: 'assets/vela/moldes/nube.PNG' },
-      { id: 'grande', name: '8 cm ancho x 3,5 cm alto', price: 600, image: 'assets/vela/moldes/nube.PNG' }
+      /* { id: 'pequeño', name: '4,5 cm ancho x 2 cm alto', price: 200, image: 'assets/vela/moldes/nube.PNG' },
+      { id: 'mediano', name: '6,5 cm ancho x 2,5 cm alto', price: 400, image: 'assets/vela/moldes/nube.PNG' }, */
+      { id: 'grande', name: '8 cm ancho x 3,5 cm alto', price: 1600, image: 'assets/vela/moldes/nube.PNG' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 500 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 500 },
-      { id: 'limon', name: 'Limón', priceExtra: 500 },
-      { id: 'menta', name: 'Menta', priceExtra: 500 }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 1100 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 1100 },
+      { id: 'limon', name: 'Limón', priceExtra: 1100 },
+      { id: 'menta', name: 'Menta', priceExtra: 1100 }
     ]
   },
   {
@@ -693,22 +693,22 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 500 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 500 },
-      { id: 'limon', name: 'Limón', priceExtra: 500 },
-      { id: 'menta', name: 'Menta', priceExtra: 500 }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 300 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 300 },
+      { id: 'limon', name: 'Limón', priceExtra: 300 },
+      { id: 'menta', name: 'Menta', priceExtra: 300 }
     ]
   },
   {
@@ -716,31 +716,31 @@ const PRODUCTS_DATA = [
     name: 'Cilindro Ovalado Vela Soja',
     category: 'velas',
     categoryName: 'Velas Artesanales',
-    dimensions: 'Figura 10 cm alto aprox.',
+    dimensions: 'Figura 12 cm alto aprox.',
     description: 'Escultura mística de cilindro en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
     image: 'assets/vela/moldes/cilindro ovalado v1.PNG',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '10 cm alto', price: 1600, image: 'assets/vela/moldes/cilindro ovalado v1.PNG' }
+      { id: 'estandar', name: '12 cm alto', price: 2100, image: 'assets/vela/moldes/cilindro ovalado v1.PNG' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 600 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 600 },
-      { id: 'limon', name: 'Limón', priceExtra: 600 },
-      { id: 'menta', name: 'Menta', priceExtra: 600 }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 1800 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 1800 },
+      { id: 'limon', name: 'Limón', priceExtra: 1800 },
+      { id: 'menta', name: 'Menta', priceExtra: 1800 }
     ]
   }, {
     id: 'Corazon-love-Vela-Soja',
@@ -756,22 +756,22 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 600 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 600 },
-      { id: 'limon', name: 'Limón', priceExtra: 600 },
-      { id: 'menta', name: 'Menta', priceExtra: 600 }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 900 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 900 },
+      { id: 'limon', name: 'Limón', priceExtra: 900 },
+      { id: 'menta', name: 'Menta', priceExtra: 900 }
     ]
   }, {
     id: 'margarita-Vela-Soja',
@@ -783,26 +783,26 @@ const PRODUCTS_DATA = [
     image: 'assets/vela/moldes/margarita.png',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '6 cm', price: 700, image: 'assets/vela/moldes/margarita.png' }
+      { id: 'estandar', name: '6 cm', price: 500, image: 'assets/vela/moldes/margarita.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 400 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 400 },
-      { id: 'limon', name: 'Limón', priceExtra: 400 },
-      { id: 'menta', name: 'Menta', priceExtra: 400 }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 300 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 300 },
+      { id: 'limon', name: 'Limón', priceExtra: 300 },
+      { id: 'menta', name: 'Menta', priceExtra: 300 }
     ]
   }, {
     id: 'osito-Vela-Soja',
@@ -814,7 +814,7 @@ const PRODUCTS_DATA = [
     image: 'assets/vela/moldes/Osito.png',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '4,5 cm alto', price: 600, image: 'assets/vela/moldes/osito.png' }
+      { id: 'estandar', name: '4,5 cm alto', price: 480, image: 'assets/vela/moldes/osito.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
@@ -845,19 +845,19 @@ const PRODUCTS_DATA = [
     image: 'assets/vela/moldes/Virgen blanca v1.png',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '6 cm alto', price: 1200, image: 'assets/vela/moldes/virgen blanca v1.png' }
+      { id: 'estandar', name: '6 cm alto', price: 1100, image: 'assets/vela/moldes/virgen blanca v1.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
@@ -876,26 +876,26 @@ const PRODUCTS_DATA = [
     image: 'assets/vela/moldes/corazon love.png',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '6,5 cm alto', price: 1200, image: 'assets/vela/moldes/virgen blanca v2.png' }
+      { id: 'estandar', name: '6,5 cm alto', price: 650, image: 'assets/vela/moldes/virgen blanca v2.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 600 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 600 },
-      { id: 'limon', name: 'Limón', priceExtra: 600 },
-      { id: 'menta', name: 'Menta', priceExtra: 600 }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 500 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 500 },
+      { id: 'limon', name: 'Limón', priceExtra: 500 },
+      { id: 'menta', name: 'Menta', priceExtra: 500 }
     ]
   },
   {
@@ -913,22 +913,22 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 600 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 600 },
-      { id: 'limon', name: 'Limón', priceExtra: 600 },
-      { id: 'menta', name: 'Menta', priceExtra: 600 }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 700 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 700 },
+      { id: 'limon', name: 'Limón', priceExtra: 700 },
+      { id: 'menta', name: 'Menta', priceExtra: 700 }
     ]
   }, {
     id: 'wax-metls-corazon',
@@ -940,26 +940,26 @@ const PRODUCTS_DATA = [
     image: 'assets/vela/wax metls/wax metls corazon.png',
     isCandle: true,
     sizes: [
-      { id: 'mujer', name: 'Bolsa 12 unidades', price: 2500, image: 'assets/vela/wax metls/wax metls corazon.png' }
+      { id: 'mujer', name: 'Bolsa 12 unidades', price: 1500, image: 'assets/vela/wax metls/wax metls corazon.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 200 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 200 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 200 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 0 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 200 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 200 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 200 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 200 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 200 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 500 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 500 },
-      { id: 'limon', name: 'Limón', priceExtra: 500 },
-      { id: 'menta', name: 'Menta', priceExtra: 600 }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 400 },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 400 },
+      { id: 'limon', name: 'Limón', priceExtra: 400 },
+      { id: 'menta', name: 'Menta', priceExtra: 400 }
     ]
   },
 
@@ -1782,7 +1782,7 @@ function buildProductOptionsHTML(product, state, isModal = false) {
             ? 'selected'
             : isAvailable
               ? 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9] cursor-pointer'
-              : 'bg-gray-50 text-gray-400 border-gray-200 opacity-60 cursor-not-allowed'
+              : 'bg-gray-50 text-gray-400 border-gray-200 opacity-60'
           }"
                   >
                     <span class="w-3.5 h-3.5 rounded-full border border-black/10 inline-block flex-shrink-0" style="background-color: ${c.hex}"></span>
@@ -1833,6 +1833,7 @@ function buildProductOptionsHTML(product, state, isModal = false) {
         }"
                 >
                   🌸 ${a.name}
+                  ${a.priceExtra > 0 ? `<span class="text-[10px] opacity-75">(+${formatCLP(a.priceExtra)})</span>` : ''}
                 </button>
               `;
     }).join('')}

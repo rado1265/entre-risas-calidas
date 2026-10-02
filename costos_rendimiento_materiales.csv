@@ -1,0 +1,60 @@
+Categoria,Producto,Dimensiones,Material_Base,Gramos_Materia_Prima,Costo_Materia_Prima_CLP,Aroma_Gramos,Costo_Complementos_CLP,Costo_Packaging_CLP,Costo_Directo_Total_CLP,Precio_Actual_CLP,Margen_Actual_CLP,Margen_Actual_Pct,Precio_Sugerido_CLP,Margen_Sugerido_CLP,Margen_Sugerido_Pct,Alerta_Rentabilidad
+"Decoración Yeso y Cemento","Porta Vela contraluz","4 cm × 5 cm","Yeso",65,39,0,240,150,429,490,61,12%,2490,2061,83%,BAJO_MARGEN
+"Decoración Yeso y Cemento","Porta Vela contraluz","4 cm × 5 cm","Cemento",100,100,0,240,150,490,1190,700,59%,3490,3000,86%,OK
+"Decoración Yeso y Cemento","Corazón portavela / Joyero","11 cm × 9,5 cm","Yeso",125,75,0,240,150,465,1490,1025,69%,3490,3025,87%,OK
+"Decoración Yeso y Cemento","Corazón portavela / Joyero","11 cm × 9,5 cm","Cemento",195,195,0,240,150,585,3490,2905,83%,4990,4405,88%,OK
+"Decoración Yeso y Cemento","Flor portavela / Joyero","10 cm × 10 cm","Yeso",110,66,0,240,150,456,1490,1034,69%,3490,3034,87%,OK
+"Decoración Yeso y Cemento","Flor portavela / Joyero","10 cm × 10 cm","Cemento",175,175,0,240,150,565,3490,2925,84%,4990,4425,89%,OK
+"Decoración Yeso y Cemento","Mariposa portavela / Joyero","10 cm × 10 cm","Yeso",110,66,0,240,150,456,1490,1034,69%,3490,3034,87%,OK
+"Decoración Yeso y Cemento","Mariposa portavela / Joyero","10 cm × 10 cm","Cemento",175,175,0,240,150,565,3490,2925,84%,4990,4425,89%,OK
+"Decoración Yeso y Cemento","Tortuga con Tapa (Alhajero Escultural)","14 cm × 10 cm × 5 cm","Yeso",260,156,0,240,150,546,2100,1554,74%,5990,5444,91%,OK
+"Decoración Yeso y Cemento","Tortuga con Tapa (Alhajero Escultural)","14 cm × 10 cm × 5 cm","Cemento",400,400,0,240,150,790,4990,4200,84%,7990,7200,90%,OK
+"Decoración Yeso y Cemento","Portavela tipo Tai Chi (Yin Yang)","Ø 9 cm","Yeso",130,78,0,240,150,468,1590,1122,71%,3990,3522,88%,OK
+"Decoración Yeso y Cemento","Portavela tipo Tai Chi (Yin Yang)","Ø 9 cm","Cemento",200,200,0,240,150,590,3790,3200,84%,5290,4700,89%,OK
+"Decoración Yeso y Cemento","Portavela Cuerda Cáñamo","Ø 6 cm × 3 cm","Yeso",75,45,0,240,150,435,590,155,26%,2490,2055,83%,BAJO_MARGEN
+"Decoración Yeso y Cemento","Portavela Cuerda Cáñamo","Ø 6 cm × 3 cm","Cemento",115,115,0,240,150,505,1290,785,61%,3290,2785,85%,OK
+"Decoración Yeso y Cemento","Portavela Infinito "Tú & Yo"","16,5 cm × 6 cm","Yeso",145,87,0,240,150,477,1790,1313,73%,4490,4013,89%,OK
+"Decoración Yeso y Cemento","Portavela Infinito "Tú & Yo"","16,5 cm × 6 cm","Cemento",225,225,0,240,150,615,4290,3675,86%,5990,5375,90%,OK
+"Decoración Yeso y Cemento","Buda Escultura / Portavela","9,5 cm × 6 cm","Yeso",155,93,0,240,150,483,1290,807,63%,3990,3507,88%,OK
+"Decoración Yeso y Cemento","Buda Escultura / Portavela","9,5 cm × 6 cm","Cemento",240,240,0,240,150,630,2990,2360,79%,5490,4860,89%,OK
+"Decoración Yeso y Cemento","Portavela tipo Flor de Loto","Ø 8 cm × 4,5 cm","Yeso",125,75,0,240,150,465,990,525,53%,3490,3025,87%,OK
+"Decoración Yeso y Cemento","Portavela tipo Flor de Loto","Ø 8 cm × 4,5 cm","Cemento",190,190,0,240,150,580,2390,1810,76%,4790,4210,88%,OK
+"Decoración Yeso y Cemento","Bandeja Corazón Mediana","12 cm × 11,5 cm × 1,5 cm","Yeso",150,90,0,240,150,480,1290,810,63%,4290,3810,89%,OK
+"Decoración Yeso y Cemento","Bandeja Corazón Mediana","12 cm × 11,5 cm × 1,5 cm","Cemento",230,230,0,240,150,620,2990,2370,79%,5690,5070,89%,OK
+"Decoración Yeso y Cemento","Bandeja Redonda Individual (Posavasos)","Ø 8 cm × 1 cm","Yeso",65,39,0,240,150,429,490,61,12%,2190,1761,80%,BAJO_MARGEN
+"Decoración Yeso y Cemento","Bandeja Redonda Individual (Posavasos)","Ø 8 cm × 1 cm","Cemento",100,100,0,240,150,490,990,500,51%,2990,2500,84%,OK
+"Decoración Yeso y Cemento","Bandeja Redonda Mediana","Ø 11 cm × 1 cm","Yeso",120,72,0,240,150,462,990,528,53%,3690,3228,87%,OK
+"Decoración Yeso y Cemento","Bandeja Redonda Mediana","Ø 11 cm × 1 cm","Cemento",185,185,0,240,150,575,1990,1415,71%,4990,4415,88%,OK
+"Decoración Yeso y Cemento","Gatito Portavelas","10 cm × 6 cm","Yeso",160,96,0,240,150,486,1590,1104,69%,4490,4004,89%,OK
+"Decoración Yeso y Cemento","Gatito Portavelas","10 cm × 6 cm","Cemento",245,245,0,240,150,635,3890,3255,84%,5990,5355,89%,OK
+"Decoración Yeso y Cemento","Bandeja Hoja Tropical (Costilla de Adán / Monstera)","21,2 cm × 12,2 cm","Yeso",185,111,0,240,150,501,1690,1189,70%,4990,4489,90%,OK
+"Decoración Yeso y Cemento","Bandeja Hoja Tropical (Costilla de Adán / Monstera)","21,2 cm × 12,2 cm","Cemento",285,285,0,240,150,675,3990,3315,83%,6990,6315,90%,OK
+"Decoración Yeso y Cemento","Hornillo Aromático Difusor","Ø 8 cm × 7,5 cm","Yeso",270,162,0,240,150,552,2990,2438,82%,7990,7438,93%,OK
+"Decoración Yeso y Cemento","Hornillo Aromático Difusor","Ø 8 cm × 7,5 cm","Cemento",410,410,0,240,150,800,6990,6190,89%,10990,10190,93%,OK
+"Decoración Yeso y Cemento","Bandeja Ovalada Clásica","17,5 cm × 9 cm × 1,5 cm","Yeso",170,102,0,240,150,492,1690,1198,71%,4690,4198,90%,OK
+"Decoración Yeso y Cemento","Bandeja Ovalada Clásica","17,5 cm × 9 cm × 1,5 cm","Cemento",260,260,0,240,150,650,3990,3340,84%,6490,5840,90%,OK
+"Decoración Yeso y Cemento","Bandeja Ovalada Doble Cavidad","17,5 cm × 9 cm × 1,5 cm","Yeso",175,105,0,240,150,495,1790,1295,72%,4990,4495,90%,OK
+"Decoración Yeso y Cemento","Bandeja Ovalada Doble Cavidad","17,5 cm × 9 cm × 1,5 cm","Cemento",270,270,0,240,150,660,4190,3530,84%,6790,6130,90%,OK
+"Decoración Yeso y Cemento","Bandeja Nube Decorativa","19 cm × 13,5 cm × 1,5 cm","Yeso",225,135,0,240,150,525,1990,1465,74%,5490,4965,90%,OK
+"Decoración Yeso y Cemento","Bandeja Nube Decorativa","19 cm × 13,5 cm × 1,5 cm","Cemento",345,345,0,240,150,735,4690,3955,84%,7490,6755,90%,OK
+"Decoración Yeso y Cemento","Caja Redonda con Tapa (Alhajero)","Ø 5,5 cm × 3,5 cm","Yeso",95,57,0,240,150,447,590,143,24%,2990,2543,85%,BAJO_MARGEN
+"Decoración Yeso y Cemento","Caja Redonda con Tapa (Alhajero)","Ø 5,5 cm × 3,5 cm","Cemento",145,145,0,240,150,535,1290,755,59%,4290,3755,88%,OK
+"Decoración Yeso y Cemento","Caja Cuadrada con Tapa (Alhajero)","6 cm × 4 cm","Yeso",115,69,0,240,150,459,790,331,42%,3290,2831,86%,OK
+"Decoración Yeso y Cemento","Caja Cuadrada con Tapa (Alhajero)","6 cm × 4 cm","Cemento",175,175,0,240,150,565,1890,1325,70%,4690,4125,88%,OK
+"Velas Artesanales","Luna Vela Soja","5,5 cm","soja molde",40,340,2.4,250,150,740,300,-440,-147%,2990,2250,75%,PERDIDA
+"Velas Artesanales","Rosa Vela Soja","5 cm ancho × 3 cm alto","soja molde",45,383,2.7,265,150,798,350,-448,-128%,3290,2492,76%,PERDIDA
+"Velas Artesanales","Nube Vela Soja (Chica)","4,5 cm × 2 cm","soja molde",22,187,1.3,196,150,533,200,-333,-166%,1990,1457,73%,PERDIDA
+"Velas Artesanales","Nube Vela Soja (Mediana)","6,5 cm × 2,5 cm","soja molde",55,468,3.3,295,150,913,400,-513,-128%,3490,2577,74%,PERDIDA
+"Velas Artesanales","Nube Vela Soja (Grande)","8 cm × 3,5 cm","soja molde",115,978,6.9,475,150,1603,600,-1003,-167%,4990,3387,68%,PERDIDA
+"Velas Artesanales","Corazón Textura Vela Soja","6 cm × 1,5 cm","soja molde",50,425,3,280,150,855,890,35,4%,3490,2635,76%,BAJO_MARGEN
+"Velas Artesanales","Cilindro Ovalado Vela Soja (Pilar Acanalado)","10 cm alto","soja molde",155,1318,9.3,595,150,2063,1600,-463,-29%,6990,4927,70%,PERDIDA
+"Velas Artesanales","Corazón "Love" Vela Soja","6 cm alto","soja molde",85,723,5.1,385,150,1258,1400,142,10%,4490,3232,72%,BAJO_MARGEN
+"Velas Artesanales","Margarita Vela Soja","6 cm","soja molde",55,468,3.3,295,150,913,700,-213,-30%,3490,2577,74%,PERDIDA
+"Velas Artesanales","Osito Vela Soja (Teddy Bear)","4,5 cm alto","soja molde",48,408,2.9,274,150,832,600,-232,-39%,3490,2658,76%,PERDIDA
+"Velas Artesanales","Virgen v1 Vela Soja","6 cm alto","soja molde",75,638,4.5,355,150,1143,1200,57,5%,4290,3147,73%,BAJO_MARGEN
+"Velas Artesanales","Virgen v2 Vela Soja (Manto Largo)","6,5 cm alto","soja molde",80,680,4.8,370,150,1200,1200,0,0%,4490,3290,73%,BAJO_MARGEN
+"Velas Artesanales","Ángel / Angelita Vela Parafina","10 cm alto","parafina",120,600,7.2,490,150,1240,1500,260,17%,4990,3750,75%,BAJO_MARGEN
+"Velas Artesanales","Wax Melts Corazón (Bolsa 12u)","1,5 cm c/u (12 u, 120g total)","soja molde",120,1020,7.2,390,150,1560,2500,940,38%,4990,3430,69%,OK
+"Velas Artesanales","Vela Soja en Frasco 100ml","Frasco vidrio 100ml + tapa corcho","soja recipiente 100",85,663,5.1,1335,150,2148,3490,1342,38%,5990,3842,64%,OK
+"Velas Artesanales","Vela Soja en Frasco 200ml","Frasco vidrio 200ml + tapa corcho","soja recipiente 200",170,1326,10.2,2040,150,3516,5490,1974,36%,8990,5474,61%,OK
+"Velas Artesanales","Vela Gel en Frasco 100ml","Frasco vidrio 100ml + tapa corcho","gel recipiente 100",90,855,5.4,1350,150,2355,3490,1135,33%,6290,3935,63%,OK
