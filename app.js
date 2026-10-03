@@ -168,21 +168,21 @@ const PRODUCTS_DATA = [
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: 'Ø6 cm',
     description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería.',
-    image: 'assets/decoracion/joyeros/frasco.png',
+    image: 'assets/decoracion/joyeros/frasco gris.png',
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 590, image: 'assets/decoracion/joyeros/frasco.png' },
-      { id: 'Cemento', name: 'Cemento', price: 1290, image: 'assets/decoracion/joyeros/frasco.png' },
+      { id: 'Yeso', name: 'Yeso', price: 590, image: 'assets/decoracion/joyeros/frasco gris.png' },
+      { id: 'Cemento', name: 'Cemento', price: 1290, image: 'assets/decoracion/joyeros/frasco gris.png' },
     ],
     sizes: [
-      { id: 'estandar', name: 'Ø6 cm', price: 0, image: 'assets/decoracion/joyeros/frasco.png' }
+      { id: 'estandar', name: 'Ø6 cm', price: 0, image: 'assets/decoracion/joyeros/frasco gris.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/frasco.png' },
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/frasco gris.png' },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 150, image: 'assets/decoracion/joyeros/frasco rojo.png' },
       { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 150, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 150, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 150, available: false },
       { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 150, available: false },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 150, available: false },
       { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 150, available: false }
     ]
   }, {
@@ -275,6 +275,30 @@ const PRODUCTS_DATA = [
     colors: [
       { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/corazon/bandeja corazon gris.png' },
       { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, image: 'assets/decoracion/corazon/bandeja corazon rojo.png' },
+      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200, available: false },
+      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
+      { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200, available: false },
+      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200, available: false }
+    ]
+  }, {
+    id: 'bandeja-corazon2',
+    name: 'Bandeja Corazón v2',
+    category: 'yeso-cemento',
+    categoryName: 'Decoración Yeso y Cemento',
+    dimensions: '12 cm x 11,5 cm',
+    description: 'Bandeja decorativa minimalista y versátil, ideal para posar velas, joyas, llaves o elementos de perfumería.',
+    image: 'assets/decoracion/corazon/corazon v2 rojo.png',
+    material: [
+      { id: 'Yeso', name: 'Yeso', price: 1290, image: 'assets/decoracion/corazon/corazon v2 rojo.png' },
+      { id: 'Cemento', name: 'Cemento', price: 2990, image: 'assets/decoracion/corazon/corazon v2 rojo.png' },
+    ],
+    sizes: [
+      { id: '18cm', name: '12 cm x 11,5 cm', priceExtra: 0, image: 'assets/decoracion/corazon/corazon v2 rojo.png' }
+    ],
+    colors: [
+      { id: 'Gris', name: 'Gris', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/corazon/corazon v2 gris.png' },
+      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, image: 'assets/decoracion/corazon/corazon v2 rojo.png' },
       { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200, available: false },
       { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, available: false },
       { id: 'Blanco', name: 'Blanco', hex: '#FAF9F6', priceExtra: 200, available: false },
@@ -1002,6 +1026,21 @@ const PRODUCTS_DATA = [
       { id: 'marco-4fotos', name: 'Marco Cubo + 4 Fotos 3D', price: 19990, image: 'assets/litofania/litografia cuadro.PNG' },
       { id: 'solo-marco', name: 'Solo Marco Cubo - 12 x 11 cm aprox', price: 8990, image: 'assets/litofania/litografia cuadro.PNG' },
       { id: 'solo-imagen-repuesto', name: 'Solo 1 Foto - 7,5 × 10 cm aprox', price: 4490, image: 'assets/litofania/litografia cuadro.PNG' }
+    ]
+  } //PACKS---------------------------------------------------
+  ,
+  {
+    id: 'pack-margaritas',
+    name: 'Pack Margaritas',
+    category: 'packs',
+    categoryName: 'Packs',
+    dimensions: 'Colores y aromas a elección.',
+    description: 'Pack de velas margarita perfectas para regalar.',
+    image: 'assets/vela/Pack/2 Margaritas.png',
+    isCustomPhoto: false,
+    sizes: [
+      { id: 'pack-2-margaritas', name: 'Pack 2 Margaritas', price: 2400, image: 'assets/vela/Pack/2 Margaritas.png' },
+      { id: 'pack-3-margaritas', name: 'Pack 3 Margaritas', price: 3750, image: 'assets/vela/Pack/3 Margaritas.png' },
     ]
   }
 ];
