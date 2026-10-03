@@ -1038,6 +1038,7 @@ const PRODUCTS_DATA = [
     description: 'Pack de velas margarita perfectas para regalar.',
     image: 'assets/vela/Pack/2 Margaritas.png',
     isCustomPhoto: false,
+    excentoEmpaque: true,
     sizes: [
       { id: 'pack-2-margaritas', name: 'Pack 2 Margaritas', price: 2400, image: 'assets/vela/Pack/2 Margaritas.png' },
       { id: 'pack-3-margaritas', name: 'Pack 3 Margaritas', price: 3750, image: 'assets/vela/Pack/3 Margaritas.png' },
@@ -1057,41 +1058,19 @@ let cart = []; // Array of cart items
 // ============================================
 
 const QUOTE_CONFIG = {
-  entregas: [
-    {
-      id: 'sinEmpaque',
-      name: 'Sin empaque',
-      badge: '(Sin empaque)',
-      desc: 'Sin empaque.',
-      priceExtra: 0,
-      icon: '👤'
-    },
-    {
-      id: 'enCaja',
-      name: 'En Caja',
-      badge: '(Ideal para regalo simple)',
-      desc: 'Incluye caja de cartón kraft.',
-      priceExtra: 300,
-      icon: '📦'
-    },
-    {
-      id: 'personalizado',
-      name: 'En Caja con Etiqueta Personalizada',
-      badge: '(Regalo único)',
-      desc: 'Incluye caja kraft + etiqueta con tu diseño.',
-      priceExtra: 500,
-      icon: '🏷️'
-    },
-    {
-      id: 'eventos',
-      name: 'Momentos especiales',/* 'Pack Eventos', */
-      badge: '(Listo para regalar)',
-      desc: 'Envíanos tu idea y lo cotizamos según tus necesidades.',/* 'Incluye caja personalizada + cinta + montaje.', */
-      priceExtra: -1,
-      icon: '🎁'
-    }
+  presentacionGeneral: [
+    { id: 'porProducto', name: 'Según cada producto', badge: '(Presentación individual)', desc: 'Cada producto utiliza la presentación seleccionada en su propia ficha.', priceExtra: 0, icon: '🧩' },
+    { id: 'todoJunto', name: 'Todo junto en una caja', badge: '(Una sola caja)', desc: 'Todos los productos se entregan juntos en una única caja.', priceExtra: 300, icon: '📦' },
+    { id: 'todoJuntoPersonalizado', name: 'Todo junto en caja personalizada', badge: '(Una sola caja + etiqueta)', desc: 'Todos los productos se entregan juntos en una única caja con etiqueta personalizada.', priceExtra: 500, icon: '🏷️' },
+    /* { id: 'sinEmpaqueGeneral', name: 'Sin empaque', badge: '(Pedido completo)', desc: 'Todo el pedido se entrega sin empaque.', priceExtra: 0, icon: '📦' }, */
+    { id: 'eventos', name: 'Momentos especiales', badge: '(A cotizar)', desc: 'Envíanos tu idea y cotizamos la presentación general según tus necesidades.', priceExtra: -1, icon: '🎁' }
   ],
-
+  presentacionesProducto: [
+    { id: 'sinEmpaque', name: 'Sin empaque', badge: '(Sin empaque)', desc: 'La pieza se entrega sin empaque.', priceExtra: 0, icon: '👤' },
+    { id: 'enCaja', name: 'En Caja', badge: '(Ideal para regalo simple)', desc: 'Incluye caja de cartón kraft.', priceExtra: 250, icon: '📦' },
+    { id: 'personalizado', name: 'En Caja con Etiqueta Personalizada', badge: '(Regalo único)', desc: 'Incluye caja kraft + etiqueta con tu diseño.', priceExtra: 400, icon: '🏷️' },
+    { id: 'eventos', name: 'Momentos especiales', badge: '(A cotizar)', desc: 'Presentación especial a definir.', priceExtra: -1, icon: '🎁' }
+  ],
   descuentosCantidad: [
     { min: 51, discount: 15 },
     { min: 21, discount: 12 },
@@ -1099,11 +1078,18 @@ const QUOTE_CONFIG = {
   ]
 };
 
-// Estado de la cotización
-let quoteOptions = {
-  deliveryId: 'enCaja'
-};
+let quoteOptions = { presentationMode: 'porProducto' };
 
+function getProductPresentations(product) {
+  if (!product || product.excentoEmpaque === true) return [];
+  return Array.isArray(product.presentaciones) && product.presentaciones.length > 0 ? product.presentaciones : QUOTE_CONFIG.presentacionesProducto;
+}
+
+function getProductPresentation(product, presentationId) {
+  if (!product || product.excentoEmpaque === true) return null;
+  const presentations = getProductPresentations(product);
+  return presentations.find(p => p.id === presentationId) || presentations[0] || null;
+}
 
 // PAGINATION STATE
 let currentPage = 1;
@@ -1125,7 +1111,8 @@ function initDefaultState() {
       sizeId: p.sizes ? p.sizes[0].id : null,
       colorId: p.colors ? p.colors[0].id : null,
       aromaId: p.aromas ? p.aromas[0].id : null,
-      variantId: p.variants ? p.variants[0].id : null
+      variantId: p.variants ? p.variants[0].id : null,
+      presentationId: p.excentoEmpaque ? null : (getProductPresentations(p)[0]?.id || null)
     };
   });
 }
@@ -1344,6 +1331,8 @@ function getProductState(product) {
   }
 
 
+  const selectedPresentation = product.excentoEmpaque ? null : getProductPresentation(product, options.presentationId);
+
   return {
 
     selectedDiseño,
@@ -1352,6 +1341,7 @@ function getProductState(product) {
     selectedColor,
     selectedAroma,
     selectedVariant,
+    selectedPresentation,
 
     // IMPORTANTE:
     // Ya NO existe selectedEntrega
@@ -1397,87 +1387,103 @@ function getDiscountByQuantity(quantity) {
   return discount ? discount.discount : 0;
 }
 
-function updateQuoteDelivery(deliveryId) {
-
-  quoteOptions.deliveryId = deliveryId;
-
+function updateQuotePresentationMode(modeId) {
+  quoteOptions.presentationMode = modeId;
   renderCartDrawer();
+}
+
+function updateProductPresentation(productId, presentationId) {
+  const product = PRODUCTS_DATA.find(p => p.id === productId);
+  if (!product || product.excentoEmpaque) return;
+  if (!selectedOptionsMap[productId]) selectedOptionsMap[productId] = {};
+  selectedOptionsMap[productId].presentationId = presentationId;
+  cart.forEach(item => {
+    if (item.productId === productId) {
+      const p = getProductPresentation(product, presentationId);
+      item.presentationId = p?.id || null;
+      item.presentationName = p?.name || 'Sin empaque';
+      item.presentationPrice = Number(p?.priceExtra) || 0;
+      item.presentationPending = p?.priceExtra === -1;
+    }
+  });
+  renderCatalog();
+  renderCartDrawer();
+}
+
+function updateCartItemPresentation(cartItemId, presentationId) {
+  const item = cart.find(i => i.cartItemId === cartItemId);
+  if (!item) return;
+  const product = PRODUCTS_DATA.find(p => p.id === item.productId);
+  if (!product || product.excentoEmpaque) return;
+  const p = getProductPresentation(product, presentationId);
+  if (!p) return;
+  item.presentationId = p.id;
+  item.presentationName = p.name;
+  item.presentationPrice = Number(p.priceExtra) || 0;
+  item.presentationPending = p.priceExtra === -1;
+  if (!selectedOptionsMap[item.productId]) selectedOptionsMap[item.productId] = {};
+  selectedOptionsMap[item.productId].presentationId = p.id;
+  renderCartDrawer();
+}
+
+function getDiscountByQuantity(quantity) {
+  if (!quantity || quantity <= 0) return 0;
+  const discount = QUOTE_CONFIG.descuentosCantidad.filter(d => quantity >= d.min).sort((a, b) => b.min - a.min)[0];
+  return discount ? discount.discount : 0;
 }
 
 function getQuoteTotals() {
   const totalQuantity = cart.reduce((sum, item) => sum + (Number(item.quantity) || 0), 0);
-
-  // Group quantities by product type (productId), regardless of color, size, or variant
   const productQuantitiesMap = {};
   cart.forEach(item => {
     const pid = item.productId || item.cartItemId.split('-')[0];
     productQuantitiesMap[pid] = (productQuantitiesMap[pid] || 0) + (Number(item.quantity) || 0);
   });
-
-  let subtotal = 0;
-  let discountAmount = 0;
+  let subtotal = 0, discountAmount = 0;
   const discountedProductsMap = {};
-
   const items = cart.map(item => {
     const quantity = Number(item.quantity) || 1;
     const unitPrice = Number(item.price) || 0;
     const pid = item.productId || item.cartItemId.split('-')[0];
     const totalProductQuantity = productQuantitiesMap[pid] || quantity;
-
-    // Discount depends strictly on total quantity of THIS product type
     const discountPercent = getDiscountByQuantity(totalProductQuantity);
-    const unitDiscount = unitPrice * (discountPercent / 100);
+    const unitDiscount = unitPrice * discountPercent / 100;
     const discountedUnitPrice = unitPrice - unitDiscount;
     const itemSubtotal = unitPrice * quantity;
     const itemDiscount = unitDiscount * quantity;
     const itemTotal = discountedUnitPrice * quantity;
-
-    subtotal += itemSubtotal;
-    discountAmount += itemDiscount;
-
+    subtotal += itemSubtotal; discountAmount += itemDiscount;
     if (discountPercent > 0 && itemDiscount > 0) {
-      if (!discountedProductsMap[pid]) {
-        discountedProductsMap[pid] = {
-          name: item.name,
-          discountPercent,
-          discountAmount: 0,
-          totalUnits: totalProductQuantity
-        };
-      }
+      if (!discountedProductsMap[pid]) discountedProductsMap[pid] = { name: item.name, discountPercent, discountAmount: 0, totalUnits: totalProductQuantity };
       discountedProductsMap[pid].discountAmount += itemDiscount;
     }
-
-    return {
-      ...item,
-      quantity,
-      unitPrice,
-      productTypeQuantity: totalProductQuantity,
-      discountPercent,
-      unitDiscount,
-      discountedUnitPrice,
-      itemSubtotal,
-      itemDiscount,
-      itemTotal
-    };
+    return { ...item, quantity, unitPrice, productTypeQuantity: totalProductQuantity, discountPercent, unitDiscount, discountedUnitPrice, itemSubtotal, itemDiscount, itemTotal };
   });
 
-  const delivery = QUOTE_CONFIG.entregas.find(e => e.id === quoteOptions.deliveryId) || QUOTE_CONFIG.entregas[0];
-  const deliveryPerUnit = (delivery?.priceExtra && delivery.priceExtra > 0) ? delivery.priceExtra : 0;
-  const deliveryAmount = deliveryPerUnit * totalQuantity;
-
-  const total = subtotal - discountAmount + deliveryAmount;
-
-  return {
-    items,
-    subtotal,
-    totalQuantity,
-    discountAmount,
-    discountedProductsMap,
-    delivery,
-    deliveryPerUnit,
-    deliveryAmount,
-    total
-  };
+  const presentationMode = quoteOptions.presentationMode || 'porProducto';
+  const generalPresentation = QUOTE_CONFIG.presentacionGeneral.find(p => p.id === presentationMode) || QUOTE_CONFIG.presentacionGeneral[0];
+  let productPresentationAmount = 0, productPresentationPending = false;
+  const productPresentationsMap = {};
+  if (presentationMode === 'porProducto') {
+    items.forEach(item => {
+      const product = PRODUCTS_DATA.find(p => p.id === item.productId);
+      if (!product || product.excentoEmpaque) return;
+      const p = getProductPresentation(product, item.presentationId);
+      if (!p) return;
+      if (p.priceExtra === -1) productPresentationPending = true;
+      else productPresentationAmount += (Number(p.priceExtra) || 0) * item.quantity;
+      productPresentationsMap[item.cartItemId] = { id: p.id, name: p.name, priceExtra: Number(p.priceExtra) || 0, pending: p.priceExtra === -1, quantity: item.quantity };
+    });
+  }
+  let generalPresentationAmount = 0, generalPresentationPending = false;
+  if (presentationMode !== 'porProducto') {
+    if (generalPresentation.priceExtra === -1) generalPresentationPending = true;
+    else generalPresentationAmount = Number(generalPresentation.priceExtra) || 0;
+  }
+  const presentationAmount = productPresentationAmount + generalPresentationAmount;
+  const presentationPending = productPresentationPending || generalPresentationPending;
+  const total = subtotal - discountAmount + presentationAmount;
+  return { items, subtotal, totalQuantity, discountAmount, discountedProductsMap, presentationMode, generalPresentation, productPresentationsMap, productPresentationAmount, generalPresentationAmount, presentationAmount, presentationPending, total };
 }
 
 function getWhatsAppLinkForProduct(product, state) {
@@ -1909,6 +1915,31 @@ function buildProductOptionsHTML(product, state, isModal = false) {
         </div>
       ` : ''}
 
+      ${!product.excentoEmpaque ? `
+        <div class="pt-3 mt-2 border-t border-[#8B5A2B]/10">
+          <div class="flex justify-between items-center mb-1.5">
+            <span class="text-[11px] font-bold text-[#8B5A2B] uppercase tracking-wider">🎁 Presentación:</span>
+            <span class="text-[11px] font-semibold text-[#C86D51]">${state.selectedPresentation ? state.selectedPresentation.name : 'Sin empaque'}</span>
+          </div>
+          <p class="text-[10px] text-[#6C5C57] mb-2">Elige cómo quieres presentar este producto.</p>
+          <div class="grid grid-cols-1 gap-1.5">
+            ${getProductPresentations(product).map(presentation => {
+      const isSelected = state.selectedPresentation?.id === presentation.id;
+      const isPending = presentation.priceExtra === -1;
+      return `
+                <button type="button" onclick="updateProductPresentation('${product.id}', '${presentation.id}')"
+                  class="relative w-full text-left px-3 py-2 rounded-xl border transition-all ${isSelected ? (isPending ? 'bg-amber-50 border-amber-500 ring-2 ring-amber-500/20' : 'bg-[#FFFDF9] border-[#C86D51] ring-2 ring-[#C86D51]/15') : 'bg-white border-gray-200 hover:border-[#C86D51]/40 hover:bg-[#FFFDF9]'}">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="flex items-center gap-1.5 text-xs font-semibold text-[#3A2E2B]"><span>${presentation.icon || '🎁'}</span><span>${presentation.name}</span></span>
+                    <span class="text-[10px] font-bold ${isPending ? 'text-amber-700' : 'text-[#C86D51]'}">${isPending ? 'A cotizar' : (presentation.priceExtra > 0 ? '+' + formatCLP(presentation.priceExtra) : 'Sin costo')}</span>
+                  </div>
+                  <div class="text-[10px] text-[#6C5C57] mt-0.5">${presentation.desc}</div>
+                  ${isSelected ? '<span class="absolute -top-2 right-2 bg-[#C86D51] text-white text-[9px] font-bold px-2 py-0.5 rounded-full">Seleccionado</span>' : ''}
+                </button>`;
+    }).join('')}
+          </div>
+        </div>
+      ` : ''}
     </div>
   `;
 }
@@ -2005,39 +2036,21 @@ function buildProductCardHTML(product) {
 function addToCart(productId) {
   const product = PRODUCTS_DATA.find(p => p.id === productId);
   if (!product) return;
-
   const state = getProductState(product);
   const details = [];
-
   if (state.selectedVariant) details.push(state.selectedVariant.name);
   if (state.selectedMaterial) details.push(`Material: ${state.selectedMaterial.name}`);
   if (state.selectedDiseño) details.push(`Diseño: ${state.selectedDiseño.name}`);
   if (state.selectedSize) details.push(`Tamaño: ${state.selectedSize.name}`);
   if (state.selectedColor) details.push(`Color: ${state.selectedColor.name}`);
   if (state.selectedAroma) details.push(`Aroma: ${state.selectedAroma.name}`);
-
   const variantLabel = details.join(' · ') || 'Estándar';
   const cartItemId = `${productId}-${state.selectedMaterial?.id || ''}-${state.selectedDiseño?.id || ''}-${state.selectedSize?.id || ''}-${state.selectedColor?.id || ''}-${state.selectedAroma?.id || ''}-${state.selectedVariant?.id || ''}`;
-
+  const presentation = product.excentoEmpaque ? null : state.selectedPresentation;
   const existingIndex = cart.findIndex(item => item.cartItemId === cartItemId);
-
-  if (existingIndex > -1) {
-    cart[existingIndex].quantity += 1;
-  } else {
-    cart.push({
-      cartItemId,
-      productId: product.id,
-      name: product.name,
-      variantName: variantLabel,
-      price: state.price,
-      quantity: 1,
-      image: state.image
-    });
-  }
-
-  updateCartBadge();
-  renderCartDrawer();
-  showToastNotification(`¡"${product.name}" (${variantLabel}) agregado a tu cotización!`);
+  if (existingIndex > -1) cart[existingIndex].quantity += 1;
+  else cart.push({ cartItemId, productId: product.id, name: product.name, variantName: variantLabel, price: state.price, quantity: 1, image: state.image, excentoEmpaque: !!product.excentoEmpaque, presentationId: presentation?.id || null, presentationName: presentation?.name || (product.excentoEmpaque ? 'Exento de empaque' : 'Sin empaque'), presentationPrice: Number(presentation?.priceExtra) || 0, presentationPending: presentation?.priceExtra === -1 });
+  updateCartBadge(); renderCartDrawer(); showToastNotification(`¡"${product.name}" (${variantLabel}) agregado a tu cotización!`);
 }
 
 function removeFromCart(cartItemId) {
@@ -2272,14 +2285,14 @@ function renderCartDrawer() {
           </div>
         ` : ''}
 
-        ${totals.deliveryAmount > 0 ? `
+        ${totals.presentationAmount > 0 ? `
           <div class="flex justify-between items-center text-[#6C5C57] pt-1">
-            <span>Presentación (${totals.delivery.name}):</span>
-            <span class="font-semibold text-[#8B5A2B]">+${formatCLP(totals.deliveryAmount)}</span>
+            <span>Presentación (${totals.generalPresentation.name}):</span>
+            <span class="font-semibold text-[#8B5A2B]">+${formatCLP(totals.presentationAmount)}</span>
           </div>
-        ` : (totals.delivery.priceExtra === -1 ? `
+        ` : (totals.presentationPending ? `
           <div class="flex justify-between items-center text-[#6C5C57] pt-1">
-            <span>Presentación (${totals.delivery.name}):</span>
+            <span>Presentación (${totals.generalPresentation.name}):</span>
             <span class="font-semibold text-amber-800 bg-amber-100/90 border border-amber-300/60 px-2 py-0.5 rounded-md text-[11px] flex items-center gap-1">
               <span>⚠️</span>
               <span>+ Por confirmar</span>
@@ -2288,69 +2301,42 @@ function renderCartDrawer() {
         ` : '')}
       </div>
 
-      <!-- PERSONALIZACIÓN DE LA PRESENTACIÓN -->
+      <!-- PERSONALIZACIÓN DE LA PRESENTACIÓN GENERAL -->
       <div class="pt-3 border-t border-[#8B5A2B]/15">
         <div class="mb-3">
-          <h5 class="text-xs font-bold text-[#3A2E2B] uppercase tracking-wider flex items-center gap-1.5">
-            <span>🎁</span>
-            <span>PERSONALIZACIÓN DE LA PRESENTACIÓN</span>
-          </h5>
-          <p class="text-[11px] text-[#8B5A2B] mt-0.5">Selecciona el tipo de empaque para tus piezas:</p>
+          <h5 class="text-xs font-bold text-[#3A2E2B] uppercase tracking-wider flex items-center gap-1.5"><span>🎁</span><span>PERSONALIZACIÓN DE LA PRESENTACIÓN GENERAL</span></h5>
+          <p class="text-[11px] text-[#8B5A2B] mt-0.5">Elige si cada producto mantiene su presentación o si quieres agrupar todo el pedido.</p>
         </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-          ${QUOTE_CONFIG.entregas.map(entrega => {
-    const isSelected = quoteOptions.deliveryId === entrega.id;
-    const isPending = entrega.priceExtra === -1;
-    return `
-              <div 
-                onclick="updateQuoteDelivery('${entrega.id}')"
-                class="relative cursor-pointer p-3 rounded-2xl border transition-all flex flex-col justify-between ${isSelected
-        ? (isPending
-          ? 'bg-amber-50/50 border-amber-500 ring-2 ring-amber-500/25 shadow-md'
-          : 'bg-[#FFFDF9] border-[#C86D51] ring-2 ring-[#C86D51]/20 shadow-md')
-        : 'bg-white/80 border-[#8B5A2B]/20 hover:border-[#C86D51]/40 hover:bg-white'
-      }"
-              >
-                ${isSelected ? `
-                  <span class="absolute -top-2.5 right-2 ${isPending ? 'bg-amber-600' : 'bg-[#C86D51]'} text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow-sm flex items-center gap-1">
-                    Seleccionado 🎖️
-                  </span>
-                ` : ''}
-
-                <div>
-                  <div class="flex items-center gap-1.5 mb-1">
-                    <span class="text-xl">${entrega.icon}</span>
-                    <h6 class="font-bold text-xs text-[#3A2E2B] leading-tight">${entrega.name}</h6>
-                  </div>
-                  <p class="text-[10px] text-[#8B5A2B] font-semibold mb-1">${entrega.badge}</p>
-                  <p class="text-[10px] text-[#6C5C57] leading-tight">${entrega.desc}</p>
-                </div>
-
-                <div class="mt-2.5 pt-2 border-t border-[#8B5A2B]/10 flex items-center justify-between text-[11px] font-bold ${isPending ? 'text-amber-700' : 'text-[#C86D51]'}">
-                  <span>${isPending ? 'Empaque sujeto a confirmación' : '+' + (formatCLP(entrega.priceExtra) + ' c/u.')}</span>
-                </div>
-              </div>
-            `;
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          ${QUOTE_CONFIG.presentacionGeneral.map(p => {
+    const selected = totals.presentationMode === p.id, pending = p.priceExtra === -1;
+    return `<div onclick="updateQuotePresentationMode('${p.id}')" class="relative cursor-pointer p-3 rounded-2xl border transition-all ${selected ? (pending ? 'bg-amber-50/50 border-amber-500 ring-2 ring-amber-500/25' : 'bg-[#FFFDF9] border-[#C86D51] ring-2 ring-[#C86D51]/20') : 'bg-white/80 border-[#8B5A2B]/20 hover:border-[#C86D51]/40 hover:bg-white'}">
+              ${selected ? `<span class="absolute -top-2.5 right-2 ${pending ? 'bg-amber-600' : 'bg-[#C86D51]'} text-white text-[9px] font-bold px-2 py-0.5 rounded-full">Seleccionado 🎖️</span>` : ''}
+              <div class="flex items-center gap-1.5 mb-1"><span class="text-xl">${p.icon}</span><h6 class="font-bold text-xs text-[#3A2E2B]">${p.name}</h6></div>
+              <p class="text-[10px] text-[#8B5A2B] font-semibold">${p.badge}</p><p class="text-[10px] text-[#6C5C57] mt-1">${p.desc}</p>
+              <div class="mt-2 pt-2 border-t border-[#8B5A2B]/10 text-[11px] font-bold ${pending ? 'text-amber-700' : 'text-[#C86D51]'}">${pending ? 'Empaque sujeto a confirmación' : (p.priceExtra > 0 ? '+' + formatCLP(p.priceExtra) + ' total' : 'Sin costo adicional')}</div>
+            </div>`;
   }).join('')}
         </div>
-
-        <!--${totals.delivery.priceExtra === -1 ? `
-          <div class="mt-3 bg-amber-50/90 border border-amber-200/90 rounded-xl p-2.5 text-[11px] text-amber-900 flex items-start gap-2 shadow-xs">
-            <span class="text-sm">⚠️</span>
-            <div>
-              <strong class="font-semibold text-amber-950">El total final puede variar:</strong> Al seleccionar <em>"${totals.delivery.name}" (+ Por confirmar)</em>, el valor final del empaque no está incluido en el cálculo actual y se definirá según los detalles de tu evento.
+        ${totals.presentationMode === 'porProducto' ? `
+          <div class="mt-3 rounded-xl bg-[#FFFDF9] border border-[#8B5A2B]/10 p-3">
+            <p class="text-[10px] font-bold text-[#8B5A2B] uppercase tracking-wider mb-2">Presentación seleccionada por producto</p>
+            <div class="space-y-2">
+              ${totals.items.map(item => {
+    const product = PRODUCTS_DATA.find(p => p.id === item.productId); if (!product) return '';
+    if (product.excentoEmpaque) return `<div class="flex justify-between gap-2 text-[11px]"><span class="font-medium text-[#3A2E2B]">${item.name} ×${item.quantity}</span><span class="italic text-[#6C5C57]">Exento de empaque</span></div>`;
+    const selected = getProductPresentation(product, item.presentationId);
+    return `<div class="rounded-xl border border-[#8B5A2B]/10 p-2.5 bg-white"><div class="flex justify-between gap-2 mb-1.5"><span class="text-[11px] font-semibold text-[#3A2E2B]">${item.name} ×${item.quantity}</span><span class="text-[10px] font-bold text-[#C86D51]">${selected?.priceExtra === -1 ? 'A cotizar' : (selected?.priceExtra > 0 ? '+' + formatCLP(selected.priceExtra) + ' c/u' : 'Sin costo')}</span></div><select onchange="updateCartItemPresentation('${item.cartItemId}', this.value)" class="w-full text-[11px] px-2.5 py-2 rounded-lg border border-[#8B5A2B]/20 bg-[#FFFDF9] text-[#3A2E2B]">${getProductPresentations(product).map(x => `<option value="${x.id}" ${x.id === selected?.id ? 'selected' : ''}>${x.name}${x.priceExtra === -1 ? ' — A cotizar' : (x.priceExtra > 0 ? ` — +${formatCLP(x.priceExtra)} c/u` : ' — Sin costo')}</option>`).join('')}</select></div>`;
+  }).join('')}
             </div>
-          </div>
-        ` : ''}
-        -->
+          </div>` : `<div class="mt-3 bg-[#FFFDF9] border border-[#8B5A2B]/10 rounded-xl p-3 text-[11px] text-[#6C5C57]"><strong class="text-[#3A2E2B]">Presentación agrupada:</strong> todos los productos del pedido se consideran dentro de una sola presentación general.</div>`}
       </div>
     </div>
   `;
 
   container.innerHTML = bannerHTML + itemsHTML + summaryHTML;
 
-  const isPendingDelivery = totals.delivery?.priceExtra === -1;
+  const isPendingDelivery = totals.presentationPending;
 
   if (totalElem) {
     totalElem.textContent = isPendingDelivery ? `${formatCLP(totals.total)}*` : formatCLP(totals.total);
@@ -2384,7 +2370,7 @@ function renderCartDrawer() {
       alertElem.innerHTML = `
         <span class="text-base leading-none">⚠️</span>
         <div class="text-[11px] leading-tight">
-          <strong class="font-bold text-amber-950">El precio final puede variar:</strong> Al elegir <em>${totals.delivery.name}</em>, el valor del empaque se definirá directamente por WhatsApp según tus requerimientos.
+          <strong class="font-bold text-amber-950">El precio final puede variar:</strong> Al elegir <em>${totals.generalPresentation.name}</em>, el valor del empaque se definirá directamente por WhatsApp según tus requerimientos.
         </div>
       `;
       alertElem.classList.remove('hidden');
@@ -2395,57 +2381,59 @@ function renderCartDrawer() {
 }
 
 function sendConsolidatedWhatsAppOrder() {
-  if (cart.length === 0) {
-    alert('Tu lista de cotización está vacía.');
-    return;
-  }
-
+  if (cart.length === 0) { alert('Tu lista de cotización está vacía.'); return; }
   const totals = getQuoteTotals();
+  let msg = `✨ *Hola Entre Risas Cálidas!* Quisiera realizar la siguiente cotización / pedido:
 
-  let msg = `✨ *Hola Entre Risas Cálidas!* Quisiera realizar la siguiente cotización / pedido:\n\n`;
-
+`;
   totals.items.forEach((item, idx) => {
-    msg += `*${idx + 1}. ${item.name}* (x${item.quantity})\n`;
-    if (item.variantName) {
-      msg += `   • Detalles: ${item.variantName}\n`;
-    }
-    msg += `   • Precio unitario: ${formatCLP(item.unitPrice)}\n`;
-
+    msg += `*${idx + 1}. ${item.name}* (x${item.quantity})
+`;
+    if (item.variantName) msg += `   • Detalles: ${item.variantName}
+`;
+    msg += `   • Precio unitario: ${formatCLP(item.unitPrice)}
+`;
     if (item.discountPercent > 0) {
-      msg += `   • Descuento por cantidad (${item.discountPercent}%): -${formatCLP(item.itemDiscount)}\n`;
-      msg += `   • Precio unitario c/desc: ${formatCLP(item.discountedUnitPrice)}\n`;
+      msg += `   • Descuento por cantidad (${item.discountPercent}%): -${formatCLP(item.itemDiscount)}
+`; msg += `   • Precio unitario c/desc: ${formatCLP(item.discountedUnitPrice)}
+`;
     }
+    if (item.excentoEmpaque) msg += `   • Presentación: Exento de empaque
+`;
+    else if (totals.presentationMode === 'porProducto') {
+      const p = getProductPresentation(PRODUCTS_DATA.find(x => x.id === item.productId), item.presentationId); if (p) msg += `   • Presentación: ${p.name}${p.priceExtra === -1 ? ' (A cotizar)' : (p.priceExtra > 0 ? ` (+${formatCLP(p.priceExtra)} c/u)` : '')}
+`;
+    }
+    msg += `   • Total producto: ${formatCLP(item.itemTotal)}
 
-    msg += `   • Total producto: ${formatCLP(item.itemTotal)}\n\n`;
+`;
   });
-
-  msg += `📋 *RESUMEN DEL PEDIDO:*\n`;
-  msg += `📦 *Cantidad total:* ${totals.totalQuantity} unidades\n`;
-  msg += `💰 *Subtotal productos:* ${formatCLP(totals.subtotal)}\n`;
-
+  msg += `📋 *RESUMEN DEL PEDIDO:*
+📦 *Cantidad total:* ${totals.totalQuantity} unidades
+💰 *Subtotal productos:* ${formatCLP(totals.subtotal)}
+`;
   if (totals.discountAmount > 0) {
-    const discountedNames = Object.values(totals.discountedProductsMap || {}).map(p => p.name).join(', ');
-    msg += `🏷️ *Descuento total por volumen ${discountedNames ? `(${discountedNames})` : ''}:* -${formatCLP(totals.discountAmount)}\n`;
-    msg += `💲 *Subtotal c/descuento:* ${formatCLP(totals.subtotal - totals.discountAmount)}\n`;
+    const names = Object.values(totals.discountedProductsMap || {}).map(p => p.name).join(', '); msg += `🏷️ *Descuento total por volumen ${names ? `(${names})` : ''}:* -${formatCLP(totals.discountAmount)}
+`; msg += `💲 *Subtotal c/descuento:* ${formatCLP(totals.subtotal - totals.discountAmount)}
+`;
   }
-
-  if (totals.delivery.priceExtra === -1) {
-    msg += `🎁 *Presentación:* ${totals.delivery.name} _(*Por confirmar / a cotizar*)_\n`;
-    msg += `\n💵 *TOTAL ESTIMADO BASE: ${formatCLP(totals.total)}* _(+ empaque por confirmar)_\n`;
-    msg += `⚠️ *Nota:* El valor final podría variar ya que la presentación seleccionada fue "${totals.delivery.name}".\n\n`;
-  } else {
-    const extraLabel = totals.delivery.priceExtra > 0 ? ` (+${formatCLP(totals.delivery.priceExtra)} c/u)` : ` (Sin costo adicional)`;
-    msg += `🎁 *Presentación:* ${totals.delivery.name}${extraLabel}\n`;
-    if (totals.deliveryAmount > 0) {
-      msg += `🚚 *Costo presentación:* +${formatCLP(totals.deliveryAmount)}\n`;
-    }
-    msg += `\n💵 *TOTAL ESTIMADO: ${formatCLP(totals.total)}*\n\n`;
+  if (totals.presentationMode === 'porProducto') {
+    msg += `🎁 *Presentación:* Según cada producto
+`; if (totals.presentationAmount > 0) msg += `🚚 *Costo presentación:* +${formatCLP(totals.presentationAmount)}
+`;
   }
+  else {
+    msg += `🎁 *Presentación general:* ${totals.generalPresentation.name}${totals.generalPresentation.priceExtra === -1 ? ' (Por confirmar / a cotizar)' : (totals.generalPresentation.priceExtra > 0 ? ` (+${formatCLP(totals.generalPresentation.priceExtra)} total)` : ' (Sin costo adicional)')}
+`;
+  }
+  if (totals.presentationPending) msg += `⚠️ *Nota:* El valor final de la presentación queda sujeto a confirmación.
+`;
+  msg += `
+💵 *TOTAL ESTIMADO: ${formatCLP(totals.total)}*${totals.presentationPending ? ' _(+ presentación por confirmar)_' : ''}
 
+`;
   msg += `Quedo atento a la disponibilidad y tiempos de entrega en El Monte / envíos. ¡Muchas gracias!`;
-
-  const waUrl = `https://wa.me/56948738454?text=${encodeURIComponent(msg)}`;
-  window.open(waUrl, '_blank');
+  window.open(`https://wa.me/56948738454?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
 // PRODUCT DETAIL & LITHOPHANE PREVIEW MODAL
