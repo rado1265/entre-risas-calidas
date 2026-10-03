@@ -2482,7 +2482,7 @@ function openProductDetailModal(productId) {
   selectedOptionsMap[product.id] = {
     materialId: null,
     diseñoId: null,
-    sizeId: null,
+    sizeId: product.sizes && product.sizes.length > 0 ? product.sizes[0].id : null,
     colorId: null,
     aromaId: null,
     variantId: null,
