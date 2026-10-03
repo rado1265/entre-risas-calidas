@@ -1106,15 +1106,42 @@ document.addEventListener('DOMContentLoaded', () => {
 function initDefaultState() {
   PRODUCTS_DATA.forEach(p => {
     selectedOptionsMap[p.id] = {
-      materialId: p.material ? p.material[0].id : null,
-      diseñoId: p.diseño ? p.diseño[0].id : null,
-      sizeId: p.sizes ? p.sizes[0].id : null,
-      colorId: p.colors ? p.colors[0].id : null,
-      aromaId: p.aromas ? p.aromas[0].id : null,
-      variantId: p.variants ? p.variants[0].id : null,
-      presentationId: p.excentoEmpaque ? null : (getProductPresentations(p)[0]?.id || null)
+      materialId: null,
+      diseñoId: null,
+      sizeId: null,
+      colorId: null,
+      aromaId: null,
+      variantId: null,
+      presentationId: null,
+      quantity: 1
     };
   });
+}
+
+function getMissingProductOptions(product, options = {}) {
+  const missing = [];
+  if (product.material && product.material.length > 0 && !options.materialId) {
+    missing.push('Material');
+  }
+  if (product.diseño && product.diseño.length > 0 && !options.diseñoId) {
+    missing.push('Diseño');
+  }
+  if (product.sizes && product.sizes.length > 0 && !options.sizeId) {
+    missing.push('Tamaño');
+  }
+  if (product.colors && product.colors.length > 0 && !options.colorId) {
+    missing.push('Color / Tono');
+  }
+  if (product.aromas && product.aromas.length > 0 && !options.aromaId) {
+    missing.push('Aroma');
+  }
+  if (product.variants && product.variants.length > 0 && !options.variantId) {
+    missing.push('Opción');
+  }
+  if (!product.excentoEmpaque && !options.presentationId) {
+    missing.push('Presentación');
+  }
+  return missing;
 }
 
 function formatCLP(amount) {
@@ -1156,185 +1183,66 @@ function setupEventListeners() {
 }
 
 function getProductState(product) {
-
   const options = selectedOptionsMap[product.id] || {};
 
-  const selectedMaterial =
-    product.material?.find(
-      s => s.id === options.materialId
-    ) ||
-    product.material?.[0] ||
-    null;
-
-  const selectedDiseño =
-    product.diseño?.find(
-      s => s.id === options.diseñoId
-    ) ||
-    product.diseño?.[0] ||
-    null;
-
-  const selectedSize =
-    product.sizes?.find(
-      s => s.id === options.sizeId
-    ) ||
-    product.sizes?.[0] ||
-    null;
-
-  const selectedColor =
-    product.colors?.find(
-      c => c.id === options.colorId
-    ) ||
-    product.colors?.[0] ||
-    null;
-
-  const selectedAroma =
-    product.aromas?.find(
-      a => a.id === options.aromaId
-    ) ||
-    product.aromas?.[0] ||
-    null;
-
-  const selectedVariant =
-    product.variants?.find(
-      v => v.id === options.variantId
-    ) ||
-    product.variants?.[0] ||
-    null;
-
-
-  // ==========================================
-  // PRECIO BASE
-  // ==========================================
+  const selectedMaterial = options.materialId ? product.material?.find(s => s.id === options.materialId) || null : null;
+  const selectedDiseño = options.diseñoId ? product.diseño?.find(s => s.id === options.diseñoId) || null : null;
+  const selectedSize = options.sizeId ? product.sizes?.find(s => s.id === options.sizeId) || null : null;
+  const selectedColor = options.colorId ? product.colors?.find(c => c.id === options.colorId) || null : null;
+  const selectedAroma = options.aromaId ? product.aromas?.find(a => a.id === options.aromaId) || null : null;
+  const selectedVariant = options.variantId ? product.variants?.find(v => v.id === options.variantId) || null : null;
 
   let price = 0;
-
   if (selectedVariant) {
-
     price = selectedVariant.price || 0;
-
   } else if (selectedMaterial) {
-
     price = selectedMaterial.price || 0;
-
   } else if (selectedSize) {
-
     price = selectedSize.price || 0;
-
+  } else if (selectedDiseño) {
+    price = selectedDiseño.price || 0;
   } else {
-
     price = product.price || 0;
-
   }
 
-
-  // ==========================================
-  // EXTRAS
-  // ==========================================
-
-  if (
-    selectedSize &&
-    selectedSize.priceExtra &&
-    !selectedVariant
-  ) {
+  if (selectedSize && selectedSize.priceExtra && !selectedVariant) {
     price += selectedSize.priceExtra;
   }
-
-  if (selectedDiseño) {
-    if (selectedDiseño.priceExtra) {
-      price += selectedDiseño.priceExtra;
-    } else if (selectedDiseño.price && selectedDiseño.price > 0 && !selectedMaterial && !selectedVariant) {
-      price += selectedDiseño.price;
-    }
+  if (selectedDiseño && selectedDiseño.priceExtra) {
+    price += selectedDiseño.priceExtra;
   }
-
-  if (
-    selectedColor &&
-    selectedColor.priceExtra
-  ) {
+  if (selectedColor && selectedColor.priceExtra) {
     price += selectedColor.priceExtra;
   }
-
-  if (
-    selectedAroma &&
-    selectedAroma.priceExtra
-  ) {
+  if (selectedAroma && selectedAroma.priceExtra) {
     price += selectedAroma.priceExtra;
   }
 
-
-  // ==========================================
-  // CANTIDAD DEL PRODUCTO
-  // ==========================================
-
-  const quantity =
-    Number(options.quantity) || 1;
-
-
-  // ==========================================
-  // DESCUENTO DEL PRODUCTO
-  // ==========================================
-
-  const discountPercent =
-    getDiscountByQuantity(quantity);
-
-  const discountAmount =
-    price * (discountPercent / 100);
-
-  const discountedPrice =
-    price - discountAmount;
-
-  const total =
-    discountedPrice * quantity;
-
-
-  // ==========================================
-  // IMAGEN
-  // ==========================================
+  const quantity = Number(options.quantity) || 1;
+  const discountPercent = getDiscountByQuantity(quantity);
+  const discountAmount = price * (discountPercent / 100);
+  const discountedPrice = price - discountAmount;
+  const total = discountedPrice * quantity;
 
   let image = product.image;
-
-  if (
-    selectedColor &&
-    selectedColor.image
-  ) {
-
+  if (selectedColor && selectedColor.image) {
     image = selectedColor.image;
-
-  } else if (
-    selectedMaterial &&
-    selectedMaterial.image
-  ) {
-
+  } else if (selectedMaterial && selectedMaterial.image) {
     image = selectedMaterial.image;
-
-  } else if (
-    selectedDiseño &&
-    selectedDiseño.image
-  ) {
-
+  } else if (selectedDiseño && selectedDiseño.image) {
     image = selectedDiseño.image;
-
-  } else if (
-    selectedSize &&
-    selectedSize.image
-  ) {
-
+  } else if (selectedSize && selectedSize.image) {
     image = selectedSize.image;
-
-  } else if (
-    selectedVariant &&
-    selectedVariant.image
-  ) {
-
+  } else if (selectedVariant && selectedVariant.image) {
     image = selectedVariant.image;
-
   }
 
+  const selectedPresentation = (product.excentoEmpaque || !options.presentationId) ? null : getProductPresentation(product, options.presentationId);
 
-  const selectedPresentation = product.excentoEmpaque ? null : getProductPresentation(product, options.presentationId);
+  const missingOptions = getMissingProductOptions(product, options);
+  const isComplete = missingOptions.length === 0;
 
   return {
-
     selectedDiseño,
     selectedMaterial,
     selectedSize,
@@ -1342,25 +1250,15 @@ function getProductState(product) {
     selectedAroma,
     selectedVariant,
     selectedPresentation,
-
-    // IMPORTANTE:
-    // Ya NO existe selectedEntrega
-    // porque la entrega es global.
-
     price,
-
     image,
-
     quantity,
-
     discountPercent,
-
     discountAmount,
-
     discountedPrice,
-
-    total
-
+    total,
+    missingOptions,
+    isComplete
   };
 }
 
@@ -1499,84 +1397,83 @@ function getWhatsAppLinkForProduct(product, state) {
   return `https://wa.me/56948738454?text=${encodeURIComponent(waText)}`;
 }
 
+// PRICE RANGE & OPTIONS BADGES HELPERS FOR CLEAN CATALOG CARDS
+function getProductPriceRange(product) {
+  let prices = [];
+
+  if (product.variants && product.variants.length > 0) {
+    prices.push(...product.variants.map(v => v.price || 0));
+  } else if (product.material && product.material.length > 0) {
+    prices.push(...product.material.map(m => m.price || 0));
+  } else if (product.sizes && product.sizes.length > 0) {
+    prices.push(...product.sizes.map(s => (s.price !== undefined && s.price > 0 ? s.price : (product.price || 0) + (s.priceExtra || 0))));
+  } else if (product.diseño && product.diseño.length > 0) {
+    prices.push(...product.diseño.map(d => (d.price !== undefined && d.price > 0 ? d.price : (product.price || 0) + (d.priceExtra || 0))));
+  } else if (product.price !== undefined && product.price > 0) {
+    prices.push(product.price);
+  }
+
+  if (prices.length === 0) return formatCLP(0);
+
+  const minPrice = Math.min(...prices);
+  const maxPrice = Math.max(...prices);
+
+  if (minPrice === maxPrice) {
+    return formatCLP(minPrice);
+  }
+  return `${formatCLP(minPrice)} – ${formatCLP(maxPrice)}`;
+}
+
+function getProductOptionsBadges(product) {
+  const badges = [];
+  if (product.material && product.material.length > 0) {
+    const matNames = product.material.map(m => m.name).join(' / ');
+    badges.push(`🏺 ${matNames}`);
+  }
+  if (product.colors && product.colors.length > 0) {
+    badges.push(`🎨 ${product.colors.length} Colores`);
+  }
+  if (product.aromas && product.aromas.length > 0) {
+    badges.push(`🌸 Aromas`);
+  }
+  if (product.diseño && product.diseño.length > 0) {
+    badges.push(`✨ ${product.diseño.length} Diseños`);
+  }
+  if (product.sizes && product.sizes.length > 0) {
+    badges.push(`📏 ${product.sizes.length} Tamaños`);
+  }
+  if (product.variants && product.variants.length > 0) {
+    badges.push(`💡 ${product.variants.length} Opciones`);
+  }
+  if (product.isCustomPhoto) {
+    badges.push(`🖼️ Foto 3D`);
+  }
+  return badges;
+}
+
 function updateProductOption(productId, optionType, optionId) {
   if (!selectedOptionsMap[productId]) {
     selectedOptionsMap[productId] = {};
   }
-  selectedOptionsMap[productId][optionType] = optionId;
-
-  const product = PRODUCTS_DATA.find(p => p.id === productId);
-  if (!product) return;
-
-  const state = getProductState(product);
-
-  // 1. Update in Product Card DOM if visible
-  const card = document.querySelector(`[data-product-id="${productId}"]`);
-  if (card) {
-    const imgEl = card.querySelector('.product-card-img');
-    if (imgEl && imgEl.getAttribute('src') !== state.image) {
-      imgEl.classList.add('opacity-40');
-      setTimeout(() => {
-        imgEl.setAttribute('src', state.image);
-        imgEl.classList.remove('opacity-40');
-      }, 150);
-    }
-
-    const priceEl = card.querySelector('.product-card-price');
-    if (priceEl) {
-      priceEl.textContent = formatCLP(state.price);
-      priceEl.classList.add('scale-105');
-      setTimeout(() => priceEl.classList.remove('scale-105'), 150);
-    }
-
-    const optionsEl = card.querySelector('.product-card-options');
-    if (optionsEl) optionsEl.innerHTML = buildProductOptionsHTML(product, state, false);
-
-    const waBtn = card.querySelector('.product-wa-btn');
-    if (waBtn) waBtn.setAttribute('href', getWhatsAppLinkForProduct(product, state));
+  if (optionType) {
+    selectedOptionsMap[productId][optionType] = optionId;
   }
 
-  // 2. Update in Modal DOM if currently open for this product
-  const modalContainer = document.querySelector(`[data-modal-product-id="${productId}"]`);
-  if (modalContainer) {
-    const modalImg = document.getElementById('modal-product-img');
-    if (modalImg && modalImg.getAttribute('src') !== state.image) {
-      modalImg.classList.add('opacity-40');
-      setTimeout(() => {
-        modalImg.setAttribute('src', state.image);
-        modalImg.classList.remove('opacity-40');
-      }, 150);
-    }
-
-    const modalPrice = document.getElementById('modal-product-price');
-    if (modalPrice) modalPrice.textContent = formatCLP(state.price);
-
-    const modalOptions = document.getElementById('modal-product-options');
-    if (modalOptions) modalOptions.innerHTML = buildProductOptionsHTML(product, state, true);
-
-    const modalWa = document.getElementById('modal-wa-link');
-    if (modalWa) modalWa.setAttribute('href', getWhatsAppLinkForProduct(product, state));
-  }
+  updateModalDOM(productId);
 }
 
 function toggleExpandedColors(productId) {
   expandedColorsMap[productId] = !expandedColorsMap[productId];
+  updateModalDOM(productId);
+}
+
+function updateProductPresentation(productId, presentationId) {
   const product = PRODUCTS_DATA.find(p => p.id === productId);
-  if (!product) return;
+  if (!product || product.excentoEmpaque) return;
+  if (!selectedOptionsMap[productId]) selectedOptionsMap[productId] = {};
+  selectedOptionsMap[productId].presentationId = presentationId;
 
-  const state = getProductState(product);
-
-  const card = document.querySelector(`[data-product-id="${productId}"]`);
-  if (card) {
-    const optionsEl = card.querySelector('.product-card-options');
-    if (optionsEl) optionsEl.innerHTML = buildProductOptionsHTML(product, state, false);
-  }
-
-  const modalContainer = document.querySelector(`[data-modal-product-id="${productId}"]`);
-  if (modalContainer) {
-    const modalOptions = document.getElementById('modal-product-options');
-    if (modalOptions) modalOptions.innerHTML = buildProductOptionsHTML(product, state, true);
-  }
+  updateModalDOM(productId);
 }
 
 function renderCatalog() {
@@ -1710,10 +1607,10 @@ function resetFilters() {
   renderCatalog();
 }
 
-function buildProductOptionsHTML(product, state, isModal = false) {
+function buildProductOptionsHTML(product, state, isModal = true) {
   return `
-    <div class="space-y-3 my-3 bg-[#F7EFE5]/50 p-3 rounded-2xl border border-[#8B5A2B]/10">
-       <!-- 1. MAterial (Option Buttons - MercadoLibre Style) -->
+    <div class="space-y-3 my-3 bg-[#F7EFE5]/50 p-3.5 rounded-2xl border border-[#8B5A2B]/10">
+       <!-- 1. Material -->
       ${product.material ? `
         <div>
           <div class="flex justify-between items-center mb-1.5">
@@ -1722,22 +1619,23 @@ function buildProductOptionsHTML(product, state, isModal = false) {
           </div>
           <div class="flex flex-wrap gap-1.5">
             ${product.material.map(s => {
-    const isSelected = state.selectedMaterial && state.selectedMaterial.id === s.id;
-    return `
+              const isSelected = state.selectedMaterial && state.selectedMaterial.id === s.id;
+              return `
                 <button 
                   type="button"
                   onclick="updateProductOption('${product.id}', 'materialId', '${s.id}')"
-                  class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1 cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
-      }"
+                  class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1 cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'}"
                 >
                   <span>${s.name}</span>
+                  <span class="text-[10px] font-bold text-[#C86D51]">(${formatCLP(s.price)})</span>
                 </button>
               `;
-  }).join('')}
+            }).join('')}
           </div>
         </div>
       ` : ''}
-       <!-- 1. Diseño (Option Buttons - MercadoLibre Style) -->
+
+       <!-- 2. Diseño -->
       ${product.diseño ? `
         <div>
           <div class="flex justify-between items-center mb-1.5">
@@ -1746,23 +1644,22 @@ function buildProductOptionsHTML(product, state, isModal = false) {
           </div>
           <div class="flex flex-wrap gap-1.5">
             ${product.diseño.map(s => {
-    const isSelected = state.selectedDiseño && state.selectedDiseño.id === s.id;
-    return `
+              const isSelected = state.selectedDiseño && state.selectedDiseño.id === s.id;
+              return `
                 <button 
                   type="button"
                   onclick="updateProductOption('${product.id}', 'diseñoId', '${s.id}')"
-                  class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1 cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
-      }"
+                  class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1 cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'}"
                 >
                   <span>${s.name}</span>
                 </button>
               `;
-  }).join('')}
+            }).join('')}
           </div>
         </div>
       ` : ''}
 
-      <!-- 1. TAMAÑO (Option Buttons - MercadoLibre Style) -->
+      <!-- 3. Tamaño -->
       ${product.sizes ? `
         <div>
           <div class="flex justify-between items-center mb-1.5">
@@ -1771,41 +1668,39 @@ function buildProductOptionsHTML(product, state, isModal = false) {
           </div>
           <div class="flex flex-wrap gap-1.5">
             ${product.sizes.map(s => {
-    const isSelected = state.selectedSize && state.selectedSize.id === s.id;
-    return `
+              const isSelected = state.selectedSize && state.selectedSize.id === s.id;
+              return `
                 <button 
                   type="button"
                   onclick="updateProductOption('${product.id}', 'sizeId', '${s.id}')"
-                  class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1 cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
-      }"
+                  class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1 cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'}"
                 >
                   <span>${s.name}</span>
                 </button>
               `;
-  }).join('')}
+            }).join('')}
           </div>
         </div>
       ` : ''}
 
-      <!-- 2. COLOR / TONO Swatches (Option Buttons - MercadoLibre Style + Toggle) -->
+      <!-- 4. Color / Tono -->
       ${product.colors ? (() => {
-      const MAX_VISIBLE = 3;
-      const isExpanded = !!expandedColorsMap[product.id];
-      const totalColors = product.colors.length;
-      const hasMore = totalColors > MAX_VISIBLE;
+        const MAX_VISIBLE = 8;
+        const isExpanded = !!expandedColorsMap[product.id];
+        const totalColors = product.colors.length;
+        const hasMore = totalColors > MAX_VISIBLE;
 
-      let visibleColors = product.colors;
-      if (hasMore && !isExpanded) {
-        visibleColors = product.colors.slice(0, MAX_VISIBLE);
-        // Always ensure current selected color is visible even if collapsed
-        if (state.selectedColor && !visibleColors.some(c => c.id === state.selectedColor.id)) {
-          visibleColors = [...visibleColors.slice(0, MAX_VISIBLE - 1), state.selectedColor];
+        let visibleColors = product.colors;
+        if (hasMore && !isExpanded) {
+          visibleColors = product.colors.slice(0, MAX_VISIBLE);
+          if (state.selectedColor && !visibleColors.some(c => c.id === state.selectedColor.id)) {
+            visibleColors = [...visibleColors.slice(0, MAX_VISIBLE - 1), state.selectedColor];
+          }
         }
-      }
 
-      const hiddenCount = totalColors - visibleColors.length;
+        const hiddenCount = totalColors - visibleColors.length;
 
-      return `
+        return `
           <div>
             <div class="flex justify-between items-center mb-1.5">
               <span class="text-[11px] font-bold text-[#8B5A2B] uppercase tracking-wider">Color / Tono:</span>
@@ -1813,22 +1708,19 @@ function buildProductOptionsHTML(product, state, isModal = false) {
             </div>
             <div class="flex flex-wrap gap-1.5 items-center">
               ${visibleColors.map(c => {
-        const isSelected =
-          state.selectedColor &&
-          state.selectedColor.id === c.id;
+                const isSelected = state.selectedColor && state.selectedColor.id === c.id;
+                const isAvailable = c.available !== false;
 
-        const isAvailable = c.available !== false;
-
-        return `
+                return `
                   <button 
                     type="button"
                     onclick="updateProductOption('${product.id}', 'colorId', '${c.id}')"
                     class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1.5 relative overflow-hidden ${isSelected
-            ? 'selected'
-            : isAvailable
-              ? 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9] cursor-pointer'
-              : 'bg-gray-50 text-gray-400 border-gray-200 opacity-60'
-          }"
+                      ? 'selected'
+                      : isAvailable
+                        ? 'bg-[#FFFDF9] text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50'
+                        : 'bg-gray-50 text-gray-400 border-gray-200 opacity-60'
+                    }"
                   >
                     <span class="w-3.5 h-3.5 rounded-full border border-black/10 inline-block flex-shrink-0" style="background-color: ${c.hex}"></span>
                     <span>${c.name}</span>
@@ -1843,7 +1735,7 @@ function buildProductOptionsHTML(product, state, isModal = false) {
                     ` : ''}
                   </button>
                 `;
-      }).join('')}
+              }).join('')}
 
               ${hasMore ? `
                 <button 
@@ -1858,35 +1750,34 @@ function buildProductOptionsHTML(product, state, isModal = false) {
             </div>
           </div>
         `;
-    })() : ''}
+      })() : ''}
 
-      <!-- 3. FRAGANCIA / AROMA (Option Buttons - MercadoLibre Style) -->
+      <!-- 5. Aromas -->
       ${product.aromas ? `
         <div>
           <div class="flex justify-between items-center mb-1.5">
             <span class="text-[11px] font-bold text-[#8B5A2B] uppercase tracking-wider">Aroma:</span>
             <span class="text-[11px] font-semibold text-[#C86D51]">${state.selectedAroma ? state.selectedAroma.name : ''}</span>
           </div>
-          <div class="flex flex-wrap gap-1">
+          <div class="flex flex-wrap gap-1.5">
             ${product.aromas.map(a => {
-      const isSelected = state.selectedAroma && state.selectedAroma.id === a.id;
-      return `
+              const isSelected = state.selectedAroma && state.selectedAroma.id === a.id;
+              return `
                 <button 
                   type="button"
                   onclick="updateProductOption('${product.id}', 'aromaId', '${a.id}')"
-                  class="option-btn px-2.5 py-1 rounded-lg text-[11px] font-medium border transition-all cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#6C5C57] border-gray-200 hover:border-gray-400'
-        }"
+                  class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#6C5C57] border-gray-200 hover:border-gray-400'}"
                 >
                   🌸 ${a.name}
                   ${a.priceExtra > 0 ? `<span class="text-[10px] opacity-75">(+${formatCLP(a.priceExtra)})</span>` : ''}
                 </button>
               `;
-    }).join('')}
+            }).join('')}
           </div>
         </div>
       ` : ''}
 
-      <!-- 4. VARIANTS / LITOGRAFÍA (Option Buttons - MercadoLibre Style) -->
+      <!-- 6. Variantes -->
       ${product.variants ? `
         <div>
           <div class="flex justify-between items-center mb-1.5">
@@ -1895,13 +1786,12 @@ function buildProductOptionsHTML(product, state, isModal = false) {
           </div>
           <div class="grid grid-cols-1 gap-1.5">
             ${product.variants.map(v => {
-      const isSelected = state.selectedVariant && state.selectedVariant.id === v.id;
-      return `
+              const isSelected = state.selectedVariant && state.selectedVariant.id === v.id;
+              return `
                 <button 
                   type="button"
                   onclick="updateProductOption('${product.id}', 'variantId', '${v.id}')"
-                  class="option-btn px-3 py-2 rounded-xl text-xs font-semibold border transition-all flex items-center justify-between gap-2 text-left cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'
-        }"
+                  class="option-btn px-3 py-2 rounded-xl text-xs font-semibold border transition-all flex items-center justify-between gap-2 text-left cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50 hover:bg-[#FFFDF9]'}"
                 >
                   <div class="flex items-center gap-1.5">
                     <span class="text-[#C86D51]">${isSelected ? '●' : '○'}</span>
@@ -1910,23 +1800,23 @@ function buildProductOptionsHTML(product, state, isModal = false) {
                   <span class="font-bold text-[#C86D51]">${formatCLP(v.price)}</span>
                 </button>
               `;
-    }).join('')}
+            }).join('')}
           </div>
         </div>
       ` : ''}
 
+      <!-- 7. Presentación -->
       ${!product.excentoEmpaque ? `
         <div class="pt-3 mt-2 border-t border-[#8B5A2B]/10">
           <div class="flex justify-between items-center mb-1.5">
-            <span class="text-[11px] font-bold text-[#8B5A2B] uppercase tracking-wider">🎁 Presentación:</span>
+            <span class="text-[11px] font-bold text-[#8B5A2B] uppercase tracking-wider">🎁 Presentación / Empaque:</span>
             <span class="text-[11px] font-semibold text-[#C86D51]">${state.selectedPresentation ? state.selectedPresentation.name : 'Sin empaque'}</span>
           </div>
-          <p class="text-[10px] text-[#6C5C57] mb-2">Elige cómo quieres presentar este producto.</p>
           <div class="grid grid-cols-1 gap-1.5">
             ${getProductPresentations(product).map(presentation => {
-      const isSelected = state.selectedPresentation?.id === presentation.id;
-      const isPending = presentation.priceExtra === -1;
-      return `
+              const isSelected = state.selectedPresentation?.id === presentation.id;
+              const isPending = presentation.priceExtra === -1;
+              return `
                 <button type="button" onclick="updateProductPresentation('${product.id}', '${presentation.id}')"
                   class="relative w-full text-left px-3 py-2 rounded-xl border transition-all ${isSelected ? (isPending ? 'bg-amber-50 border-amber-500 ring-2 ring-amber-500/20' : 'bg-[#FFFDF9] border-[#C86D51] ring-2 ring-[#C86D51]/15') : 'bg-white border-gray-200 hover:border-[#C86D51]/40 hover:bg-[#FFFDF9]'}">
                   <div class="flex items-center justify-between gap-2">
@@ -1936,7 +1826,7 @@ function buildProductOptionsHTML(product, state, isModal = false) {
                   <div class="text-[10px] text-[#6C5C57] mt-0.5">${presentation.desc}</div>
                   ${isSelected ? '<span class="absolute -top-2 right-2 bg-[#C86D51] text-white text-[9px] font-bold px-2 py-0.5 rounded-full">Seleccionado</span>' : ''}
                 </button>`;
-    }).join('')}
+            }).join('')}
           </div>
         </div>
       ` : ''}
@@ -1944,88 +1834,231 @@ function buildProductOptionsHTML(product, state, isModal = false) {
   `;
 }
 
-function updateProductQuantity(productId, quantity) {
-  quantity = parseInt(quantity, 10);
-  if (isNaN(quantity) || quantity < 1) {
-    quantity = 1;
-  }
-  if (!selectedOptionsMap[productId]) {
-    selectedOptionsMap[productId] = {};
-  }
-  selectedOptionsMap[productId].quantity = quantity;
-  renderCatalog();
+function changeModalQuantity(productId, delta) {
+  if (!selectedOptionsMap[productId]) selectedOptionsMap[productId] = {};
+  const currentQuantity = selectedOptionsMap[productId].quantity || 1;
+  const newQuantity = Math.max(1, currentQuantity + delta);
+  selectedOptionsMap[productId].quantity = newQuantity;
+
+  updateModalDOM(productId);
 }
 
-function changeProductQuantity(productId, amount) {
-  const currentQuantity = selectedOptionsMap[productId]?.quantity || 1;
-  const newQuantity = Math.max(1, currentQuantity + amount);
-  updateProductQuantity(productId, newQuantity);
+function updateModalDOM(productId) {
+  const product = PRODUCTS_DATA.find(p => p.id === productId);
+  if (!product) return;
+  const state = getProductState(product);
+
+  const modalHeader = document.getElementById('modal-header-banner');
+  if (modalHeader) {
+    if (state.isComplete) {
+      modalHeader.className = 'bg-emerald-50 border-b border-emerald-200 p-4 flex items-center gap-3 transition-colors';
+      modalHeader.innerHTML = `
+        <span class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center text-sm font-bold shadow-xs flex-shrink-0">✓</span>
+        <div>
+          <h4 class="text-xs font-bold text-emerald-900 uppercase tracking-wider">¡Opciones completas!</h4>
+          <p class="text-[11px] text-emerald-800">Haz clic en el botón inferior para agregar este producto a tu cotización.</p>
+        </div>
+      `;
+    } else {
+      modalHeader.className = 'bg-amber-50 border-b border-amber-200 p-4 flex items-center gap-3 transition-colors';
+      modalHeader.innerHTML = `
+        <span class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center text-sm font-bold shadow-xs flex-shrink-0">⚠️</span>
+        <div>
+          <h4 class="text-xs font-bold text-amber-900 uppercase tracking-wider">Falta seleccionar opciones</h4>
+          <p class="text-[11px] text-amber-800">Debes elegir: <strong class="underline">${state.missingOptions.join(', ')}</strong> para habilitar la cotización.</p>
+        </div>
+      `;
+    }
+  }
+
+  const modalImg = document.getElementById('modal-product-img');
+  if (modalImg && modalImg.getAttribute('src') !== state.image) {
+    modalImg.classList.add('opacity-40');
+    setTimeout(() => {
+      modalImg.setAttribute('src', state.image);
+      modalImg.classList.remove('opacity-40');
+    }, 150);
+  }
+
+  const modalUnitPrice = document.getElementById('modal-unit-price-display');
+  if (modalUnitPrice) {
+    modalUnitPrice.textContent = state.price > 0 ? formatCLP(state.price) : 'Por configurar';
+  }
+
+  const modalDiscountBadge = document.getElementById('modal-discount-badge');
+  if (modalDiscountBadge) {
+    if (state.discountPercent > 0 && state.isComplete) {
+      modalDiscountBadge.textContent = `🏷️ ¡${state.discountPercent}% de descuento por volumen aplicado!`;
+      modalDiscountBadge.classList.remove('hidden');
+    } else {
+      modalDiscountBadge.classList.add('hidden');
+    }
+  }
+
+  const modalOptions = document.getElementById('modal-product-options');
+  if (modalOptions) modalOptions.innerHTML = buildProductOptionsHTML(product, state, true);
+
+  const qtyVal = document.getElementById('modal-quantity-val');
+  if (qtyVal) qtyVal.textContent = state.quantity;
+
+  const btnContainer = document.getElementById('modal-add-to-cart-container');
+  if (btnContainer) {
+    if (state.isComplete) {
+      btnContainer.innerHTML = `
+        <button 
+          id="modal-add-to-cart-btn"
+          onclick="addConfiguredModalToCart('${product.id}')" 
+          class="w-full bg-[#8B5A2B] hover:bg-[#724822] active:scale-[0.99] text-white font-bold py-3.5 px-4 rounded-2xl text-xs transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg cursor-pointer"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+          <span>✨ Agregar a mi Lista de Cotización — Total: ${formatCLP(state.total)}</span>
+        </button>
+      `;
+    } else {
+      btnContainer.innerHTML = `
+        <button 
+          id="modal-add-to-cart-btn"
+          disabled
+          class="w-full bg-gray-200 text-gray-400 font-bold py-3.5 px-4 rounded-2xl text-xs flex items-center justify-center gap-2 cursor-not-allowed border border-gray-300 opacity-80"
+        >
+          <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          <span>Falta elegir: ${state.missingOptions.join(', ')}</span>
+        </button>
+      `;
+    }
+  }
+
+  const modalWa = document.getElementById('modal-wa-link');
+  if (modalWa) {
+    if (state.isComplete) {
+      modalWa.setAttribute('href', getWhatsAppLinkForProduct(product, state));
+      modalWa.classList.remove('opacity-50', 'pointer-events-none');
+    } else {
+      modalWa.classList.add('opacity-50', 'pointer-events-none');
+    }
+  }
+}
+
+function addConfiguredModalToCart(productId) {
+  const product = PRODUCTS_DATA.find(p => p.id === productId);
+  if (!product) return;
+  const state = getProductState(product);
+
+  if (!state.isComplete) {
+    showToastNotification(`Por favor selecciona: ${state.missingOptions.join(', ')}`);
+    return;
+  }
+
+  const details = [];
+  if (state.selectedVariant) details.push(state.selectedVariant.name);
+  if (state.selectedMaterial) details.push(`Material: ${state.selectedMaterial.name}`);
+  if (state.selectedDiseño) details.push(`Diseño: ${state.selectedDiseño.name}`);
+  if (state.selectedSize) details.push(`Tamaño: ${state.selectedSize.name}`);
+  if (state.selectedColor) details.push(`Color: ${state.selectedColor.name}`);
+  if (state.selectedAroma) details.push(`Aroma: ${state.selectedAroma.name}`);
+  const variantLabel = details.join(' · ') || 'Estándar';
+
+  const cartItemId = `${productId}-${state.selectedMaterial?.id || ''}-${state.selectedDiseño?.id || ''}-${state.selectedSize?.id || ''}-${state.selectedColor?.id || ''}-${state.selectedAroma?.id || ''}-${state.selectedVariant?.id || ''}`;
+  const presentation = product.excentoEmpaque ? null : state.selectedPresentation;
+
+  const existingIndex = cart.findIndex(item => item.cartItemId === cartItemId);
+  if (existingIndex > -1) {
+    cart[existingIndex].quantity += state.quantity;
+  } else {
+    cart.push({
+      cartItemId,
+      productId: product.id,
+      name: product.name,
+      variantName: variantLabel,
+      price: state.price,
+      quantity: state.quantity,
+      image: state.image,
+      excentoEmpaque: !!product.excentoEmpaque,
+      presentationId: presentation?.id || null,
+      presentationName: presentation?.name || (product.excentoEmpaque ? 'Exento de empaque' : 'Sin empaque'),
+      presentationPrice: Number(presentation?.priceExtra) || 0,
+      presentationPending: presentation?.priceExtra === -1
+    });
+  }
+
+  updateCartBadge();
+  renderCartDrawer();
+  closeModal();
+  showToastNotification(`¡"${product.name}" (${variantLabel}) × ${state.quantity} agregado a tu cotización!`);
 }
 
 function buildProductCardHTML(product) {
   const state = getProductState(product);
-  const singleWaLink = getWhatsAppLinkForProduct(product, state);
+  const priceRange = getProductPriceRange(product);
+  const optionBadges = getProductOptionsBadges(product);
+  const isRange = priceRange.includes('–');
 
   return `
-    <article data-product-id="${product.id}" class="product-card glass-panel rounded-3xl overflow-hidden flex flex-col justify-between border border-[#C86D51]/15 relative group">
-      <!-- Top Image Header -->
-      <div class="relative overflow-hidden aspect-[4/3] bg-[#F7EFE5]/50">
-        <img src="${state.image}" alt="${product.name}" class="product-card-img img-zoom w-full h-full object-cover object-center" loading="lazy" />
+    <article data-product-id="${product.id}" class="product-card glass-panel rounded-3xl overflow-hidden flex flex-col justify-between border border-[#C86D51]/15 relative group hover:shadow-xl transition-all duration-300">
+      
+      <!-- Top Image Header (Clickable) -->
+      <div onclick="openProductDetailModal('${product.id}')" class="relative overflow-hidden aspect-[4/3] bg-[#F7EFE5]/50 cursor-pointer group">
+        <img src="${state.image}" alt="${product.name}" class="product-card-img img-zoom w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" loading="lazy" />
         
         <!-- Category Pill Badge -->
         <span class="absolute top-3 left-3 bg-[#FFFDF9]/90 backdrop-blur-md text-[#8B5A2B] text-xs font-semibold px-3 py-1 rounded-full shadow-sm border border-[#8B5A2B]/20">
           ${product.categoryName}
         </span>
 
-        <!-- Preview Modal Action Icon -->
-        <button onclick="openProductDetailModal('${product.id}')" title="Ver detalles y vista previa" class="absolute top-3 right-3 w-9 h-9 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center text-[#3A2E2B] hover:text-[#C86D51] hover:bg-white shadow-md transition-all">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-        </button>
+        <!-- Quick View Hover Overlay -->
+        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <span class="bg-white/95 backdrop-blur-md text-[#3A2E2B] text-xs font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+            <span>✨</span>
+            <span>Personalizar y Cotizar</span>
+          </span>
+        </div>
       </div>
 
       <!-- Product Info -->
       <div class="p-5 flex-1 flex flex-col justify-between">
         <div>
-          <div class="flex items-baseline justify-between mb-1 gap-2">
-            <h3 class="text-lg font-serif-title font-bold text-[#3A2E2B] group-hover:text-[#C86D51] transition-colors leading-tight">${product.name}</h3>
-            <span class="product-card-price text-lg font-bold text-[#C86D51] whitespace-nowrap transition-transform duration-200 inline-block">${formatCLP(state.price)}</span>
+          <!-- Title & Price Range -->
+          <div class="mb-2">
+            <h3 onclick="openProductDetailModal('${product.id}')" class="text-lg font-serif-title font-bold text-[#3A2E2B] group-hover:text-[#C86D51] transition-colors leading-tight cursor-pointer">
+              ${product.name}
+            </h3>
+            
+            <div class="mt-1 flex items-baseline gap-1.5">
+              <span class="text-xs text-[#8B5A2B] font-medium">Precio:</span>
+              <span class="text-lg font-extrabold text-[#C86D51]">
+                ${priceRange}
+              </span>
+              ${isRange ? '<span class="text-[10px] text-[#8B5A2B] italic">(según elección)</span>' : ''}
+            </div>
           </div>
           
+          <!-- Dimensions -->
           <p class="text-xs text-[#8B5A2B] font-medium mb-2 flex items-center gap-1.5">
             <svg class="w-3.5 h-3.5 text-[#C86D51]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
             ${product.dimensions}
           </p>
 
+          <!-- Short Description -->
           <p class="text-xs text-[#6C5C57] mb-3 line-clamp-2 leading-relaxed">
             ${product.description}
           </p>
 
-          <!-- Dynamic Option Buttons (MercadoLibre Style) -->
-          <div class="product-card-options">
-            ${buildProductOptionsHTML(product, state, false)}
+          <!-- Customization Summary Badges -->
+          <div class="flex flex-wrap gap-1 mb-3">
+            ${optionBadges.map(b => `<span class="bg-[#F7EFE5] text-[#8B5A2B] text-[10px] font-semibold px-2.5 py-1 rounded-lg border border-[#8B5A2B]/10">${b}</span>`).join('')}
           </div>
         </div>
 
-        <!-- Action Buttons -->
-        <div class="grid grid-cols-5 gap-2 pt-3 border-t border-[#8B5A2B]/10 mt-2">
+        <!-- Clean Main Action CTA Button -->
+        <div class="pt-3 border-t border-[#8B5A2B]/10 mt-2">
           <button 
-            onclick="addToCart('${product.id}')"
-            class="col-span-2 bg-[#F7EFE5] hover:bg-[#EFE2D3] text-[#8B5A2B] font-semibold py-2.5 px-3 rounded-2xl text-xs flex items-center justify-center gap-1.5 transition-colors border border-[#8B5A2B]/20"
-            title="Agregar a la lista de cotización"
+            onclick="openProductDetailModal('${product.id}')"
+            class="w-full bg-[#C86D51] hover:bg-[#b35b40] active:scale-[0.99] text-white font-bold py-3 px-4 rounded-2xl text-xs flex items-center justify-center gap-2 transition-all shadow-sm hover:shadow-md cursor-pointer"
           >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
-            Cotizar
+            <span>✨</span>
+            <span>Personalizar y Cotizar</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </button>
-          
-          <a 
-            href="${singleWaLink}" 
-            target="_blank"
-            rel="noopener noreferrer"
-            class="product-wa-btn col-span-3 bg-[#C86D51] hover:bg-[#b35b40] text-white font-semibold py-2.5 px-3 rounded-2xl text-xs flex items-center justify-center gap-1.5 transition-all shadow-sm hover:shadow-md"
-          >
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-            Pedir WhatsApp
-          </a>
         </div>
       </div>
     </article>
@@ -2436,7 +2469,7 @@ function sendConsolidatedWhatsAppOrder() {
   window.open(`https://wa.me/56948738454?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
-// PRODUCT DETAIL & LITHOPHANE PREVIEW MODAL
+// PRODUCT DETAIL & CUSTOMIZATION CONFIRMATION MODAL
 function openProductDetailModal(productId) {
   const product = PRODUCTS_DATA.find(p => p.id === productId);
   if (!product) return;
@@ -2446,47 +2479,116 @@ function openProductDetailModal(productId) {
   const content = document.getElementById('modal-content');
   if (!modal || !content) return;
 
+  selectedOptionsMap[product.id] = {
+    materialId: null,
+    diseñoId: null,
+    sizeId: null,
+    colorId: null,
+    aromaId: null,
+    variantId: null,
+    presentationId: null,
+    quantity: 1
+  };
+
   const state = getProductState(product);
 
   content.innerHTML = `
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6" data-modal-product-id="${product.id}">
-      <div class="relative rounded-2xl overflow-hidden bg-[#F7EFE5] flex items-center justify-center min-h-[250px]">
-        <img id="modal-product-img" src="${state.image}" alt="${product.name}" class="w-full h-full object-cover rounded-2xl transition-all duration-300" />
-        ${product.isCustomPhoto ? `
-          <div class="absolute inset-x-4 bottom-4 bg-black/70 backdrop-blur-md text-white p-3 rounded-xl text-center text-xs">
-            <p class="font-semibold text-yellow-300">💡 Simulación de Retroiluminación 3D</p>
-            <p class="text-[11px] text-gray-200 mt-0.5">Sube una foto para previsualizar tu litofanía iluminada:</p>
-            <input type="file" accept="image/*" onchange="previewLithophanePhoto(event)" class="mt-2 text-xs text-slate-200 file:mr-2 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-[#C86D51] file:text-white hover:file:bg-[#b35b40] cursor-pointer" />
-          </div>
-        ` : ''}
+    <div data-modal-product-id="${product.id}" class="relative">
+      
+      <!-- Top Guidance Header inside Modal -->
+      <div id="modal-header-banner" class="bg-amber-50 border-b border-amber-200 p-4 flex items-center gap-3 transition-colors">
+        <span class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center text-sm font-bold shadow-xs flex-shrink-0">⚠️</span>
+        <div>
+          <h4 class="text-xs font-bold text-amber-900 uppercase tracking-wider">Falta seleccionar opciones</h4>
+          <p class="text-[11px] text-amber-800">Debes elegir: <strong class="underline">${state.missingOptions.join(', ')}</strong> para habilitar la cotización.</p>
+        </div>
       </div>
 
-      <div class="flex flex-col justify-between">
-        <div>
-          <span class="text-xs font-semibold text-[#8B5A2B] bg-[#F7EFE5] px-3 py-1 rounded-full uppercase tracking-wider">${product.categoryName}</span>
-          <h2 class="text-2xl font-serif-title font-bold text-[#3A2E2B] mt-2 mb-1">${product.name}</h2>
-          <p class="text-xs font-semibold text-[#8B5A2B] mb-2">${product.dimensions}</p>
-          
-          <div id="modal-product-price" class="text-2xl font-bold text-[#C86D51] mb-4">${formatCLP(state.price)}</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+        
+        <!-- Left Column: Product Image & Lithophane Upload -->
+        <div class="space-y-3">
+          <div class="relative rounded-2xl overflow-hidden bg-[#F7EFE5] flex items-center justify-center min-h-[260px] border border-[#8B5A2B]/10 shadow-inner">
+            <img id="modal-product-img" src="${state.image}" alt="${product.name}" class="w-full h-full object-cover rounded-2xl transition-all duration-300 max-h-[380px]" />
+            ${product.isCustomPhoto ? `
+              <div class="absolute inset-x-3 bottom-3 bg-black/80 backdrop-blur-md text-white p-3 rounded-xl text-center text-xs shadow-lg">
+                <p class="font-semibold text-yellow-300">💡 Simulación de Retroiluminación 3D</p>
+                <p class="text-[11px] text-gray-200 mt-0.5">Sube una foto para previsualizar tu litofanía iluminada:</p>
+                <input type="file" accept="image/*" onchange="previewLithophanePhoto(event)" class="mt-2 text-xs text-slate-200 file:mr-2 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-[#C86D51] file:text-white hover:file:bg-[#b35b40] cursor-pointer" />
+              </div>
+            ` : ''}
+          </div>
 
-          <p class="text-xs text-[#6C5C57] leading-relaxed mb-4">${product.description}</p>
-
-          <!-- Interactive Options inside modal -->
-          <div id="modal-product-options">
-            ${buildProductOptionsHTML(product, state, true)}
+          <!-- Price & Volume Discount Summary Callout -->
+          <div class="bg-[#FFFDF9] p-3 rounded-2xl border border-[#8B5A2B]/15 text-center shadow-xs">
+            <span class="text-[11px] font-bold text-[#8B5A2B] uppercase tracking-wider block">Precio Unitario Configurado</span>
+            <div id="modal-unit-price-display" class="text-2xl font-extrabold text-[#C86D51]">
+              ${state.price > 0 ? formatCLP(state.price) : 'Por configurar'}
+            </div>
+            <div id="modal-discount-badge" class="mt-1 text-[11px] font-bold text-emerald-700 hidden">
+            </div>
           </div>
         </div>
 
-        <div class="space-y-3 pt-4 border-t border-[#8B5A2B]/10">
-          <button onclick="addToCart('${product.id}'); closeModal();" class="w-full bg-[#8B5A2B] hover:bg-[#724822] text-white font-semibold py-3 px-4 rounded-xl text-sm transition-colors flex items-center justify-center gap-2 shadow-sm">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
-            Agregar a la lista de Cotización
-          </button>
-          
-          <a id="modal-wa-link" href="${getWhatsAppLinkForProduct(product, state)}" target="_blank" rel="noopener noreferrer" class="w-full bg-[#C86D51] hover:bg-[#b35b40] text-white font-semibold py-3 px-4 rounded-xl text-sm transition-colors flex items-center justify-center gap-2 shadow-sm">
-            Consultar por WhatsApp
-          </a>
+        <!-- Right Column: Product Info & Options -->
+        <div class="flex flex-col justify-between space-y-4">
+          <div>
+            <span class="text-[11px] font-semibold text-[#8B5A2B] bg-[#F7EFE5] px-3 py-1 rounded-full uppercase tracking-wider">${product.categoryName}</span>
+            <h2 class="text-2xl font-serif-title font-bold text-[#3A2E2B] mt-2 mb-1">${product.name}</h2>
+            <p class="text-xs font-semibold text-[#8B5A2B] mb-2 flex items-center gap-1">
+              <span>📐 Dimensiones:</span>
+              <span class="text-[#3A2E2B]">${product.dimensions}</span>
+            </p>
+
+            <p class="text-xs text-[#6C5C57] leading-relaxed mb-3">${product.description}</p>
+
+            <!-- Options Selectors -->
+            <div id="modal-product-options">
+              ${buildProductOptionsHTML(product, state, true)}
+            </div>
+
+            <!-- Quantity Selector -->
+            <div class="mt-4 p-3.5 bg-[#F7EFE5]/60 rounded-2xl border border-[#8B5A2B]/15 flex items-center justify-between">
+              <div>
+                <span class="text-xs font-bold text-[#3A2E2B] block">Cantidad de unidades:</span>
+                <span class="text-[10px] text-[#8B5A2B]">Descuentos desde 10 unidades</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <button type="button" onclick="changeModalQuantity('${product.id}', -1)" class="w-8 h-8 rounded-xl bg-white border border-gray-300 text-[#3A2E2B] font-bold hover:bg-[#F5EBE6] active:scale-95 transition-all shadow-xs flex items-center justify-center cursor-pointer">-</button>
+                <span id="modal-quantity-val" class="w-8 text-center font-extrabold text-[#3A2E2B] text-sm">${state.quantity}</span>
+                <button type="button" onclick="changeModalQuantity('${product.id}', 1)" class="w-8 h-8 rounded-xl bg-white border border-gray-300 text-[#3A2E2B] font-bold hover:bg-[#F5EBE6] active:scale-95 transition-all shadow-xs flex items-center justify-center cursor-pointer">+</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Action Buttons inside Modal -->
+          <div class="space-y-2.5 pt-3 border-t border-[#8B5A2B]/15">
+            <div id="modal-add-to-cart-container">
+              <button 
+                id="modal-add-to-cart-btn"
+                disabled
+                class="w-full bg-gray-200 text-gray-400 font-bold py-3.5 px-4 rounded-2xl text-xs flex items-center justify-center gap-2 cursor-not-allowed border border-gray-300 opacity-80"
+              >
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                <span>Falta elegir: ${state.missingOptions.join(', ')}</span>
+              </button>
+            </div>
+            
+            <a 
+              id="modal-wa-link" 
+              href="${getWhatsAppLinkForProduct(product, state)}" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="w-full bg-[#C86D51] hover:bg-[#b35b40] text-white font-bold py-3 px-4 rounded-2xl text-xs transition-colors flex items-center justify-center gap-2 shadow-xs opacity-50 pointer-events-none"
+            >
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span>Consultar este producto por WhatsApp</span>
+            </a>
+          </div>
+
         </div>
+
       </div>
     </div>
   `;
