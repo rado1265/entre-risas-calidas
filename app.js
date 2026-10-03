@@ -630,11 +630,11 @@ const PRODUCTS_DATA = [
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 200 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 200 },
-      { id: 'limon', name: 'Limón', priceExtra: 200 },
-      { id: 'Floral', name: 'Floral', priceExtra: 200 }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 200, icon: 'assets/icons/lavanda.png' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 200, icon: 'assets/icons/vainilla.png' },
+      { id: 'limon', name: 'Limón', priceExtra: 200, icon: 'assets/icons/limon.png' },
+      { id: 'Floral', name: 'Floral', priceExtra: 200, icon: 'assets/icons/flor.png' }
     ]
   },
   {
@@ -662,11 +662,11 @@ const PRODUCTS_DATA = [
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 400 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 400 },
-      { id: 'limon', name: 'Limón', priceExtra: 400 },
-      { id: 'Floral', name: 'Floral', priceExtra: 400 }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 400, icon: 'assets/icons/lavanda.png' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 400, icon: 'assets/icons/vainilla.png' },
+      { id: 'limon', name: 'Limón', priceExtra: 400, icon: 'assets/icons/limon.png' },
+      { id: 'Floral', name: 'Floral', priceExtra: 400, icon: 'assets/icons/flor.png' }
     ]
   },
   {
@@ -696,11 +696,11 @@ const PRODUCTS_DATA = [
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 1100 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 1100 },
-      { id: 'limon', name: 'Limón', priceExtra: 1100 },
-      { id: 'Floral', name: 'Floral', priceExtra: 1100 }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 1100, icon: 'assets/icons/lavanda.png' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 1100, icon: 'assets/icons/vainilla.png' },
+      { id: 'limon', name: 'Limón', priceExtra: 1100, icon: 'assets/icons/limon.png' },
+      { id: 'Floral', name: 'Floral', priceExtra: 1100, icon: 'assets/icons/flor.png' }
     ]
   },
   {
@@ -728,11 +728,11 @@ const PRODUCTS_DATA = [
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 300 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 300 },
-      { id: 'limon', name: 'Limón', priceExtra: 300 },
-      { id: 'Floral', name: 'Floral', priceExtra: 300 }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 300, icon: 'assets/icons/lavanda.png' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 300, icon: 'assets/icons/vainilla.png' },
+      { id: 'limon', name: 'Limón', priceExtra: 300, icon: 'assets/icons/limon.png' },
+      { id: 'Floral', name: 'Floral', priceExtra: 300, icon: 'assets/icons/flor.png' }
     ]
   },
   {
@@ -760,11 +760,11 @@ const PRODUCTS_DATA = [
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 1800 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 1800 },
-      { id: 'limon', name: 'Limón', priceExtra: 1800 },
-      { id: 'Floral', name: 'Floral', priceExtra: 1800 }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 1800, icon: 'assets/icons/lavanda.png' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 1800, icon: 'assets/icons/vainilla.png' },
+      { id: 'limon', name: 'Limón', priceExtra: 1800, icon: 'assets/icons/limon.png' },
+      { id: 'Floral', name: 'Floral', priceExtra: 1800, icon: 'assets/icons/flor.png' }
     ]
   }, {
     id: 'Corazon-love-Vela-Soja',
@@ -791,11 +791,11 @@ const PRODUCTS_DATA = [
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 900 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 900 },
-      { id: 'limon', name: 'Limón', priceExtra: 900 },
-      { id: 'Floral', name: 'Floral', priceExtra: 900 }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 900, icon: 'assets/icons/lavanda.png' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 900, icon: 'assets/icons/vainilla.png' },
+      { id: 'limon', name: 'Limón', priceExtra: 900, icon: 'assets/icons/limon.png' },
+      { id: 'Floral', name: 'Floral', priceExtra: 900, icon: 'assets/icons/flor.png' }
     ]
   }, {
     id: 'margarita-Vela-Soja',
@@ -822,11 +822,11 @@ const PRODUCTS_DATA = [
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 300 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 300 },
-      { id: 'limon', name: 'Limón', priceExtra: 300 },
-      { id: 'Floral', name: 'Floral', priceExtra: 300 }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 300, icon: 'assets/icons/lavanda.png' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 300, icon: 'assets/icons/vainilla.png' },
+      { id: 'limon', name: 'Limón', priceExtra: 300, icon: 'assets/icons/limon.png' },
+      { id: 'Floral', name: 'Floral', priceExtra: 300, icon: 'assets/icons/flor.png' }
     ]
   }, {
     id: 'osito-Vela-Soja',
@@ -853,11 +853,11 @@ const PRODUCTS_DATA = [
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 300 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 300 },
-      { id: 'limon', name: 'Limón', priceExtra: 300 },
-      { id: 'Floral', name: 'Floral', priceExtra: 300 }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 300, icon: 'assets/icons/lavanda.png' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 300, icon: 'assets/icons/vainilla.png' },
+      { id: 'limon', name: 'Limón', priceExtra: 300, icon: 'assets/icons/limon.png' },
+      { id: 'Floral', name: 'Floral', priceExtra: 300, icon: 'assets/icons/flor.png' }
     ]
   }, {
     id: 'virgen-blanca-v1-Vela-Soja',
@@ -884,11 +884,11 @@ const PRODUCTS_DATA = [
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 600 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 600 },
-      { id: 'limon', name: 'Limón', priceExtra: 600 },
-      { id: 'Floral', name: 'Floral', priceExtra: 600 }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 600, icon: 'assets/icons/lavanda.png' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 600, icon: 'assets/icons/vainilla.png' },
+      { id: 'limon', name: 'Limón', priceExtra: 600, icon: 'assets/icons/limon.png' },
+      { id: 'Floral', name: 'Floral', priceExtra: 600, icon: 'assets/icons/flor.png' }
     ]
   }, {
     id: 'virgen blanca v2-Vela-Soja',
@@ -915,11 +915,11 @@ const PRODUCTS_DATA = [
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 500 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 500 },
-      { id: 'limon', name: 'Limón', priceExtra: 500 },
-      { id: 'Floral', name: 'Floral', priceExtra: 500 }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 600, icon: 'assets/icons/lavanda.png' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 600, icon: 'assets/icons/vainilla.png' },
+      { id: 'limon', name: 'Limón', priceExtra: 600, icon: 'assets/icons/limon.png' },
+      { id: 'Floral', name: 'Floral', priceExtra: 600, icon: 'assets/icons/flor.png' }
     ]
   },
   {
@@ -948,11 +948,11 @@ const PRODUCTS_DATA = [
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 700 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 700 },
-      { id: 'limon', name: 'Limón', priceExtra: 700 },
-      { id: 'Floral', name: 'Floral', priceExtra: 700 }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 700, icon: 'assets/icons/lavanda.png' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 700, icon: 'assets/icons/vainilla.png' },
+      { id: 'limon', name: 'Limón', priceExtra: 700, icon: 'assets/icons/limon.png' },
+      { id: 'Floral', name: 'Floral', priceExtra: 700, icon: 'assets/icons/flor.png' }
     ]
   }, {
     id: 'wax-metls-corazon',
@@ -979,11 +979,11 @@ const PRODUCTS_DATA = [
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
     ],
     aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0 },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 400 },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 400 },
-      { id: 'limon', name: 'Limón', priceExtra: 400 },
-      { id: 'Floral', name: 'Floral', priceExtra: 400 }
+      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 400, icon: 'assets/icons/lavanda.png' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 400, icon: 'assets/icons/vainilla.png' },
+      { id: 'limon', name: 'Limón', priceExtra: 400, icon: 'assets/icons/limon.png' },
+      { id: 'Floral', name: 'Floral', priceExtra: 400, icon: 'assets/icons/flor.png' }
     ]
   },
 
@@ -1766,9 +1766,9 @@ function buildProductOptionsHTML(product, state, isModal = true) {
                 <button 
                   type="button"
                   onclick="updateProductOption('${product.id}', 'aromaId', '${a.id}')"
-                  class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#6C5C57] border-gray-200 hover:border-gray-400'}"
+                  class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all cursor-pointer flex items-center gap-1.5 ${isSelected ? 'selected' : 'bg-white text-[#6C5C57] border-gray-200 hover:border-gray-400'}"
                 >
-                  🌸 ${a.name}
+                   <img src="${a.icon}"width=18 alt="${product.name}"/> ${a.name}
                   ${a.priceExtra > 0 ? `<span class="text-[10px] opacity-75">(+${formatCLP(a.priceExtra)})</span>` : ''}
                 </button>
               `;
