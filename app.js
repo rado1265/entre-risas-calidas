@@ -634,7 +634,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 200 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 200 },
       { id: 'limon', name: 'Limón', priceExtra: 200 },
-      { id: 'menta', name: 'Menta', priceExtra: 200 }
+      /* { id: 'menta', name: 'Menta', priceExtra: 200 } */
     ]
   },
   {
@@ -666,7 +666,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 400 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 400 },
       { id: 'limon', name: 'Limón', priceExtra: 400 },
-      { id: 'menta', name: 'Menta', priceExtra: 400 }
+      /* { id: 'menta', name: 'Menta', priceExtra: 400 } */
     ]
   },
   {
@@ -700,7 +700,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 1100 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 1100 },
       { id: 'limon', name: 'Limón', priceExtra: 1100 },
-      { id: 'menta', name: 'Menta', priceExtra: 1100 }
+      /* { id: 'menta', name: 'Menta', priceExtra: 1100 } */
     ]
   },
   {
@@ -732,7 +732,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 300 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 300 },
       { id: 'limon', name: 'Limón', priceExtra: 300 },
-      { id: 'menta', name: 'Menta', priceExtra: 300 }
+      /* { id: 'menta', name: 'Menta', priceExtra: 300 } */
     ]
   },
   {
@@ -764,7 +764,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 1800 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 1800 },
       { id: 'limon', name: 'Limón', priceExtra: 1800 },
-      { id: 'menta', name: 'Menta', priceExtra: 1800 }
+      /* { id: 'menta', name: 'Menta', priceExtra: 1800 } */
     ]
   }, {
     id: 'Corazon-love-Vela-Soja',
@@ -795,7 +795,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 900 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 900 },
       { id: 'limon', name: 'Limón', priceExtra: 900 },
-      { id: 'menta', name: 'Menta', priceExtra: 900 }
+      /* { id: 'menta', name: 'Menta', priceExtra: 900 } */
     ]
   }, {
     id: 'margarita-Vela-Soja',
@@ -826,7 +826,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 300 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 300 },
       { id: 'limon', name: 'Limón', priceExtra: 300 },
-      { id: 'menta', name: 'Menta', priceExtra: 300 }
+      /* { id: 'menta', name: 'Menta', priceExtra: 300 } */
     ]
   }, {
     id: 'osito-Vela-Soja',
@@ -857,7 +857,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 300 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 300 },
       { id: 'limon', name: 'Limón', priceExtra: 300 },
-      { id: 'menta', name: 'Menta', priceExtra: 300 }
+      /* { id: 'menta', name: 'Menta', priceExtra: 300 } */
     ]
   }, {
     id: 'virgen-blanca-v1-Vela-Soja',
@@ -888,7 +888,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 600 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 600 },
       { id: 'limon', name: 'Limón', priceExtra: 600 },
-      { id: 'menta', name: 'Menta', priceExtra: 600 }
+      /* { id: 'menta', name: 'Menta', priceExtra: 600 } */
     ]
   }, {
     id: 'virgen blanca v2-Vela-Soja',
@@ -919,7 +919,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 500 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 500 },
       { id: 'limon', name: 'Limón', priceExtra: 500 },
-      { id: 'menta', name: 'Menta', priceExtra: 500 }
+      /* { id: 'menta', name: 'Menta', priceExtra: 500 } */
     ]
   },
   {
@@ -952,7 +952,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 700 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 700 },
       { id: 'limon', name: 'Limón', priceExtra: 700 },
-      { id: 'menta', name: 'Menta', priceExtra: 700 }
+      /* { id: 'menta', name: 'Menta', priceExtra: 700 } */
     ]
   }, {
     id: 'wax-metls-corazon',
@@ -983,7 +983,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 400 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 400 },
       { id: 'limon', name: 'Limón', priceExtra: 400 },
-      { id: 'menta', name: 'Menta', priceExtra: 400 }
+      /* { id: 'menta', name: 'Menta', priceExtra: 400 } */
     ]
   },
 
