@@ -544,7 +544,7 @@ const PRODUCTS_DATA = [
       { id: 'terracota', name: 'Terracota Cálido', hex: '#C86D51', priceExtra: 310, image: 'assets/vela/margarita.PNG' },
       { id: 'lavanda', name: 'Lavanda Pastel', hex: '#C8B6E2', priceExtra: 310, image: 'assets/vela/luna.PNG' },
       { id: 'rosa', name: 'Rosa Palo', hex: '#E8C5C8', priceExtra: 310, image: 'assets/vela/rosa.PNG' },
-      { id: 'verde', name: 'Verde Menta', hex: '#A3D9C9', priceExtra: 310, image: 'assets/vela/nube.PNG' }
+      { id: 'verde', name: 'Verde Floral', hex: '#A3D9C9', priceExtra: 310, image: 'assets/vela/nube.PNG' }
     ],
     aromas: [
       { id: 'vainilla', name: 'Vainilla & Coco' },
@@ -634,7 +634,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 200 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 200 },
       { id: 'limon', name: 'Limón', priceExtra: 200 },
-      /* { id: 'menta', name: 'Menta', priceExtra: 200 } */
+      /* { id: 'Floral', name: 'Floral', priceExtra: 200 } */
     ]
   },
   {
@@ -666,7 +666,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 400 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 400 },
       { id: 'limon', name: 'Limón', priceExtra: 400 },
-      /* { id: 'menta', name: 'Menta', priceExtra: 400 } */
+      /* { id: 'Floral', name: 'Floral', priceExtra: 400 } */
     ]
   },
   {
@@ -700,7 +700,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 1100 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 1100 },
       { id: 'limon', name: 'Limón', priceExtra: 1100 },
-      /* { id: 'menta', name: 'Menta', priceExtra: 1100 } */
+      /* { id: 'Floral', name: 'Floral', priceExtra: 1100 } */
     ]
   },
   {
@@ -732,7 +732,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 300 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 300 },
       { id: 'limon', name: 'Limón', priceExtra: 300 },
-      /* { id: 'menta', name: 'Menta', priceExtra: 300 } */
+      /* { id: 'Floral', name: 'Floral', priceExtra: 300 } */
     ]
   },
   {
@@ -764,7 +764,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 1800 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 1800 },
       { id: 'limon', name: 'Limón', priceExtra: 1800 },
-      /* { id: 'menta', name: 'Menta', priceExtra: 1800 } */
+      /* { id: 'Floral', name: 'Floral', priceExtra: 1800 } */
     ]
   }, {
     id: 'Corazon-love-Vela-Soja',
@@ -795,7 +795,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 900 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 900 },
       { id: 'limon', name: 'Limón', priceExtra: 900 },
-      /* { id: 'menta', name: 'Menta', priceExtra: 900 } */
+      /* { id: 'Floral', name: 'Floral', priceExtra: 900 } */
     ]
   }, {
     id: 'margarita-Vela-Soja',
@@ -826,7 +826,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 300 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 300 },
       { id: 'limon', name: 'Limón', priceExtra: 300 },
-      /* { id: 'menta', name: 'Menta', priceExtra: 300 } */
+      /* { id: 'Floral', name: 'Floral', priceExtra: 300 } */
     ]
   }, {
     id: 'osito-Vela-Soja',
@@ -857,7 +857,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 300 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 300 },
       { id: 'limon', name: 'Limón', priceExtra: 300 },
-      /* { id: 'menta', name: 'Menta', priceExtra: 300 } */
+      /* { id: 'Floral', name: 'Floral', priceExtra: 300 } */
     ]
   }, {
     id: 'virgen-blanca-v1-Vela-Soja',
@@ -888,7 +888,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 600 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 600 },
       { id: 'limon', name: 'Limón', priceExtra: 600 },
-      /* { id: 'menta', name: 'Menta', priceExtra: 600 } */
+      /* { id: 'Floral', name: 'Floral', priceExtra: 600 } */
     ]
   }, {
     id: 'virgen blanca v2-Vela-Soja',
@@ -919,7 +919,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 500 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 500 },
       { id: 'limon', name: 'Limón', priceExtra: 500 },
-      /* { id: 'menta', name: 'Menta', priceExtra: 500 } */
+      /* { id: 'Floral', name: 'Floral', priceExtra: 500 } */
     ]
   },
   {
@@ -952,7 +952,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 700 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 700 },
       { id: 'limon', name: 'Limón', priceExtra: 700 },
-      /* { id: 'menta', name: 'Menta', priceExtra: 700 } */
+      /* { id: 'Floral', name: 'Floral', priceExtra: 700 } */
     ]
   }, {
     id: 'wax-metls-corazon',
@@ -983,7 +983,7 @@ const PRODUCTS_DATA = [
       { id: 'lavanda', name: 'Lavanda', priceExtra: 400 },
       { id: 'vainilla', name: 'Vainilla', priceExtra: 400 },
       { id: 'limon', name: 'Limón', priceExtra: 400 },
-      /* { id: 'menta', name: 'Menta', priceExtra: 400 } */
+      /* { id: 'Floral', name: 'Floral', priceExtra: 400 } */
     ]
   },
 
@@ -1619,8 +1619,8 @@ function buildProductOptionsHTML(product, state, isModal = true) {
           </div>
           <div class="flex flex-wrap gap-1.5">
             ${product.material.map(s => {
-              const isSelected = state.selectedMaterial && state.selectedMaterial.id === s.id;
-              return `
+    const isSelected = state.selectedMaterial && state.selectedMaterial.id === s.id;
+    return `
                 <button 
                   type="button"
                   onclick="updateProductOption('${product.id}', 'materialId', '${s.id}')"
@@ -1630,7 +1630,7 @@ function buildProductOptionsHTML(product, state, isModal = true) {
                   <span class="text-[10px] font-bold text-[#C86D51]">(${formatCLP(s.price)})</span>
                 </button>
               `;
-            }).join('')}
+  }).join('')}
           </div>
         </div>
       ` : ''}
@@ -1644,8 +1644,8 @@ function buildProductOptionsHTML(product, state, isModal = true) {
           </div>
           <div class="flex flex-wrap gap-1.5">
             ${product.diseño.map(s => {
-              const isSelected = state.selectedDiseño && state.selectedDiseño.id === s.id;
-              return `
+    const isSelected = state.selectedDiseño && state.selectedDiseño.id === s.id;
+    return `
                 <button 
                   type="button"
                   onclick="updateProductOption('${product.id}', 'diseñoId', '${s.id}')"
@@ -1654,7 +1654,7 @@ function buildProductOptionsHTML(product, state, isModal = true) {
                   <span>${s.name}</span>
                 </button>
               `;
-            }).join('')}
+  }).join('')}
           </div>
         </div>
       ` : ''}
@@ -1668,8 +1668,8 @@ function buildProductOptionsHTML(product, state, isModal = true) {
           </div>
           <div class="flex flex-wrap gap-1.5">
             ${product.sizes.map(s => {
-              const isSelected = state.selectedSize && state.selectedSize.id === s.id;
-              return `
+    const isSelected = state.selectedSize && state.selectedSize.id === s.id;
+    return `
                 <button 
                   type="button"
                   onclick="updateProductOption('${product.id}', 'sizeId', '${s.id}')"
@@ -1678,29 +1678,29 @@ function buildProductOptionsHTML(product, state, isModal = true) {
                   <span>${s.name}</span>
                 </button>
               `;
-            }).join('')}
+  }).join('')}
           </div>
         </div>
       ` : ''}
 
       <!-- 4. Color / Tono -->
       ${product.colors ? (() => {
-        const MAX_VISIBLE = 8;
-        const isExpanded = !!expandedColorsMap[product.id];
-        const totalColors = product.colors.length;
-        const hasMore = totalColors > MAX_VISIBLE;
+      const MAX_VISIBLE = 8;
+      const isExpanded = !!expandedColorsMap[product.id];
+      const totalColors = product.colors.length;
+      const hasMore = totalColors > MAX_VISIBLE;
 
-        let visibleColors = product.colors;
-        if (hasMore && !isExpanded) {
-          visibleColors = product.colors.slice(0, MAX_VISIBLE);
-          if (state.selectedColor && !visibleColors.some(c => c.id === state.selectedColor.id)) {
-            visibleColors = [...visibleColors.slice(0, MAX_VISIBLE - 1), state.selectedColor];
-          }
+      let visibleColors = product.colors;
+      if (hasMore && !isExpanded) {
+        visibleColors = product.colors.slice(0, MAX_VISIBLE);
+        if (state.selectedColor && !visibleColors.some(c => c.id === state.selectedColor.id)) {
+          visibleColors = [...visibleColors.slice(0, MAX_VISIBLE - 1), state.selectedColor];
         }
+      }
 
-        const hiddenCount = totalColors - visibleColors.length;
+      const hiddenCount = totalColors - visibleColors.length;
 
-        return `
+      return `
           <div>
             <div class="flex justify-between items-center mb-1.5">
               <span class="text-[11px] font-bold text-[#8B5A2B] uppercase tracking-wider">Color / Tono:</span>
@@ -1708,19 +1708,19 @@ function buildProductOptionsHTML(product, state, isModal = true) {
             </div>
             <div class="flex flex-wrap gap-1.5 items-center">
               ${visibleColors.map(c => {
-                const isSelected = state.selectedColor && state.selectedColor.id === c.id;
-                const isAvailable = c.available !== false;
+        const isSelected = state.selectedColor && state.selectedColor.id === c.id;
+        const isAvailable = c.available !== false;
 
-                return `
+        return `
                   <button 
                     type="button"
                     onclick="updateProductOption('${product.id}', 'colorId', '${c.id}')"
                     class="option-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1.5 relative overflow-hidden ${isSelected
-                      ? 'selected'
-                      : isAvailable
-                        ? 'bg-[#FFFDF9] text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50'
-                        : 'bg-gray-50 text-gray-400 border-gray-200 opacity-60'
-                    }"
+            ? 'selected'
+            : isAvailable
+              ? 'bg-[#FFFDF9] text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50'
+              : 'bg-gray-50 text-gray-400 border-gray-200 opacity-60'
+          }"
                   >
                     <span class="w-3.5 h-3.5 rounded-full border border-black/10 inline-block flex-shrink-0" style="background-color: ${c.hex}"></span>
                     <span>${c.name}</span>
@@ -1735,7 +1735,7 @@ function buildProductOptionsHTML(product, state, isModal = true) {
                     ` : ''}
                   </button>
                 `;
-              }).join('')}
+      }).join('')}
 
               ${hasMore ? `
                 <button 
@@ -1750,7 +1750,7 @@ function buildProductOptionsHTML(product, state, isModal = true) {
             </div>
           </div>
         `;
-      })() : ''}
+    })() : ''}
 
       <!-- 5. Aromas -->
       ${product.aromas ? `
@@ -1761,8 +1761,8 @@ function buildProductOptionsHTML(product, state, isModal = true) {
           </div>
           <div class="flex flex-wrap gap-1.5">
             ${product.aromas.map(a => {
-              const isSelected = state.selectedAroma && state.selectedAroma.id === a.id;
-              return `
+      const isSelected = state.selectedAroma && state.selectedAroma.id === a.id;
+      return `
                 <button 
                   type="button"
                   onclick="updateProductOption('${product.id}', 'aromaId', '${a.id}')"
@@ -1772,7 +1772,7 @@ function buildProductOptionsHTML(product, state, isModal = true) {
                   ${a.priceExtra > 0 ? `<span class="text-[10px] opacity-75">(+${formatCLP(a.priceExtra)})</span>` : ''}
                 </button>
               `;
-            }).join('')}
+    }).join('')}
           </div>
         </div>
       ` : ''}
@@ -1786,8 +1786,8 @@ function buildProductOptionsHTML(product, state, isModal = true) {
           </div>
           <div class="grid grid-cols-1 gap-1.5">
             ${product.variants.map(v => {
-              const isSelected = state.selectedVariant && state.selectedVariant.id === v.id;
-              return `
+      const isSelected = state.selectedVariant && state.selectedVariant.id === v.id;
+      return `
                 <button 
                   type="button"
                   onclick="updateProductOption('${product.id}', 'variantId', '${v.id}')"
@@ -1800,7 +1800,7 @@ function buildProductOptionsHTML(product, state, isModal = true) {
                   <span class="font-bold text-[#C86D51]">${formatCLP(v.price)}</span>
                 </button>
               `;
-            }).join('')}
+    }).join('')}
           </div>
         </div>
       ` : ''}
@@ -1814,9 +1814,9 @@ function buildProductOptionsHTML(product, state, isModal = true) {
           </div>
           <div class="grid grid-cols-1 gap-1.5">
             ${getProductPresentations(product).map(presentation => {
-              const isSelected = state.selectedPresentation?.id === presentation.id;
-              const isPending = presentation.priceExtra === -1;
-              return `
+      const isSelected = state.selectedPresentation?.id === presentation.id;
+      const isPending = presentation.priceExtra === -1;
+      return `
                 <button type="button" onclick="updateProductPresentation('${product.id}', '${presentation.id}')"
                   class="relative w-full text-left px-3 py-2 rounded-xl border transition-all ${isSelected ? (isPending ? 'bg-amber-50 border-amber-500 ring-2 ring-amber-500/20' : 'bg-[#FFFDF9] border-[#C86D51] ring-2 ring-[#C86D51]/15') : 'bg-white border-gray-200 hover:border-[#C86D51]/40 hover:bg-[#FFFDF9]'}">
                   <div class="flex items-center justify-between gap-2">
@@ -1826,7 +1826,7 @@ function buildProductOptionsHTML(product, state, isModal = true) {
                   <div class="text-[10px] text-[#6C5C57] mt-0.5">${presentation.desc}</div>
                   ${isSelected ? '<span class="absolute -top-2 right-2 bg-[#C86D51] text-white text-[9px] font-bold px-2 py-0.5 rounded-full">Seleccionado</span>' : ''}
                 </button>`;
-            }).join('')}
+    }).join('')}
           </div>
         </div>
       ` : ''}
