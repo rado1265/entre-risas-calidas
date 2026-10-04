@@ -1027,12 +1027,12 @@ const PRODUCTS_DATA = [
     categoryName: 'Packs',
     dimensions: '',
     description: 'Pack de velas margarita perfectas para regalar. Colores y aroma a elección.',
-    image: 'assets/vela/Pack/2 Margaritas.png',
+    image: 'assets/vela/Pack/2 mrgaritas.png',
     isCustomPhoto: false,
     excentoEmpaque: true,
     sizes: [
-      { id: 'pack-2-margaritas', name: 'Pack 2 Margaritas', price: 2400, image: 'assets/vela/Pack/2 Margaritas.png' },
-      { id: 'pack-3-margaritas', name: 'Pack 3 Margaritas', price: 3750, image: 'assets/vela/Pack/3 Margaritas.png' },
+      { id: 'pack-2-margaritas', name: 'Pack 2 Margaritas', price: 2400, image: 'assets/vela/Pack/2 margaritas.png' },
+      { id: 'pack-3-margaritas', name: 'Pack 3 Margaritas', price: 3750, image: 'assets/vela/Pack/3 margaritas.png' },
     ]
   }
 ];
