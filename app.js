@@ -607,6 +607,7 @@ const PRODUCTS_DATA = [
       { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
       { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
@@ -639,6 +640,7 @@ const PRODUCTS_DATA = [
       { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
       { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
@@ -673,6 +675,7 @@ const PRODUCTS_DATA = [
       { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
       { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
@@ -705,6 +708,7 @@ const PRODUCTS_DATA = [
       { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
       { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
@@ -737,6 +741,7 @@ const PRODUCTS_DATA = [
       { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
       { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
@@ -768,6 +773,7 @@ const PRODUCTS_DATA = [
       { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
       { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
@@ -799,6 +805,7 @@ const PRODUCTS_DATA = [
       { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
       { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
@@ -814,7 +821,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 4,5 cm alto aprox.',
     description: 'Escultura mística de osito en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
-    image: 'assets/vela/moldes/Osito.png',
+    image: 'assets/vela/moldes/osito.png',
     isCandle: true,
     sizes: [
       { id: 'estandar', name: '4,5 cm alto', price: 480, image: 'assets/vela/moldes/osito.png' }
@@ -830,6 +837,7 @@ const PRODUCTS_DATA = [
       { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
       { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
@@ -845,7 +853,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 6,5 cm alto aprox.',
     description: 'Escultura mística de Virgen en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
-    image: 'assets/vela/moldes/Virgen blanca v1.png',
+    image: 'assets/vela/moldes/virgen blanca v1.png',
     isCandle: true,
     sizes: [
       { id: 'estandar', name: '6 cm alto', price: 1100, image: 'assets/vela/moldes/virgen blanca v1.png' }
@@ -861,6 +869,7 @@ const PRODUCTS_DATA = [
       { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
       { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
@@ -876,10 +885,10 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 6,5 cm alto aprox.',
     description: 'Escultura mística de Virgen en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
-    image: 'assets/vela/moldes/corazon love.png',
+    image: 'assets/vela/moldes/virgen blanca v2.png',
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '6,5 cm alto', price: 650, image: 'assets/vela/moldes/virgen blanca v2.png' }
+      { id: 'estandar', name: '6,5 cm alto', price: 1100, image: 'assets/vela/moldes/virgen blanca v2.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
@@ -892,6 +901,7 @@ const PRODUCTS_DATA = [
       { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
       { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
@@ -908,11 +918,11 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 10 cm alto aprox.',
     description: 'Escultura delicada de ángel. Ideal para recuerditos de bautizo o primera comunión.',
-    image: 'assets/vela/moldes/angel parafina.png',
+    image: 'assets/vela/moldes/angel mujer parafina.png',
     isCandle: true,
     sizes: [
-      { id: 'mujer', name: 'Niña 10 cm alto', price: 1500, image: 'assets/vela/moldes/angel parafina.png' },
-      { id: 'hombre', name: 'Niño 10 cm alto', price: 1500, image: 'assets/vela/moldes/angel parafina.png' }
+      { id: 'mujer', name: 'Niña 10 cm alto', price: 1500, image: 'assets/vela/moldes/angel mujer parafina.png' },
+      { id: 'hombre', name: 'Niño 10 cm alto', price: 1500, image: 'assets/vela/moldes/angel hombre parafina.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
@@ -925,6 +935,7 @@ const PRODUCTS_DATA = [
       { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
       { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
@@ -956,6 +967,7 @@ const PRODUCTS_DATA = [
       { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
       { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
       { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.png' },
@@ -1013,8 +1025,8 @@ const PRODUCTS_DATA = [
     name: 'Pack Margaritas',
     category: 'packs',
     categoryName: 'Packs',
-    dimensions: 'Colores y aromas a elección.',
-    description: 'Pack de velas margarita perfectas para regalar.',
+    dimensions: '',
+    description: 'Pack de velas margarita perfectas para regalar. Colores y aroma a elección.',
     image: 'assets/vela/Pack/2 Margaritas.png',
     isCustomPhoto: false,
     excentoEmpaque: true,
@@ -1172,36 +1184,59 @@ function getProductState(product) {
   const selectedVariant = options.variantId ? product.variants?.find(v => v.id === options.variantId) || null : null;
 
   let price = 0;
+
   if (selectedVariant) {
-    price = selectedVariant.price || 0;
+    price = Number(selectedVariant.price) || 0;
   } else if (selectedMaterial) {
-    price = selectedMaterial.price || 0;
+    price = Number(selectedMaterial.price) || 0;
   } else if (selectedSize) {
-    price = selectedSize.price || 0;
+    price = Number(selectedSize.price) || 0;
   } else if (selectedDiseño) {
-    price = selectedDiseño.price || 0;
+    price = Number(selectedDiseño.price) || 0;
   } else {
-    price = product.price || 0;
+    price = Number(product.price) || 0;
   }
 
-  if (selectedSize && selectedSize.priceExtra && !selectedVariant) {
-    price += selectedSize.priceExtra;
+
+  // EXTRAS
+  if (selectedSize && !selectedVariant) {
+    price += Number(selectedSize.priceExtra) || 0;
   }
-  if (selectedDiseño && selectedDiseño.priceExtra) {
-    price += selectedDiseño.priceExtra;
+
+  if (selectedDiseño) {
+    price += Number(selectedDiseño.priceExtra) || 0;
   }
-  if (selectedColor && selectedColor.priceExtra) {
-    price += selectedColor.priceExtra;
+
+  if (selectedColor) {
+    price += Number(selectedColor.priceExtra) || 0;
   }
-  if (selectedAroma && selectedAroma.priceExtra) {
-    price += selectedAroma.priceExtra;
+
+  if (selectedAroma) {
+    price += Number(selectedAroma.priceExtra) || 0;
   }
 
   const quantity = Number(options.quantity) || 1;
   const discountPercent = getDiscountByQuantity(quantity);
   const discountAmount = price * (discountPercent / 100);
   const discountedPrice = price - discountAmount;
-  const total = discountedPrice * quantity;
+
+
+  // PRESENTACIÓN / EMPAQUE
+  const selectedPresentation =
+    (product.excentoEmpaque || !options.presentationId)
+      ? null
+      : getProductPresentation(product, options.presentationId);
+
+  const presentationPrice =
+    selectedPresentation && Number(selectedPresentation.priceExtra) > 0
+      ? Number(selectedPresentation.priceExtra)
+      : 0;
+
+
+  // TOTAL DEL PRODUCTO + PRESENTACIÓN
+  const total =
+    (discountedPrice + presentationPrice) * quantity;
+
 
   let image = product.image;
   if (selectedColor && selectedColor.image) {
@@ -1216,7 +1251,7 @@ function getProductState(product) {
     image = selectedVariant.image;
   }
 
-  const selectedPresentation = (product.excentoEmpaque || !options.presentationId) ? null : getProductPresentation(product, options.presentationId);
+  /*  const selectedPresentation = (product.excentoEmpaque || !options.presentationId) ? null : getProductPresentation(product, options.presentationId); */
 
   const missingOptions = getMissingProductOptions(product, options);
   const isComplete = missingOptions.length === 0;
@@ -1378,28 +1413,147 @@ function getWhatsAppLinkForProduct(product, state) {
 
 // PRICE RANGE & OPTIONS BADGES HELPERS FOR CLEAN CATALOG CARDS
 function getProductPriceRange(product) {
-  let prices = [];
+  let basePrices = [];
+
+  // =========================
+  // PRECIO BASE DEL PRODUCTO
+  // =========================
 
   if (product.variants && product.variants.length > 0) {
-    prices.push(...product.variants.map(v => v.price || 0));
+    basePrices = product.variants
+      .map(v => Number(v.price) || 0)
+      .filter(price => price > 0);
+
   } else if (product.material && product.material.length > 0) {
-    prices.push(...product.material.map(m => m.price || 0));
+    basePrices = product.material
+      .map(m => Number(m.price) || 0)
+      .filter(price => price > 0);
+
   } else if (product.sizes && product.sizes.length > 0) {
-    prices.push(...product.sizes.map(s => (s.price !== undefined && s.price > 0 ? s.price : (product.price || 0) + (s.priceExtra || 0))));
+    basePrices = product.sizes
+      .map(s => {
+        if (s.price !== undefined && Number(s.price) > 0) {
+          return Number(s.price);
+        }
+
+        return (
+          (Number(product.price) || 0) +
+          (Number(s.priceExtra) || 0)
+        );
+      })
+      .filter(price => price > 0);
+
   } else if (product.diseño && product.diseño.length > 0) {
-    prices.push(...product.diseño.map(d => (d.price !== undefined && d.price > 0 ? d.price : (product.price || 0) + (d.priceExtra || 0))));
-  } else if (product.price !== undefined && product.price > 0) {
-    prices.push(product.price);
+    basePrices = product.diseño
+      .map(d => {
+        if (d.price !== undefined && Number(d.price) > 0) {
+          return Number(d.price);
+        }
+
+        return (
+          (Number(product.price) || 0) +
+          (Number(d.priceExtra) || 0)
+        );
+      })
+      .filter(price => price > 0);
+
+  } else if (
+    product.price !== undefined &&
+    Number(product.price) > 0
+  ) {
+    basePrices.push(Number(product.price));
   }
 
-  if (prices.length === 0) return formatCLP(0);
+  if (basePrices.length === 0) {
+    return formatCLP(0);
+  }
 
-  const minPrice = Math.min(...prices);
-  const maxPrice = Math.max(...prices);
+
+  // =========================
+  // PRECIO BASE
+  // =========================
+
+  const minBasePrice = Math.min(...basePrices);
+  const maxBasePrice = Math.max(...basePrices);
+
+
+  // =========================
+  // COLORES
+  // =========================
+
+  const colorExtras = product.colors?.length
+    ? product.colors
+      .map(c => Number(c.priceExtra) || 0)
+      .filter(price => price >= 0)
+    : [0];
+
+  const minColorExtra = Math.min(...colorExtras);
+  const maxColorExtra = Math.max(...colorExtras);
+
+
+  // =========================
+  // AROMAS
+  // =========================
+
+  const aromaExtras = product.aromas?.length
+    ? product.aromas
+      .map(a => Number(a.priceExtra) || 0)
+      .filter(price => price >= 0)
+    : [0];
+
+  const minAromaExtra = Math.min(...aromaExtras);
+  const maxAromaExtra = Math.max(...aromaExtras);
+
+
+  // =========================
+  // PRESENTACIONES
+  // =========================
+
+  const presentaciones = QUOTE_CONFIG?.presentacionesProducto || [];
+
+  const presentacionExtras = presentaciones
+    .map(p => Number(p.priceExtra))
+    .filter(price => price >= 0);
+
+  const minPresentacionExtra = presentacionExtras.length
+    ? Math.min(...presentacionExtras)
+    : 0;
+
+  const maxPresentacionExtra = presentacionExtras.length
+    ? Math.max(...presentacionExtras)
+    : 0;
+
+
+  // =========================
+  // PRECIO FINAL MÍNIMO
+  // =========================
+
+  const minPrice =
+    minBasePrice +
+    minColorExtra +
+    minAromaExtra +
+    minPresentacionExtra;
+
+
+  // =========================
+  // PRECIO FINAL MÁXIMO
+  // =========================
+
+  const maxPrice =
+    maxBasePrice +
+    maxColorExtra +
+    maxAromaExtra +
+    maxPresentacionExtra;
+
+
+  // =========================
+  // RESULTADO
+  // =========================
 
   if (minPrice === maxPrice) {
     return formatCLP(minPrice);
   }
+
   return `${formatCLP(minPrice)} – ${formatCLP(maxPrice)}`;
 }
 
@@ -1860,8 +2014,21 @@ function updateModalDOM(productId) {
   }
 
   const modalUnitPrice = document.getElementById('modal-unit-price-display');
+
   if (modalUnitPrice) {
-    modalUnitPrice.textContent = state.price > 0 ? formatCLP(state.price) : 'Por configurar';
+    const presentationPrice =
+      state.selectedPresentation &&
+        Number(state.selectedPresentation.priceExtra) > 0
+        ? Number(state.selectedPresentation.priceExtra)
+        : 0;
+
+    const configuredUnitPrice =
+      Number(state.price || 0) + presentationPrice;
+
+    modalUnitPrice.textContent =
+      configuredUnitPrice > 0
+        ? formatCLP(configuredUnitPrice)
+        : 'Por configurar';
   }
 
   const modalDiscountBadge = document.getElementById('modal-discount-badge');
