@@ -1027,7 +1027,7 @@ const PRODUCTS_DATA = [
     categoryName: 'Packs',
     dimensions: '',
     description: 'Pack de velas margarita perfectas para regalar. Colores y aroma a elección.',
-    image: 'assets/vela/Pack/2 mrgaritas.png',
+    image: 'assets/vela/Pack/2 margaritas.png',
     isCustomPhoto: false,
     excentoEmpaque: true,
     sizes: [
