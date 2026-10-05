@@ -1057,9 +1057,9 @@ const QUOTE_CONFIG = {
     { id: 'eventos', name: 'Momentos especiales', badge: '(A cotizar)', desc: 'Envíanos tu idea y cotizamos la presentación general según tus necesidades.', priceExtra: -1, icon: '🎁' }
   ],
   presentacionesProducto: [
-    { id: 'sinEmpaque', name: 'Sin empaque', badge: '(Sin empaque)', desc: 'La pieza se entrega sin empaque.', priceExtra: 0, icon: '👤' },
-    { id: 'enCaja', name: 'En Caja', badge: '(Ideal para regalo simple)', desc: 'Incluye caja de cartón kraft.', priceExtra: 250, icon: '📦' },
-    { id: 'personalizado', name: 'En Caja con Etiqueta Personalizada', badge: '(Regalo único)', desc: 'Incluye caja kraft + etiqueta con tu diseño.', priceExtra: 400, icon: '🏷️' },
+    { id: 'sinEmpaque', name: 'Sin Diseño', badge: '(Sin diseño)', desc: 'La pieza se entrega sin diseño.', priceExtra: 0, icon: '👤' },
+    /* { id: 'enCaja', name: 'En Caja', badge: '(Ideal para regalo simple)', desc: 'Incluye caja de cartón kraft.', priceExtra: 250, icon: '📦' }, */
+    { id: 'personalizado', name: 'Caja Decorada + Etiqueta Personalizada', badge: '(Regalo único)', desc: 'Incluye caja decorada + etiqueta personalizada con tu diseño.', priceExtra: 400, icon: '🏷️' },
     { id: 'eventos', name: 'Momentos especiales', badge: '(A cotizar)', desc: 'Presentación especial a definir.', priceExtra: -1, icon: '🎁' }
   ],
   descuentosCantidad: [
