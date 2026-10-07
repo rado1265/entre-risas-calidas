@@ -62,11 +62,11 @@ const PRODUCTS_DATA = [
     categoryName: 'Packs',
     dimensions: '',
     description: 'Un delicado rincón floral hecho para regalar y sorprender. Bandeja decorativa de cemento acompañada de hermosas velas florales de cera de soja, con detalles en forma de corazón y rosas. Puedes personalizar los colores y aromas para crear una combinación única y especial.',
-    image: 'assets/v2/velas florales sobre bandeja romántica.png',
+    image: 'assets/v2/velas florales sobre bandeja romantica.png',
     isCustomPhoto: false,
     excentoEmpaque: true,
     sizes: [
-      { id: 'velas-florales-bandeja-romantica', name: 'Bandeja Jardín de Flores', price: 7990/* 7900 */, image: 'assets/v2/velas florales sobre bandeja romántica.png' }
+      { id: 'velas-florales-bandeja-romantica', name: 'Bandeja Jardín de Flores', price: 7990/* 7900 */, image: 'assets/v2/velas florales sobre bandeja romantica.png' }
     ]
   }, {
     id: 'casitas-de-ensueno',
@@ -574,12 +574,12 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: '10,5 cm ancho x 5 cm alto',
     description: 'Escultura romántica de corazón con micro-textura en cera de soja pura.',
-    image: 'assets/v2/velas/Vela romántica Love.png',
+    image: 'assets/v2/velas/vela romantica Love.png',
     isCustomPhoto: false,
     excentoEmpaque: true,
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '10,5 cm ancho x 5 cm alto', price: 2990/* 2900 */, image: 'assets/v2/velas/Vela romántica Love.png' }
+      { id: 'estandar', name: '10,5 cm ancho x 5 cm alto', price: 2990/* 2900 */, image: 'assets/v2/velas/vela romantica Love.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
