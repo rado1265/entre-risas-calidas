@@ -23,11 +23,11 @@ const PRODUCTS_DATA = [
     categoryName: 'Packs',
     dimensions: '',
     description: 'Un rincón de aroma y calidez para disfrutar en cualquier momento. Incluye un hornillo decorativo de cemento y 25 gramos de wax melts de cera de soja, disponibles con aroma a elección. Ideal para perfumar tus espacios y crear un ambiente acogedor.',
-    image: 'assets/v2/Calentador de cera con corazones de lavanda.png',
+    image: 'assets/v2/calentador de cera con corazones de lavanda.png',
     isCustomPhoto: false,
     excentoEmpaque: true,
     sizes: [
-      { id: 'hornillo-wax', name: 'Pack Aroma & Calidez', price: 9990/* 10990 */, image: 'assets/v2/Calentador de cera con corazones de lavanda.png' }
+      { id: 'hornillo-wax', name: 'Pack Aroma & Calidez', price: 9990/* 10990 */, image: 'assets/v2/calentador de cera con corazones de lavanda.png' }
     ]
   }, {
     id: 'serenidad-entre-lavanda-y-loto',
@@ -36,11 +36,11 @@ const PRODUCTS_DATA = [
     categoryName: 'Packs',
     dimensions: '',
     description: 'Bandeja de cemento + Buda de yeso + vela de loto de cera de soja. Personaliza el color y aroma de tu vela y crea un rincón lleno de calma y armonía.',
-    image: 'assets/v2/Serenidad entre lavanda y loto.png',
+    image: 'assets/v2/serenidad entre lavanda y loto.png',
     isCustomPhoto: false,
     excentoEmpaque: true,
     sizes: [
-      { id: 'serenidad-entre-lavanda-y-loto', name: 'Pack Armonía Zen', price: 11990/* 5900 */, image: 'assets/v2/Serenidad entre lavanda y loto.png' }
+      { id: 'serenidad-entre-lavanda-y-loto', name: 'Pack Armonía Zen', price: 11990/* 5900 */, image: 'assets/v2/serenidad entre lavanda y loto.png' }
     ]
   }, {
     id: 'velas-romantic-bandeja-floral',
@@ -49,11 +49,11 @@ const PRODUCTS_DATA = [
     categoryName: 'Packs',
     dimensions: '',
     description: 'Un detalle lleno de amor y dulzura. Bandeja decorativa de cemento acompañada de una vela “Love” con aroma a elección y delicadas flores en forma de rosas. Un regalo especial para celebrar el amor, aniversarios, cumpleaños o simplemente sorprender a alguien importante.',
-    image: 'assets/v2/Velas románticas sobre bandeja floral.png',
+    image: 'assets/v2/velas románticas sobre bandeja floral.png',
     isCustomPhoto: false,
     excentoEmpaque: true,
     sizes: [
-      { id: 'velas-romantic-bandeja-floral', name: 'Bandeja Amor & Rosas', price: 8990/* 7900 */, image: 'assets/v2/Velas románticas sobre bandeja floral.png' }
+      { id: 'velas-romantic-bandeja-floral', name: 'Bandeja Amor & Rosas', price: 8990/* 7900 */, image: 'assets/v2/velas románticas sobre bandeja floral.png' }
     ]
   }, {
     id: 'velas-florales-bandeja-romantica',
@@ -62,11 +62,11 @@ const PRODUCTS_DATA = [
     categoryName: 'Packs',
     dimensions: '',
     description: 'Un delicado rincón floral hecho para regalar y sorprender. Bandeja decorativa de cemento acompañada de hermosas velas florales de cera de soja, con detalles en forma de corazón y rosas. Puedes personalizar los colores y aromas para crear una combinación única y especial.',
-    image: 'assets/v2/Velas florales sobre bandeja romántica.png',
+    image: 'assets/v2/velas florales sobre bandeja romántica.png',
     isCustomPhoto: false,
     excentoEmpaque: true,
     sizes: [
-      { id: 'velas-florales-bandeja-romantica', name: 'Bandeja Jardín de Flores', price: 7990/* 7900 */, image: 'assets/v2/Velas florales sobre bandeja romántica.png' }
+      { id: 'velas-florales-bandeja-romantica', name: 'Bandeja Jardín de Flores', price: 7990/* 7900 */, image: 'assets/v2/velas florales sobre bandeja romántica.png' }
     ]
   }, {
     id: 'casitas-de-ensueno',
@@ -75,11 +75,11 @@ const PRODUCTS_DATA = [
     categoryName: 'Packs',
     dimensions: '',
     description: 'Pequeñas casitas, grandes momentos. Crea una decoración cálida y encantadora para tu hogar o para regalar.',
-    image: 'assets/v2/Casitas de ensueño con lavanda y pétalos.png',
+    image: 'assets/v2/casitas de ensueño con lavanda y petalos.png',
     isCustomPhoto: false,
     excentoEmpaque: true,
     sizes: [
-      { id: 'casitas-de-ensueno', name: 'Rincón de Casitas', price: 2190/* 2190 */, image: 'assets/v2/Casitas de ensueño con lavanda y pétalos.png' }
+      { id: 'casitas-de-ensueno', name: 'Rincón de Casitas', price: 2190/* 2190 */, image: 'assets/v2/casitas de ensueño con lavanda y petalos.png' }
     ]
   }, {
     id: 'pequeno-encanto',
@@ -88,11 +88,11 @@ const PRODUCTS_DATA = [
     categoryName: 'Regalos',
     dimensions: '',
     description: 'Un pequeño detalle lleno de aroma y encanto, ideal para perfumar espacios, cajones o regalar un momento de calma. Presentado con un hermoso detalle decorativo, listo para sorprender.(Incluye tarjeta personalizada)',
-    image: 'assets/v2/Saquito de lavanda entre flores y recuerdos.png',
+    image: 'assets/v2/saquito de lavanda entre flores y recuerdos.png',
     isCustomPhoto: false,
     excentoEmpaque: true,
     sizes: [
-      { id: 'pequeno-encanto', name: 'Pequeño Encanto', price: 1290/* 5900 */, image: 'assets/v2/Saquito de lavanda entre flores y recuerdos.png' }
+      { id: 'pequeno-encanto', name: 'Pequeño Encanto', price: 1290/* 5900 */, image: 'assets/v2/saquito de lavanda entre flores y recuerdos.png' }
     ]
   },// CATEGORIA 3: Litofanías y Recuerdos Personalizados
   {
