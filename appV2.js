@@ -23,11 +23,11 @@ const PRODUCTS_DATA = [
     categoryName: 'Packs',
     dimensions: '',
     description: 'Un rincón de aroma y calidez para disfrutar en cualquier momento. Incluye un hornillo decorativo de cemento y 25 gramos de wax melts de cera de soja, disponibles con aroma a elección. Ideal para perfumar tus espacios y crear un ambiente acogedor.',
-    image: 'assets/v2/calentador de cera con corazones de lavanda.png',
+    image: 'assets/v2/calentador de cera.png',
     isCustomPhoto: false,
     excentoEmpaque: true,
     sizes: [
-      { id: 'hornillo-wax', name: 'Pack Aroma & Calidez', price: 9990/* 10990 */, image: 'assets/v2/calentador de cera con corazones de lavanda.png' }
+      { id: 'hornillo-wax', name: 'Pack Aroma & Calidez', price: 9990/* 10990 */, image: 'assets/v2/calentador de cera.png' }
     ]
   }, {
     id: 'serenidad-entre-lavanda-y-loto',
