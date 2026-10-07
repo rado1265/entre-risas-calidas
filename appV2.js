@@ -36,11 +36,11 @@ const PRODUCTS_DATA = [
     categoryName: 'Packs',
     dimensions: '',
     description: 'Bandeja de cemento + Buda de yeso + vela de loto de cera de soja. Personaliza el color y aroma de tu vela y crea un rincón lleno de calma y armonía.',
-    image: 'assets/v2/serenidad entre lavanda y loto.png',
+    image: 'assets/v2/serenidad loto.png',
     isCustomPhoto: false,
     excentoEmpaque: true,
     sizes: [
-      { id: 'serenidad-entre-lavanda-y-loto', name: 'Pack Armonía Zen', price: 11990/* 5900 */, image: 'assets/v2/serenidad entre lavanda y loto.png' }
+      { id: 'serenidad-entre-lavanda-y-loto', name: 'Pack Armonía Zen', price: 11990/* 5900 */, image: 'assets/v2/serenidad loto.png' }
     ]
   }, {
     id: 'velas-romantic-bandeja-floral',
@@ -49,11 +49,11 @@ const PRODUCTS_DATA = [
     categoryName: 'Packs',
     dimensions: '',
     description: 'Un detalle lleno de amor y dulzura. Bandeja decorativa de cemento acompañada de una vela “Love” con aroma a elección y delicadas flores en forma de rosas. Un regalo especial para celebrar el amor, aniversarios, cumpleaños o simplemente sorprender a alguien importante.',
-    image: 'assets/v2/velas románticas sobre bandeja floral.png',
+    image: 'assets/v2/velas sobre bandeja floral.png',
     isCustomPhoto: false,
     excentoEmpaque: true,
     sizes: [
-      { id: 'velas-romantic-bandeja-floral', name: 'Bandeja Amor & Rosas', price: 8990/* 7900 */, image: 'assets/v2/velas románticas sobre bandeja floral.png' }
+      { id: 'velas-romantic-bandeja-floral', name: 'Bandeja Amor & Rosas', price: 8990/* 7900 */, image: 'assets/v2/velas sobre bandeja floral.png' }
     ]
   }, {
     id: 'velas-florales-bandeja-romantica',
@@ -88,11 +88,11 @@ const PRODUCTS_DATA = [
     categoryName: 'Regalos',
     dimensions: '',
     description: 'Un pequeño detalle lleno de aroma y encanto, ideal para perfumar espacios, cajones o regalar un momento de calma. Presentado con un hermoso detalle decorativo, listo para sorprender.(Incluye tarjeta personalizada)',
-    image: 'assets/v2/saquito de lavanda entre flores y recuerdos.png',
+    image: 'assets/v2/saquito flores y recuerdos.png',
     isCustomPhoto: false,
     excentoEmpaque: true,
     sizes: [
-      { id: 'pequeno-encanto', name: 'Pequeño Encanto', price: 1290/* 5900 */, image: 'assets/v2/saquito de lavanda entre flores y recuerdos.png' }
+      { id: 'pequeno-encanto', name: 'Pequeño Encanto', price: 1290/* 5900 */, image: 'assets/v2/saquito flores y recuerdos.png' }
     ]
   },// CATEGORIA 3: Litofanías y Recuerdos Personalizados
   {
