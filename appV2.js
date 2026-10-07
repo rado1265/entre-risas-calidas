@@ -2,32 +2,167 @@
 
 const PRODUCTS_DATA = [
   {
+    id: 'pack-margaritas',
+    name: 'Pack Jardín de Flores',
+    category: 'packs',
+    categoryName: 'Packs',
+    dimensions: '',
+    description: 'Delicado pack de velas en forma de margarita, perfectas para regalar o decorar tus espacios con un toque floral y especial. Elige entre distintos tamaños, colores y aromas para crear una combinación única. 🌸',
+    image: 'assets/v2/2 margaritas.webp',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
+    sizes: [
+      { id: 'pack-2-margaritas', name: 'Pack 2 Margaritas', price: 2500/* 2400 */, image: 'assets/v2/2 margaritas.webp' },
+      { id: 'pack-3-margaritas', name: 'Pack 3 Margaritas', price: 3800/* 3750 */, image: 'assets/v2/3 margaritas.webp' },
+    ]
+  },
+  {
+    id: 'hornillo-wax',
+    name: 'Pack Aroma & Calidez',
+    category: 'packs',
+    categoryName: 'Packs',
+    dimensions: '',
+    description: 'Un rincón de aroma y calidez para disfrutar en cualquier momento. Incluye un hornillo decorativo de cemento y 25 gramos de wax melts de cera de soja, disponibles con aroma a elección. Ideal para perfumar tus espacios y crear un ambiente acogedor.',
+    image: 'assets/v2/Calentador de cera con corazones de lavanda.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
+    sizes: [
+      { id: 'hornillo-wax', name: 'Pack Aroma & Calidez', price: 9990/* 10990 */, image: 'assets/v2/Calentador de cera con corazones de lavanda.png' }
+    ]
+  }, {
+    id: 'serenidad-entre-lavanda-y-loto',
+    name: 'Pack Armonía Zen',
+    category: 'packs',
+    categoryName: 'Packs',
+    dimensions: '',
+    description: 'Bandeja de cemento + Buda de yeso + vela de loto de cera de soja. Personaliza el color y aroma de tu vela y crea un rincón lleno de calma y armonía.',
+    image: 'assets/v2/Serenidad entre lavanda y loto.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
+    sizes: [
+      { id: 'serenidad-entre-lavanda-y-loto', name: 'Pack Armonía Zen', price: 11990/* 5900 */, image: 'assets/v2/Serenidad entre lavanda y loto.png' }
+    ]
+  }, {
+    id: 'velas-romantic-bandeja-floral',
+    name: 'Bandeja Amor & Rosas',
+    category: 'packs',
+    categoryName: 'Packs',
+    dimensions: '',
+    description: 'Un detalle lleno de amor y dulzura. Bandeja decorativa de cemento acompañada de una vela “Love” con aroma a elección y delicadas flores en forma de rosas. Un regalo especial para celebrar el amor, aniversarios, cumpleaños o simplemente sorprender a alguien importante.',
+    image: 'assets/v2/Velas románticas sobre bandeja floral.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
+    sizes: [
+      { id: 'velas-romantic-bandeja-floral', name: 'Bandeja Amor & Rosas', price: 8990/* 7900 */, image: 'assets/v2/Velas románticas sobre bandeja floral.png' }
+    ]
+  }, {
+    id: 'velas-florales-bandeja-romantica',
+    name: 'Bandeja Jardín de Flores',
+    category: 'packs',
+    categoryName: 'Packs',
+    dimensions: '',
+    description: 'Un delicado rincón floral hecho para regalar y sorprender. Bandeja decorativa de cemento acompañada de hermosas velas florales de cera de soja, con detalles en forma de corazón y rosas. Puedes personalizar los colores y aromas para crear una combinación única y especial.',
+    image: 'assets/v2/Velas florales sobre bandeja romántica.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
+    sizes: [
+      { id: 'velas-florales-bandeja-romantica', name: 'Bandeja Jardín de Flores', price: 7990/* 7900 */, image: 'assets/v2/Velas florales sobre bandeja romántica.png' }
+    ]
+  }, {
+    id: 'casitas-de-ensueno',
+    name: 'Rincón de Casitas',
+    category: 'packs',
+    categoryName: 'Packs',
+    dimensions: '',
+    description: 'Pequeñas casitas, grandes momentos. Crea una decoración cálida y encantadora para tu hogar o para regalar.',
+    image: 'assets/v2/Casitas de ensueño con lavanda y pétalos.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
+    sizes: [
+      { id: 'casitas-de-ensueno', name: 'Rincón de Casitas', price: 2190/* 2190 */, image: 'assets/v2/Casitas de ensueño con lavanda y pétalos.png' }
+    ]
+  }, {
+    id: 'pequeno-encanto',
+    name: 'Pequeño Encanto',
+    category: 'packs',
+    categoryName: 'Regalos',
+    dimensions: '',
+    description: 'Un pequeño detalle lleno de aroma y encanto, ideal para perfumar espacios, cajones o regalar un momento de calma. Presentado con un hermoso detalle decorativo, listo para sorprender.(Incluye tarjeta personalizada)',
+    image: 'assets/v2/Saquito de lavanda entre flores y recuerdos.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
+    sizes: [
+      { id: 'pequeno-encanto', name: 'Pequeño Encanto', price: 1290/* 5900 */, image: 'assets/v2/Saquito de lavanda entre flores y recuerdos.png' }
+    ]
+  },// CATEGORIA 3: Litofanías y Recuerdos Personalizados
+  {
+    id: 'litofania-individual-10cm',
+    name: 'Litofanía Individual Personalizada',
+    category: 'litofanias',
+    categoryName: 'Litofanías & Personalizados',
+    dimensions: 'Placa de foto 3D de 10 cm de ancho.',
+    description: 'Fotografía en relieve 3D que cobra vida al encender su vela. Un recuerdo mágico y emocionante.',
+    image: 'assets/litofania/litografia base.webp',
+    isCustomPhoto: true,
+    excentoEmpaque: true,
+    /* sizes: [
+      { id: '10cm', name: 'Placa 10 cm', priceExtra: 0, image: 'assets/litofania/litografia base.webp' },
+      { id: '15cm', name: 'Placa 15 cm', priceExtra: 2000, image: 'assets/litofania/litografia cuadro.webp' },
+      { id: '20cm', name: 'Placa 20 cm', priceExtra: 4000, image: 'assets/litofania/litografia base.webp' }
+    ], */
+    variants: [
+      { id: 'base-imagen', name: 'Base LED + Placa Imagen', price: 6990, image: 'assets/litofania/litografia base.webp' },
+      { id: 'solo-imagen', name: 'Solo Placa Imagen 3D - 10 cm aprox', price: 4990, image: 'assets/litofania/litografia base.webp' },
+      { id: 'solo-base', name: 'Solo Base LED Madera - 10 cm aprox', price: 2490, image: 'assets/litofania/litografia base.webp' }
+    ]
+  },
+  {
+    id: 'litofania-marco-cubo',
+    name: 'Litofanía Marco Cubo (4 Fotos)',
+    category: 'litofanias',
+    categoryName: 'Litofanías & Personalizados',
+    dimensions: 'Cubo con 4 fotografías personalizadas',
+    description: 'Lámpara de noche en forma de cubo con 4 fotografías familiares personalizables para iluminación por vela.',
+    image: 'assets/litofania/litografia cuadro.webp',
+    isCustomPhoto: true,
+    excentoEmpaque: true,
+    /* sizes: [
+      { id: 'estandar', name: 'Fotos 7,5 × 10 cm', priceExtra: 0, image: 'assets/litofania/litografia cuadro.webp' },
+      { id: 'grande', name: 'Fotos 10 × 12 cm', priceExtra: 5000, image: 'assets/litofania/litografia base.webp' }
+    ], */
+    variants: [
+      { id: 'marco-4fotos', name: 'Marco Cubo + 4 Fotos 3D', price: 19990, image: 'assets/litofania/litografia cuadro.webp' },
+      { id: 'solo-marco', name: 'Solo Marco Cubo - 12 x 11 cm aprox', price: 8990, image: 'assets/litofania/litografia cuadro.webp' },
+      { id: 'solo-imagen-repuesto', name: 'Solo 1 Foto - 7,5 × 10 cm aprox', price: 4490, image: 'assets/litofania/litografia cuadro.webp' }
+    ]
+  },
+
+
+
+  // Yeso y cemento
+  {
     id: 'Porta-contraluz',
     name: 'Porta Vela contraluz',
     category: 'yeso-cemento',
-    categoryName: 'Decoración Yeso y Cemento',
+    categoryName: 'Decoración Yeso',
     dimensions: '4 cm × 5, cm',
     description: 'Porta Vela contraluz para vela pequeña.',
-    image: 'assets/decoracion/contraluz/contraluz angel.webp',
+    image: 'assets/v2/decoracion/contraluz angel gris yeso.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     material: [
       { id: 'Yeso', name: 'Yeso', price: 490/* , image: 'assets/decoracion/contraluz/contraluz angel.webp' */ },
-      { id: 'Cemento', name: 'Cemento', price: 1190/* , image: 'assets/decoracion/contraluz/contraluz angel.webp'  */ },
     ],
     diseño: [
-      { id: 'Angel', name: 'Angel', price: 0, image: 'assets/decoracion/contraluz/contraluz angel.webp' },
-      { id: 'Estrella', name: 'Estrella', price: 0, image: 'assets/decoracion/contraluz/contraluz estrella.webp' },
-      { id: 'Corazon', name: 'Corazón', price: 0, image: 'assets/decoracion/contraluz/contraluz corazon.webp' },
-      { id: 'arbol navidad', name: 'Arbol Navidad', price: 0, image: 'assets/decoracion/contraluz/contraluz arbol navidad.webp' },
+      { id: 'Angel', name: 'Angel', price: 0, image: 'assets/v2/decoracion/contraluz angel gris yeso.png' },
+      { id: 'Estrella', name: 'Estrella', price: 0, image: 'assets/v2/decoracion/contraluz estrella gris yeso.png' },
+      { id: 'Corazon', name: 'Corazón', price: 0, image: 'assets/v2/decoracion/contraluz corazon gris yeso.png' },
+      { id: 'arbol navidad', name: 'Arbol Navidad', price: 0, image: 'assets/v2/decoracion/contraluz arbol navidad gris yeso.png' },
     ], sizes: [
       { id: 'estandar', name: '4 cm × 5 cm', price: 0/* , image: 'assets/decoracion/cuadradocontapa/cuadrado tapa blanco.webp' */ }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0/* , image: 'assets/decoracion/contraluz/contraluz estrella.webp' */ },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 150/* , available: false */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 150/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 150/* , available: false */ },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 150/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 150/* , available: false */ }
+      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0 },
     ]/* ,
     entrega: [
       { id: 'enCaja', name: 'En Caja', priceExtra: 200 },
@@ -39,73 +174,26 @@ const PRODUCTS_DATA = [
       { min: 10, discount: 5 }
     ] */
   }, {
-    id: 'joyero-corazon',
-    name: 'Corazón portavela',
+    id: 'portavelas-Alhajero',
+    name: 'Portavelas Alhajero',
     category: 'yeso-cemento',
-    categoryName: 'Decoración Yeso y Cemento',
+    categoryName: 'Decoración Cemento',
     dimensions: '11 cm × 9,5 cm',
     description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería.',
-    image: 'assets/decoracion/joyeros/corazon.webp',
+    image: 'assets/v2/decoracion/corazon gris cemento.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 1490, image: 'assets/decoracion/joyeros/corazon.webp' },
-      { id: 'Cemento', name: 'Cemento', price: 3490, image: 'assets/decoracion/joyeros/corazon.webp' },
+      /* { id: 'Yeso', name: 'Yeso', price: 1490, image: 'assets/decoracion/joyeros/corazon.webp' }, */
+      { id: 'Cemento', name: 'Cemento', price: 5990 },
     ],
-    sizes: [
-      { id: 'estandar', name: '11 cm × 9,5 cm', price: 0, image: 'assets/decoracion/joyeros/corazon.webp' }
+    diseño: [
+      { id: 'corazon', name: 'Corazon 11 cm × 9,5 cm', price: 5990, image: 'assets/v2/decoracion/corazon gris cemento.png' },
+      { id: 'flor', name: 'Flor 10 cm × 10 cm', price: 5990, image: 'assets/v2/decoracion/flor gris cemento.png' },
+      { id: 'mariposa', name: 'Mariposa 10 cm × 10 cm', price: 5990, image: 'assets/v2/decoracion/mariposa blanco cemento.png' },
     ],
     colors: [
-      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/corazon.webp' },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, image: 'assets/decoracion/joyeros/corazon.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200/* , available: false */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200/* , available: false */ }
-    ]
-  }, {
-    id: 'joyero-flor',
-    name: 'Flor portavela',
-    category: 'yeso-cemento',
-    categoryName: 'Decoración Yeso y Cemento',
-    dimensions: '10 cm × 10 cm',
-    description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería',
-    image: 'assets/decoracion/joyeros/flor.webp',
-    material: [
-      { id: 'Yeso', name: 'Yeso', price: 1490, image: 'assets/decoracion/joyeros/flor.webp' },
-      { id: 'Cemento', name: 'Cemento', price: 3490, image: 'assets/decoracion/joyeros/flor.webp' },
-    ],
-    sizes: [
-      { id: 'estandar', name: '10 cm × 10 cm', price: 0, image: 'assets/decoracion/joyeros/flor.webp' }
-    ],
-    colors: [
-      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/flor.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200/* , available: false */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200/* , available: false */ },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200/* , available: false */ }
-    ]
-  }, {
-    id: 'joyero-mariposa',
-    name: 'Mariposa portavela',
-    category: 'yeso-cemento',
-    categoryName: 'Decoración Yeso y Cemento',
-    dimensions: '10 cm × 10 cm',
-    description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería',
-    image: 'assets/decoracion/joyeros/mariposa.webp',
-    material: [
-      { id: 'Yeso', name: 'Yeso', price: 1490, image: 'assets/decoracion/joyeros/mariposa.webp' },
-      { id: 'Cemento', name: 'Cemento', price: 3490, image: 'assets/decoracion/joyeros/mariposa.webp' },
-    ],
-    sizes: [
-      { id: 'estandar', name: '10 cm × 10 cm', price: 0, image: 'assets/decoracion/joyeros/mariposa.webp' }
-    ],
-    colors: [
-      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/mariposa.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200/* , available: false */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200/* , available: false */ },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200/* , available: false */ }
+      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0 },
     ]
   },
   {
@@ -115,45 +203,40 @@ const PRODUCTS_DATA = [
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: '14 cm × 10 cm',
     description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas o llaves.',
-    image: 'assets/decoracion/tortuga/tortuga.webp',
+    image: 'assets/v2/decoracion/tortuga yeso gris.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 2100, image: 'assets/decoracion/tortuga/tortuga.webp' },
-      { id: 'Cemento', name: 'Cemento', price: 4990, image: 'assets/decoracion/tortuga/tortuga.webp' },
+      { id: 'Yeso', name: 'Yeso', price: 3490, image: 'assets/v2/decoracion/tortuga yeso gris.png' },
+      { id: 'Cemento', name: 'Cemento', price: 6990, image: 'assets/v2/decoracion/tortuga yeso gris.png' },
     ],
     sizes: [
-      { id: 'estandar', name: '14 cm × 10 cm', price: 0, image: 'assets/decoracion/tortuga/tortuga.webp' }
+      { id: 'estandar', name: '14 cm × 10 cm', price: 0 }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/tortuga/tortuga.webp' },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 400, image: 'assets/decoracion/tortuga/tortuga.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 400/* , available: false */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 400/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 400/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 400/* , available: false */ }
+      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0 },
     ]
   },
   {
     id: 'joyero-taichi',
     name: 'Portavela tipo Tai chi',
     category: 'yeso-cemento',
-    categoryName: 'Decoración Yeso y Cemento',
+    categoryName: 'Decoración Cemento',
     dimensions: 'Ø9 cm',
     description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería.',
-    image: 'assets/decoracion/joyeros/taichi.webp',
+    image: 'assets/v2/decoracion/taichi gris cemento.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 1590, image: 'assets/decoracion/joyeros/taichi.webp' },
-      { id: 'Cemento', name: 'Cemento', price: 3790, image: 'assets/decoracion/joyeros/taichi.webp' },
+      /* { id: 'Yeso', name: 'Yeso', price: 1590, image: 'assets/decoracion/joyeros/taichi.webp' }, */
+      { id: 'Cemento', name: 'Cemento', price: 4990/* 3790 */, image: 'assets/v2/decoracion/taichi gris cemento.png' },
     ],
     sizes: [
-      { id: 'estandar', name: 'Ø9 cm', price: 0, image: 'assets/decoracion/joyeros/taichi.webp' }
+      { id: 'estandar', name: 'Ø9 cm', price: 0 }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/taichi.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200/* , available: false */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200/* , available: false */ },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200/* , available: false */ }
+      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0 },
+
     ]
   }, {
     id: 'joyero-cuerda',
@@ -162,67 +245,59 @@ const PRODUCTS_DATA = [
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: 'Ø6 cm',
     description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería.',
-    image: 'assets/decoracion/joyeros/frasco cañamo.webp',
+    image: 'assets/v2/decoracion/frasco gris cemento.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 590, image: 'assets/decoracion/joyeros/frasco cañamo.webp' },
-      { id: 'Cemento', name: 'Cemento', price: 1290, image: 'assets/decoracion/joyeros/frasco cañamo.webp' },
+      { id: 'Yeso', name: 'Yeso', price: 1200/* 590 */, image: 'assets/v2/decoracion/frasco gris cemento.png' },
+      { id: 'Cemento', name: 'Cemento', price: 3700/* 1290 */, image: 'assets/v2/decoracion/frasco gris cemento.png' },
     ],
     sizes: [
-      { id: 'estandar', name: 'Ø6 cm', price: 0, image: 'assets/decoracion/joyeros/frasco cañamo.webp' }
+      { id: 'estandar', name: 'Ø6 cm', price: 0, image: 'assets/v2/decoracion/frasco gris cemento.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/frasco cañamo.webp' },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 150, image: 'assets/decoracion/joyeros/frasco cañamo.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 150/* , available: false */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 150/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 150/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 150/* , available: false */ }
+      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/v2/decoracion/frasco gris cemento.png' },
+
     ]
-  },/*  {
+  }, {
     id: 'joyero-infinito',
-    name: 'Portavela tipo Infinito "Tú & Yo"',
+    name: 'Portavela Infinito “Tú & Yo” ❤️',
     category: 'yeso-cemento',
-    categoryName: 'Decoración Yeso y Cemento',
+    categoryName: 'Decoración Cemento',
     dimensions: '16,5 cm x 6 cm',
     description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería.',
-    image: 'assets/decoracion/joyeros/love infinito.webp',
+    image: 'assets/v2/decoracion/love infinito cemento.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 1790, image: 'assets/decoracion/joyeros/love infinito.webp' },
-      { id: 'Cemento', name: 'Cemento', price: 4290, image: 'assets/decoracion/joyeros/love infinito.webp' },
+      /*  { id: 'Yeso', name: 'Yeso', price: 1790, image: 'assets/decoracion/joyeros/love infinito.webp' }, */
+      { id: 'Cemento', name: 'Cemento', price: 7990/* 7990 */, image: 'assets/v2/decoracion/love infinito cemento.png' },
     ],
     sizes: [
-      { id: 'estandar', name: '16,5 cm x 6 cm', price: 0, image: 'assets/decoracion/joyeros/love infinito.webp' }
+      { id: 'estandar', name: '16,5 cm x 6 cm', price: 0, image: 'assets/v2/decoracion/love infinito cemento.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/love infinito.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 300 },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 300 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 300 },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 300 },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 300 }
+      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/v2/decoracion/love infinito cemento.png' },
     ]
-  }, */ {
+  }, {
     id: 'buda',
     name: 'Buda',
     category: 'yeso-cemento',
-    categoryName: 'Decoración Yeso y Cemento',
+    categoryName: 'Decoración Yeso',
     dimensions: '9,5 cm x 6 cm',
     description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería.',
-    image: 'assets/decoracion/buda/buda.webp',
+    image: 'assets/v2/decoracion/buda yeso gris.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 1290, image: 'assets/decoracion/buda/buda.webp' },
-      { id: 'Cemento', name: 'Cemento', price: 2990, image: 'assets/decoracion/buda/buda.webp' },
+      { id: 'Yeso', name: 'Yeso', price: 2490 /* 1290 */, image: 'assets/v2/decoracion/buda yeso gris.png' },
+      //{ id: 'Cemento', name: 'Cemento', price: 5490/* 2990 */, image: 'assets/v2/decoracion/buda gris cemento.png' },
     ],
     sizes: [
-      { id: 'estandar', name: '9,5 cm x 6 cm', price: 0, image: 'assets/decoracion/buda/buda.webp' }
+      { id: 'estandar', name: '9,5 cm x 6 cm', price: 0 }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/buda/buda.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200/* , available: false */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200/* , available: false */ },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200/* , available: false */ }
+      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0 }
     ]
   }, {
     id: 'joyero-loto',
@@ -231,119 +306,103 @@ const PRODUCTS_DATA = [
     categoryName: 'Decoración Yeso y Cemento',
     dimensions: 'Ø8 cm',
     description: 'Alhajero minimalista y multipropósito, ideal para posar velas, joyas, llaves o elementos de perfumería.',
-    image: 'assets/decoracion/joyeros/loto.webp',
+    image: 'assets/v2/decoracion/loto gris cemento.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 990, image: 'assets/decoracion/joyeros/loto.webp' },
-      { id: 'Cemento', name: 'Cemento', price: 2390, image: 'assets/decoracion/joyeros/loto.webp' },
+      { id: 'Yeso', name: 'Yeso', price: 1890/* 990 */, image: 'assets/v2/decoracion/loto gris cemento.png' },
+      { id: 'Cemento', name: 'Cemento', price: 4490/* 2390 */, image: 'assets/v2/decoracion/loto gris cemento.png' },
     ],
     sizes: [
-      { id: 'estandar', name: 'Ø8 cm', price: 0, image: 'assets/decoracion/joyeros/loto.webp' }
+      { id: 'estandar', name: 'Ø8 cm', price: 0, image: 'assets/v2/decoracion/loto gris cemento.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/loto.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 150, image: 'assets/decoracion/joyeros/loto.webp' },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 150/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 150/* , available: false */ },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 150/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 150/* , available: false */ }
+      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/joyeros/loto.webp' }
     ]
   }, {
     id: 'bandeja-corazon',
     name: 'Bandeja Corazón',
     category: 'yeso-cemento',
-    categoryName: 'Decoración Yeso y Cemento',
+    categoryName: 'Decoración Cemento',
     dimensions: '12 cm x 11,5 cm',
     description: 'Bandeja decorativa minimalista y versátil, ideal para posar velas, joyas, llaves o elementos de perfumería.',
-    image: 'assets/decoracion/corazon/bandeja corazon.webp',
+    image: 'assets/v2/decoracion/bandeja corazon gris cemento.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 1290, image: 'assets/decoracion/corazon/bandeja corazon.webp' },
-      { id: 'Cemento', name: 'Cemento', price: 2990, image: 'assets/decoracion/corazon/bandeja corazon.webp' },
+      /* { id: 'Yeso', name: 'Yeso', price: 1290, image: 'assets/decoracion/corazon/bandeja corazon.webp' }, */
+      { id: 'Cemento', name: 'Cemento', price: 6990/* 2990 */, image: 'assets/v2/decoracion/bandeja corazon gris cemento.png' },
     ],
     sizes: [
-      { id: '18cm', name: '12 cm x 11,5 cm', priceExtra: 0, image: 'assets/decoracion/corazon/bandeja corazon.webp' }
+      { id: '18cm', name: '12 cm x 11,5 cm', priceExtra: 0, image: 'assets/v2/decoracion/bandeja corazon gris cemento.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/corazon/bandeja corazon.webp' },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, image: 'assets/decoracion/corazon/bandeja corazon.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200/* , available: false */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200/* , available: false */ }
+      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0 },
     ]
   }, {
     id: 'bandeja-corazon2',
     name: 'Bandeja Corazón v2',
     category: 'yeso-cemento',
-    categoryName: 'Decoración Yeso y Cemento',
+    categoryName: 'Decoración Cemento',
     dimensions: '9,5 cm x 10,5 cm',
     description: 'Bandeja decorativa minimalista y versátil, ideal para posar velas, joyas, llaves o elementos de perfumería.',
-    image: 'assets/decoracion/corazon/corazon v2.webp',
+    image: 'assets/v2/decoracion/corazon v2 gris cemento.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 1290, image: 'assets/decoracion/corazon/corazon v2.webp' },
-      { id: 'Cemento', name: 'Cemento', price: 2990, image: 'assets/decoracion/corazon/corazon v2.webp' },
+      /* { id: 'Yeso', name: 'Yeso', price: 1290, image: 'assets/decoracion/corazon/corazon v2.webp' }, */
+      { id: 'Cemento', name: 'Cemento', price: 5990/* 2990 */, image: 'assets/v2/decoracion/corazon v2 gris cemento.png' },
     ],
     sizes: [
-      { id: 'estandar', name: '9,5 cm x 10,5 cm', priceExtra: 0, image: 'assets/decoracion/corazon/corazon v2.webp' }
+      { id: 'estandar', name: '9,5 cm x 10,5 cm', priceExtra: 0, image: 'assets/v2/decoracion/corazon v2 gris cemento.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/corazon/corazon v2.webp' },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, image: 'assets/decoracion/corazon/corazon v2.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200/* , available: false */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200/* , available: false */ }
+      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0 }
     ]
   },
-  // CATEGORIA 1: Decoración en Yeso y Cemento
   {
     id: 'bandeja-redonda',
     name: 'Bandeja Redonda',
     category: 'yeso-cemento',
-    categoryName: 'Decoración Yeso y Cemento',
+    categoryName: 'Decoración Cemento',
     dimensions: '1 cm alto',
     description: 'Bandeja decorativa minimalista y versátil, ideal para posar velas, joyas, llaves o elementos de perfumería.',
-    image: 'assets/decoracion/redondo/ovalado mediano.webp',
+    image: 'assets/v2/decoracion/ovalado mediano blanco cemento.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 490, image: 'assets/decoracion/redondo/ovalado mediano.webp' },
-      { id: 'Cemento', name: 'Cemento', price: 990, image: 'assets/decoracion/redondo/ovalado mediano.webp' },
+      /* { id: 'Yeso', name: 'Yeso', price: 490, image: 'assets/decoracion/redondo/ovalado mediano.webp' }, */
+      { id: 'Cemento', name: 'Cemento', price: 3990/* 3990 */, image: 'assets/v2/decoracion/ovalado mediano blanco cemento.png' },
     ],
     sizes: [
-      { id: '18cm', name: 'Ø8 cm (Individual)', priceExtra: 0, image: 'assets/decoracion/redondo/ovalado mediano.webp' },
-      { id: '25cm', name: 'Ø11 cm (Grande)', priceExtra: 900, image: 'assets/decoracion/redondo/ovalado mediano.webp' }
+      { id: '18cm', name: 'Ø8 cm (Individual)', priceExtra: 0, image: 'assets/v2/decoracion/ovalado mediano blanco cemento.png' },
+      { id: '25cm', name: 'Ø11 cm (Grande)', priceExtra: 1500/* 2900 */, image: 'assets/v2/decoracion/ovalado mediano blanco cemento.png' }
     ],
     colors: [
-      { id: 'Blanco', name: 'Gris/Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/redondo/ovalado mediano.webp' },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200, image: 'assets/decoracion/redondo/ovalado mediano.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200/* , available: false */ },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200/* , available: false */ }
+      { id: 'Blanco', name: 'Gris/Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/v2/decoracion/ovalado mediano blanco cemento.png' }
     ]
   },
   {
     id: 'gatito-portavelas',
     name: 'Gatito Portavelas',
     category: 'yeso-cemento',
-    categoryName: 'Decoración Yeso y Cemento',
+    categoryName: 'Decoración Yeso',
     dimensions: '10 cm largo × 6 cm alto aprox.',
     description: 'Ternura y funcionalidad en una sola pieza. Sculpted candle holder perfecto para dar calidez a tu mesa o velador.',
-    image: 'assets/decoracion/gato/gato.webp',
+    image: 'assets/v2/decoracion/gato blanco cemento.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 1590, image: 'assets/decoracion/gato/gato.webp' },
-      { id: 'Cemento', name: 'Cemento', price: 3890, image: 'assets/decoracion/gato/gato.webp' },
+      { id: 'Yeso', name: 'Yeso', price: 3990/* 1590 */, image: 'assets/decoracion/gato/gato blanco cemento.png' },
+      /* { id: 'Cemento', name: 'Cemento', price: 2990 3890, image: 'assets/decoracion/gato/gato.webp' }, */
     ], sizes: [
-      { id: 'estandar', name: '10 cm × 6 cm', price: 0, image: 'assets/decoracion/gato/gato.webp' }
+      { id: 'estandar', name: '10 cm × 6 cm', price: 0 }
     ],
     colors: [
-      { id: 'Blanco', name: 'Gris/Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/gato/gato.webp' },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 300, image: 'assets/decoracion/gato/gato.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 300/* , available: false */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 300/* , available: false */ },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 300/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 300/* , available: false */ }
+      { id: 'Blanco', name: 'Gris/Blanco', hex: '#FAF9F6', priceExtra: 0 }
     ]
   },
-  {
+  /* {
     id: 'bandeja-hoja',
     name: 'Bandeja Hoja',
     category: 'yeso-cemento',
@@ -358,83 +417,68 @@ const PRODUCTS_DATA = [
       { id: 'estandar', name: '21,2 × 12,2 cm', price: 0, image: 'assets/decoracion/hoja/hoja.webp' }
     ],
     colors: [
-      { id: 'Blanco', name: 'Gris/Blanco', hex: '#FAF9F6', priceExtra: 0 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 300 },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 300 },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 300/* , available: false */ },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 300/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 300/* , available: false */ }
+      { id: 'Blanco', name: 'Gris/Blanco', hex: '#FAF9F6', priceExtra: 0 }
     ]
-  },
+  }, */
   {
     id: 'hornillo-aromatico',
     name: 'Hornillo Aromático con bandeja quemadora',
     category: 'yeso-cemento',
-    categoryName: 'Decoración Yeso y Cemento',
+    categoryName: 'Decoración Cemento',
     dimensions: 'Ø8 cm × 7,5 cm',
     description: 'Diseñado especialmente para wax melts, aceites esenciales o aromaterapia. Incluye cavidad para tea-light.',
-    image: 'assets/decoracion/hornillo/hornillo.webp',
+    image: 'assets/v2/decoracion/hornillo gris cemento.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 2990, image: 'assets/decoracion/hornillo/hornillo.webp' },
-      { id: 'Cemento', name: 'Cemento', price: 6990, image: 'assets/decoracion/hornillo/hornillo.webp' },
+      /* { id: 'Yeso', name: 'Yeso', price: 2990, image: 'assets/decoracion/hornillo/hornillo.webp' }, */
+      { id: 'Cemento', name: 'Cemento', price: 8990, image: 'assets/v2/decoracion/hornillo gris cemento.png' },
     ], sizes: [
-      { id: 'estandar', name: 'Ø9 cm', price: 0, image: 'assets/decoracion/hornillo/hornillo.webp' }
+      { id: 'estandar', name: 'Ø9 cm', price: 0, image: 'assets/v2/decoracion/hornillo gris cemento.png' }
     ],
     colors: [
-
-      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/hornillo/hornillo.webp', },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 300/* , available: false */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 300/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 300/* , available: false */ },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 300/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 300/* , available: false */ }
+      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/v2/decoracion/hornillo gris cemento.png', },
     ]
   },
   {
     id: 'bandeja-ovalada',
     name: 'Bandeja Ovalada',
     category: 'yeso-cemento',
-    categoryName: 'Decoración Yeso y Cemento',
+    categoryName: 'Decoración Cemento',
     dimensions: '17,5 × 9 × 1,5 cm',
     description: 'Estética limpia y estilizada. Ideal para organizar frascos de perfume, accesorios o velas cilíndricas.',
-    image: 'assets/decoracion/ovalado/ovalado.webp',
+    image: 'assets/v2/decoracion/ovalado blanco cemento.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 1690, image: 'assets/decoracion/ovalado/ovalado.webp' },
-      { id: 'Cemento', name: 'Cemento', price: 3990, image: 'assets/decoracion/ovalado/ovalado.webp' },
+      //{ id: 'Yeso', name: 'Yeso', price: 0/* 1690 */, image: 'assets/v2/decoracion/ovalado blanco cemento.png' },
+      { id: 'Cemento', name: 'Cemento', price: 6490/* 3990 */, image: 'assets/v2/decoracion/ovalado blanco cemento.png' },
     ], sizes: [
-      { id: 'estandar', name: '17,5 × 9 × 1,5 cm', price: 0, image: 'assets/decoracion/ovalado/ovalado.webp' }
+      { id: 'estandar', name: '17,5 × 9 × 1,5 cm', price: 0, image: 'assets/v2/decoracion/ovalado blanco cemento.png' }
     ],
     colors: [
-      { id: 'Blanco', name: 'Gris/Blanco', hex: '#FAF9F6', priceExtra: 0 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200 },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200 },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200/* , available: false */ },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200/* , available: false */ }
+      { id: 'Blanco', name: 'Gris/Blanco', hex: '#FAF9F6', priceExtra: 0 }
     ]
   }, {
     id: 'bandeja-ovalada-doble',
     name: 'Bandeja Ovalada doble',
     category: 'yeso-cemento',
-    categoryName: 'Decoración Yeso y Cemento',
+    categoryName: 'Decoración Cemento',
     dimensions: '17,5 × 9 × 1,5 cm',
     description: 'Estética limpia y estilizada. Ideal para organizar frascos de perfume, accesorios o velas cilíndricas.',
-    image: 'assets/decoracion/ovalado/ovalada doble.webp',
+    image: 'assets/v2/decoracion/ovalada doble blanco cemento.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     material: [
-      { id: 'Yeso', name: 'Yeso', price: 1790, image: 'assets/decoracion/ovalado/ovalada doble.webp' },
-      { id: 'Cemento', name: 'Cemento', price: 4190, image: 'assets/decoracion/ovalado/ovalada doble.webp' },
+      //{ id: 'Yeso', name: 'Yeso', price: 1790, image: 'assets/decoracion/ovalado/ovalada doble.webp' },
+      { id: 'Cemento', name: 'Cemento', price: 6990/* 4190 */, image: 'assets/v2/decoracion/ovalada doble blanco cemento.png' },
     ], sizes: [
-      { id: 'estandar', name: '17,5 × 9 × 1,5 cm', price: 0, image: 'assets/decoracion/ovalado/ovalada doble.webp' }
+      { id: 'estandar', name: '17,5 × 9 × 1,5 cm', price: 0, image: 'assets/v2/decoracion/ovalada doble blanco cemento.png' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/ovalado/ovalada doble.webp' },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 200, image: 'assets/decoracion/ovalado/ovalada doble.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 200/* , available: false */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 200/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 200/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 200/* , available: false */ }
+      { id: 'Blanco', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/v2/decoracion/ovalada doble blanco cemento.png' }
     ]
-  }, {
+  },/*  {
     id: 'bandeja-nube',
     name: 'Bandeja Nube',
     category: 'yeso-cemento',
@@ -449,12 +493,7 @@ const PRODUCTS_DATA = [
       { id: 'estandar', name: '19 × 13,5 × 1,5 cm', price: 0, image: 'assets/decoracion/bandejanube/bandeja nube.webp' }
     ],
     colors: [
-      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/bandejanube/bandeja nube.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 300/* , available: false */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 300/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 300/* , available: false */ },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 300/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 300/* , available: false */ }
+      { id: 'Gris', name: 'Gris/Blanco', hex: '#9E9E9E', priceExtra: 0, image: 'assets/decoracion/bandejanube/bandeja nube.webp' }
     ]
   },
   {
@@ -473,11 +512,6 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Blanco', name: 'Gris/Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/redondocontapa/redondo tapa.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 150/* , available: false */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 150/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 150/* , available: false */ },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 150/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 150/* , available: false */ }
     ]
   },
   {
@@ -496,323 +530,110 @@ const PRODUCTS_DATA = [
     ],
     colors: [
       { id: 'Blanco', name: 'Gris/Blanco', hex: '#FAF9F6', priceExtra: 0, image: 'assets/decoracion/cuadradocontapa/cuadrado tapa.webp' },
-      { id: 'Cafe', name: 'Café', hex: '#b3814f ', priceExtra: 150/* , available: false */ },
-      { id: 'Verde', name: 'Verde', hex: '#308d44', priceExtra: 150/* , available: false */ },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#ffec45', priceExtra: 150/* , available: false */ },
-      { id: 'Rojo', name: 'Rojo', hex: '#d1402d', priceExtra: 150/* , available: false */ },
-      { id: 'Azul', name: 'Azul', hex: '#3523d4', priceExtra: 150/* , available: false */ }
-    ]
-  },
-
-  // CATEGORIA 2: Velas Artesanales
-  /* {
-    id: 'vela-frasco-soja',
-    name: 'Vela Soja en Frasco',
-    category: 'velas',
-    categoryName: 'Velas Artesanales',
-    dimensions: 'Frasco de vidrio con tapa de corcho',
-    description: 'Vela de cera de soja 100% vegetal en frasco reutilizable con tapa de corcho natural y lazo de yute.',
-    image: 'assets/vela/vela 100ml soja.webp',
-    isCandle: true,
-    sizes: [
-      { id: '100ml', name: '100 ml (Individual)', price: 3490, image: 'assets/vela/vela 100ml soja.webp' },
-      { id: '200ml', name: '200 ml (Mediana)', price: 5490, image: 'assets/vela/vela 200ml soja.webp' }
-    ],
-    colors: [
-      { id: 'marfil', name: 'Marfil Natural', hex: '#FAF0E6', priceExtra: 0, image: 'assets/vela/vela 100ml soja.webp' },
-      { id: 'terracota', name: 'Terracota Cálido', hex: '#C86D51', priceExtra: 310, image: 'assets/vela/margarita.webp' },
-      { id: 'lavanda', name: 'Lavanda Pastel', hex: '#C8B6E2', priceExtra: 310, image: 'assets/vela/luna.webp' },
-      { id: 'rosa', name: 'Rosa Palo', hex: '#E8C5C8', priceExtra: 310, image: 'assets/vela/rosa.webp' },
-      { id: 'verde', name: 'Verde Floral', hex: '#A3D9C9', priceExtra: 310, image: 'assets/vela/nube.webp' }
-    ],
-    aromas: [
-      { id: 'vainilla', name: 'Vainilla & Coco' },
-      { id: 'lavanda', name: 'Lavanda Silvestre' },
-      { id: 'cafe', name: 'Café & Caramelo' },
-      { id: 'jazmin', name: 'Jazmín & Ámbar' },
-      { id: 'sin-aroma', name: 'Sin aroma (Neutro)' }
-    ]
-  },
-  {
-    id: 'vela-frasco-gel',
-    name: 'Vela Gel en Frasco',
-    category: 'velas',
-    categoryName: 'Velas Artesanales',
-    dimensions: 'Frasco de vidrio con tapa de corcho',
-    description: 'Vela de cera de gel vegetal en frasco de vidrio reutilizable con acabado transparente brillante y alta durabilidad.',
-    image: 'assets/vela/vela 100ml gel.webp',
-    isCandle: true,
-    sizes: [
-      { id: '100ml', name: '100 ml (Individual)', price: 3490, image: 'assets/vela/vela 100ml gel.webp' },
-      { id: '200ml', name: '200 ml (Mediana)', price: 5490, image: 'assets/vela/vela 200ml soja.webp' }
-    ],
-    colors: [
-      { id: 'transparente', name: 'Gel Transparente', hex: '#E0F7FA', priceExtra: 0, image: 'assets/vela/vela 100ml gel.webp' },
-      { id: 'rosa-cristal', name: 'Rosa Cristal', hex: '#F8BBD0', priceExtra: 400, image: 'assets/vela/corazon textura.webp' },
-      { id: 'azul-marino', name: 'Azul Marino', hex: '#B3E5FC', priceExtra: 400, image: 'assets/vela/cilindro ovalado v1.webp' }
-    ],
-    aromas: [
-      { id: 'vainilla', name: 'Vainilla & Coco' },
-      { id: 'lavanda', name: 'Lavanda Silvestre' },
-      { id: 'cafe', name: 'Café & Caramelo' },
-      { id: 'jazmin', name: 'Jazmín & Ámbar' },
-      { id: 'sin-aroma', name: 'Sin aroma (Neutro)' }
-    ]
-  },
-  {
-    id: 'Margarita-Vela-Soja',
-    name: 'Margarita Vela Soja',
-    category: 'velas',
-    categoryName: 'Velas Artesanales',
-    dimensions: 'Figura floral en cera de alta pureza',
-    description: 'Escultura delicada de margarita en cera de alta pureza. Ideal para centros de mesa o recuerdos.',
-    image: 'assets/vela/margarita.webp',
-    isCandle: true,
-    sizes: [
-      { id: 'chico', name: 'Chica (5,5 cm)', price: 2490, image: 'assets/vela/margarita.webp' },
-      { id: 'grande', name: 'Grande (8,5 cm)', price: 3490, image: 'assets/vela/margarita 2.webp' }
-    ],
-    colors: [
-      { id: 'blanco', name: 'Blanco Natural', hex: '#FFFFFF', priceExtra: 0, image: 'assets/vela/margarita.webp' },
-      { id: 'rosa', name: 'Rosa Palo', hex: '#E8C5C8', priceExtra: 300, image: 'assets/vela/margarita 2.webp' },
-      { id: 'terracota', name: 'Terracota', hex: '#C86D51', priceExtra: 300, image: 'assets/vela/corazon textura.webp' }
-    ],
-    aromas: [
-      { id: 'vainilla', name: 'Vainilla & Coco' },
-      { id: 'lavanda', name: 'Lavanda Silvestre' },
-      { id: 'jazmin', name: 'Jazmín & Ámbar' },
-      { id: 'sin-aroma', name: 'Sin aroma' }
     ]
   }, */
+  // Velas ---------------------------------------------------------
   {
-    id: 'luna-Vela-Soja',
-    name: 'Luna Vela Soja',
-    category: 'velas',
-    categoryName: 'Velas Artesanales',
-    dimensions: 'Figura de Luna en cera artesanal',
-    description: 'Escultura mística de Luna en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
-    image: 'assets/vela/moldes/luna.webp',
-    isCandle: true,
-    sizes: [
-      { id: 'estandar', name: '5,5 cm', price: 350, image: 'assets/vela/moldes/luna.webp' }
-    ],
-    colors: [
-      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
-      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
-    ],
-    aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.webp' },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 200, icon: 'assets/icons/lavanda.webp' },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 200, icon: 'assets/icons/vainilla.webp' },
-      { id: 'limon', name: 'Limón', priceExtra: 200, icon: 'assets/icons/limon.webp' },
-      { id: 'Floral', name: 'Floral', priceExtra: 200, icon: 'assets/icons/flor.webp' }
-    ]
-  },
-  {
-    id: 'rosa-Vela-Soja',
-    name: 'Rosa Vela Soja',
-    category: 'velas',
-    categoryName: 'Velas Artesanales',
-    dimensions: 'Figura esculpida de Rosa',
-    description: 'Detallada escultura en cera de alta densidad con forma de rosa florecida.',
-    image: 'assets/vela/moldes/rosa.webp',
-    isCandle: true,
-    sizes: [
-      { id: 'estandar', name: '5 cm ancho x 3 cm alto', price: 800, image: 'assets/vela/moldes/rosa.webp' }
-    ],
-    colors: [
-      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
-      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
-    ],
-    aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.webp' },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 400, icon: 'assets/icons/lavanda.webp' },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 400, icon: 'assets/icons/vainilla.webp' },
-      { id: 'limon', name: 'Limón', priceExtra: 400, icon: 'assets/icons/limon.webp' },
-      { id: 'Floral', name: 'Floral', priceExtra: 400, icon: 'assets/icons/flor.webp' }
-    ]
-  },
-  {
-    id: 'nube-Vela-Soja',
-    name: 'Nube Vela Soja',
-    category: 'velas',
-    categoryName: 'Velas Artesanales',
-    dimensions: 'Figura esponjosa de nube',
-    description: 'Forma suave y moderna de nube decorativa en cera de soja.',
-    image: 'assets/vela/moldes/nube.webp',
-    isCandle: true,
-    sizes: [
-      /* { id: 'pequeño', name: '4,5 cm ancho x 2 cm alto', price: 200, image: 'assets/vela/moldes/nube.webp' },
-      { id: 'mediano', name: '6,5 cm ancho x 2,5 cm alto', price: 400, image: 'assets/vela/moldes/nube.webp' }, */
-      { id: 'grande', name: '8 cm ancho x 3,5 cm alto', price: 1600, image: 'assets/vela/moldes/nube.webp' }
-    ],
-    colors: [
-      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
-      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
-    ],
-    aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.webp' },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 1100, icon: 'assets/icons/lavanda.webp' },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 1100, icon: 'assets/icons/vainilla.webp' },
-      { id: 'limon', name: 'Limón', priceExtra: 1100, icon: 'assets/icons/limon.webp' },
-      { id: 'Floral', name: 'Floral', priceExtra: 1100, icon: 'assets/icons/flor.webp' }
-    ]
-  },
-  {
-    id: 'corazon-textura-Vela-Soja',
-    name: 'Corazón Textura Vela Soja',
-    category: 'velas',
-    categoryName: 'Velas Artesanales',
-    dimensions: 'Figura de corazón con relieve',
-    description: 'Escultura romántica de corazón con micro-textura en cera de soja pura.',
-    image: 'assets/vela/moldes/corazon textura.webp',
-    isCandle: true,
-    sizes: [
-      { id: 'estandar', name: '6 cm ancho x 1,5 cm alto', price: 890, image: 'assets/vela/moldes/corazon textura.webp' }
-    ],
-    colors: [
-      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
-      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
-    ],
-    aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.webp' },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 300, icon: 'assets/icons/lavanda.webp' },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 300, icon: 'assets/icons/vainilla.webp' },
-      { id: 'limon', name: 'Limón', priceExtra: 300, icon: 'assets/icons/limon.webp' },
-      { id: 'Floral', name: 'Floral', priceExtra: 300, icon: 'assets/icons/flor.webp' }
-    ]
-  }, {
     id: 'loto-v1',
     name: 'Flor de Loto Vela Soja',
     category: 'velas',
     categoryName: 'Velas Artesanales',
-    dimensions: 'Figura de corazón con relieve',
-    description: 'Escultura romántica de corazón con micro-textura en cera de soja pura.',
-    image: 'assets/vela/moldes/loto.webp',
+    dimensions: '9 cm ancho x 4 cm alto',
+    description: 'Escultura de loto con micro-textura en cera de soja pura.',
+    image: 'assets/v2/velas/loto.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '9 cm ancho x 4 cm alto', price: 1700, image: 'assets/vela/moldes/loto.webp' }
+      { id: 'estandar', name: '9 cm ancho x 4 cm alto', price: 3490/* 1700 */, image: 'assets/v2/velas/loto.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
-      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 500/* 100 */ },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 500/* 100 */ },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 500/* 100 */ },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 500/* 100 */ },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 500/* 100 */ },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 500/* 100 */ },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 500/* 100 */ },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 500/* 100 */ },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 500/* 100 */ },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 500/* 100 */ },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.webp' },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 1200, icon: 'assets/icons/lavanda.webp' },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 1200, icon: 'assets/icons/vainilla.webp' },
-      { id: 'limon', name: 'Limón', priceExtra: 1200, icon: 'assets/icons/limon.webp' },
-      { id: 'Floral', name: 'Floral', priceExtra: 1200, icon: 'assets/icons/flor.webp' }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 1000/* 1200 */, icon: 'assets/icons/lavanda.webp' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 1000/* 1200 */, icon: 'assets/icons/vainilla.webp' },
+      { id: 'limon', name: 'Limón', priceExtra: 1000/* 1200 */, icon: 'assets/icons/limon.webp' },
+      { id: 'Floral', name: 'Floral', priceExtra: 1000/* 1200 */, icon: 'assets/icons/flor.webp' }
     ]
   }, {
     id: 'love-v1',
     name: 'Vela "Love" Vela Soja',
     category: 'velas',
     categoryName: 'Velas Artesanales',
-    dimensions: 'Figura de corazón con relieve',
+    dimensions: '10,5 cm ancho x 5 cm alto',
     description: 'Escultura romántica de corazón con micro-textura en cera de soja pura.',
-    image: 'assets/vela/moldes/vela love.webp',
+    image: 'assets/v2/velas/Vela romántica Love.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '10,5 cm ancho x 5 cm alto', price: 1900, image: 'assets/vela/moldes/vela love.webp' }
+      { id: 'estandar', name: '10,5 cm ancho x 5 cm alto', price: 2990/* 2900 */, image: 'assets/v2/velas/Vela romántica Love.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
-      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 500/* 100 */ },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 500/* 100 */ },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 500/* 100 */ },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 500/* 100 */ },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 500/* 100 */ },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 500/* 100 */ },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 500/* 100 */ },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 500/* 100 */ },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 500/* 100 */ },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 500/* 100 */ },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.webp' },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 1300, icon: 'assets/icons/lavanda.webp' },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 1300, icon: 'assets/icons/vainilla.webp' },
-      { id: 'limon', name: 'Limón', priceExtra: 1300, icon: 'assets/icons/limon.webp' },
-      { id: 'Floral', name: 'Floral', priceExtra: 1300, icon: 'assets/icons/flor.webp' }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 1000/* 1200 */, icon: 'assets/icons/lavanda.webp' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 1000/* 1200 */, icon: 'assets/icons/vainilla.webp' },
+      { id: 'limon', name: 'Limón', priceExtra: 1000/* 1200 */, icon: 'assets/icons/limon.webp' },
+      { id: 'Floral', name: 'Floral', priceExtra: 1000/* 1200 */, icon: 'assets/icons/flor.webp' }
     ]
-  },
-  {
+  }, {
     id: 'cilindro-v1-Vela-Soja',
     name: 'Cilindro Ovalado Vela Soja',
     category: 'velas',
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 12 cm alto aprox.',
     description: 'Escultura mística de cilindro en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
-    image: 'assets/vela/moldes/cilindro ovalado v1.webp',
+    image: 'assets/v2/velas/cilindro ovalado v1 2.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '12 cm alto', price: 2100, image: 'assets/vela/moldes/cilindro ovalado v1.webp' }
+      { id: 'estandar', name: '12 cm alto', price: 3490 /* 2100 */, image: 'assets/v2/velas/cilindro ovalado v1 2.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
-      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 500/* 100 */ },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 500/* 100 */ },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 500/* 100 */ },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 500/* 100 */ },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 500/* 100 */ },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 500/* 100 */ },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 500/* 100 */ },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 500/* 100 */ },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 500/* 100 */ },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 500/* 100 */ },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.webp' },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 1800, icon: 'assets/icons/lavanda.webp' },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 1800, icon: 'assets/icons/vainilla.webp' },
-      { id: 'limon', name: 'Limón', priceExtra: 1800, icon: 'assets/icons/limon.webp' },
-      { id: 'Floral', name: 'Floral', priceExtra: 1800, icon: 'assets/icons/flor.webp' }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 1000/* 1200 */, icon: 'assets/icons/lavanda.webp' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 1000/* 1200 */, icon: 'assets/icons/vainilla.webp' },
+      { id: 'limon', name: 'Limón', priceExtra: 1000/* 1200 */, icon: 'assets/icons/limon.webp' },
+      { id: 'Floral', name: 'Floral', priceExtra: 1000/* 1200 */, icon: 'assets/icons/flor.webp' }
     ]
   }, {
     id: 'Corazon-love-Vela-Soja',
@@ -821,94 +642,32 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 6 cm alto aprox.',
     description: 'Escultura romántica de corazón con micro-textura en cera de soja pura.',
-    image: 'assets/vela/moldes/corazon love.webp',
+    image: 'assets/v2/velas/corazon love 2.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '6 cm alto', price: 1400, image: 'assets/vela/moldes/corazon love.webp' }
+      { id: 'estandar', name: '6 cm alto', price: 2990/* 1400 */, image: 'assets/v2/velas/corazon love 2.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
-      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 500/* 100 */ },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 500/* 100 */ },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 500/* 100 */ },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 500/* 100 */ },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 500/* 100 */ },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 500/* 100 */ },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 500/* 100 */ },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 500/* 100 */ },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 500/* 100 */ },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 500/* 100 */ },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.webp' },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 900, icon: 'assets/icons/lavanda.webp' },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 900, icon: 'assets/icons/vainilla.webp' },
-      { id: 'limon', name: 'Limón', priceExtra: 900, icon: 'assets/icons/limon.webp' },
-      { id: 'Floral', name: 'Floral', priceExtra: 900, icon: 'assets/icons/flor.webp' }
-    ]
-  }, {
-    id: 'margarita-Vela-Soja',
-    name: 'Margarita Vela Soja',
-    category: 'velas',
-    categoryName: 'Velas Artesanales',
-    dimensions: 'Figura 6 cm aprox.',
-    description: 'Escultura mística de margarita en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
-    image: 'assets/vela/moldes/margarita.webp',
-    isCandle: true,
-    sizes: [
-      { id: 'estandar', name: '6 cm', price: 500, image: 'assets/vela/moldes/margarita.webp' }
-    ],
-    colors: [
-      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
-      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
-    ],
-    aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.webp' },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 300, icon: 'assets/icons/lavanda.webp' },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 300, icon: 'assets/icons/vainilla.webp' },
-      { id: 'limon', name: 'Limón', priceExtra: 300, icon: 'assets/icons/limon.webp' },
-      { id: 'Floral', name: 'Floral', priceExtra: 300, icon: 'assets/icons/flor.webp' }
-    ]
-  }, {
-    id: 'osito-Vela-Soja',
-    name: 'Osito Vela Soja',
-    category: 'velas',
-    categoryName: 'Velas Artesanales',
-    dimensions: 'Figura 4,5 cm alto aprox.',
-    description: 'Escultura mística de osito en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
-    image: 'assets/vela/moldes/osito.webp',
-    isCandle: true,
-    sizes: [
-      { id: 'estandar', name: '4,5 cm alto', price: 480, image: 'assets/vela/moldes/osito.webp' }
-    ],
-    colors: [
-      { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
-      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
-    ],
-    aromas: [
-      { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.webp' },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 300, icon: 'assets/icons/lavanda.webp' },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 300, icon: 'assets/icons/vainilla.webp' },
-      { id: 'limon', name: 'Limón', priceExtra: 300, icon: 'assets/icons/limon.webp' },
-      { id: 'Floral', name: 'Floral', priceExtra: 300, icon: 'assets/icons/flor.webp' }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 1000/* 1200 */, icon: 'assets/icons/lavanda.webp' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 1000/* 1200 */, icon: 'assets/icons/vainilla.webp' },
+      { id: 'limon', name: 'Limón', priceExtra: 1000/* 1200 */, icon: 'assets/icons/limon.webp' },
+      { id: 'Floral', name: 'Floral', priceExtra: 1000/* 1200 */, icon: 'assets/icons/flor.webp' }
     ]
   }, {
     id: 'virgen-blanca-v1-Vela-Soja',
@@ -917,30 +676,32 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 6,5 cm alto aprox.',
     description: 'Escultura mística de Virgen en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
-    image: 'assets/vela/moldes/virgen blanca v1.webp',
+    image: 'assets/v2/velas/virgen blanca v1 2.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '6 cm alto', price: 1100, image: 'assets/vela/moldes/virgen blanca v1.webp' }
+      { id: 'estandar', name: '6 cm alto', price: 1490/* 1100 */, image: 'assets/v2/velas/virgen blanca v1 2.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
-      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 500/* 100 */ },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 500/* 100 */ },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 500/* 100 */ },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 500/* 100 */ },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 500/* 100 */ },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 500/* 100 */ },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 500/* 100 */ },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 500/* 100 */ },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 500/* 100 */ },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 500/* 100 */ },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.webp' },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 600, icon: 'assets/icons/lavanda.webp' },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 600, icon: 'assets/icons/vainilla.webp' },
-      { id: 'limon', name: 'Limón', priceExtra: 600, icon: 'assets/icons/limon.webp' },
-      { id: 'Floral', name: 'Floral', priceExtra: 600, icon: 'assets/icons/flor.webp' }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 1000/* 1200 */, icon: 'assets/icons/lavanda.webp' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 1000/* 1200 */, icon: 'assets/icons/vainilla.webp' },
+      { id: 'limon', name: 'Limón', priceExtra: 1000/* 1200 */, icon: 'assets/icons/limon.webp' },
+      { id: 'Floral', name: 'Floral', priceExtra: 1000/* 1200 */, icon: 'assets/icons/flor.webp' }
     ]
   }, {
     id: 'virgen blanca v2-Vela-Soja',
@@ -949,154 +710,102 @@ const PRODUCTS_DATA = [
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 6,5 cm alto aprox.',
     description: 'Escultura mística de Virgen en cera vegetal. Un detalle cálido y sereno para decorar tu hogar.',
-    image: 'assets/vela/moldes/virgen blanca v2.webp',
+    image: 'assets/v2/velas/virgen blanca v2 2.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     isCandle: true,
     sizes: [
-      { id: 'estandar', name: '6,5 cm alto', price: 1100, image: 'assets/vela/moldes/virgen blanca v2.webp' }
+      { id: 'estandar', name: '6,5 cm alto', price: 1490, image: 'assets/v2/velas/virgen blanca v2 2.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
-      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 500/* 100 */ },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 500/* 100 */ },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 500/* 100 */ },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 500/* 100 */ },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 500/* 100 */ },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 500/* 100 */ },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 500/* 100 */ },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 500/* 100 */ },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 500/* 100 */ },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 500/* 100 */ },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.webp' },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 600, icon: 'assets/icons/lavanda.webp' },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 600, icon: 'assets/icons/vainilla.webp' },
-      { id: 'limon', name: 'Limón', priceExtra: 600, icon: 'assets/icons/limon.webp' },
-      { id: 'Floral', name: 'Floral', priceExtra: 600, icon: 'assets/icons/flor.webp' }
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 1000/* 1200 */, icon: 'assets/icons/lavanda.webp' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 1000/* 1200 */, icon: 'assets/icons/vainilla.webp' },
+      { id: 'limon', name: 'Limón', priceExtra: 1000/* 1200 */, icon: 'assets/icons/limon.webp' },
+      { id: 'Floral', name: 'Floral', priceExtra: 1000/* 1200 */, icon: 'assets/icons/flor.webp' }
     ]
-  },
-  {
+  }, {
     id: 'angelitos-parafina',
     name: 'Ángel/Angelita Vela Parafina',
     category: 'velas',
     categoryName: 'Velas Artesanales',
     dimensions: 'Figura 10 cm alto aprox.',
     description: 'Escultura delicada de ángel. Ideal para recuerditos de bautizo o primera comunión.',
-    image: 'assets/vela/moldes/angel mujer parafina.webp',
+    image: 'assets/v2/velas/angelita parafina.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     isCandle: true,
     sizes: [
-      { id: 'mujer', name: 'Niña 10 cm alto', price: 1500, image: 'assets/vela/moldes/angel mujer parafina.webp' },
-      { id: 'hombre', name: 'Niño 10 cm alto', price: 1500, image: 'assets/vela/moldes/angel hombre parafina.webp' }
+      { id: 'mujer', name: 'Niña 10 cm alto', price: 3490/* 1500 */, image: 'assets/v2/velas/angelita parafina.png' },
+      { id: 'hombre', name: 'Niño 10 cm alto', price: 3490/* 1500 */, image: 'assets/v2/velas/angel parafina.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
-      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 500/* 100 */ },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 500/* 100 */ },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 500/* 100 */ },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 500/* 100 */ },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 500/* 100 */ },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 500/* 100 */ },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 500/* 100 */ },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 500/* 100 */ },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 500/* 100 */ },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 500/* 100 */ },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.webp' },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 700, icon: 'assets/icons/lavanda.webp' },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 700, icon: 'assets/icons/vainilla.webp' },
-      { id: 'limon', name: 'Limón', priceExtra: 700, icon: 'assets/icons/limon.webp' },
-      { id: 'Floral', name: 'Floral', priceExtra: 700, icon: 'assets/icons/flor.webp' }
-    ]
-  }, {
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 1000/* 1200 */, icon: 'assets/icons/lavanda.webp' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 1000/* 1200 */, icon: 'assets/icons/vainilla.webp' },
+      { id: 'limon', name: 'Limón', priceExtra: 1000/* 1200 */, icon: 'assets/icons/limon.webp' },
+      { id: 'Floral', name: 'Floral', priceExtra: 1000/* 1200 */, icon: 'assets/icons/flor.webp' }
+    ],
+  },
+  {
     id: 'wax-metls-corazon',
     name: 'Wax Melts Corazon',
     category: 'velas',
-    categoryName: 'Velas Artesanales',
+    categoryName: 'Velas Artesanales - Wax Melts',
     dimensions: '1,5 cm c/u',
     description: 'Conjunto de corazones para quemar en tu hornillo y dar un detalle cálido y sereno para dar fragancia a tu hogar.',
-    image: 'assets/vela/wax metls/wax metls corazon.webp',
+    image: 'assets/v2/velas/wax metls corazon.png',
+    isCustomPhoto: false,
+    excentoEmpaque: true,
     isCandle: true,
     sizes: [
-      { id: 'mujer', name: 'Bolsa 12 unidades', price: 1500, image: 'assets/vela/wax metls/wax metls corazon.webp' }
+      { id: 'mujer', name: 'Bolsa 25gr', price: 1990/* 1500 */, image: 'assets/v2/velas/wax metls corazon.png' }
     ],
     colors: [
       { id: 'Blanco', name: 'Blanco', hex: '#f5f5f5', priceExtra: 0 },
-      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 100 },
-      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 100 },
-      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 100 },
-      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 100 },
-      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 100 },
-      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 100 },
-      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 100 },
-      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 100 },
-      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 100 },
-      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 100 },
+      { id: 'Verde', name: 'Verde', hex: '#57dd69', priceExtra: 300/* 100 */ },
+      { id: 'Rojo', name: 'Rojo', hex: '#c23939', priceExtra: 300/* 100 */ },
+      { id: 'Naranjo', name: 'Naranjo', hex: '#d18f2b', priceExtra: 300/* 100 */ },
+      { id: 'Amarillo', name: 'Amarillo', hex: '#fcff2f', priceExtra: 300/* 100 */ },
+      { id: 'Rosado', name: 'Rosado', hex: '#e45fc7', priceExtra: 300/* 100 */ },
+      { id: 'Lila', name: 'Lila', hex: '#92577f', priceExtra: 300/* 100 */ },
+      { id: 'Azul', name: 'Azul', hex: '#2e2794', priceExtra: 300/* 100 */ },
+      { id: 'Celeste', name: 'Celeste', hex: '#B3E5FC', priceExtra: 300/* 100 */ },
+      { id: 'Gris', name: 'Gris', hex: '#4e4e4e', priceExtra: 300/* 100 */ },
+      { id: 'Otro', name: 'Otro', hex: '', priceExtra: 300/* 100 */ },
     ],
     aromas: [
       { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.webp' },
-      { id: 'lavanda', name: 'Lavanda', priceExtra: 400, icon: 'assets/icons/lavanda.webp' },
-      { id: 'vainilla', name: 'Vainilla', priceExtra: 400, icon: 'assets/icons/vainilla.webp' },
-      { id: 'limon', name: 'Limón', priceExtra: 400, icon: 'assets/icons/limon.webp' },
-      { id: 'Floral', name: 'Floral', priceExtra: 400, icon: 'assets/icons/flor.webp' }
-    ]
-  },
-
-
-  // CATEGORIA 3: Litofanías y Recuerdos Personalizados
-  {
-    id: 'litofania-individual-10cm',
-    name: 'Litofanía Individual Personalizada',
-    category: 'litofanias',
-    categoryName: 'Litofanías & Personalizados',
-    dimensions: 'Placa de foto 3D retroiluminada 10 cm de ancho',
-    description: 'Fotografía en relieve 3D que cobra vida al encender su luz LED. Un recuerdo mágico y emocionante.',
-    image: 'assets/litofania/litografia base.webp',
-    isCustomPhoto: true,
-    /* sizes: [
-      { id: '10cm', name: 'Placa 10 cm', priceExtra: 0, image: 'assets/litofania/litografia base.webp' },
-      { id: '15cm', name: 'Placa 15 cm', priceExtra: 2000, image: 'assets/litofania/litografia cuadro.webp' },
-      { id: '20cm', name: 'Placa 20 cm', priceExtra: 4000, image: 'assets/litofania/litografia base.webp' }
-    ], */
-    variants: [
-      { id: 'base-imagen', name: 'Base LED + Placa Imagen', price: 6990, image: 'assets/litofania/litografia base.webp' },
-      { id: 'solo-imagen', name: 'Solo Placa Imagen 3D - 10 cm aprox', price: 4990, image: 'assets/litofania/litografia base.webp' },
-      { id: 'solo-base', name: 'Solo Base LED Madera - 10 cm aprox', price: 2490, image: 'assets/litofania/litografia base.webp' }
-    ]
-  },
-  {
-    id: 'litofania-marco-cubo',
-    name: 'Litofanía Marco Cubo (4 Fotos)',
-    category: 'litofanias',
-    categoryName: 'Litofanías & Personalizados',
-    dimensions: 'Cubo con 4 fotografías personalizadas',
-    description: 'Lámpara de noche en forma de cubo con 4 fotografías familiares personalizables retroiluminadas.',
-    image: 'assets/litofania/litografia cuadro.webp',
-    isCustomPhoto: true,
-    /* sizes: [
-      { id: 'estandar', name: 'Fotos 7,5 × 10 cm', priceExtra: 0, image: 'assets/litofania/litografia cuadro.webp' },
-      { id: 'grande', name: 'Fotos 10 × 12 cm', priceExtra: 5000, image: 'assets/litofania/litografia base.webp' }
-    ], */
-    variants: [
-      { id: 'marco-4fotos', name: 'Marco Cubo + 4 Fotos 3D', price: 19990, image: 'assets/litofania/litografia cuadro.webp' },
-      { id: 'solo-marco', name: 'Solo Marco Cubo - 12 x 11 cm aprox', price: 8990, image: 'assets/litofania/litografia cuadro.webp' },
-      { id: 'solo-imagen-repuesto', name: 'Solo 1 Foto - 7,5 × 10 cm aprox', price: 4490, image: 'assets/litofania/litografia cuadro.webp' }
-    ]
-  } //PACKS---------------------------------------------------
-  ,
-  {
-    id: 'pack-margaritas',
-    name: 'Pack Margaritas',
-    category: 'packs',
-    categoryName: 'Packs',
-    dimensions: '',
-    description: 'Pack de velas margarita perfectas para regalar. Colores y aroma a elección.',
-    image: 'assets/vela/pack/2 margaritas.webp',
-    isCustomPhoto: false,
-    excentoEmpaque: true,
-    sizes: [
-      { id: 'pack-2-margaritas', name: 'Pack 2 Margaritas', price: 2400, image: 'assets/vela/pack/2 margaritas.webp' },
-      { id: 'pack-3-margaritas', name: 'Pack 3 Margaritas', price: 3750, image: 'assets/vela/pack/3 margaritas.webp' },
+      { id: 'lavanda', name: 'Lavanda', priceExtra: 700/* 1800 */, icon: 'assets/icons/lavanda.webp' },
+      { id: 'vainilla', name: 'Vainilla', priceExtra: 700/* 1800 */, icon: 'assets/icons/vainilla.webp' },
+      { id: 'limon', name: 'Limón', priceExtra: 700/* 1800 */, icon: 'assets/icons/limon.webp' },
+      { id: 'Floral', name: 'Floral', priceExtra: 700/* 1800 */, icon: 'assets/icons/flor.webp' }
     ]
   }
 ];
@@ -1114,17 +823,16 @@ let cart = []; // Array of cart items
 
 const QUOTE_CONFIG = {
   presentacionGeneral: [
-    { id: 'porProducto', name: 'Según cada producto', badge: '(Presentación individual)', desc: 'Cada producto utiliza la presentación seleccionada en su propia ficha.', priceExtra: 0, icon: '🧩' },
-    { id: 'todoJunto', name: 'Todo junto en una caja', badge: '(Una sola caja)', desc: 'Todos los productos se entregan juntos en una única caja.', priceExtra: 300, icon: '📦' },
-    { id: 'todoJuntoPersonalizado', name: 'Todo junto en caja personalizada', badge: '(Una sola caja + etiqueta)', desc: 'Todos los productos se entregan juntos en una única caja con etiqueta personalizada.', priceExtra: 500, icon: '🏷️' },
+    { id: 'porProducto', name: 'Todo junto en una caja', badge: '(Una sola caja)', desc: 'Todos los productos se entregan juntos en una única caja.', priceExtra: 0, icon: '📦' },
+    { id: 'todoJuntoPersonalizado', name: 'Todo junto en caja personalizada', badge: '(Una sola caja + etiqueta)', desc: 'Todos los productos se entregan juntos en una única caja con etiqueta personalizada.', priceExtra: 600, icon: '🏷️' },
     /* { id: 'sinEmpaqueGeneral', name: 'Sin empaque', badge: '(Pedido completo)', desc: 'Todo el pedido se entrega sin empaque.', priceExtra: 0, icon: '📦' }, */
     { id: 'eventos', name: 'Momentos especiales', badge: '(A cotizar)', desc: 'Envíanos tu idea y cotizamos la presentación general según tus necesidades.', priceExtra: -1, icon: '🎁' }
   ],
   presentacionesProducto: [
-    { id: 'sinEmpaque', name: 'Sin Diseño', badge: '(Sin diseño)', desc: 'La pieza se entrega sin diseño.', priceExtra: 0, icon: '👤' },
-    /* { id: 'enCaja', name: 'En Caja', badge: '(Ideal para regalo simple)', desc: 'Incluye caja de cartón kraft.', priceExtra: 250, icon: '📦' }, */
-    { id: 'personalizado', name: 'Caja Decorada + Etiqueta Personalizada', badge: '(Regalo único)', desc: 'Incluye caja decorada + etiqueta personalizada con tu diseño.', priceExtra: 400, icon: '🏷️' },
-    { id: 'eventos', name: 'Momentos especiales', badge: '(A cotizar)', desc: 'Presentación especial a definir.', priceExtra: -1, icon: '🎁' }
+    /*  { id: 'sinEmpaque', name: 'Sin Diseño', badge: '(Sin diseño)', desc: 'La pieza se entrega sin diseño.', priceExtra: 0, icon: '👤' },
+     { id: 'enCaja', name: 'En Caja', badge: '(Ideal para regalo simple)', desc: 'Incluye caja de cartón kraft.', priceExtra: 250, icon: '📦' },
+     { id: 'personalizado', name: 'Caja Decorada + Etiqueta Personalizada', badge: '(Regalo único)', desc: 'Incluye caja decorada + etiqueta personalizada con tu diseño.', priceExtra: 400, icon: '🏷️' },
+     { id: 'eventos', name: 'Momentos especiales', badge: '(A cotizar)', desc: 'Presentación especial a definir.', priceExtra: -1, icon: '🎁' } */
   ],
   descuentosCantidad: [
     { min: 51, discount: 15 },
@@ -1239,7 +947,7 @@ function setupEventListeners() {
 
 function getProductState(product) {
   const options = selectedOptionsMap[product.id] || {};
-
+  debugger
   const selectedMaterial = options.materialId ? product.material?.find(s => s.id === options.materialId) || null : null;
   const selectedDiseño = options.diseñoId ? product.diseño?.find(s => s.id === options.diseñoId) || null : null;
   const selectedSize = options.sizeId ? product.sizes?.find(s => s.id === options.sizeId) || null : null;
@@ -1573,10 +1281,10 @@ function getProductPriceRange(product) {
   // PRESENTACIONES
   // =========================
 
-  const presentaciones = QUOTE_CONFIG?.presentacionesProducto || [];
+  const presentaciones = getProductPresentations(product);
 
   const presentacionExtras = presentaciones
-    .map(p => Number(p.priceExtra))
+    .map(p => Number(p.priceExtra) || 0)
     .filter(price => price >= 0);
 
   const minPresentacionExtra = presentacionExtras.length
@@ -1682,7 +1390,8 @@ function renderCatalog() {
     const matchesCategory = currentCategoryFilter === 'todos' || product.category === currentCategoryFilter;
     const matchesSearch = !searchQuery ||
       product.name.toLowerCase().includes(searchQuery) ||
-      product.description.toLowerCase().includes(searchQuery);
+      product.description.toLowerCase().includes(searchQuery) ||
+      product.categoryName.toLowerCase().includes(searchQuery);
     return matchesCategory && matchesSearch;
   });
 
@@ -2040,13 +1749,14 @@ function changeModalQuantity(productId, delta) {
 }
 
 function updateModalDOM(productId) {
+
   const product = PRODUCTS_DATA.find(p => p.id === productId);
   if (!product) return;
   const state = getProductState(product);
 
   const modalHeader = document.getElementById('modal-header-banner');
   if (modalHeader) {
-    if (state.isComplete) {
+    /* if (state.isComplete) {
       modalHeader.className = 'bg-emerald-50 border-b border-emerald-200 p-4 flex items-center gap-3 transition-colors';
       modalHeader.innerHTML = `
         <span class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center text-sm font-bold shadow-xs flex-shrink-0">✓</span>
@@ -2064,7 +1774,7 @@ function updateModalDOM(productId) {
           <p class="text-[11px] text-amber-800">Debes elegir: <strong class="underline">${state.missingOptions.join(', ')}</strong> para habilitar la cotización.</p>
         </div>
       `;
-    }
+    } */
   }
 
   const modalImg = document.getElementById('modal-product-img');
@@ -2689,16 +2399,15 @@ function openProductDetailModal(productId) {
   if (!modal || !content) return;
 
   selectedOptionsMap[product.id] = {
-    materialId: null,
-    diseñoId: null,
+    materialId: product.material && product.material.length > 0 ? product.material[0].id : null,
+    diseñoId: product.diseño && product.diseño.length > 0 ? product.diseño[0].id : null,
     sizeId: product.sizes && product.sizes.length > 0 ? product.sizes[0].id : null,
-    colorId: null,
-    aromaId: null,
-    variantId: null,
+    colorId: product.colors && product.colors.length > 0 ? product.colors[0].id : null,
+    aromaId: product.aromas && product.aromas.length > 0 ? product.aromas[0].id : null,
+    variantId: product.variants && product.variants.length > 0 ? product.variants[0].id : null,
     presentationId: null,
     quantity: 1
   };
-
   const state = getProductState(product);
 
   content.innerHTML = `
@@ -2706,11 +2415,6 @@ function openProductDetailModal(productId) {
       
       <!-- Top Guidance Header inside Modal -->
       <div id="modal-header-banner" class="bg-amber-50 border-b border-amber-200 p-4 flex items-center gap-3 transition-colors">
-        <span class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center text-sm font-bold shadow-xs flex-shrink-0">⚠️</span>
-        <div>
-          <h4 class="text-xs font-bold text-amber-900 uppercase tracking-wider">Falta seleccionar opciones</h4>
-          <p class="text-[11px] text-amber-800">Debes elegir: <strong class="underline">${state.missingOptions.join(', ')}</strong> para habilitar la cotización.</p>
-        </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
@@ -2719,13 +2423,6 @@ function openProductDetailModal(productId) {
         <div class="space-y-3">
           <div class="relative rounded-2xl overflow-hidden bg-[#F7EFE5] flex items-center justify-center min-h-[260px] border border-[#8B5A2B]/10 shadow-inner">
             <img id="modal-product-img" src="${state.image}" alt="${product.name}" class="w-full h-full object-cover rounded-2xl transition-all duration-300 max-h-[380px]" />
-            ${product.isCustomPhoto ? `
-              <div class="absolute inset-x-3 bottom-3 bg-black/80 backdrop-blur-md text-white p-3 rounded-xl text-center text-xs shadow-lg">
-                <p class="font-semibold text-yellow-300">💡 Simulación de Retroiluminación 3D</p>
-                <p class="text-[11px] text-gray-200 mt-0.5">Sube una foto para previsualizar tu litofanía iluminada:</p>
-                <input type="file" accept="image/*" onchange="previewLithophanePhoto(event)" class="mt-2 text-xs text-slate-200 file:mr-2 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-[#C86D51] file:text-white hover:file:bg-[#b35b40] cursor-pointer" />
-              </div>
-            ` : ''}
           </div>
 
           <!-- Price & Volume Discount Summary Callout -->
@@ -2754,19 +2451,6 @@ function openProductDetailModal(productId) {
             <!-- Options Selectors -->
             <div id="modal-product-options">
               ${buildProductOptionsHTML(product, state, true)}
-            </div>
-
-            <!-- Quantity Selector -->
-            <div class="mt-4 p-3.5 bg-[#F7EFE5]/60 rounded-2xl border border-[#8B5A2B]/15 flex items-center justify-between">
-              <div>
-                <span class="text-xs font-bold text-[#3A2E2B] block">Cantidad de unidades:</span>
-                <span class="text-[10px] text-[#8B5A2B]">Descuentos desde 10 unidades</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <button type="button" onclick="changeModalQuantity('${product.id}', -1)" class="w-8 h-8 rounded-xl bg-white border border-gray-300 text-[#3A2E2B] font-bold hover:bg-[#F5EBE6] active:scale-95 transition-all shadow-xs flex items-center justify-center cursor-pointer">-</button>
-                <span id="modal-quantity-val" class="w-8 text-center font-extrabold text-[#3A2E2B] text-sm">${state.quantity}</span>
-                <button type="button" onclick="changeModalQuantity('${product.id}', 1)" class="w-8 h-8 rounded-xl bg-white border border-gray-300 text-[#3A2E2B] font-bold hover:bg-[#F5EBE6] active:scale-95 transition-all shadow-xs flex items-center justify-center cursor-pointer">+</button>
-              </div>
             </div>
 
           </div>
@@ -2801,7 +2485,7 @@ function openProductDetailModal(productId) {
       </div>
     </div>
   `;
-
+  updateModalDOM(product.id);
   modal.classList.remove('hidden');
   backdrop?.classList.remove('hidden');
 }
