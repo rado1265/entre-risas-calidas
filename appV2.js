@@ -104,13 +104,13 @@ const PRODUCTS_DATA = [{
   name: 'Bandeja Jardín Floral',
   category: 'packs',
   categoryName: 'Packs',
-  dimensions: '17,5 cm × 9 cm',
-  description: 'Bandeja de cemento con velas decorativas y base para foto personalizada. Incluye 2 velas con aromas a elección y espacio para que coloques una foto especial. Un regalo único que combina luz, aroma y recuerdos.',
+  dimensions: '23 cm × 12 cm',
+  description: 'Bandeja de cemento con velas decorativas y base para foto personalizada. Incluye 3 velas con aromas a elección y espacio para que coloques una foto especial. Un regalo único que combina luz, aroma y recuerdos.',
   image: 'assets/v2/bandeja floral de velas.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
   sizes: [
-    { id: 'velas-con-fotos-en-bandeja', name: 'Bandeja Jardín Floral', price: 12490/* 5900 */, image: 'assets/v2/bandeja floral de velas.png' }
+    { id: 'velas-con-fotos-en-bandeja', name: 'Bandeja Jardín Floral', price: 14490/* 5900 */, image: 'assets/v2/bandeja floral de velas.png' }
   ],
   aromas: [
     { id: 'sin-aroma', name: 'Sin aroma', priceExtra: 0, icon: 'assets/icons/nada.webp' },
