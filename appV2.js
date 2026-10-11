@@ -25,8 +25,8 @@ const PRODUCTS_DATA = [{
   isCustomPhoto: false,
   excentoEmpaque: true,
   sizes: [
-    { id: 'pack-2-margaritas', name: 'Pack 2 Margaritas', price: 1800/* 2400 */, image: 'assets/v2/2 margaritas.webp' },
-    { id: 'pack-3-margaritas', name: 'Pack 3 Margaritas', price: 2700/* 3750 */, image: 'assets/v2/3 margaritas.webp' },
+    { id: 'pack-2-margaritas', name: 'Pack 2 Margaritas', price: 2500/* 2400 */, image: 'assets/v2/2 margaritas.webp' },
+    { id: 'pack-3-margaritas', name: 'Pack 3 Margaritas', price: 3800/* 3750 */, image: 'assets/v2/3 margaritas.webp' },
   ],
   colors: [
     { id: 'a', name: 'Colores a elección', hex: '#ffffffff', priceExtra: 0/* 100 */ },
