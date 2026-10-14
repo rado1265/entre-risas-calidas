@@ -932,9 +932,9 @@ const QUOTE_CONFIG = {
      { id: 'eventos', name: 'Momentos especiales', badge: '(A cotizar)', desc: 'Presentación especial a definir.', priceExtra: -1, icon: '🎁' } */
   ],
   descuentosCantidad: [
-    { min: 51, discount: 15 },
-    { min: 21, discount: 12 },
-    { min: 10, discount: 10 }
+    { min: 51, discount: 0 },
+    { min: 21, discount: 0 },
+    { min: 10, discount: 0 }
   ]
 };
 
