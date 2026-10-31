@@ -3,17 +3,128 @@
 const PRODUCTS_DATA = [{
   id: 'casitas-de-ensueno',
   name: 'Rincón de Casitas',
-  category: 'packs',
-  categoryName: 'Packs',
-  dimensions: '4cm x 5 cm c/u',
+  category: 'navidad',
+  categoryName: 'Navidad',
+  dimensions: '4cm ancho x 5cm alto x 3cm profundidad c/u',
   description: 'Pack con 6 diseños de pequeñas casitas para crear una decoración cálida y encantadora. Ideales para complementar tus espacios, armar un rincón especial o regalar un detalle lleno de cariño. ✨',
-  image: 'assets/v2/Aldea navideña de casitas decorativas.png',
+  image: 'assets/v2/navidad/aldea navidena de casitas decorativas.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
   sizes: [
-    { id: 'casitas-de-ensueno', name: 'Rincón de Casitas', price: 3200/* 2190 */, image: 'assets/v2/Aldea navideña de casitas decorativas.png' }
+    { id: 'casitas-de-ensueno', name: 'Rincón de Casitas', price: 3200/* 2190 */, image: 'assets/v2/navidad/aldea navidena de casitas decorativas.png' }
+  ],
+}, {
+  id: 'pack-magia-navidena',
+  name: 'Pack Magia Navideña',
+  category: 'navidad',
+  categoryName: 'Navidad',
+  dimensions: '24cm largo x 12 cm ancho x 8 cm alto',
+  description: 'Tres delicadas velas artesanales en forma de esfera navideña, decoradas con hermosos detalles y pequeños lazos. Ideales para decorar tu hogar, complementar tus regalos o sorprender a alguien especial. Disponibles en distintos colores y aromas para llenar de magia y calidez esta Navidad. 🎄✨',
+  image: 'assets/v2/navidad/esferas navidenas en tonos festivos.png',
+  isCustomPhoto: false,
+  excentoEmpaque: true,
+  sizes: [
+    { id: 'pack-magia-navidena', name: 'Pack Magia Navideña', price: 19990/* 2190 */, image: 'assets/v2/navidad/esferas navidenas en tonos festivos.png' }
   ],
 },
+{
+  id: 'reno-navideno',
+  name: 'Reno Navideño',
+  category: 'navidad',
+  categoryName: 'Navidad',
+  dimensions: '8cm ancho x 10 cm alto',
+  description: 'Una encantadora vela artesanal con forma de reno navideño, decorada con un delicado lazo rojo y presentada sobre una base decorativa. Perfecta para llenar tu hogar de espíritu navideño o sorprender a alguien especial con un regalo hecho con cariño. 🎄✨',
+  image: 'assets/v2/navidad/reno de navidad entre luces calidas.png',
+  isCustomPhoto: false,
+  excentoEmpaque: true,
+  sizes: [
+    { id: 'reno-navideno', name: 'Reno Navideño', price: 5990/* 1100 */, image: 'assets/v2/navidad/reno de navidad entre luces calidas.png' }
+  ],
+},
+{
+  id: 'pack-dulce-navidad',
+  name: 'Pack Dulce Navidad',
+  category: 'navidad',
+  categoryName: 'Navidad',
+  dimensions: '17,5 cm largo x 9 cm ancho x 10 cm alto',
+  description: 'Un encantador conjunto de velas artesanales inspirado en la magia de la Navidad. Incluye un tierno reno y una esfera navideña decorada con delicados detalles. Perfecto para decorar tu hogar, complementar tus regalos o compartir un detalle lleno de cariño en estas fiestas. ✨',
+  image: 'assets/v2/navidad/velas navidenas con encanto rustico.png',
+  isCustomPhoto: false,
+  excentoEmpaque: true,
+  sizes: [
+    { id: 'pack-dulce-navidad', name: 'Pack Dulce Navidad', price: 14990/* 2190 */, image: 'assets/v2/navidad/velas navidenas con encanto rustico.png' }
+  ],
+}, {
+  id: 'pack-colgantes-navidena',
+  name: 'Pack Colgantes Magia Navideña',
+  category: 'navidad',
+  categoryName: 'Navidad',
+  dimensions: '9 cm x 5 cm c/u',
+  description: 'Delicados adornos navideños artesanales con diseños de árbol de Navidad y bastón de caramelo. Ideales para decorar tu árbol, personalizar tus regalos o dar un toque especial a tus espacios. Incluyen cinta decorativa para colgar y están disponibles en diferentes combinaciones de colores. ✨',
+  image: 'assets/v2/navidad/tabletas.png',
+  isCustomPhoto: false,
+  excentoEmpaque: true,
+  sizes: [
+    { id: 'pack-colgantes-navidena', name: 'Pack Colgantes Magia Navideña', price: 4990/* 2190 */, image: 'assets/v2/navidad/tabletas.png' }
+  ],
+},
+{
+  id: 'pack-bosque-navideno',
+  name: 'Pack Bosque de Navidad',
+  category: 'navidad',
+  categoryName: 'Navidad',
+  dimensions: '11cm ancho x 11 cm alto',
+  description: 'Un pequeño rincón lleno de magia navideña. Incluye un adorable osito decorativo acompañado de tres árboles de Navidad en forma de vela, creando una composición delicada y acogedora. Ideal para decorar tu hogar o regalar un detalle especial esta Navidad. ✨',
+  image: 'assets/v2/navidad/osito navideno entre arboles de crema.png',
+  isCustomPhoto: false,
+  excentoEmpaque: true,
+  sizes: [
+    { id: 'pack-bosque-navideno', name: 'Pack Bosque de Navidad', price: 7990/* 2190 */, image: 'assets/v2/navidad/osito navideno entre arboles de crema.png' }
+  ],
+},
+{
+  id: 'pack-bosque-nevado',
+  name: 'Pack Bosque Nevado',
+  category: 'navidad',
+  categoryName: 'Navidad',
+  dimensions: '24cm largo x 12 cm ancho x 10,5 cm alto',
+  description: 'Un delicado bosque navideño compuesto por cinco árboles decorativos de cera, en tonos crema y verde pastel, sobre una hermosa bandeja ovalada. Ideal para crear un rincón acogedor, decorar tu hogar o regalar un detalle artesanal lleno de magia y encanto esta Navidad. ✨',
+  image: 'assets/v2/navidad/arboles navidenos sobre bandeja ovalada.png',
+  isCustomPhoto: false,
+  excentoEmpaque: true,
+  sizes: [
+    { id: 'pack-bosque-nevado', name: 'Pack Bosque Nevado', price: 17990/* 4190 */, image: 'assets/v2/navidad/arboles navidenos sobre bandeja ovalada.png' }
+  ],
+},
+{
+  id: 'pino-encantado',
+  name: 'Pino Encantado',
+  category: 'navidad',
+  categoryName: 'Navidad',
+  dimensions: '10 cm ancho x 10 cm alto',
+  description: 'Un hermoso árbol navideño artesanal de delicadas capas y textura, presentado sobre una elegante base hexagonal. Ideal para decorar mesas, repisas o crear un rincón lleno de magia y calidez durante la Navidad. Disponible en diferentes colores para combinar con tu decoración. ✨',
+  image: 'assets/v2/navidad/arbol navideno sobre base hexagonal.png',
+  isCustomPhoto: false,
+  excentoEmpaque: true,
+  sizes: [
+    { id: 'pino-encantado', name: 'Pino Encantado', price: 2800/* 2190 */, image: 'assets/v2/navidad/arbol navideno sobre base hexagonal.png' }
+  ],
+},
+{
+  id: 'pack-pino-navidad',
+  name: 'Pack Pino de Navidad',
+  category: 'navidad',
+  categoryName: 'Navidad',
+  dimensions: '11 cm ancho x 10 cm alto',
+  description: 'Un hermoso árbol navideño artesanal con delicadas capas y detalles que le dan un aspecto único. Acompañado de una elegante bandeja decorativa, es perfecto para crear un rincón acogedor y llenar tu hogar de espíritu navideño. Disponible en diferentes colores para personalizarlo a tu gusto. ✨',
+  image: 'assets/v2/navidad/arbol navideno sobre bandeja festiva.png',
+  isCustomPhoto: false,
+  excentoEmpaque: true,
+  sizes: [
+    { id: 'pack-pino-navidad', name: 'Pack Pino de Navidad', price: 2990/* 2190 */, image: 'assets/v2/navidad/arbol navideno sobre bandeja festiva.png' }
+  ],
+},
+
 {
   id: 'pack-margaritas',
   name: 'Pack Jardín de Flores',
@@ -231,6 +342,24 @@ const PRODUCTS_DATA = [{
     { id: 'marco-4fotos', name: 'Marco Cubo + 4 Fotos 3D', price: 19990, image: 'assets/litofania/litografia cuadro.webp' },
     { id: 'solo-marco', name: 'Solo Marco Cubo - 12 x 11 cm aprox', price: 8990, image: 'assets/litofania/litografia cuadro.webp' },
     { id: 'solo-imagen-repuesto', name: 'Solo 1 Foto - 7,5 × 10 cm aprox', price: 4490, image: 'assets/litofania/litografia cuadro.webp' }
+  ]
+},
+{
+  id: 'litofania-esfera-navidena',
+  name: 'Litofanía Esfera Navideña 3D',
+  category: 'litofanias',
+  categoryName: 'Litofanías & Navidad',
+  secondaryCategory: 'navidad',
+  dimensions: 'Esfera Ø 5 cm',
+  description: 'Hermosa esfera navideña personalizada en relieve litográfico 3D para iluminar el árbol de Navidad. Al colocarle luces navideñas o mini LED en su interior, tus recuerdos familiares cobran vida con una luz cálida y mágica en 360 grados. Diseña y acomoda tus fotos con nuestro estudio interactivo 4:1.',
+  image: 'assets/litofania/litofania-esfera-navidena.jpg',
+  isCustomPhoto: true,
+  isSphereLithophane: true,
+  excentoEmpaque: true,
+  variants: [
+    { id: 'esfera-luz', name: 'Esfera 3D', price: 3990, image: 'assets/litofania/litofania-esfera-navidena.jpg' },
+    /* { id: 'pack-2-esferas-luz', name: 'Pack 2 Esferas 3D + 2 Luces LED Navideñas', price: 15990, image: 'assets/litofania/litofania-esfera-navidena.jpg' },
+    { id: 'solo-esfera-3d', name: 'Solo Esfera 3D Personalizada (Sin luz LED)', price: 6990, image: 'assets/litofania/litofania-esfera-navidena.jpg' } */
   ]
 },
 
@@ -1044,7 +1173,6 @@ function setupEventListeners() {
 
 function getProductState(product) {
   const options = selectedOptionsMap[product.id] || {};
-  debugger
   const selectedMaterial = options.materialId ? product.material?.find(s => s.id === options.materialId) || null : null;
   const selectedDiseño = options.diseñoId ? product.diseño?.find(s => s.id === options.diseñoId) || null : null;
   const selectedSize = options.sizeId ? product.sizes?.find(s => s.id === options.sizeId) || null : null;
@@ -1484,7 +1612,9 @@ function renderCatalog() {
   if (!container) return;
 
   const filtered = PRODUCTS_DATA.filter(product => {
-    const matchesCategory = currentCategoryFilter === 'todos' || product.category === currentCategoryFilter;
+    const matchesCategory = currentCategoryFilter === 'todos' ||
+      product.category === currentCategoryFilter ||
+      (product.secondaryCategory && product.secondaryCategory === currentCategoryFilter);
     const matchesSearch = !searchQuery ||
       product.name.toLowerCase().includes(searchQuery) ||
       product.description.toLowerCase().includes(searchQuery) ||
@@ -1977,9 +2107,27 @@ function addConfiguredModalToCart(productId) {
   const cartItemId = `${productId}-${state.selectedMaterial?.id || ''}-${state.selectedDiseño?.id || ''}-${state.selectedSize?.id || ''}-${state.selectedColor?.id || ''}-${state.selectedAroma?.id || ''}-${state.selectedVariant?.id || ''}`;
   const presentation = product.excentoEmpaque ? null : state.selectedPresentation;
 
+  let customSphereDesign = selectedOptionsMap[productId]?.customSphereDesign || null;
+  if (product.isSphereLithophane && !customSphereDesign && window.sphereDesignerState) {
+    // Si no pulsó 'confirmar diseño', generarlo automáticamente a partir de lo que tenga
+    if (typeof renderSphereFullResolutionCanvas === 'function') {
+      const fullCanvas = renderSphereFullResolutionCanvas();
+      const dataUrl = fullCanvas.toDataURL('image/jpeg', 0.92);
+      const photosCount = window.sphereDesignerState.photos.filter(p => p.img !== null).length;
+      customSphereDesign = {
+        dataUrl,
+        template: window.sphereDesignerState.template,
+        text: window.sphereDesignerState.text,
+        photosCount,
+        readyToPrint: true
+      };
+    }
+  }
+
   const existingIndex = cart.findIndex(item => item.cartItemId === cartItemId);
   if (existingIndex > -1) {
     cart[existingIndex].quantity += state.quantity;
+    if (customSphereDesign) cart[existingIndex].customSphereDesign = customSphereDesign;
   } else {
     cart.push({
       cartItemId,
@@ -1988,7 +2136,8 @@ function addConfiguredModalToCart(productId) {
       variantName: variantLabel,
       price: state.price,
       quantity: state.quantity,
-      image: state.image,
+      image: customSphereDesign?.dataUrl || state.image,
+      customSphereDesign: customSphereDesign,
       excentoEmpaque: !!product.excentoEmpaque,
       presentationId: presentation?.id || null,
       presentationName: presentation?.name || (product.excentoEmpaque ? 'Exento de empaque' : 'Sin empaque'),
@@ -2261,6 +2410,17 @@ function renderCartDrawer() {
             <h4 class="font-serif-title font-bold text-base text-[#3A2E2B] leading-tight truncate">${item.name}</h4>
             <p class="text-xs text-[#8B5A2B] font-medium mt-0.5">${item.variantName}</p>
             
+            ${item.customSphereDesign ? `
+              <div class="mt-1 flex flex-wrap items-center gap-1.5">
+                <span class="text-[10px] font-bold bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md flex items-center gap-1">
+                  <span>🎄</span> <span>Tira 4:1 Personalizada (${item.customSphereDesign.photosCount} fotos)</span>
+                </span>
+                <a href="${item.customSphereDesign.dataUrl}" download="litofania-esfera-4000x1000.png" class="text-[10px] text-[#C86D51] hover:underline font-semibold flex items-center gap-0.5">
+                  <span>📥</span> <span>Descargar 4:1</span>
+                </a>
+              </div>
+            ` : ''}
+            
             <div class="flex items-baseline gap-2 mt-1.5">
               <span class="text-xs text-[#6C5C57] font-medium">${item.discountPercent > 0 ? formatCLP(item.unitPrice * (1 - item.discountPercent / 100)) : formatCLP(item.unitPrice)} c/u</span>
               ${item.discountPercent > 0 ? `
@@ -2453,6 +2613,16 @@ function sendConsolidatedWhatsAppOrder() {
       const p = getProductPresentation(PRODUCTS_DATA.find(x => x.id === item.productId), item.presentationId); if (p) msg += `   • Presentación: ${p.name}${p.priceExtra === -1 ? ' (A cotizar)' : (p.priceExtra > 0 ? ` (+${formatCLP(p.priceExtra)} c/u)` : '')}
 `;
     }
+    if (item.customSphereDesign) {
+      msg += `   • 🎄 Tira 4:1 Personalizada: Sí (${item.customSphereDesign.photosCount} fotos configuradas)
+`;
+      if (item.customSphereDesign.text) {
+        msg += `   • Texto/Dedicatoria en la Esfera: "${item.customSphereDesign.text}"
+`;
+      }
+      msg += `   • Archivo de Impresión 3D: Te adjuntaré en este chat la imagen 4:1 descargada (4000x1000 px).
+`;
+    }
     msg += `   • Total producto: ${formatCLP(item.itemTotal)}
 
 `;
@@ -2483,6 +2653,13 @@ function sendConsolidatedWhatsAppOrder() {
 `;
   msg += `Quedo atento a la disponibilidad y tiempos de entrega en El Monte / envíos. ¡Muchas gracias!`;
   window.open(`https://wa.me/56948738454?text=${encodeURIComponent(msg)}`, '_blank');
+
+  const hasSphereItem = totals.items.some(i => i.customSphereDesign);
+  if (hasSphereItem) {
+    setTimeout(() => {
+      alert("✨ ¡Tu pedido fue preparado para WhatsApp!\n\n💡 Recuerda adjuntar en la conversación de WhatsApp la imagen 4:1 de alta resolución que descargaste de tu esfera, para que el taller pueda realizar la impresión 3D exacta.");
+    }, 500);
+  }
 }
 
 // PRODUCT DETAIL & CUSTOMIZATION CONFIRMATION MODAL
@@ -2493,6 +2670,7 @@ function openProductDetailModal(productId) {
   const modal = document.getElementById('product-modal');
   const backdrop = document.getElementById('modal-backdrop');
   const content = document.getElementById('modal-content');
+  const modalContainer = document.getElementById('product-modal-container') || modal?.querySelector('.overflow-y-auto');
   if (!modal || !content) return;
 
   selectedOptionsMap[product.id] = {
@@ -2506,6 +2684,111 @@ function openProductDetailModal(productId) {
     quantity: 1
   };
   const state = getProductState(product);
+
+  // MODO ESPECIAL: CREADOR / ESTUDIO DE ESFERA NAVIDEÑA LITOFANÍA 4:1
+  if (product.isSphereLithophane) {
+    if (modalContainer) {
+      modalContainer.classList.remove('max-w-2xl');
+      modalContainer.classList.add('max-w-5xl');
+    }
+
+    content.innerHTML = `
+      <div data-modal-product-id="${product.id}" class="relative p-4 sm:p-6 space-y-6">
+        
+        <!-- Header con información del producto y precio -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-[#8B5A2B]/15 pb-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-[11px] font-semibold text-[#8B5A2B] bg-[#F7EFE5] px-3 py-1 rounded-full uppercase tracking-wider">${product.categoryName}</span>
+              <span class="text-[11px] font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full">⭐ Nuevo Producto</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-serif-title font-bold text-[#3A2E2B] mt-2 mb-1">${product.name}</h2>
+            <p class="text-xs text-[#6C5C57] max-w-xl">${product.description}</p>
+            <p class="text-xs font-semibold text-[#8B5A2B] mt-1.5 flex items-center gap-1">
+              <span>📐 Dimensiones:</span>
+              <span class="text-[#3A2E2B]">${product.dimensions}</span>
+            </p>
+          </div>
+
+          <div class="text-right sm:text-right bg-[#FFFDF9] p-3.5 rounded-2xl border border-[#8B5A2B]/15 shadow-2xs min-w-[180px]">
+            <span class="text-[10px] font-bold text-[#8B5A2B] uppercase tracking-wider block">Precio Configurado</span>
+            <div id="modal-unit-price-display" class="text-2xl font-extrabold text-[#C86D51]">
+              ${state.price > 0 ? formatCLP(state.price) : 'Por configurar'}
+            </div>
+            <span class="text-[10px] text-[#8B5A2B]">Incluye diseño personalizado 4:1</span>
+          </div>
+        </div>
+
+        <!-- Selector de Variantes (Con luz / Pack 2 / Solo esfera) -->
+        <div class="bg-[#F7EFE5]/50 p-4 rounded-2xl border border-[#8B5A2B]/10">
+          <span class="text-xs font-bold text-[#8B5A2B] uppercase tracking-wider block mb-2">Selecciona la Opción Deseada:</span>
+          <div class="flex flex-wrap gap-2">
+            ${product.variants.map(v => {
+      const isSelected = state.selectedVariant && state.selectedVariant.id === v.id;
+      return `
+                <button 
+                  type="button" 
+                  onclick="updateProductOption('${product.id}', 'variantId', '${v.id}')" 
+                  class="option-btn px-4 py-2.5 rounded-2xl text-xs font-semibold border transition-all flex items-center gap-2 cursor-pointer ${isSelected ? 'selected' : 'bg-white text-[#3A2E2B] border-gray-200 hover:border-[#C86D51]/50'}"
+                >
+                  <span>${v.name}</span>
+                  <span class="font-bold text-[#C86D51]">(${formatCLP(v.price)})</span>
+                </button>
+              `;
+    }).join('')}
+          </div>
+        </div>
+
+        <!-- ESTUDIO DISEÑADOR INTERACTIVO 4:1 -->
+        <div id="sphere-designer-container">
+          ${typeof buildSphereDesignerStudioHTML === 'function' ? buildSphereDesignerStudioHTML(product) : ''}
+        </div>
+
+        <!-- Acciones Inferiores -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-[#8B5A2B]/15">
+          <div class="text-xs text-[#8B5A2B]">
+            <span>¿Tienes dudas con tu diseño? Puedes consultarnos directamente antes de ordenar.</span>
+          </div>
+          <div class="flex items-center gap-2 w-full sm:w-auto">
+            <button 
+              id="modal-add-to-cart-btn"
+              onclick="addConfiguredModalToCart('${product.id}')" 
+              class="flex-1 sm:flex-none bg-[#8B5A2B] hover:bg-[#724822] active:scale-[0.99] text-white font-bold py-3 px-6 rounded-2xl text-xs transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg cursor-pointer"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+              <span>Agregar a mi Lista de Cotización</span>
+            </button>
+            <a 
+              id="modal-wa-link" 
+              href="${getWhatsAppLinkForProduct(product, state)}" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="flex-1 sm:flex-none bg-[#C86D51] hover:bg-[#b35b40] text-white font-bold py-3 px-5 rounded-2xl text-xs transition-colors flex items-center justify-center gap-1.5 shadow-xs"
+            >
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span>Consultar por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    `;
+
+    setTimeout(() => {
+      if (typeof initSphereCanvasInteractions === 'function') initSphereCanvasInteractions();
+      if (typeof renderSphereCanvas === 'function') renderSphereCanvas();
+    }, 50);
+
+    modal.classList.remove('hidden');
+    backdrop?.classList.remove('hidden');
+    return;
+  }
+
+  // MODAL ESTÁNDAR PARA OTROS PRODUCTOS
+  if (modalContainer) {
+    modalContainer.classList.remove('max-w-5xl');
+    modalContainer.classList.add('max-w-2xl');
+  }
 
   content.innerHTML = `
     <div data-modal-product-id="${product.id}" class="relative">
@@ -2605,6 +2888,11 @@ function previewLithophanePhoto(event) {
 function closeModal() {
   document.getElementById('product-modal')?.classList.add('hidden');
   document.getElementById('modal-backdrop')?.classList.add('hidden');
+  const modalContainer = document.getElementById('product-modal-container') || document.querySelector('#product-modal > div');
+  if (modalContainer) {
+    modalContainer.classList.remove('max-w-5xl');
+    modalContainer.classList.add('max-w-2xl');
+  }
 }
 
 // TOAST NOTIFICATION

@@ -140,10 +140,11 @@ body {
   box-shadow: 0 0 40px 15px rgba(255, 215, 130, 0.45);
 }
 
-/* Mercado Libre Style Swatches & Option Buttons */
+/* Mercado Libre Style Swatches & Option Buttons with Strong Active Focus */
 .option-btn {
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   user-select: none;
+  touch-action: manipulation;
 }
 
 .option-btn:hover {
@@ -154,16 +155,101 @@ body {
   transform: translateY(0);
 }
 
-.option-btn.selected {
-  background-color: #FFF5F0;
-  color: #C86D51;
-  border-color: #C86D51;
-  border-width: 2px;
-  box-shadow: 0 2px 8px rgba(200, 109, 81, 0.18);
-  font-weight: 700;
+.option-btn.selected,
+.selected {
+  background-color: #FFF0EB !important;
+  color: #C86D51 !important;
+  border-color: #C86D51 !important;
+  border-width: 2px !important;
+  box-shadow: 0 0 0 2px rgba(200, 109, 81, 0.3), 0 2px 8px rgba(200, 109, 81, 0.2) !important;
+  font-weight: 700 !important;
 }
 
 .product-card-img {
   transition: opacity 0.2s ease-in-out, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Mobile & Touch Helpers */
+.touch-none {
+  touch-action: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ====================================================
+   Sphere Designer – Estado activo con data-active
+   Estas reglas se aplican QUIRÚRGICAMENTE sin re-render.
+   ==================================================== */
+
+/* Tab de vista activo */
+.sphere-tab-btn[data-active="true"] {
+  background-color: #C86D51 !important;
+  color: #fff !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+.sphere-tab-btn[data-active="false"] {
+  background-color: transparent !important;
+  color: #6C5C57;
+}
+
+/* Slot de foto activo */
+.sphere-slot-card[data-active="true"] {
+  border-color: #C86D51 !important;
+  background-color: #FFF5F0 !important;
+  box-shadow: 0 0 0 2px rgba(200, 109, 81, 0.28);
+}
+.sphere-slot-card[data-active="false"] {
+  border-color: #e5e7eb !important;
+  background-color: rgba(249, 250, 251, 0.7) !important;
+  box-shadow: none;
+}
+
+/* Botón de fuente activo */
+.sphere-font-btn[data-active="true"] {
+  background-color: #C86D51 !important;
+  color: #fff !important;
+  border-color: #C86D51 !important;
+  font-weight: 700;
+}
+.sphere-font-btn[data-active="false"] {
+  background-color: #f9fafb !important;
+  color: #374151 !important;
+  border-color: #e5e7eb !important;
+}
+
+/* Botón de posición de texto activo */
+.sphere-pos-btn[data-active="true"] {
+  background-color: #8B5A2B !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+.sphere-pos-btn[data-active="false"] {
+  background-color: #f9fafb !important;
+  color: #4b5563 !important;
+}
+
+/* Sticker activo */
+.sphere-sticker-btn[data-active="true"] {
+  background-color: #ecfdf5 !important;
+  border-color: #22c55e !important;
+  color: #166534 !important;
+  font-weight: 700;
+}
+.sphere-sticker-btn[data-active="false"] {
+  background-color: #f9fafb !important;
+  border-color: #e5e7eb !important;
+  color: #4b5563 !important;
+}
+
+/* Snowflakes sticker – azul cuando activo */
+.sphere-sticker-btn[data-sphere-sticker="snowflakes"][data-active="true"] {
+  background-color: #eff6ff !important;
+  border-color: #3b82f6 !important;
+  color: #1e40af !important;
 }
 

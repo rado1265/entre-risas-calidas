@@ -623,18 +623,19 @@
 
   <!-- ==================== PRODUCT DETAIL & LITHOPHANE MODAL ==================== -->
   <div id="modal-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
-  <div id="product-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
-    <div
-      class="bg-[#FFFDF9] rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-[#8B5A2B]/15 relative">
+  <div id="product-modal" class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 hidden">
+    <div id="product-modal-container"
+      class="bg-[#FFFDF9] rounded-2xl sm:rounded-3xl max-w-2xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl border border-[#8B5A2B]/15 relative transition-all duration-300">
       <button id="close-modal-btn"
-        class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/90 shadow-md flex items-center justify-center text-gray-600 hover:text-black">✕</button>
+        class="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 z-30 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/95 hover:bg-white shadow-md flex items-center justify-center text-gray-700 hover:text-black font-bold transition-all cursor-pointer">✕</button>
       <div id="modal-content">
         <!-- Rendered dynamically -->
       </div>
     </div>
   </div>
 
-  <!-- Application Script -->
+  <!-- Application Scripts -->
+  <script src="sphere-designer.js"></script>
   <script src="appV2.js"></script>
 
 </body>

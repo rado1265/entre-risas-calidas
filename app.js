@@ -1082,6 +1082,24 @@ const PRODUCTS_DATA = [
       { id: 'solo-marco', name: 'Solo Marco Cubo - 12 x 11 cm aprox', price: 8990, image: 'assets/litofania/litografia cuadro.webp' },
       { id: 'solo-imagen-repuesto', name: 'Solo 1 Foto - 7,5 × 10 cm aprox', price: 4490, image: 'assets/litofania/litografia cuadro.webp' }
     ]
+  },
+  {
+    id: 'litofania-esfera-navidena',
+    name: 'Litofanía Esfera Navideña 3D (Bola Iluminada)',
+    category: 'litofanias',
+    categoryName: 'Litofanías & Navidad',
+    secondaryCategory: 'navidad',
+    dimensions: 'Esfera Ø 7,5 - 8 cm (Apertura 15 mm para luz LED)',
+    description: 'Hermosa esfera navideña personalizada en relieve litográfico 3D para iluminar el árbol de Navidad. Al colocarle luces navideñas o mini LED en su interior, tus recuerdos familiares cobran vida con una luz cálida y mágica en 360 grados. Diseña y acomoda tus fotos con nuestro estudio interactivo 4:1.',
+    image: 'assets/litofania/litofania-esfera-navidena.jpg',
+    isCustomPhoto: true,
+    isSphereLithophane: true,
+    excentoEmpaque: true,
+    variants: [
+      { id: 'esfera-luz', name: 'Esfera 3D + Luz LED Navideña (Lista para Colgar)', price: 8990, image: 'assets/litofania/litofania-esfera-navidena.jpg' },
+      { id: 'pack-2-esferas-luz', name: 'Pack 2 Esferas 3D + 2 Luces LED Navideñas', price: 15990, image: 'assets/litofania/litofania-esfera-navidena.jpg' },
+      { id: 'solo-esfera-3d', name: 'Solo Esfera 3D Personalizada (Sin luz LED)', price: 6990, image: 'assets/litofania/litofania-esfera-navidena.jpg' }
+    ]
   } //PACKS---------------------------------------------------
   ,
   {
