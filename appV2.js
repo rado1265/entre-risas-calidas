@@ -95,6 +95,19 @@ const PRODUCTS_DATA = [{
   sizes: [
     { id: 'pack-bosque-nevado', name: 'Pack Bosque Nevado', price: 17990/* 4190 */, image: 'assets/v2/navidad/arboles navidenos sobre bandeja ovalada.png' }
   ],
+}, {
+  id: 'pack-navidad-encantada',
+  name: 'Pack Navidad Encantada',
+  category: 'navidad',
+  categoryName: 'Navidad',
+  dimensions: '24cm largo x 12 cm ancho x 10,5 cm alto',
+  description: 'Un pequeño mundo lleno de magia navideña. Incluye dos árboles decorativos, una esfera navideña y un delicado regalo, acompañados de una elegante bandeja ovalada. Ideal para decorar tu hogar y crear un rincón cálido y acogedor durante estas fiestas. ✨',
+  image: 'assets/v2/navidad/Adornos navideños sobre bandeja blanca.png',
+  isCustomPhoto: false,
+  excentoEmpaque: true,
+  sizes: [
+    { id: 'pack-navidad-encantada', name: 'Pack Navidad Encantada', price: 19990/* 4190 */, image: 'assets/v2/navidad/Adornos navideños sobre bandeja blanca.png' }
+  ],
 },
 {
   id: 'pino-encantado',
@@ -124,7 +137,38 @@ const PRODUCTS_DATA = [{
     { id: 'pack-pino-navidad', name: 'Pack Pino de Navidad', price: 2990/* 2190 */, image: 'assets/v2/navidad/arbol navideno sobre bandeja festiva.png' }
   ],
 },
-
+{
+  id: 'servilletero-bosque-navideno',
+  name: 'Servilletero Bosque Navideño',
+  category: 'yeso-cemento',
+  categoryName: 'Cemento & Navidad',
+  secondaryCategory: 'navidad',
+  dimensions: '12 cm ancho x 13,5 cm alto',
+  description: 'Dale un toque mágico y especial a tu mesa esta Navidad. Servilletero decorativo con diseño de dos árboles navideños y delicados detalles de estrellas. Ideal para complementar tu decoración y vestir tu mesa con un estilo artesanal, cálido y elegante. ✨',
+  image: 'assets/v2/navidad/arboles navidenos blancos sobre madera.png',
+  isCustomPhoto: false,
+  excentoEmpaque: true,
+  sizes: [
+    { id: 'servilletero-bosque-navideno', name: 'Servilletero Bosque Navideño', price: 7490/* 2190 */, image: 'assets/v2/navidad/arboles navidenos blancos sobre madera.png' }
+  ],
+},
+{
+  id: 'litofania-esfera-navidena',
+  name: 'Esfera Navideña – Recuerdos que Iluminan.(Con Luz)',
+  category: 'litofanias',
+  categoryName: 'Litofanías & Navidad',
+  secondaryCategory: 'navidad',
+  dimensions: 'Esfera Ø 6 cm',
+  description: 'Transformamos tu fotografía favorita en una hermosa esfera navideña con efecto de litofanía iluminada. Un adorno único y personalizado para decorar tu árbol y mantener cerca esos momentos que hacen especial a tu familia.',
+  image: 'assets/v2/navidad/Adorno navideño luminoso con retrato familiar.png',
+  isCustomPhoto: true,
+  isSphereLithophane: true,
+  excentoEmpaque: true,
+  variants: [
+    { id: 'esfera-3d', name: 'Esfera 3D', price: 6990, image: 'assets/v2/navidad/Adorno navideño luminoso con retrato familiar.png' },
+    { id: 'pack-esferas-luz', name: 'Pack 2 Esfera 3D', price: 11990, image: 'assets/v2/navidad/Adorno navideño luminoso con retrato familiar.png' }
+  ]
+},
 {
   id: 'pack-margaritas',
   name: 'Pack Jardín de Flores',
@@ -342,24 +386,6 @@ const PRODUCTS_DATA = [{
     { id: 'marco-4fotos', name: 'Marco Cubo + 4 Fotos 3D', price: 19990, image: 'assets/litofania/litografia cuadro.webp' },
     { id: 'solo-marco', name: 'Solo Marco Cubo - 12 x 11 cm aprox', price: 8990, image: 'assets/litofania/litografia cuadro.webp' },
     { id: 'solo-imagen-repuesto', name: 'Solo 1 Foto - 7,5 × 10 cm aprox', price: 4490, image: 'assets/litofania/litografia cuadro.webp' }
-  ]
-},
-{
-  id: 'litofania-esfera-navidena',
-  name: 'Litofanía Esfera Navideña 3D',
-  category: 'litofanias',
-  categoryName: 'Litofanías & Navidad',
-  secondaryCategory: 'navidad',
-  dimensions: 'Esfera Ø 5 cm',
-  description: 'Hermosa esfera navideña personalizada en relieve litográfico 3D para iluminar el árbol de Navidad. Al colocarle luces navideñas o mini LED en su interior, tus recuerdos familiares cobran vida con una luz cálida y mágica en 360 grados. Diseña y acomoda tus fotos con nuestro estudio interactivo 4:1.',
-  image: 'assets/litofania/litofania-esfera-navidena.jpg',
-  isCustomPhoto: true,
-  isSphereLithophane: true,
-  excentoEmpaque: true,
-  variants: [
-    { id: 'esfera-luz', name: 'Esfera 3D', price: 3990, image: 'assets/litofania/litofania-esfera-navidena.jpg' },
-    /* { id: 'pack-2-esferas-luz', name: 'Pack 2 Esferas 3D + 2 Luces LED Navideñas', price: 15990, image: 'assets/litofania/litofania-esfera-navidena.jpg' },
-    { id: 'solo-esfera-3d', name: 'Solo Esfera 3D Personalizada (Sin luz LED)', price: 6990, image: 'assets/litofania/litofania-esfera-navidena.jpg' } */
   ]
 },
 
