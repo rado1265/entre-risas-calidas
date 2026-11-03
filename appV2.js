@@ -6,12 +6,13 @@ const PRODUCTS_DATA = [{
   category: 'navidad',
   categoryName: 'Navidad',
   dimensions: '4cm ancho x 5cm alto x 3cm profundidad c/u',
-  description: 'Pack con 6 diseños de pequeñas casitas para crear una decoración cálida y encantadora. Ideales para complementar tus espacios, armar un rincón especial o regalar un detalle lleno de cariño. ✨',
-  image: 'assets/v2/navidad/aldea navidena de casitas decorativas.png',
+  description: 'Pack con diseños de pequeñas casitas para crear una decoración cálida y encantadora. Ideales para complementar tus espacios, armar un rincón especial o regalar un detalle lleno de cariño. ✨',
+  image: 'assets/v2/navidad/aldea navidena de 6 casitas decorativas.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
   sizes: [
-    { id: 'casitas-de-ensueno', name: 'Rincón de Casitas', price: 3200/* 2190 */, image: 'assets/v2/navidad/aldea navidena de casitas decorativas.png' }
+    { id: 'casitas-de-4-ensueno', name: 'Rincón 4 de Casitas', price: 2150/* 2190 */, image: 'assets/v2/navidad/aldea navidena de 4 casitas decorativas.png' },
+    { id: 'casitas-de-6-ensueno', name: 'Rincón 6 de Casitas', price: 3200/* 2190 */, image: 'assets/v2/navidad/aldea navidena de 6 casitas decorativas.png' }
   ],
 }, {
   id: 'pack-magia-navidena',
@@ -2692,7 +2693,6 @@ function sendConsolidatedWhatsAppOrder() {
 function openProductDetailModal(productId) {
   const product = PRODUCTS_DATA.find(p => p.id === productId);
   if (!product) return;
-
   const modal = document.getElementById('product-modal');
   const backdrop = document.getElementById('modal-backdrop');
   const content = document.getElementById('modal-content');
