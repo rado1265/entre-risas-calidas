@@ -29,6 +29,21 @@ const PRODUCTS_DATA = [{
   ],
 },
 {
+  id: 'luz-de-Navidad',
+  name: 'Luz de Navidad',
+  category: 'navidad',
+  categoryName: 'Navidad',
+  dimensions: '5cm ancho x 7,5 cm alto',
+  description: 'Una delicada vela artesanal en forma de árbol navideño, acompañada de una hermosa base decorativa con detalles en relieve. Disponible en 10 diseños diferentes para elegir, cada uno inspirado en la magia y el espíritu de la Navidad. Ideal para decorar tu hogar o regalar un detalle lleno de luz, calidez y encanto. ✨',
+  image: 'assets/v2/navidad/collage de velas navidenas artesanales.png',
+  isCustomPhoto: false,
+  excentoEmpaque: true,
+  sizes: [
+    { id: '1', name: '1 vela', price: 2990/* 1100 */, image: 'assets/v2/navidad/collage de velas navidenas artesanales.png' },
+    { id: '2', name: 'Pack 2 velas', price: 4990/* 1100 */, image: 'assets/v2/navidad/collage de velas navidenas artesanales.png' }
+  ],
+},
+{
   id: 'reno-navideno',
   name: 'Pack Reno Navideño',
   category: 'navidad',
@@ -110,7 +125,7 @@ const PRODUCTS_DATA = [{
     { id: 'pack-navidad-encantada', name: 'Pack Navidad Encantada', price: 19990/* 4190 */, image: 'assets/v2/navidad/Adornos navideños sobre bandeja blanca.png' }
   ],
 },
-{
+/* {
   id: 'pino-encantado',
   name: 'Pack Pino Encantado',
   category: 'navidad',
@@ -121,9 +136,9 @@ const PRODUCTS_DATA = [{
   isCustomPhoto: false,
   excentoEmpaque: true,
   sizes: [
-    { id: 'pino-encantado', name: 'Pino Encantado', price: 2800/* 2190 */, image: 'assets/v2/navidad/arbol navideno sobre base hexagonal.png' }
+    { id: 'pino-encantado', name: 'Pino Encantado', price: 2800, image: 'assets/v2/navidad/arbol navideno sobre base hexagonal.png' }
   ],
-},
+}, */
 {
   id: 'pack-pino-navidad',
   name: 'Pack Pino de Navidad',
