@@ -2,7 +2,7 @@
 
 const PRODUCTS_DATA = [{
   id: 'casitas-de-ensueno',
-  name: 'Rincón de Casitas',
+  name: 'Pack Rincón de Casitas',
   category: 'navidad',
   categoryName: 'Navidad',
   dimensions: '4cm ancho x 5cm alto x 3cm profundidad c/u',
@@ -29,7 +29,7 @@ const PRODUCTS_DATA = [{
 },
 {
   id: 'reno-navideno',
-  name: 'Reno Navideño',
+  name: 'Pack Reno Navideño',
   category: 'navidad',
   categoryName: 'Navidad',
   dimensions: '8cm ancho x 10 cm alto',
@@ -111,7 +111,7 @@ const PRODUCTS_DATA = [{
 },
 {
   id: 'pino-encantado',
-  name: 'Pino Encantado',
+  name: 'Pack Pino Encantado',
   category: 'navidad',
   categoryName: 'Navidad',
   dimensions: '10 cm ancho x 10 cm alto',
