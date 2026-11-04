@@ -10,6 +10,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/navidad/aldea navidena de 6 casitas decorativas.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: true,
   sizes: [
     { id: 'casitas-de-4-ensueno', name: 'Rincón 4 de Casitas', price: 2150/* 2190 */, image: 'assets/v2/navidad/aldea navidena de 4 casitas decorativas.png' },
     { id: 'casitas-de-6-ensueno', name: 'Rincón 6 de Casitas', price: 3200/* 2190 */, image: 'assets/v2/navidad/aldea navidena de 6 casitas decorativas.png' }
@@ -24,6 +25,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/navidad/esferas navidenas en tonos festivos.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: true,
   sizes: [
     { id: 'pack-magia-navidena', name: 'Pack Magia Navideña', price: 19990/* 2190 */, image: 'assets/v2/navidad/esferas navidenas en tonos festivos.png' }
   ],
@@ -38,6 +40,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/navidad/collage de velas navidenas artesanales.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: true,
   sizes: [
     { id: '1', name: '1 vela', price: 2990/* 1100 */, image: 'assets/v2/navidad/collage de velas navidenas artesanales.png' },
     { id: '2', name: 'Pack 2 velas', price: 4990/* 1100 */, image: 'assets/v2/navidad/collage de velas navidenas artesanales.png' }
@@ -53,6 +56,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/navidad/reno de navidad entre luces calidas.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: true,
   sizes: [
     { id: 'reno-navideno', name: 'Reno Navideño', price: 5990/* 1100 */, image: 'assets/v2/navidad/reno de navidad entre luces calidas.png' }
   ],
@@ -67,6 +71,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/navidad/velas navidenas con encanto rustico.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: true,
   sizes: [
     { id: 'pack-dulce-navidad', name: 'Pack Dulce Navidad', price: 14990/* 2190 */, image: 'assets/v2/navidad/velas navidenas con encanto rustico.png' }
   ],
@@ -80,6 +85,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/navidad/tabletas.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: true,
   sizes: [
     { id: 'pack-colgantes-navidena', name: 'Pack Colgantes Magia Navideña', price: 4990/* 2190 */, image: 'assets/v2/navidad/tabletas.png' }
   ],
@@ -94,6 +100,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/navidad/osito navideno entre arboles de crema.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: true,
   sizes: [
     { id: 'pack-bosque-navideno', name: 'Pack Bosque de Navidad', price: 7990/* 2190 */, image: 'assets/v2/navidad/osito navideno entre arboles de crema.png' }
   ],
@@ -108,6 +115,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/navidad/arboles navidenos sobre bandeja ovalada.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: true,
   sizes: [
     { id: 'pack-bosque-nevado', name: 'Pack Bosque Nevado', price: 17990/* 4190 */, image: 'assets/v2/navidad/arboles navidenos sobre bandeja ovalada.png' }
   ],
@@ -121,6 +129,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/navidad/Adornos navideños sobre bandeja blanca.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: true,
   sizes: [
     { id: 'pack-navidad-encantada', name: 'Pack Navidad Encantada', price: 19990/* 4190 */, image: 'assets/v2/navidad/Adornos navideños sobre bandeja blanca.png' }
   ],
@@ -139,7 +148,7 @@ const PRODUCTS_DATA = [{
     { id: 'pino-encantado', name: 'Pino Encantado', price: 2800, image: 'assets/v2/navidad/arbol navideno sobre base hexagonal.png' }
   ],
 }, */
-{
+/* {
   id: 'pack-pino-navidad',
   name: 'Pack Pino de Navidad',
   category: 'navidad',
@@ -150,9 +159,9 @@ const PRODUCTS_DATA = [{
   isCustomPhoto: false,
   excentoEmpaque: true,
   sizes: [
-    { id: 'pack-pino-navidad', name: 'Pack Pino de Navidad', price: 2990/* 2190 */, image: 'assets/v2/navidad/arbol navideno sobre bandeja festiva.png' }
+    { id: 'pack-pino-navidad', name: 'Pack Pino de Navidad', price: 2990, image: 'assets/v2/navidad/arbol navideno sobre bandeja festiva.png' }
   ],
-},
+}, */
 {
   id: 'servilletero-bosque-navideno',
   name: 'Servilletero Bosque Navideño',
@@ -164,6 +173,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/navidad/arboles navidenos blancos sobre madera.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: true,
   sizes: [
     { id: 'servilletero-bosque-navideno', name: 'Servilletero Bosque Navideño', price: 7490/* 2190 */, image: 'assets/v2/navidad/arboles navidenos blancos sobre madera.png' }
   ],
@@ -176,13 +186,35 @@ const PRODUCTS_DATA = [{
   secondaryCategory: 'navidad',
   dimensions: 'Esfera Ø 6 cm',
   description: 'Transformamos tu fotografía favorita en una hermosa esfera navideña con efecto de litofanía iluminada. Un adorno único y personalizado para decorar tu árbol y mantener cerca esos momentos que hacen especial a tu familia.',
-  image: 'assets/v2/navidad/Adorno navideño luminoso con retrato familiar.png',
+  image: 'assets/v2/navidad/esferas/personalizadas/Adorno navideño luminoso con retrato familiar.png',
   isCustomPhoto: true,
   isSphereLithophane: true,
   excentoEmpaque: true,
+  nuevo: true,
   variants: [
-    { id: 'esfera-3d', name: 'Esfera 3D', price: 6990, image: 'assets/v2/navidad/Adorno navideño luminoso con retrato familiar.png' },
-    { id: 'pack-esferas-luz', name: 'Pack 2 Esfera 3D', price: 11990, image: 'assets/v2/navidad/Adorno navideño luminoso con retrato familiar.png' }
+    { id: 'esfera-3d', name: 'Esfera 3D', price: 6990, image: 'assets/v2/navidad/esferas/personalizadas/Adorno navideño luminoso con retrato familiar.png' },
+    { id: 'pack-esferas-luz', name: 'Pack 2 Esfera 3D', price: 11990, image: 'assets/v2/esferas/personalizadas/navidad/Adorno navideño luminoso con retrato familiar.png' }
+  ]
+},
+{
+  id: 'Esferas-Luz-de-Navidad',
+  name: 'Esferas Luz de Navidad.(Con Luz)',
+  category: 'litofanias',
+  categoryName: 'Litofanías & Navidad',
+  secondaryCategory: 'navidad',
+  dimensions: 'Esfera Ø 6 cm',
+  description: 'Hermosas esferas navideñas decorativas con iluminación cálida y delicados relieves que cobran vida al encenderlas. Incluyen diseños especiales y cordón rústico para colgar. Ideales para decorar tu árbol, crear ambientes acogedores o regalar un recuerdo especial esta Navidad. 🎄✨',
+  image: 'assets/v2/navidad/esferas/fijas/adornos navidenos iluminada.png',
+  isCustomPhoto: true,
+  excentoEmpaque: true,
+  nuevo: true,
+  /* sizes: [
+    { id: '10cm', name: '1 esfera', priceExtra: 5990, image: 'assets/v2/navidad/esferas/fijas/adornos navidenos iluminada.png' },
+    { id: '15cm', name: 'Pack 2 esferas', priceExtra: 9990, image: 'assets/v2/navidad/esferas/fijas/adornos navidenos iluminada.png' }
+  ], */
+  variants: [
+    { id: '10cm', name: '1 esfera', price: 5990, image: 'assets/v2/navidad/esferas/fijas/adornos navidenos iluminada.png' },
+    { id: '15cm', name: 'Pack 2 esferas', price: 9990, image: 'assets/v2/navidad/esferas/fijas/adornos navidenos iluminada.png' }
   ]
 },
 {
@@ -195,6 +227,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/2 margaritas.webp',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   sizes: [
     { id: 'pack-2-margaritas', name: 'Pack 2 Margaritas', price: 2500/* 2400 */, image: 'assets/v2/2 margaritas.webp' },
     { id: 'pack-3-margaritas', name: 'Pack 3 Margaritas', price: 3800/* 3750 */, image: 'assets/v2/3 margaritas.webp' },
@@ -220,6 +253,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/calentador de cera.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   sizes: [
     { id: 'hornillo-wax', name: 'Pack Aroma & Calidez', price: 9990/* 10990 */, image: 'assets/v2/calentador de cera.png' }
   ],
@@ -240,6 +274,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/Vela de niña entre rosas.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   sizes: [
     { id: 'jardin-de-ternura', name: 'Jardín de Ternura', price: 6500/* 5900 */, image: 'assets/v2/Vela de niña entre rosas.png' }
   ],
@@ -260,6 +295,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/serenidad loto.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   sizes: [
     { id: 'serenidad-entre-lavanda-y-loto', name: 'Pack Armonía Zen', price: 10990/* 5900 */, image: 'assets/v2/serenidad loto.png' }
   ],
@@ -280,6 +316,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/bandeja floral de velas.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   sizes: [
     { id: 'velas-con-fotos-en-bandeja', name: 'Bandeja Jardín Floral', price: 14490/* 5900 */, image: 'assets/v2/bandeja floral de velas.png' }
   ],
@@ -300,6 +337,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/velas sobre bandeja floral.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   sizes: [
     { id: 'velas-romantic-bandeja-floral', name: 'Bandeja Amor & Rosas', price: 9990/* 7900 */, image: 'assets/v2/velas sobre bandeja floral.png' }
   ],
@@ -320,6 +358,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/velas florales sobre bandeja romantica.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   sizes: [
     { id: 'velas-florales-bandeja-romantica', name: 'Bandeja Jardín de Flores', price: 7990/* 7900 */, image: 'assets/v2/velas florales sobre bandeja romantica.png' }
   ],
@@ -340,6 +379,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/saquito flores y recuerdos.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   sizes: [
     { id: 'pequeno-encanto', name: 'Pequeño Encanto', price: 1290/* 5900 */, image: 'assets/v2/saquito flores y recuerdos.png' }
   ], colors: [
@@ -373,6 +413,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/litofania/litografia base.webp',
   isCustomPhoto: true,
   excentoEmpaque: true,
+  nuevo: false,
   /* sizes: [
     { id: '10cm', name: 'Placa 10 cm', priceExtra: 0, image: 'assets/litofania/litografia base.webp' },
     { id: '15cm', name: 'Placa 15 cm', priceExtra: 2000, image: 'assets/litofania/litografia cuadro.webp' },
@@ -394,6 +435,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/litofania/litografia cuadro.webp',
   isCustomPhoto: true,
   excentoEmpaque: true,
+  nuevo: false,
   /* sizes: [
     { id: 'estandar', name: 'Fotos 7,5 × 10 cm', priceExtra: 0, image: 'assets/litofania/litografia cuadro.webp' },
     { id: 'grande', name: 'Fotos 10 × 12 cm', priceExtra: 5000, image: 'assets/litofania/litografia base.webp' }
@@ -418,6 +460,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/decoracion/contraluz angel gris yeso.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   material: [
     { id: 'Yeso', name: 'Yeso', price: 590/* , image: 'assets/decoracion/contraluz/contraluz angel.webp' */ },
   ],
@@ -451,6 +494,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/decoracion/corazon gris cemento.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   material: [
     /* { id: 'Yeso', name: 'Yeso', price: 1490, image: 'assets/decoracion/joyeros/corazon.webp' }, */
     { id: 'Cemento', name: 'Cemento', price: 5990 },
@@ -474,6 +518,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/decoracion/tortuga yeso gris.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   material: [
     { id: 'Yeso', name: 'Yeso', price: 3490, image: 'assets/v2/decoracion/tortuga yeso gris.png' },
     { id: 'Cemento', name: 'Cemento', price: 6990, image: 'assets/v2/decoracion/tortuga yeso gris.png' },
@@ -495,6 +540,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/decoracion/taichi gris cemento.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   material: [
     /* { id: 'Yeso', name: 'Yeso', price: 1590, image: 'assets/decoracion/joyeros/taichi.webp' }, */
     { id: 'Cemento', name: 'Cemento', price: 4990/* 3790 */, image: 'assets/v2/decoracion/taichi gris cemento.png' },
@@ -516,6 +562,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/decoracion/frasco gris cemento.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   material: [
     { id: 'Yeso', name: 'Yeso', price: 1200/* 590 */, image: 'assets/v2/decoracion/frasco gris cemento.png' },
     { id: 'Cemento', name: 'Cemento', price: 3700/* 1290 */, image: 'assets/v2/decoracion/frasco gris cemento.png' },
@@ -537,6 +584,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/decoracion/love infinito cemento.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   material: [
     /*  { id: 'Yeso', name: 'Yeso', price: 1790, image: 'assets/decoracion/joyeros/love infinito.webp' }, */
     { id: 'Cemento', name: 'Cemento', price: 7990/* 7990 */, image: 'assets/v2/decoracion/love infinito cemento.png' },
@@ -557,6 +605,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/decoracion/buda yeso gris.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   material: [
     { id: 'Yeso', name: 'Yeso', price: 2490 /* 1290 */, image: 'assets/v2/decoracion/buda yeso gris.png' },
     //{ id: 'Cemento', name: 'Cemento', price: 5490/* 2990 */, image: 'assets/v2/decoracion/buda gris cemento.png' },
@@ -577,6 +626,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/decoracion/loto gris cemento.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   material: [
     { id: 'Yeso', name: 'Yeso', price: 1890/* 990 */, image: 'assets/v2/decoracion/loto gris cemento.png' },
     { id: 'Cemento', name: 'Cemento', price: 4490/* 2390 */, image: 'assets/v2/decoracion/loto gris cemento.png' },
@@ -597,6 +647,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/decoracion/bandeja corazon gris cemento.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   material: [
     /* { id: 'Yeso', name: 'Yeso', price: 1290, image: 'assets/decoracion/corazon/bandeja corazon.webp' }, */
     { id: 'Cemento', name: 'Cemento', price: 6990/* 2990 */, image: 'assets/v2/decoracion/bandeja corazon gris cemento.png' },
@@ -617,6 +668,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/decoracion/corazon v2 gris cemento.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   material: [
     /* { id: 'Yeso', name: 'Yeso', price: 1290, image: 'assets/decoracion/corazon/corazon v2.webp' }, */
     { id: 'Cemento', name: 'Cemento', price: 5990/* 2990 */, image: 'assets/v2/decoracion/corazon v2 gris cemento.png' },
@@ -638,6 +690,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/decoracion/ovalado mediano blanco cemento.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   material: [
     /* { id: 'Yeso', name: 'Yeso', price: 490, image: 'assets/decoracion/redondo/ovalado mediano.webp' }, */
     { id: 'Cemento', name: 'Cemento', price: 3990/* 3990 */, image: 'assets/v2/decoracion/ovalado mediano blanco cemento.png' },
@@ -660,6 +713,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/decoracion/gato blanco cemento.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   material: [
     { id: 'Yeso', name: 'Yeso', price: 3990/* 1590 */, image: 'assets/decoracion/gato/gato blanco cemento.png' },
     /* { id: 'Cemento', name: 'Cemento', price: 2990 3890, image: 'assets/decoracion/gato/gato.webp' }, */
@@ -698,6 +752,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/decoracion/hornillo gris cemento.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   material: [
     /* { id: 'Yeso', name: 'Yeso', price: 2990, image: 'assets/decoracion/hornillo/hornillo.webp' }, */
     { id: 'Cemento', name: 'Cemento', price: 8990, image: 'assets/v2/decoracion/hornillo gris cemento.png' },
@@ -718,6 +773,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/decoracion/ovalado blanco cemento.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   material: [
     //{ id: 'Yeso', name: 'Yeso', price: 0/* 1690 */, image: 'assets/v2/decoracion/ovalado blanco cemento.png' },
     { id: 'Cemento', name: 'Cemento', price: 6490/* 3990 */, image: 'assets/v2/decoracion/ovalado blanco cemento.png' },
@@ -737,6 +793,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/decoracion/ovalada doble blanco cemento.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
+  nuevo: false,
   material: [
     //{ id: 'Yeso', name: 'Yeso', price: 1790, image: 'assets/decoracion/ovalado/ovalada doble.webp' },
     { id: 'Cemento', name: 'Cemento', price: 6990/* 4190 */, image: 'assets/v2/decoracion/ovalada doble blanco cemento.png' },
@@ -811,7 +868,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/velas/loto.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
-  isCandle: true,
+  isCandle: true, nuevo: false,
   sizes: [
     { id: 'estandar', name: '9 cm ancho x 4 cm alto', price: 3490/* 1700 */, image: 'assets/v2/velas/loto.png' }
   ],
@@ -845,7 +902,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/velas/vela romantica Love.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
-  isCandle: true,
+  isCandle: true, nuevo: false,
   sizes: [
     { id: 'estandar', name: '10,5 cm ancho x 5 cm alto', price: 2990/* 2900 */, image: 'assets/v2/velas/vela romantica Love.png' }
   ],
@@ -879,7 +936,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/velas/cilindro ovalado v1 2.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
-  isCandle: true,
+  isCandle: true, nuevo: false,
   sizes: [
     { id: 'estandar', name: '12 cm alto', price: 3490 /* 2100 */, image: 'assets/v2/velas/cilindro ovalado v1 2.png' }
   ],
@@ -913,7 +970,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/velas/corazon love 2.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
-  isCandle: true,
+  isCandle: true, nuevo: false,
   sizes: [
     { id: 'estandar', name: '6 cm alto', price: 2990/* 1400 */, image: 'assets/v2/velas/corazon love 2.png' }
   ],
@@ -947,7 +1004,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/velas/virgen blanca v1 2.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
-  isCandle: true,
+  isCandle: true, nuevo: false,
   sizes: [
     { id: 'estandar', name: '6 cm alto', price: 1490/* 1100 */, image: 'assets/v2/velas/virgen blanca v1 2.png' }
   ],
@@ -981,7 +1038,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/velas/virgen blanca v2 2.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
-  isCandle: true,
+  isCandle: true, nuevo: false,
   sizes: [
     { id: 'estandar', name: '6,5 cm alto', price: 1490, image: 'assets/v2/velas/virgen blanca v2 2.png' }
   ],
@@ -1015,7 +1072,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/velas/angelita parafina.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
-  isCandle: true,
+  isCandle: true, nuevo: false,
   sizes: [
     { id: 'mujer', name: 'Niña 10 cm alto', price: 3490/* 1500 */, image: 'assets/v2/velas/angelita parafina.png' },
     { id: 'hombre', name: 'Niño 10 cm alto', price: 3490/* 1500 */, image: 'assets/v2/velas/angel parafina.png' }
@@ -1051,7 +1108,7 @@ const PRODUCTS_DATA = [{
   image: 'assets/v2/velas/wax metls corazon.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
-  isCandle: true,
+  isCandle: true, nuevo: false,
   sizes: [
     { id: 'mujer', name: 'Bolsa 25gr', price: 1990/* 1500 */, image: 'assets/v2/velas/wax metls corazon.png' }
   ],
@@ -1144,7 +1201,8 @@ function initDefaultState() {
       aromaId: null,
       variantId: null,
       presentationId: null,
-      quantity: 1
+      quantity: 1,
+      nuevo: false
     };
   });
 }
@@ -2193,7 +2251,10 @@ function addConfiguredModalToCart(productId) {
   closeModal();
   showToastNotification(`¡"${product.name}" (${variantLabel}) × ${state.quantity} agregado a tu cotización!`);
 }
-
+function newProduct(product) {
+  if (product.nuevo)
+    return ` <span class="absolute top-3 right-3 text-[11px] font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full">⭐ Nuevo Producto</span>`
+}
 function buildProductCardHTML(product) {
   const state = getProductState(product);
   const priceRange = getProductPriceRange(product);
@@ -2210,7 +2271,9 @@ function buildProductCardHTML(product) {
         <!-- Category Pill Badge -->
         <span class="absolute top-3 left-3 bg-[#FFFDF9]/90 backdrop-blur-md text-[#8B5A2B] text-xs font-semibold px-3 py-1 rounded-full shadow-sm border border-[#8B5A2B]/20">
           ${product.categoryName}
-        </span>
+          
+            </span>
+            ${newProduct(product)}
 
         <!-- Quick View Hover Overlay -->
         <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -2741,7 +2804,7 @@ function openProductDetailModal(productId) {
           <div>
             <div class="flex items-center gap-2">
               <span class="text-[11px] font-semibold text-[#8B5A2B] bg-[#F7EFE5] px-3 py-1 rounded-full uppercase tracking-wider">${product.categoryName}</span>
-              <span class="text-[11px] font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full">⭐ Nuevo Producto</span>
+              
             </div>
             <h2 class="text-2xl sm:text-3xl font-serif-title font-bold text-[#3A2E2B] mt-2 mb-1">${product.name}</h2>
             <p class="text-xs text-[#6C5C57] max-w-xl">${product.description}</p>
@@ -2861,6 +2924,8 @@ function openProductDetailModal(productId) {
         <div class="flex flex-col justify-between space-y-4">
           <div>
             <span class="text-[11px] font-semibold text-[#8B5A2B] bg-[#F7EFE5] px-3 py-1 rounded-full uppercase tracking-wider">${product.categoryName}</span>
+
+           
             <h2 class="text-2xl font-serif-title font-bold text-[#3A2E2B] mt-2 mb-1">${product.name}</h2>
             <p class="text-xs font-semibold text-[#8B5A2B] mb-2 flex items-center gap-1">
               <span>📐 Dimensiones:</span>
