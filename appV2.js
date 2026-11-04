@@ -42,8 +42,8 @@ const PRODUCTS_DATA = [{
   excentoEmpaque: true,
   nuevo: true,
   sizes: [
-    { id: '1', name: '1 vela', price: 2990/* 1100 */, image: 'assets/v2/navidad/collage de velas navidenas artesanales.png' },
-    { id: '2', name: 'Pack 2 velas', price: 4990/* 1100 */, image: 'assets/v2/navidad/collage de velas navidenas artesanales.png' }
+    { id: '1', name: '1 vela', price: 2490/* 1100 */, image: 'assets/v2/navidad/collage de velas navidenas artesanales.png' },
+    { id: '2', name: 'Pack 2 velas', price: 4490/* 1100 */, image: 'assets/v2/navidad/collage de velas navidenas artesanales.png' }
   ],
 },
 {
@@ -58,7 +58,7 @@ const PRODUCTS_DATA = [{
   excentoEmpaque: true,
   nuevo: true,
   sizes: [
-    { id: 'reno-navideno', name: 'Reno Navideño', price: 5990/* 1100 */, image: 'assets/v2/navidad/reno de navidad entre luces calidas.png' }
+    { id: 'reno-navideno', name: 'Reno Navideño', price: 5490/* 1100 */, image: 'assets/v2/navidad/reno de navidad entre luces calidas.png' }
   ],
 },
 {
@@ -73,7 +73,7 @@ const PRODUCTS_DATA = [{
   excentoEmpaque: true,
   nuevo: true,
   sizes: [
-    { id: 'pack-dulce-navidad', name: 'Pack Dulce Navidad', price: 14990/* 2190 */, image: 'assets/v2/navidad/velas navidenas con encanto rustico.png' }
+    { id: 'pack-dulce-navidad', name: 'Pack Dulce Navidad', price: 12990/* 2190 */, image: 'assets/v2/navidad/velas navidenas con encanto rustico.png' }
   ],
 }, {
   id: 'pack-colgantes-navidena',
@@ -102,7 +102,7 @@ const PRODUCTS_DATA = [{
   excentoEmpaque: true,
   nuevo: true,
   sizes: [
-    { id: 'pack-bosque-navideno', name: 'Pack Bosque de Navidad', price: 7990/* 2190 */, image: 'assets/v2/navidad/osito navideno entre arboles de crema.png' }
+    { id: 'pack-bosque-navideno', name: 'Pack Bosque de Navidad', price: 4990/* 2190 */, image: 'assets/v2/navidad/osito navideno entre arboles de crema.png' }
   ],
 },
 {
@@ -117,7 +117,7 @@ const PRODUCTS_DATA = [{
   excentoEmpaque: true,
   nuevo: true,
   sizes: [
-    { id: 'pack-bosque-nevado', name: 'Pack Bosque Nevado', price: 17990/* 4190 */, image: 'assets/v2/navidad/arboles navidenos sobre bandeja ovalada.png' }
+    { id: 'pack-bosque-nevado', name: 'Pack Bosque Nevado', price: 16990/* 4190 */, image: 'assets/v2/navidad/arboles navidenos sobre bandeja ovalada.png' }
   ],
 }, {
   id: 'pack-navidad-encantada',
@@ -175,7 +175,7 @@ const PRODUCTS_DATA = [{
   excentoEmpaque: true,
   nuevo: true,
   sizes: [
-    { id: 'servilletero-bosque-navideno', name: 'Servilletero Bosque Navideño', price: 7490/* 2190 */, image: 'assets/v2/navidad/arboles navidenos blancos sobre madera.png' }
+    { id: 'servilletero-bosque-navideno', name: 'Servilletero Bosque Navideño', price: 5490/* 2190 */, image: 'assets/v2/navidad/arboles navidenos blancos sobre madera.png' }
   ],
 },
 {
