@@ -16,6 +16,21 @@ const PRODUCTS_DATA = [{
     { id: 'casitas-de-6-ensueno', name: 'Rincón 6 de Casitas', price: 3200/* 2190 */, image: 'assets/v2/navidad/aldea navidena de 6 casitas decorativas.png' }
   ],
 }, {
+  id: 'Aldea-Navideña',
+  name: 'Aldea Navideña',
+  category: 'navidad',
+  categoryName: 'Navidad',
+  dimensions: '7cm ancho x 6cm alto',
+  description: 'Crea un pequeño rincón lleno de encanto con nuestra Aldea Navideña. Set de casitas decorativas con diferentes diseños y detalles en relieve, perfectas para complementar tu decoración de Navidad y llenar tu hogar de un ambiente cálido y acogedor. ✨',
+  image: 'assets/v2/navidad/aldea navidena de casitas blancas.png',
+  isCustomPhoto: false,
+  excentoEmpaque: true,
+  nuevo: true,
+  sizes: [
+    { id: '1-ensueno', name: '1 casita', price: 1490/* 2190 */, image: 'assets/v2/navidad/aldea navidena de casitas blancas.png' },
+    { id: '3-ensueno', name: 'Pack 3 casitas', price: 3990/* 2190 */, image: 'assets/v2/navidad/aldea navidena de casitas blancas.png' }
+  ],
+}, {
   id: 'pack-magia-navidena',
   name: 'Pack Magia Navideña',
   category: 'navidad',
@@ -1181,7 +1196,7 @@ function getProductPresentation(product, presentationId) {
 
 // PAGINATION STATE
 let currentPage = 1;
-const ITEMS_PER_PAGE = 12;
+const ITEMS_PER_PAGE = 18;
 
 // DOM Ready initialization
 document.addEventListener('DOMContentLoaded', () => {
