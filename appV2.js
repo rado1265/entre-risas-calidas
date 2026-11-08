@@ -5,7 +5,7 @@ const PRODUCTS_DATA = [{
   name: 'Pack Rincón de Casitas',
   category: 'navidad',
   categoryName: 'Navidad',
-  dimensions: '4cm ancho x 5cm alto x 3cm profundidad c/u',
+  dimensions: '4cm ancho x 5cm alto x 3cm profundidad',
   description: 'Pack con diseños de pequeñas casitas para crear una decoración cálida y encantadora. Ideales para complementar tus espacios, armar un rincón especial o regalar un detalle lleno de cariño. ✨',
   image: 'assets/v2/navidad/aldea navidena de 6 casitas decorativas.png',
   isCustomPhoto: false,
@@ -30,20 +30,6 @@ const PRODUCTS_DATA = [{
     { id: '1-ensueno', name: '1 casita', price: 1490/* 2190 */, image: 'assets/v2/navidad/aldea navidena de casitas blancas.png' },
     { id: '3-ensueno', name: 'Pack 3 casitas', price: 3990/* 2190 */, image: 'assets/v2/navidad/aldea navidena de casitas blancas.png' }
   ],
-}, {
-  id: 'pack-magia-navidena',
-  name: 'Pack Magia Navideña',
-  category: 'navidad',
-  categoryName: 'Navidad',
-  dimensions: '24cm largo x 12 cm ancho x 8 cm alto',
-  description: 'Tres delicadas velas artesanales en forma de esfera navideña, decoradas con hermosos detalles y pequeños lazos. Ideales para decorar tu hogar, complementar tus regalos o sorprender a alguien especial. Disponibles en distintos colores y aromas para llenar de magia y calidez esta Navidad. 🎄✨',
-  image: 'assets/v2/navidad/esferas navidenas en tonos festivos.png',
-  isCustomPhoto: false,
-  excentoEmpaque: true,
-  nuevo: true,
-  sizes: [
-    { id: 'pack-magia-navidena', name: 'Pack Magia Navideña', price: 19990/* 2190 */, image: 'assets/v2/navidad/esferas navidenas en tonos festivos.png' }
-  ],
 },
 {
   id: 'luz-de-Navidad',
@@ -59,6 +45,36 @@ const PRODUCTS_DATA = [{
   sizes: [
     { id: '1', name: '1 vela', price: 2490/* 1100 */, image: 'assets/v2/navidad/collage de velas navidenas artesanales.png' },
     { id: '2', name: 'Pack 2 velas', price: 4490/* 1100 */, image: 'assets/v2/navidad/collage de velas navidenas artesanales.png' }
+  ],
+},
+{
+  id: 'pinitos-Navideños',
+  name: 'Pack Pinitos Navideños',
+  category: 'navidad',
+  categoryName: 'Navidad',
+  dimensions: '3,5cm ancho x 5 cm alto',
+  description: 'Set de 5 velas artesanales en forma de árbol navideño, disponibles en diferentes colores para llenar tus espacios de calidez y espíritu navideño. Perfectas para decorar la mesa, complementar un rincón especial o regalar un detalle hecho a mano. ✨',
+  image: 'assets/v2/navidad/arboles navidenos artesanales.png',
+  isCustomPhoto: false,
+  excentoEmpaque: true,
+  nuevo: true,
+  sizes: [
+    { id: '1', name: 'Pack 5 Pinitos', price: 3490/* 1100 */, image: 'assets/v2/navidad/arboles navidenos artesanales.png' }
+  ],
+},
+{
+  id: 'pack-magia-navidena',
+  name: 'Pack Magia Navideña',
+  category: 'navidad',
+  categoryName: 'Navidad',
+  dimensions: '24cm largo x 12 cm ancho x 8 cm alto',
+  description: 'Tres delicadas velas artesanales en forma de esfera navideña, decoradas con hermosos detalles y pequeños lazos. Ideales para decorar tu hogar, complementar tus regalos o sorprender a alguien especial. Disponibles en distintos colores y aromas para llenar de magia y calidez esta Navidad. 🎄✨',
+  image: 'assets/v2/navidad/esferas navidenas en tonos festivos.png',
+  isCustomPhoto: false,
+  excentoEmpaque: true,
+  nuevo: true,
+  sizes: [
+    { id: 'pack-magia-navidena', name: 'Pack Magia Navideña', price: 19990/* 2190 */, image: 'assets/v2/navidad/esferas navidenas en tonos festivos.png' }
   ],
 },
 {
@@ -95,7 +111,7 @@ const PRODUCTS_DATA = [{
   name: 'Pack Colgantes Magia Navideña',
   category: 'navidad',
   categoryName: 'Navidad',
-  dimensions: '9 cm x 5 cm c/u',
+  dimensions: '9 cm x 5 cm ',
   description: 'Delicados adornos navideños artesanales con diseños de árbol de Navidad y bastón de caramelo. Ideales para decorar tu árbol, personalizar tus regalos o dar un toque especial a tus espacios. Incluyen cinta decorativa para colgar y están disponibles en diferentes combinaciones de colores. ✨',
   image: 'assets/v2/navidad/tabletas.png',
   isCustomPhoto: false,
@@ -219,7 +235,7 @@ const PRODUCTS_DATA = [{
   secondaryCategory: 'navidad',
   dimensions: 'Esfera Ø 6 cm',
   description: 'Hermosas esferas navideñas decorativas con iluminación cálida y delicados relieves que cobran vida al encenderlas. Incluyen diseños especiales y cordón rústico para colgar. Ideales para decorar tu árbol, crear ambientes acogedores o regalar un recuerdo especial esta Navidad. 🎄✨',
-  image: 'assets/v2/navidad/esferas/fijas/adornos navidenos iluminada.png',
+  image: 'assets/v2/navidad/esferas/fijas/adornos navidenos iluminada 4.png',
   isCustomPhoto: true,
   excentoEmpaque: true,
   nuevo: true,
@@ -228,8 +244,8 @@ const PRODUCTS_DATA = [{
     { id: '15cm', name: 'Pack 2 esferas', priceExtra: 9990, image: 'assets/v2/navidad/esferas/fijas/adornos navidenos iluminada.png' }
   ], */
   variants: [
-    { id: '10cm', name: '1 esfera', price: 5990, image: 'assets/v2/navidad/esferas/fijas/adornos navidenos iluminada.png' },
-    { id: '15cm', name: 'Pack 2 esferas', price: 9990, image: 'assets/v2/navidad/esferas/fijas/adornos navidenos iluminada.png' }
+    { id: '10cm', name: '1 esfera', price: 5990, image: 'assets/v2/navidad/esferas/fijas/adornos navidenos iluminada 4.png' },
+    { id: '15cm', name: 'Pack 2 esferas', price: 9990, image: 'assets/v2/navidad/esferas/fijas/adornos navidenos iluminada 4.png' }
   ]
 },
 {
@@ -2320,7 +2336,7 @@ function buildProductCardHTML(product) {
           <!-- Dimensions -->
           <p class="text-xs text-[#8B5A2B] font-medium mb-2 flex items-center gap-1.5">
             <svg class="w-3.5 h-3.5 text-[#C86D51]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
-            ${product.dimensions}
+            Tamaño: ${product.dimensions}
           </p>
 
           <!-- Short Description -->
