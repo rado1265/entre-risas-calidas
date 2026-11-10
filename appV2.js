@@ -83,7 +83,7 @@ const PRODUCTS_DATA = [{
   category: 'navidad',
   categoryName: 'Navidad',
   dimensions: '24cm largo x 12 cm ancho x 8 cm alto',
-  description: 'Tres delicadas velas artesanales en forma de esfera navideña, decoradas con hermosos detalles y pequeños lazos. Ideales para decorar tu hogar, complementar tus regalos o sorprender a alguien especial. Disponibles en distintos colores y aromas para llenar de magia y calidez esta Navidad. 🎄✨',
+  description: 'Set de 3 velas artesanales en forma de esfera navideña, decoradas con delicados copos de nieve y estrellas, presentadas sobre una elegante base ovalada de cemento. Un detalle cálido y especial para decorar tu hogar, vestir tu mesa o regalar esta Navidad. ✨',
   image: 'assets/v2/navidad/esferas navidenas en tonos festivos.png',
   isCustomPhoto: false,
   excentoEmpaque: true,
