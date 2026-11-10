@@ -61,6 +61,21 @@ const PRODUCTS_DATA = [{
   sizes: [
     { id: '1', name: 'Pack 5 Pinitos', price: 3490/* 1100 */, image: 'assets/v2/navidad/arboles navidenos artesanales.png' }
   ],
+}, {
+  id: 'Esferas Mágicas',
+  name: 'Esferas Mágicas',
+  category: 'navidad',
+  categoryName: 'Navidad',
+  dimensions: '6,5cm ancho x 7 cm alto c/u',
+  description: 'Velas artesanales en forma de esfera navideña, decoradas con un elegante lazo y delicados detalles de copos de nieve y estrellas. Disponibles en distintos colores para personalizar tu decoración y crear un detalle único para regalar o disfrutar en casa. ✨🎄',
+  image: 'assets/v2/navidad/Adornos navideños impecables en tonos festivos.png',
+  isCustomPhoto: false,
+  excentoEmpaque: true,
+  nuevo: true,
+  sizes: [
+    { id: '1', name: '1 Esfera Mágica', price: 4490/* 1100 */, image: 'assets/v2/navidad/Adornos navideños impecables en tonos festivos.png' },
+    { id: '3', name: '3 Esferas Mágicas', price: 12990/* 1100 */, image: 'assets/v2/navidad/Adornos navideños impecables en tonos festivos.png' }
+  ],
 },
 {
   id: 'pack-magia-navidena',
